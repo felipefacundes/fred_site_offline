@@ -34,7 +34,7 @@ To use the scripts in this repository, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/felipefacundes/freds-imagemagick-scripts.git
+   git clone https://github.com/felipefacundes/fred_site_offline.git ~/.fred_site_offline
    ```
 
 2. **Navigate to the Directory**:
