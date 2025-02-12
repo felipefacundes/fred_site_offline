@@ -39,16 +39,24 @@ To use the scripts in this repository, follow these steps:
 
 2. **Navigate to the Directory**:
    ```bash
-   cd freds-imagemagick-scripts
+   cd fred_site_offline
+   ```
+3. This repository provides the **offline site** of **Fred Weinhaus**, which includes valuable resources and tutorials. To download all the scripts at once, use the following commands:
+
+   ```bash
+   git clone https://github.com/felipefacundes/shell_utils ~/.shell_utils
+   bash ~/.shell_utils/install.sh
    ```
 
-3. **Run a Script**:
+   Follow the instructions above to install and access the scripts quickly and conveniently.
+
+4. **Run a Script**:
    - Each script can be executed using the command line. For example, to use the `glow` script:
    ```bash
    glow [-a amount] [-s softening] infile outfile
    ```
 
-4. **Refer to the Documentation**: Each script includes usage instructions and examples. Please refer to the comments within the scripts for detailed information.
+5. **Refer to the Documentation**: Each script includes usage instructions and examples. Please refer to the comments within the scripts for detailed information.
 
 ---
 
