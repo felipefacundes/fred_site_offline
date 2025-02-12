@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: CYLINDERIZE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - cylinderize - applies a cylinder distortion to an image so that the image is wrapped about the cylinder">
+<meta name="keywords" content="ImageMagick, scripts, image processing, cylinderize, distortion, wrap, warp, pitch, tilt, rotate, cylinder, composite, overlay">
+<link rel="stylesheet" href="CYLINDERIZE_files/style.css">
+</head>
+<body id="cylinderize" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="CYLINDERIZE_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+CYLINDERIZE
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Applies a cylinder distortion to an image so that the image is wrapped 
+		about the cylinder
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=cylinderize&amp;dirname=cylinderize">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: November 09, 2021</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: cylinderize [-m mode] [-r radius] [-l length] [-w wrap] [-f fcolor] 
+		[-a angle] [-p pitch] [-d direction] [-n narrow] [e efactor] [-s scale]  
+		[-o offset] [-v vpmethod] [-b bgcolor] [-t] [-R rotate] [-c compose] [-E] 
+		[-D dfile] infile [bgfile] outfile<br>
+		USAGE: cylinderize [-h or -help]
+		</p>
+
+		<p align="left">
+		-m .... mode ......... mode of orientation for cylinder axis; options are <br>
+		...................... horizontal (or h) or vertical (or v); default=horizontal<br>
+		-r .... radius ....... radius of cylinder; float&gt;0; default is one quarter<br>
+		...................... of image width or height depending upon mode.<br>
+		-l .... length ....... length of cylinder; lenght&gt;0; default=width or height <br>
+		...................... depending upon mode and adjusted for the cylinder pitch angle.<br>
+		-w .... wrap ......... percentage of image to wrap about the cylinder; float; <br>
+		...................... 10&lt;=wrap&lt;=100 or 0; default=50; use wrap=0 to preserve <br>
+		...................... aspect ratio of input as it is wrapped about the cylinder<br>
+		-f .... fcolor ....... fill color for portion of cylinder not covered by the <br>
+		...................... image; default=none (transparent)<br>
+		-a .... angle ........ rotation angle in degrees about cylinder axis; <br>
+		...................... best used when wrap=full; float; -360&lt;=angle&lt;=360;<br>
+		...................... default=0<br>
+		-p .... pitch ........ pitch (tilt) angle of cylinder; float; 0&lt;=pitch&lt;90;<br>
+		...................... default=0<br>
+		-d .... direction .... pitch direction; choices are down (d), up (u), <br>
+		...................... right (r), left (l) or both (b). Option both is for <br>
+		...................... the case of a straight on view with perspective <br>
+		...................... distortion. The default is down or right depending <br>
+		...................... upon mode of vertical or horizontal, respectively.  <br>               
+		-n .... narrow ....... narrow is the percent ratio of the bottom-to-top or <br>
+		...................... right-to-left radii used to simulate perspective <br>
+		...................... tapering; floatsr&gt;=0; default=100 means same size radii<br>
+		-e .... efactor ...... exaggeration factor for pitch curvature of the opposite<br>
+		...................... side of the cylinder adjusted by the pitch argument<br>
+		...................... to make perspective views more realistic; floatr&gt;=1;<br> 
+		...................... default=1 i.e. no exaggeration. Nominal is 2.<br>
+		-s .... scale ........ percent scaling of the infile in either the vertical or <br>
+		...................... horizontal dimension as appropriate to the mode; <br>
+		...................... integer&gt;=100; default=100<br>
+		-o .... offsets ...... x and y offset pair in the following form: +-Xoff+-Yoff;<br>
+		...................... where either the + or - sign is required; values are<br> 
+		...................... integers; default=+0+0<br>
+		-v .... vpmethod ..... virtual-pixel method; default=black<br>
+		-b .... bgcolor ...... background color for the case when vpmethod=background; <br>
+		...................... default=black<br>
+		-t ................... trim background<br>
+		-R .... rotation ..... rotation angle of output before compositing with background;<br>
+		...................... float; -360&lt;=rotation&lt;=360; default=0<br>
+		-c .... compose ...... compose method when overlaying the input pattern on<br>
+		...................... the background image; choices are: over (o) and <br>
+		...................... multiply (m); the default is over; to apply shading <br>
+		...................... from the background image, use multiply<br>
+		-E .... export ....... export the displacement map and other needed parameters <br>
+		...................... to be able to use a condensed script to repeat the <br>
+		...................... processing on the same size input images for faster <br>
+		...................... processing.<br>
+		-D .... dfile ........ path to and including desired displacement file name; <br>
+		...................... used in conjunction with -E (export) option; <br>
+		...................... default="displace.png"; do not use a compressed file<br>
+		...................... format; also use Q16 or higher IM compilation, not Q8<br>
+		<br>
+		bgfile is an optional background file onto which the cylinderized infile is <br>
+		to be composited at the offset coordinated relative to the center of the bgfile
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a cylinder distortion to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: CYLINDERIZE applies a cylinder distortion to an image so 
+		that the image is wrapped about the cylinder. The image can be wrapped 
+		about any percentage of the cylinder from 10 to 100 percent. If the wrap 
+		is less than 100%, then the cylinder will be colored to fill the remaining 
+		amount. The cylinder can also be pitched (tilted).
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-m mode ... MODE specifies the orientation for the cylinder axis. The 
+		choices are horizontal (or h) or vertical (or v). The default is horizontal.
+		</p>
+
+		<p align="left">
+		-r radius ... RADIUS is the radius of the cylinder in pixels. The values are 
+		floats&gt;0. The default is one quarter of the image width or height depending 
+		upon the mode.
+		</p>
+
+		<p align="left">
+		-l length ... Length is the length of the cylinder along its axis in pixels. 
+		The values are floats with length&gt;0. The default is either the width or height 
+		depending upon mode and adjusted for the pitch of the cylinder. If a length 
+		is provided, then the cylinder length will not be adjusted for pitch, but 
+		the ends will still be adjusted for pitch.
+		</p>
+
+		<p align="left">
+		-w wrap ... WRAP is the percentage of the cylinder circumference that is wrapped 
+		with the image. Values are floats such that 10&lt;=wrap&lt;=100 or 0. Default=50. Use 
+		wrap=0 to preserve aspect ratio of input as it is wrapped around the cylinder.
+		</p>
+
+		<p align="left">
+		-f fcolor ... FCOLOR is the fill color to put on the remainder of the cylinder 
+		that is not covered by the image. Any valid IM color is allowed. The default 
+		is none (for transparent).
+		</p>
+
+		<p align="left">
+		-a angle ... ANGLE is the rotation of the image about the cylinder. This is 
+		best used when wrap=full. The values are floats with -360&lt;=angle&lt;=360. 
+		The default=0.
+		</p>
+
+		<p align="left">
+		-p pitch ... PITCH (tilt) angle of the cylinder. Values are floats with 
+		0&lt;=pitch&lt;90. The default=0.
+		</p>
+
+		<p align="left">
+		-d direction ... pitch DIRECTION (sign). The choices are down (d), up (u), 
+		right (r), left (l) or both (b). Option both is for the case of a straight 
+		on view with perspective distortion pitching either up and down or left and 
+		right. The default is down or right depending upon mode of vertical or 
+		horizontal, respectively.                   
+		</p>
+
+		<p align="left">
+		-n narrow ... NARROW is the percent ratio of the bottom-to-top or 
+		right-to-left radii used to simulate perspective tapering. Values are 
+		floats&gt;=0. The default=100 means same size radii.
+		</p>
+
+		<p align="left">
+		-e efactor ... EFACTOR is the exaggeration factor for the pitch curvature 
+		of the opposite side of the cylinder adjusted by the pitch argument in order 
+		to make perspective views more realistic. Values are floats&gt;=1. The default=1 
+		i.e. no exaggeration. From my limited tests a value of 2 works well for 
+		pitch values up to at least 20 degrees.
+		</p>
+
+		<p align="left">
+		-s scale ... SCALE is the percent scaling of the infile in the vertical or 
+		horizontal dimension as appropriate to the mode. Values are integer&gt;=100; 
+		The default=100. This can be used to compensate for the distortions 
+		introduced by the top and bottom curvatures.
+		</p>
+
+		<p align="left">
+		-o offsets ... OFFSETS are the x and y offset pair in the following form: 
+		+-Xoff+-Yoff (no spaces) where either the + or - sign is required. Numerical 
+		values are integers. The default=+0+0. The offsets are used to position the 
+		cylinderized image over the background image relative to its center.
+		</p>
+
+		<p align="left">
+		-v vpmethod ... VPMETHOD is the virtual-pixel method to use. Any valid IM 
+		virtual-pixel may be used. The background will be transparent if 
+		vpmethod=transparent. The default is black. 
+		</p>
+
+		<p align="left">
+		-b bgcolor ... BGCOLOR is the background color to use when vpmethod=background. 
+		Any valid IM color is allowed. The background will be transparent if 
+		bgcolor=none and vpmethod=background. The bgcolor must be set to match the 
+		virtual pixel color when using the -R rotation option, as well. This is most 
+		simply done by using -vpmethod=background and setting the bgcolor. The  
+		default vpmethod is black.
+		</p>
+
+		<p align="left">
+		-t ... TRIM the background.
+		</p>
+
+		<p align="left">
+		-R ... ROTATION angle of output before compositing with background. The 
+		values are floats with -360&lt;=rotation&lt;=360. The default=0.
+		</p>
+
+		<p align="left">
+		-c ... COMPOSE method when overlaying the input pattern on the background 
+		image. The choices are: over (o) and multiply (m). The default is over. 
+		To apply shading from the background image, use multiply
+		</p>
+
+		<p align="left">
+		-E ... EXPORT the displacement map and other needed parameters for use with 
+		a condensed script to repeat the processing on the same size input images 
+		for faster processing. The displacement map will named displace.png. The 
+		other arguments will be displayed to the terminal and can be copied and 
+		pasted into other scripts. See my script, cylinderwarp.
+		</p>
+
+		<p align="left">
+		-D dfile ... DFILE is the desired location of the displacement file. It is 
+		the path to and including the desired name of the displacement file. It is 
+		used in conjunction with -E (export) option. The default="displace.png". 
+		Do not specify a compressed file format such as jpg. Also you must use a 
+		Q16 or higher IM compilation and not Q8. A Q8 system will write an 8-bit  
+		displacement file, which may cause severe blocky results in the output image.
+		</p>
+
+		<p align="left">
+		NOTE: Thanks to Anthony Thyssen for the concept and basic equation for 
+		achieving the tilted cylinder effect. Thanks to Glen Fiebich for the 
+		suggestion to allow any amount of wrap and to be able to fill the 
+		remainder with color or transparency and still rotate the cylinder. 
+		Thanks to Marcos Passos for the suggestion and processing concept to handle 
+		face on cylindrical objects with perspective distortion up and down and 
+		for his extensive testing.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		No Pitch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -l 56
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_full_r37p25_l112_t0_a0_black.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l56_t0_a0_black.jpg" width="149" vspace="0" hspace="0" height="56" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m horizontal
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m horizontal -l 75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_horizontal_half_r28_l149_t0_a0_black.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_horizontal_half_r28_l75_t0_a0_black.jpg" width="75" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -v background -b red
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t0_a0_red.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r75_l112_t0_a0_black.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Rotation Animation<br>
+		Arguments:<br>
+		-m vertical -w 100 -a #<br>
+		(where # varies from 0 to 360<br>
+		in 30 degree increments)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_full_r28_l74_black_animation.gif" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Rotation Animation<br>
+		Arguments:<br>
+		-m vertical -w 50 -p 25 -a #<br>
+		(where # varies from 0 to 360<br>
+		in 30 degree increments)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_w50_p25_red_anim.gif" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		With 20 Degree Pitch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -p 20
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -l 56 -p 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t20_a0_black.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l56_t20_a0_black.jpg" width="149" vspace="0" hspace="0" height="56" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m horizontal -p 20
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m horizontal -l 75 -p 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_horizontal_half_r28_l149_t20_a0_black.jpg" width="150" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_horizontal_half_r28_l75_t20_a0_black.jpg" width="85" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -v background -b red -p 20
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 75 -p 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t20_a0_red.jpg" width="149" vspace="0" hspace="0" height="118" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r75_l112_t20_a0_black.jpg" width="149" vspace="0" hspace="0" height="118" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -p 20 -t
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -v background -b none -p 20 -t
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t20_a0_black_trim.jpg" width="75" vspace="0" hspace="0" height="112" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t20_a0_none_trim.png" width="75" vspace="0" hspace="0" height="117" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		With 45 Degree Pitch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967.jpg" width="149" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -p 45
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m horizontal -p 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_vertical_half_r37p25_l112_t45_a0_black.jpg" width="149" vspace="0" hspace="0" height="106" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/img5967_cyl_horizontal_half_r28_l149_t45_a0_black.jpg" width="125" vspace="0" hspace="0" height="112" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Overlay Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper.png" width="533" vspace="0" hspace="0" height="400" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.customizedcoffeemug.info/wp-content/uploads/custom%20coffee%20mugs%20gifts.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.customizedcoffeemug.info/wp-content/uploads/custom%20coffee%20mugs%20gifts.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug1.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug1_flop.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 120 -w 90 -p 5 -n 94 -e 2 <br>
+		-a 100 -v background -b none -f none -o +24+10
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 120 -w 90 -p 5 -n 94 -e 2 <br>
+		-a -100 -v background -b none -f none -o -26+10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug1.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug1_flop.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 120 -w 90 -p 5 -n 94 -e 2 -s 200 <br>
+		-a 100 -v background -b none -f none -o +24+10 
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 120 -w 90 -p 5 -n 94 -e 2 -s 200 <br>
+		-a -100 -v background -b none -f none -o -26+10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug1b.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug1b_flop.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Overlay Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper.png" width="533" vspace="0" hspace="0" height="400" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.spaceworks.co.uk/images/products/WA4022.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.spaceworks.co.uk/images/products/WA4022.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug2.jpg" width="300" vspace="0" hspace="0" height="300" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug2_flop.jpg" width="300" vspace="0" hspace="0" height="300" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 79 -l 120 -w 90 -p 10 -n 96 -e 2 <br>
+		-a -100 -v background -b none -f none -o -22+15
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 120 -w 90 -p 5 -n 94 -e 2 <br>
+		-a 100 -v background -b none -f none -o +20+15
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug2.jpg" width="300" vspace="0" hspace="0" height="300" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug2_flop.jpg" width="300" vspace="0" hspace="0" height="300" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Overlay Example 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper.png" width="533" vspace="0" hspace="0" height="400" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.furniturehireuk.com/ProductImages/374_1.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.furniturehireuk.com/ProductImages/374_1.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug3.jpg" width="350" vspace="0" hspace="0" height="350" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug3_flop.jpg" width="350" vspace="0" hspace="0" height="350" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 117 -l 150 -w 80 -p 17 -n 92 -e 2 \<br>
+		-a -90 -v background -b none -f none -o -42+35
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 117 -l 150 -w 80 -p 17 -n 94 -e 2 \<br>
+		-a 90 -v background -b none -f none -o +39+35
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug3.jpg" width="350" vspace="0" hspace="0" height="350" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper_coffee_mug3_flop.jpg" width="350" vspace="0" hspace="0" height="350" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Overlay Example 4 <br>
+		(image width &lt; radius)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(width=50, height=64)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="bgimage" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/cartoon_cat.jpg" width="50" vspace="0" hspace="0" height="64" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Input Image Padded From Width=50 To Width=74<br>
+		(convert cartoon_cat.jpg -bordercolor none -border 12 cartoon_cat_pad.png)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="bgimage" valign="middle" align="center">
+		<img src="CYLINDERIZE_files/cartoon_cat_pad.png" style="border: 3px red solid;" width="74" vspace="0" hspace="0" height="64">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.customizedcoffeemug.info/wp-content/uploads/custom%20coffee%20mugs%20gifts.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/coffee_mug1.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 73 -l 64 -w 13 -p 5 -n 94 -e 2 <br>
+		-a 0 -v background -b none -f none -o +24+10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/cartoon_cat_pad_coffee_mug1.jpg" width="240" vspace="0" hspace="0" height="232" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Pitch in Both Directions
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/wallpaper.png" width="533" vspace="0" hspace="0" height="400" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/mug_base2.png" width="600" vspace="0" hspace="0" height="495" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 150 -l 310 -w 100 -p 6 -d both -e 1.4 -a 0 -v background -b none -f none
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/mug_base2_wallpaper.png" width="600" vspace="0" hspace="0" height="495" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Shading
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://www.dreamstime.com/royalty-free-stock-photo-doodle-bright-decorative-seamless-fabric-texture-background-flowers-vintage-pattern-image31455505" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/doodle.jpg" width="595" vspace="0" hspace="0" height="650" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.cafepress.com/mf/84388199/plain-blank_mugs?productId=1061899546" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/plain_blank_mugs.jpg" width="460" vspace="0" hspace="0" height="460" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 173 -l 290 -w 90 -p 12 -n 96 -e 2 -a -100 -v background -b none -f none -o -34+15 -c over 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/plain_mug_doodle_r173_l290_w90_p12_n96_e2_am100_om34p15_over.jpg" width="460" vspace="0" hspace="0" height="460" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-m vertical -r 173 -l 290 -w 90 -p 12 -n 96 -e 2 -a -100 -v background -b none -f none -o -34+15 -c multiply 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="CYLINDERIZE_files/plain_mug_doodle_r173_l290_w90_p12_n96_e2_am100_om34p15_mult.jpg" width="460" vspace="0" hspace="0" height="460" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Computes an arcsin distortion map for the radial dimension</li>
+			<li>Computes a linear distortion map for the length dimension</li>
+			<li>Uses composite displace to apply the two distortion maps to the image</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the <br>
+		case of the default vertically oriented cylinder.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>width=`identify -ping -format %w $infile`</li>
+			<li>height=`identify -ping -format %h $infile`</li>
+			<li>xc=`convert xc: -format "%[fx:($width-1)/2]" info:`</li>
+			<li>factor=`convert xc: -format "%[fx:2/pi]" info:`</li>
+			<li>radius=`convert xc: -format "%[fx:$width/4]" info:`</li>
+			<li>length1=`convert xc: -format "%[fx:$height]" info:`</li>
+			<li>length1=`convert xc: -format "%[fx:$length1*cos(pi*$pitch/180)]" info:`</li>
+			<li>height1=`convert xc: -format "%[fx:$length1+$radius1]" info:`</li>
+			<li>ffx="ffx=$factor*asin(xd);"</li>
+			<li>convert -size ${width}x1 xc: -virtual-pixel black -fx \<br>
+				"xd=(i-$xc)/$radius; $ffx xs=0.5*(ffx+($xc-i)/($xc))+0.5; xd&gt;1?1:xs" \<br>
+				-scale ${width}x${height1}! \
+				$tmp0</li>
+			<li>ffx="ffx=-sqrt(1-(xd)^2);"</li>
+			<li>convert -size ${width}x1 xc: -virtual-pixel black -fx \<br>
+				"xd=(i-$xc)/$radius; $ffx xs=0.5*(ffx)+0.5; abs(xd)&gt;1?0.5:xs" \<br>
+				-scale ${width}x${height1}! \
+				$tmp1</li>
+			<li>length2=`convert xc: -format "%[fx:100*($length1)/$height]" info:`</li>
+			<li>convert $infile -resize 100x${length2}% \<br>
+				-gravity north -extent ${width}x${height1} $tmpA</li>
+			<li>composite $tmp0 $infile $tmp1 -virtual-pixel black \<br>
+				-displace ${xc}x${radius1} $tmpA</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="CYLINDERIZE_files/app.js" type="text/javascript"></script></body></html>

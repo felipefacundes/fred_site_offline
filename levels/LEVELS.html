@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: LEVELS </title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - levels - applies a Photoshop-like levels operation on an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, levels, stretch, compress, clip, gamma">
+<link rel="stylesheet" href="LEVELS_files/style.css">
+</head>
+<body id="levels" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="LEVELS_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+LEVELS
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Applies a Photoshop-like levels operation on an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=levels&amp;dirname=levels">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: levels [-C channels ] [-i invals] [-o outvals] [-r range] [-g gammaval] [-c clipvals] infile outfile<br>
+		USAGE: levels [-h or -help]
+		</p>
+
+		<p align="left">
+		-C ... channels .... processing channels; choices are: global (g), <br>
+		.................... rgb (r) or lum (l); default=global       <br>              
+		-i ... invals ...... input stretch values; ilow,ihi as pair of <br>
+		.................... comma separate non-negative floats; <br>
+		.................... default=no change<br>
+		-o ... outvals ..... output compress values; olow,ohi as pair of <br>
+		.................... comma separate non-negative floats; <br>
+		.................... default=no change<br>
+		-r ... range ....... range of values to use for invals and outvals;<br>
+		.................... choices are: percent (p) for 0 to 100 percent,<br>
+		.................... 8bit (8) for 0 to 255, qrange (q) for<br>
+		.................... quantumrange for IM Qlevel (e.g. 0 to 65535 <br>
+		.................... for Q16); default=percent   <br>                   
+		-g ... gammaval .... gamma value for non-linear adjustment; <br>
+		.................... float&gt;0; default=1 (for no change)<br>
+		-c ... clipvals .... clip values as percent counts; clow,chi as <br>
+		.................... comma separated pair of floats; default is <br>
+		.................... for no change
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a Photoshop-like levels operation on an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: LEVELS applies a Photoshop-like levels operation on 
+		an image. The user may specify the input stretch values, a gamma value, 
+		the output compress (limiting) values and percent count clip values. 
+		Processing can be applied globally (i.e. to the rgb channels equally),
+		to the rgb channels independently or to the luminosity channel from YUV.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-C channels ... CHANNELS are the channel or channels to process. The 
+		choices are: global (g) i.e., to RGB equally, rgb (r) for clipping 
+		each rgb channel separately or lum (l) i.e. the luminosity Y channel 
+		from colorspace YUV. The default=global  
+		</p>
+
+		<p align="left">
+		-i invals ... INVALS=ilow,ihi are the input linear stretch values expressed  
+		 as a pair of comma separate non-negative floats. Values will depend upon   
+		the range parameter. The default=no change
+		</p>
+
+		<p align="left">
+		-o outvals ... OUTVALS=olow,ohi are the output linear compress or limiting 
+		values expressed as a pair of comma separate non-negative floats. Values  
+		will depend upon the range parameter. The default=no change
+		</p>
+
+		<p align="left">
+		-r range ... RANGE is the range of values to use for invals and outvals.
+		Choices are: percent (p) for 0 to 100 percent, 8bit (8) for 0 to 255, 
+		qrange (q) for quantumrange for IM Qlevel (e.g. 0 to 65535 for Q16). 
+		The default=percent
+		</p>
+
+		<p align="left">
+		-g gamma ... GAMMA is the gamma value for non-linear adjustment. 
+		Values are floats&gt;0. The default=1 (for no change)
+		</p>
+
+		<p align="left">
+		-c clipvals ... CLIPVALS=clow,chi are the clip values as percent counts 
+		from the histogram ends. Values are 0&lt;=floats&lt;=100. The default is no 
+		change. Values of 0,0, however, will stretch the min and max to black 
+		and white globally or for each channel depending upon the channels parameter.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="center">
+		<p align="center">
+		Example 1 -- Gradient
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Image
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Profile
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256.gif" width="256" vspace="0" hspace="0" height="256" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_profile.gif" width="152" vspace="0" hspace="0" height="84" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-i 25,75
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_i25x75.gif" width="256" vspace="0" hspace="0" height="256" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_i25x75_profile.gif" width="152" vspace="0" hspace="0" height="84" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-o 25,75
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_o25x75.gif" width="256" vspace="0" hspace="0" height="256" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_o25x75_profile.gif" width="152" vspace="0" hspace="0" height="84" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-c 5,5
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_c5x5.gif" width="256" vspace="0" hspace="0" height="256" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_c5x5_profile.gif" width="152" vspace="0" hspace="0" height="84" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-i 25,75 -o 25,75
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_i25x75_o25x75.gif" width="256" vspace="0" hspace="0" height="256" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/grad256_levels_i25x75_o25x75_profile.gif" width="152" vspace="0" hspace="0" height="84" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C global -i 25,75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_i25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C global -o 25,75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_o25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C global -i 25,75 -o 25,75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_i25x75_o25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C lum -i 25,75 -o 25,75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_lum_i25x75_o25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C global -i 25,75 -o 25,75 -c 2,2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_c2x2_i25x75_o25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-C rgb -i 25,75 -o 25,75 -c 2,2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny.jpg" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="LEVELS_files/chinese_chess_tiny_levels_rgb_c2x2_i25x75_o25x75.gif" width="200" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Combines -contrast-stretch, -level and +level</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the global case using percent values.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>if [ "$clipvals" = "" ]; then<br>
+				clipping=""<br>
+			else<br>
+				clipping="-contrast-stretch $clipvals%"<br>
+			fi</li>
+			<li>convert $infile $clipping \<br>
+			-level ${invals},${gammaval}% -clamp \<br>
+			+level ${outvals}% \<br>
+			$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="LEVELS_files/app.js" type="text/javascript"></script></body></html>

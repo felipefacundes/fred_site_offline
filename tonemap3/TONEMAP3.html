@@ -1,0 +1,1164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)http://www.fmwconcepts.com/imagemagick/tonemap3/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: TONEMAP3</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - tonemap3 - enhances the shadows and/or highlight regions in an image using a non-linear log or gamma function plus an extra processing function.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, tonemap, tone mapping, enhancement, brightness, contrast, log, gamma, shadows, highlights">
+<link rel="stylesheet" href="./TONEMAP3_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="8ccf124f44194e4725ef7e2b1237368d"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="tonemap3">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./TONEMAP3_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+TONEMAP3
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Enhances the shadows and/or highlight regions in an image using 
+		a non-linear log or gamma function plus an extra processing function.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=tonemap3&amp;dirname=tonemap3">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 16, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: tonemap3 [-k kind] [-a amount] [-t type] [-c colormode] [-s shadows] [-h highlights] [-e edge] [-w window] [-S saturation] [-C colorspace] [-A] infile outfile<br>
+		USAGE: tonemap3 [-help]
+		</p>
+
+		<p align="left">
+		-k ... kind ......... apply non-linear enhancement; log or gamma; default=log<br>
+		-a ... amount ....... amount of non-linear enhancement; float&gt;0; default=4<br>
+		-t ... type ......... type of extra processing; none (n), retinex (r), <br>
+		..................... or space (s); default=retinex<br>
+		-c ... colormode .... colormode; OHTA, YUV, YIQ, YCbCr, Rec709YCbCr; <br>
+		..................... default=OHTA<br>
+		-s ... shadows ...... increase/decrease percent brightness in shadows;<br>
+		..................... positive or negative integer; default=0<br>
+		-h ... highlights ... increase/decrease percent brightness in highlights;<br>
+		..................... positive or negative integer; default=0<br>
+		-e ... edge ......... edge sharpening amount; float&gt;=0; nominally 0 to 2;<br>
+		..................... default=1<br>
+		-w ... window ....... window parameter for type=space; float&gt;0; default=12.5 <br>
+		-S ... saturation ... saturation percent change; positive or negative integer; <br>
+		..................... default=50<br>
+		-C ... colorproc .... preprocessing to change colorspace to: RGB, sRGB;<br>
+		..................... default is no change<br>
+		-A .................. preprocessing to apply autolevel stretch; default is<br>
+		..................... not to apply autolevel stretch
+		</p>
+
+		<p align="left">
+		PURPOSE: Enhances the shadows and/or highlight regions in an image using a 
+		non-linear log or gamma function plus an extra processing function.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: TONEMAP3 enhances the shadows and/or highlight regions in
+		an image using a non-linear log or gamma function plus an extra
+		processing function, which can be either: a multiresolution retinex or
+		space (spatially adaptive contrast enhancement). The a copy of the image
+		is first processed by the non-linear function. Then it is converted to
+		the desired colorspace and the channels separate. Then the channels are
+		processed to enhance the saturation. Next a copy of the input image is
+		converted to the same colorspace and the intensity (luminance) image is
+		separate. The non-linear function is applied to it followed by the extra
+		processing function and by the shadow/highlight enhancement and . edge
+		sharpening. This last image is used to replace the intensity channel
+		from the first processing of original image. Finally the 3 channels are
+		recombined and converted back to RGB.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-k kind ... KIND of non-linear enhancement. Choices are log (l) or gamma (g).
+		The log function is a scaled log whose scaling function is 10^amount. 
+		The gamma function is a power law whose exponent is the amount.  
+		The default=log
+		</p>
+
+		<p align="left">
+		-a amount ... AMOUNT of non-linear enhancement. Values are float&gt;0. Note  
+		that kind=gamma can process dark image with amounts greater than 1 or bright 
+		images with amounts less than 1. Whereas kind=log can only process dark images.   
+		The log amounts are exponents for a power of 10. For example a log amount of 3  
+		is equivalent to 1000. Nominal amounts for the log are about 3 to 4. Nominal 
+		equivalent amounts for gamma are about twice those for the log, i.e. 6 to 8. 
+		The default=4
+		</p>
+
+		<p align="left">
+		-t type ... TYPE of extra processing. The choices are: none (n), retinex (r) 
+		or space (s). Space is a spatially adaptive contrast enhancement and retinex 
+		is multiscale enhancement. Note that equalize was tested, but did not work well.
+		Generally retinex works well with fewer artifacts. Space can work better for 
+		some images, but has more potential for ringing artifacts near high contrast 
+		edges. The default=retinex.
+		</p>
+
+		<p align="left">
+		-c colormode ... COLORMODE is the colorspace in which processing is done. 
+		Values are OHTA, YUV, YIQ, YCbCr or Rec709YCbCr. There is some small difference 
+		between OHTA and the others, but very little if any between those others.
+		OHTA is an approximation for a principle components analysis (PCA) also known
+		as Karhunen Loeve transformation (KLT). The default=OHTA
+		</p>
+
+		<p align="left">
+		-s shadows ... SHADOWS is the increase/decrease percent brightness in the 
+		shadows. Values are in range -100&lt;=integer&lt;=100. The default=0
+		</p>
+
+		<p align="left">
+		-h highlights ... HIGHLIGHTS is the increase/decrease percent brightness in 
+		the highlights. Values are in range -100&lt;=integer&lt;=100. The default=0
+		</p>
+
+		<p align="left">
+		-e edge ... EDGE is the edge sharpening amount. Values are floats&gt;=0. 
+		Nominal values are between 0 and 2. The default=1
+		</p>
+
+		<p align="left">
+		-w window ... WINDOW is the moving window percentage of image size for 
+		type=space. Values are floats&gt;0 and are nominally between 5 and 20. 
+		Larger or smaller values can mitigate the ringing. Larger values 
+		narrow the ringing and smaller values broaden or diffues the ringing.
+		The default=12.5
+		</p>
+
+		<p align="left">
+		-S saturation ... SATURATION is the saturation percentage increase/decrease. 
+		Values are positive or negatative integers.  The default=50
+		</p>
+
+		<p align="left">
+		-C colorproc ... COLORPROC is an optional preprocessing step to convert 
+		the input image from some other colorspace to either RGB or sRGB. This 
+		seems to be needed for HDR Radiance images in XYZ colorspace (.hdr suffix) 
+		prior to a bug fix in .hdr images in IM 6.7.2.0. The choices are: RGB 
+		and sRGB. The default is no change. Note that somewhere between IM 6.7.5.5 
+		and IM 6.7.6.7, colorspace RGB and sRGB were swapped to correct their meaning.
+		</p>
+
+		<p align="left">
+		-A ... Optional AUTOLEVEL preprocessing step. Generally this will not be 
+		needed, especially for HDR image with very high dynamic range that require 
+		processing in IM HDRI mode. Using it on such images generally cause changes 
+		in color or causes the images to become dark.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: space and retinex scripts. Also IM 6.5.9-0 to support the 
+		-brightness-contrast function.
+		</p>
+
+		<p align="left">
+		NOTE: type=retinex will be slow due to the use of -fx for IM less 
+		than 6.4.2-1. type=space will be slow due to the use of -fx when not 
+		in HDRI mode. 
+		</p>
+
+		<p align="left" class="red">
+		Note: For IM 6.7.5.5 or higher, in order to reproduce some of the examples 
+		below, one may have to add, remove or change -C arguments, due to the 
+		swap of the meaning of -colorspace RGB and -colorspace sRGB. Also if -c is
+		not none for .hdr images, then some parameter changes may be needed. For more 
+		details, see 
+		<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/tonemap_tests.txt" target="blank">http://www.fmwconcepts.com/imagemagick/tonemap3/tonemap_tests.txt</a> 
+		</p>
+
+		<p align="left">
+		References:<br>
+		<a href="http://biblion.epfl.ch/EPFL/theses/2006/3588/EPFL_TH3588.pdf" target="_blank">http://biblion.epfl.ch/EPFL/theses/2006/3588/EPFL_TH3588.pdf (see page 33)</a><br>
+		<a href="http://en.wikipedia.org/wiki/Principal_component_analysis" target="_blank">http://en.wikipedia.org/wiki/Principal_component_analysis</a><br>
+		<a href="http://www.sciencedirect.com/science/article/pii/0146664X80900477" target="_blank">http://www.sciencedirect.com/science/article/pii/0146664X80900477</a>
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<p align="center">(Processed With Q16 HDRI IM Compile)</p>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="60%">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="left">
+		Note: Over time there have been changes to IM. Therefore, some examples  
+		now are better and some worse. So some arguments may need changing, but
+		may not fix all the examples. Also -C sRGB or RGB will need swapping on 
+		current versions of IM.
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 1 -- variation in type -- OHTA vs YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/cascata_praia_da_ursa_small.exr" target="_blank">Actual EXR Image Used</a>)<br>
+		(<a href="http://rnbc.dyndns.org/exr_examples/" target="_blank">source image web site</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s -15 -h -10 -e 2 -S 0.5 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s -10 -h -10 -e 2 -S 0.5 -c YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_none_OHTA_sm15_hm10_e2_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_none_YUV_sm10_hm10_e2_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 0 -h -10 -e 1 -S 0.5 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 0 -h -10 -e 1 -S 0.5 -c YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_retinex_OHTA_s0_hm10_e1_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_retinex_YUV_s0_hm10_e1_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s -10 -h -10 -e 1 -S 0.5 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s -10 -h -10 -e 1 -S 0.5 -c YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_space_OHTA_sm10_hm10_e1_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/cascata_praia_da_ursa_small_tonemap3_log_a4_space_YUV_sm10_hm10_e1_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+<!-- 
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br />
+		-t space -s -10 -h -10 -e 1 -S 0.5 -c OHTA -w 12.5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br />
+		-t space -s -10 -h -10 -e 1 -S 0.5 -c OHTA -w 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="images/cascata_praia_da_ursa_small_tonemap3_log_a4_space_OHTA_sm10_hm10_e1_S50_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="images/cascata_praia_da_ursa_small_tonemap3_log_a4_space_OHTA_sm10_hm10_e1_S50_w20_none_no.jpg" width="333" height="500" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+ -->
+</tbody></table>
+
+<br>
+<br>
+
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 2 -- variation in type -- OHTA vs YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/sala_com_janela_small.exr" target="_blank">Actual EXR Image Used</a>)<br>
+		(<a href="http://rnbc.dyndns.org/exr_examples/" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 30 -h -10 -e 2 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_none_OHTA_s30_hm10_e2_S50_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 30 -h -10 -e 2 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_none_YUV_s30_hm10_e2_S50_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 10 -h -10 -e 1 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_retinex_OHTA_s10_hm10_e1_S50_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 10 -h -10 -e 1 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_retinex_YUV_s10_hm10_e1_S50_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 30 -h -20 -e 2 -S 50 -w 5 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_space_OHTA_s30_hm20_e2_S50_w5_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 30 -h -20 -e 2 -S 50 -w 5 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/sala_com_janela_small_tonemap3_log_a4_space_OHTA_s30_hm20_e2_S50_w5_none_no.jpg" width="500" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 3 -- variation in type -- OHTA vs YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/zona_zen_vodafone_small.exr" target="_blank">Actual EXR Image Used</a>)<br>
+		(<a href="http://rnbc.dyndns.org/exr_examples/" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 30 -h -10 -e 2 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_none_OHTA_s30_hm10_e2_S50_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 30 -h -10 -e 2 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_none_YUV_s30_hm10_e2_S50_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 10 -h 0 -e 1 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_retinex_OHTA_s10_h0_e1_S50_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 10 -h 0 -e 1 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_retinex_YUV_s10_h0_e1_S50_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 30 -h -10 -e 1 -S 50 -w 40 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_space_OHTA_s30_hm10_e1_S50_w40_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 30 -h -10 -e 1 -S 50 -w 40 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/zona_zen_vodafone_small_tonemap3_log_a4_space_OHTA_s30_hm10_e1_S50_w40_none_no.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 4 -- variation in type -- OHTA vs YUV
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/doll_small.exr" target="_blank">Actual EXR Image Used</a>)<br>
+		(<a href="http://www.mit.edu/~yzli/hdr_companding.htm" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 10 -h -10 -e 2 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_none_OHTA_s10_hm10_e2_S50_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 10 -h -10 -e 2 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_none_YUV_s10_hm10_e2_S50_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s -10 -h -10 -e 1 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_retinex_OHTA_sm10_hm10_e1_S50_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s -10 -h -10 -e 1 -S 50 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_retinex_YUV_sm10_hm10_e1_S50_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 10 -h 0 -e 1 -S 50 -w 20 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_space_OHTA_s10_h0_e1_S50_w20_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 10 -h 0 -e 1 -S 50 -w 20 -c YUV
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/doll_small_tonemap3_log_a4_space_YUV_s10_h0_e1_S50_w20_none_no.jpg" width="500" height="489" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 4 -- variation in type -- OHTA vs YUV -- sRGB
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/IMG_3133And8more_640x480.hdr" target="_blank">Actual HDR Image Used</a>)<br>
+		(<a href="http://www.imagemagick.org/discourse-server/viewtopic.php?f=22&amp;t=18740&amp;start=15#p72572" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s -30 -h -15 -e 2 -S 50 -c OHTA -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_none_OHTA_sm30_hm15_e2_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s -30 -h -15 -e 2 -S 50 -c YUV -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_none_YUV_sm30_hm15_e2_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c OHTA -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_OHTA_s20_h0_e1_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c YUV -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_YUV_s20_h0_e1_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s -30 -h -20 -e 1 -S 50 -c OHTA -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_space_OHTA_sm30_hm20_e1_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s -30 -h -20 -e 1 -S 50 -c YUV -C sRGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_space_YUV_sm30_hm20_e1_S50_sRGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 5 -- variation in type -- OHTA vs YUV -- RGB
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/IMG_3133And8more_640x480.hdr" target="_blank">Actual HDR Image Used</a>)<br>
+		(<a href="http://www.imagemagick.org/discourse-server/viewtopic.php?f=22&amp;t=18740&amp;start=15#p72572" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 5 -h -10 -e 2 -S 50 -c OHTA -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_none_OHTA_s5_hm10_e2_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t none -s 5 -h -10 -e 2 -S 50 -c YUV -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_none_YUV_s5_hm10_e2_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c OHTA -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_OHTA_s20_h0_e1_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c YUV -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_YUV_s20_h0_e1_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 20 -h -10 -e 1 -S 50 -c OHTA -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_space_OHTA_s20_hm10_e1_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 20 -h -10 -e 1 -S 50 -c YUV -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_space_YUV_s20_hm10_e1_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 5 -- OHTA w/ RGB prior to IM 6.7.2.0 vs OHTA w/o RGB IM 6.7.2.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/IMG_3133And8more_640x480.hdr" target="_blank">Actual HDR Image Used</a>)<br>
+		(<a href="http://www.imagemagick.org/discourse-server/viewtopic.php?f=22&amp;t=18740&amp;start=15#p72572" target="_blank">source image web site</a>)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(before IM 6.7.2.0)<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c OHTA -C RGB
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_OHTA_s20_h0_e1_S50_RGB_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(at or after IM 6.7.2.0)<br>
+		-t retinex -s 20 -h 0 -e 1 -S 50 -c OHTA
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/IMG_3133And8more_640x480_tonemap3_log_a4_retinex_OHTA_s20_h0_e1_S50_none_no.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 6 -- OHTA -- Retinex vs Space -- Post .hdri bug fix IM 6.7.2.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Displayed As JPEG<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/tonemap3/images/lampickaHDR_small.hdr" target="_blank">Actual HDR Image Used</a>)<br>
+		(<a href="http://dcgi.felk.cvut.cz/home/cadikm/tmo/hdr_images/" target="_blank">source image web site</a>)<br>
+		(NOTE: Processed after .hdr bug fix at IM 6.7.2.0)
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/lampickaHDR_small.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t retinex -s -30 -h 10 -e 2 -S 50 -c OHTA -C sRGB -A
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/lampickaHDR_small_tonemap3_log_a4_retinex_OHTA_sm30_h10_e2_S50_sRGB_yes.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t space -s 30 -h 20 -e 2 -S 50 -c OHTA -C sRGB -A
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TONEMAP3_files/lampickaHDR_small_tonemap3_log_a4_space_OHTA_s30_h20_e2_S50_W12p5_sRGB_yes.jpg" width="500" height="375" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows for kind=retinex:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Processes the image with the non-linear enhancement, <br>
+				converts to the desired colorspace and separates channels</li>
+			<li>Takes the original image and converts to the desired <br>
+				colorspace and separates out the intensity-like channel</li>
+			<li>Applies the non-linear enhancement to the intensity-like <br>
+				channel, followed by the extra processing step, followed  <br>
+				by shadow/highlight enhancement, followed by edge sharpening</li>
+			<li>Combines this modified intensity-like channel with the processed <br>
+				other two channels from the first step, then converts to RGB</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for kind=retinex:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>if [ "$cspace" = "none" ]; then<br>
+					cproc=""<br>
+				else<br>
+					cproc="-set colorspace $cspace"<br>
+				fi</li>
+			<li>if [ "$alevel" = "yes" ]; then<br>
+					aproc="-auto-level"<br>
+				else<br>
+					aproc=""<br>
+				fi</li>
+			<li>convert -quiet -regard-warnings "$infile" -alpha off $cproc $aproc +repage "$tmpA1"</li>
+			<li>if [ "$kind" = "log" ]; then<br>
+					amount=`convert xc: -precision 8 -format "%[fx:10^$amount]" info:`<br>
+					proc0="-evaluate log $amount"<br>
+				elif [ "$kind" = "gamma" ]; then<br>
+					proc0="-gamma $amount"<br>
+				fi</li>
+			<li>ssign=`convert xc: -format "%[fx:sign($shadows)==-1?1:0]" info:`</li>
+			<li>hsign=`convert xc: -format "%[fx:sign($highlights)==-1?1:0]" info:`</li>
+			<li>mlo=0</li>
+			<li>mhi=100</li>
+			<li>plo=0</li>
+			<li>phi=100</li>
+			<li>if [ "$shadows" != "0" -a $ssign -eq 1 ]; then<br>
+					mlo=$((-shadows))<br>
+				elif [ "$shadows" != "0" -a $ssign -eq 0 ]; then<br>
+					plo=$shadows<br>
+				fi</li>
+			<li>if [ "$highlights" != "0" -a $hsign -eq 1 ]; then<br>
+					phi=$((100+highlights))<br>
+				elif [ "$highlights" != "0" -a $hsign -eq 0 ]; then<br>
+					mhi=$((100-highlights))<br>
+				fi</li>
+			<li>if [ $mlo -eq 0 -a $mhi -eq 100 ]; then<br>
+					proc1=""<br>
+				else<br>
+					proc1="-level $mlo,$mhi%"<br>
+				fi</li>
+			<li>if [ $plo -eq 0 -a $phi -eq 100 ]; then<br>
+					proc2=""<br>
+				else<br>
+					proc2="+level $plo,$phi%"<br>
+				fi</li>
+			<li>if [ "$sat" = "0" ]; then<br>
+					saturation=""<br>
+				else<br>
+					saturation="-brightness-contrast 0,$sat"<br>
+				fi</li>
+			<li>if [ "$edge" = "0" ]; then<br>
+					eproc=""<br>
+				else<br>
+					eproc="-sharpen 0x$edge"<br>
+				fi</li>
+			<li>if [ "$type" = "none" ]; then<br>
+					tproc=""<br>
+				elif [ "$type" = "space" ]; then<br>
+					tproc="space -m 0 -w $window -g 5"<br>
+				elif [ "$type" = "retinex" ]; then<br>
+					tproc="retinex"<br>
+				fi</li>
+			<li>convert $tmpA1 $proc0 -colorspace $colormode -separate +channel $saturation $tmpS1</li>
+			<li>convert $tmpA1 -colorspace $colormode -channel R -separate +channel $proc0 $tmpI1</li>
+			<li>$tproc $tmpI1 $tmpI1</li>
+			<li>convert \( $tmpI1 $proc1 $proc2 $eproc \) $tmpS1[1] $tmpS1[2] \<br>
+				-set colorspace $colormode -combine -colorspace RGB \<br>
+				$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

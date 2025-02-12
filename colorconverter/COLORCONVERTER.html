@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0063)http://www.fmwconcepts.com/imagemagick/colorconverter/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: COLORCONVERTER</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - colorconverter - converts any valid ImageMagick color specification to the other ImageMagick color representations">
+<meta name="keywords" content="ImageMagick, scripts, colorconverter, image processing, colors, converts, color swatch, rgb, hex, hsl, hsb, cmyk">
+<link rel="stylesheet" href="./COLORCONVERTER_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="f9406e76e5c1f1532f942078012c498a"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="colorconverter">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./COLORCONVERTER_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+COLORCONVERTER
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Generates a spectrum-like image from the colors in an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=colorconverter&amp;dirname=colorconverter">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: colorconverter -c "color" [-d dimensions] [-s] [-v]<br>
+		USAGE: colorconverter [-h or -help]
+		</p>
+
+		<p align="left">
+		-c .... color ......... Any valid IM color specification<br>
+		-d .... dimensions .... Dimensions of optional color swatch; WidthxHeight;<br>
+		-s .................... Show color swatch of specified color<br>
+		-v .................... Validate all converted colors by showing color swatches 
+		</p>
+
+		<p align="left">
+		PURPOSE: To convert any valid ImageMagick color specification to the other 
+		ImageMagick color representations.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: COLORCONVERTER converts any valid ImageMagick color specification 
+		to other ImageMagick color representations, including: RGB, HEX, HSL, HSB 
+		and CMYK. The values will be listed to the Terminal. A color swatch for the 
+		input color may be displayed. Also a swatch for each of the other color 
+		representations may be displayed.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-c color ... COLOR is any valid IM color specification, including RGB, HEX, 
+		HSL, HSB, CMYK or by name. If not a color name, the color specification 
+		should be enclosed in quotes.
+		</p>
+
+		<p align="left">
+		-d dimensions ... DIMENSIONS specifies the WidthxHeight for the color 
+		swatch(es). The default="150x150".
+		</p>
+
+		<p align="left">
+		-s ... Indicates to display a color swatch for the specified color.
+		</p>
+
+		<p align="left">
+		-v ... Indicates to display a color swatch for each converted color in 
+		the various color representations.
+		</p>
+
+		<p align="left">
+		NOTE: Prior to IM 6.5.6-6, HSL colors may not produce correct swatches, as 
+		changes and bugs were fixed starting with IM 6.5.6-4. Prior to IM 6.5.6-4, 
+		HSL colors were specified only with hue in range 0-360 and saturation and 
+		lightness as percentages. HSB color specification and swatches were only 
+		first available and correct starting with IM 6.5.6-6.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES (IM 6.5.6-6)</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c wheat -s<br>
+		<br>
+		RGB:<br>
+		rgb(245,222,179)<br>
+		rgb(96.0784%,87.0588%,70.1961%)<br>
+		<br>
+		HEX:<br>
+		#F5F5DEDEB3B3<br>
+		<br>
+		HSL:<br>
+		hsl(39.09,195.696,212)<br>
+		hsl(10.8583%,76.7437%,83.1373%)<br>
+		<br>
+		HSB:<br>
+		hsb(39.09,68.6926,245)<br>
+		hsb(10.8583%,26.9383%,96.0784%)<br>
+		<br>
+		CMYK:<br>
+		cmyk(0,23.9377,68.6926,10)<br>
+		cmyk(0%,9.38735%,26.9383%,3.92157%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_wheat.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c "rgb(0,0,255)" -s<br>
+		<br>
+		RGB:<br>
+		rgb(0,0,255)<br>
+		rgb(0%,0%,100%)<br>
+		<br>
+		HEX:<br>
+		#00000000FFFF<br>
+		<br>
+		HSL:<br>
+		hsl(240,255,127.502)<br>
+		hsl(66.6667%,100%,50.0008%)<br>
+		<br>
+		HSB:<br>
+		hsb(240,255,255)<br>
+		hsb(66.6667%,100%,100%)<br>
+		<br>
+		CMYK:<br>
+		cmyk(255,255,0,0)<br>
+		cmyk(100%,100%,0%,0%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_rgb_blue.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c "#FFFF00" -s<br>
+		<br>
+		RGB:<br>
+		rgb(255,255,0)<br>
+		rgb(100%,100%,0%)<br>
+		<br>
+		HEX:<br>
+		#FFFFFFFF0000<br>
+		<br>
+		HSL:<br>
+		hsl(59.9973,255,127.502)<br>
+		hsl(16.6659%,100%,50.0008%)<br>
+		<br>
+		HSB:<br>
+		hsb(60.0027,255,255)<br>
+		hsb(16.6674%,100%,100%)<br>
+		<br>
+		CMYK:<br>
+		cmyk(0,0,255,0)<br>
+		cmyk(0%,0%,100%,0%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_hex_yellow.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c "hsl(120,255,127.5)" -s<br>
+		<br>
+		RGB:<br>
+		rgb(0,255,0)<br>
+		rgb(0%,100%,0%)<br>
+		<br>
+		HEX:<br>
+		#0000FFFF0000<br>
+		<br>
+		HSL:<br>
+		hsl(120,255,127.502)<br>
+		hsl(33.3333%,100%,50.0008%)<br>
+		<br>
+		HSB:<br>
+		hsb(120,255,255)<br>
+		hsb(33.3333%,100%,100%)<br>
+		<br>
+		CMYK:<br>
+		cmyk(255,0,255,0)<br>
+		cmyk(100%,0%,100%,0%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_hsl_green1.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c "hsb(83.3341%,100%,100%)" -s<br>
+		<br>
+		RGB:<br>
+		rgb(255,0,254.988)<br>
+		rgb(100%,0%,99.9954%)<br>
+		<br>
+		HEX:<br>
+		#FFFF0000FFFC<br>
+		<br>
+		HSL:<br>
+		hsl(300.003,255,127.502)<br>
+		hsl(83.3341%,100%,50.0008%)<br>
+		
+		HSB:<br>
+		hsb(300.003,255,255)<br>
+		hsb(83.3341%,100%,100%)<br>
+		
+		CMYK:<br>
+		cmyk(0,255,0.0116732,0)<br>
+		cmyk(0%,100%,0.00457771%,0%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_hsb_magenta.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Text Output
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Color Swatch
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		colorconverter -c "cmyk(255,0,0,0)" -s<br>
+		<br>
+		RGB:<br>
+		rgb(0,255,255)<br>
+		rgb(0%,100%,100%)<br>
+		<br>
+		HEX:<br>
+		#0000FFFFFFFF<br>
+		<br>
+		HSL:<br>
+		hsl(179.997,255,127.502)<br>
+		hsl(49.9992%,100%,50.0008%)<br>
+		<br>
+		HSB:<br>
+		hsb(180.003,255,255)<br>
+		hsb(50.0008%,100%,100%)<br>
+		<br>
+		CMYK:<br>
+		cmyk(255,0,0,0)<br>
+		cmyk(100%,0%,0%,0%)<br>
+		</p>
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./COLORCONVERTER_files/swatch_cmyk_cyan.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Converts the color to each colorspace: RGB, HSL, HSB, CMYK</li>
+			<li>Extracts the raw component values for the IM Q level</li>
+			<li>Converts each component to range 0-255, 0-360 and range 0-100% <br>
+				as appropriate</li>
+			<li>Prints the colorspace values in the appropriate format</li>
+			<li>Optionally creates and displays a color swatch for the specifice color</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the RGB components.
+		</p>
+		<p align="left">
+		</p><ul>
+	<li>rgb=`convert xc:"$color" -colorspace RGB txt:- |\<br>
+		tail -n 1 |\<br>
+		sed -n 's/ *//g; s/^.*[:][(]\(.*\)[)].*[\#].*$/\1/p'`</li>
+	<li>RR=`echo "$rgb" | cut -d, -f1`</li>
+	<li>GG=`echo "$rgb" | cut -d, -f2`</li>
+	<li>BB=`echo "$rgb" | cut -d, -f3`</li>
+	<li>AA=`echo "$rgb" | cut -d, -f4`</li>
+	<li>RRV=`convert xc: -format "%[fx:255*$RR/quantumrange]" info:`</li>
+	<li>GGV=`convert xc: -format "%[fx:255*$GG/quantumrange]" info:`</li>
+	<li>BBV=`convert xc: -format "%[fx:255*$BB/quantumrange]" info:`</li>
+	<li>RRP=`convert xc: -format "%[fx:100*$RR/quantumrange]" info:`</li>
+	<li>GGP=`convert xc: -format "%[fx:100*$GG/quantumrange]" info:`</li>
+	<li>BBP=`convert xc: -format "%[fx:100*$BB/quantumrange]" info:`</li>
+	<li>[ "$AA" != "" ] &amp;&amp; AAV=`convert xc: -format "%[fx:$AA/quantumrange]" info:`</li>
+	<li>if [ "$AA" = "" ]; then<br>
+			echo "rgb($RRV,$GGV,$BBV)"<br>
+			echo "rgb($RRP%,$GGP%,$BBP%)"<br>
+		else<br>
+			echo "rgba($RR,$GG,$BB,$AAV)"<br>
+			echo "rgba($RRP%,$GGP%,$BBP%,$AAV)"<br>
+		fi</li>
+	<li>if [ "$show" = "yes" ]; then<br>
+			convert -respect-parenthesis \( -size "$dimensions" xc:"$color" \) \<br>
+				-colorspace rgb -background white -fill black -font Helvetica \<br>
+				-pointsize 10 label:"$color" -gravity south -append -alpha off show:<br>
+		fi</li>
+
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

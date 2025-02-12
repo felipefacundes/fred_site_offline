@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://www.fmwconcepts.com/imagemagick/scatter/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: SCATTER</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - scatter - generates a channel-by-channel scatter diagram between two images">
+<meta name="keywords" content="ImageMagick, scripts, image processing, scatter, diagram, graph, image, dual image, channel-by-channel, scattergram">
+<link rel="stylesheet" href="./SCATTER_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="27d44ad19265d04befc5bcd7ef43e32d"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="scatter">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./SCATTER_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+SCATTER
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Generates a channel-by-channel scatter diagram between two images
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=scatter&amp;dirname=scatter">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: scatter [-s scale] [-m] infile1 infile2 outfile<br>
+		USAGE: scatter [-h or -help]
+		</p>
+
+		<p align="left">
+		-s ..... scale .... subsampling scale size for input images in both dimensions;<br>
+		................... default=50 (pixels)<br>
+		-m................. mirror the resulting scatter diagram vertically <br>
+		................... <br>
+		The two input images must be the same size.
+		</p>
+
+		<p align="left">
+		PURPOSE: To generate a channel-by-channel scatter diagram between two images. 
+		</p>
+
+		<p align="left">
+		DESCRIPTION: SCATTER generates a channel-by-channel scatter diagram between 
+		two images. The 8-bit channel graylevel values at each corresponding pixel 
+		in the two images are used as the x and y coordinates to plot white points 
+		on a 256x256 black background image. The process is slow and is proportional 
+		to the size of the input images. Therefore the two images will be scaled 
+		down to the desired size in order to keep the processing to a reasonable time, 
+		but have an adequate uniform sampling of the data. The resulting graph image 
+		may be mirrored vertically so that the x,y origin is at the bottom left, if 
+		desired, rather than the default top left.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-s scale ... SCALE is the resulting subsampled scale size of the two input  
+		images. The two images will be scaled to the desired size in pixels maximum on  
+		each side, if the images are larger than this size. The default is 50. Thus  
+		for a square image equal to or larger than 50, 50x50=2500 points will be 
+		plotted.
+		</p>
+
+		<p align="left">
+		-m ... Indicates to mirror the resulting scatter diagram vertically, 
+		so that the x,y origin is at the bottom left rather than the top left.
+		</p>
+
+		<p align="left">
+		The two input images must be the same size. If both images are grayscale, 
+		only the one channel will be processed.
+		</p>
+
+		<p align="left">
+		NOTE: This process is slow and takes about 2 minutes to generate with the 
+		default sample size of 50 on my Mac Mini 1.4 GHz G4.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Image vs Low Saturation Version Of Same Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Scatter Diagram<br>
+		Arguments:<br>
+		-s 50
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Scatter Diagram<br>
+		Arguments:<br>
+		-s 50 -m
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3_lowsat.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/scatter_zelda3_zelda3_lowsat.gif" width="255" height="255" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/scatter_zelda3_zelda3_lowsat_m.gif" width="255" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+	
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Image vs Same Image<br>
+		(should produce white diagonal line if all graylevels available in all channels)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Scatter Diagram<br>
+		Arguments:<br>
+		-s 50
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/scatter_zelda3_zelda3.gif" width="255" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+	
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Image vs Same Image Shifted By 1 Pixel<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 2<br>
+		-roll +1+0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Scatter Diagram<br>
+		Arguments:<br>
+		-s 50
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3_roll1x.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/scatter_zelda3_zelda3_roll1x.gif" width="255" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+	
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Image vs Same Image Shifted By 2 Pixels<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Image 2<br>
+		-roll +2+0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Scatter Diagram<br>
+		Arguments:<br>
+		-s 50
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/zelda3_roll2x.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SCATTER_files/scatter_zelda3_zelda3_roll2x.gif" width="255" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+	
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Scales the two images to 8-bit depth and size 50x50 (nominally)</li>
+			<li>For each corresponding channel, finds the graylevel in range 0-255 <br>
+			and plots a white point at x=graylevel for image 1 and y=graylevel for image2 </li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>colorlist="Red Green Blue"</li>
+			<li>for color in $colorlist; do</li>
+			<li>xArray=(`convert  $infile1 -scale '50x50&gt;' -depth 8 -colorspace RGB -channel $color \<br>
+				-separate txt:- | tail -n +2 | tr -cs '0-9\n'  ' ' | cut -d' ' -f3`)</li>
+			<li>yArray=(`convert  $infile2 -scale '50x50&gt;' -depth 8 -colorspace RGB -channel $color \<br>
+				-separate txt:- | tail -n +2 | tr -cs '0-9\n'  ' ' | cut -d' ' -f3`)</li>
+			<li># Generate a MVG file for IM to draw all components</li>
+			<li>( echo "viewbox 0 0 256 256   fill black  rectangle 0,0 256 256"</li>
+			<li>echo "fill white"</li>
+			<li>i=0</li>
+			<li>while [ $i -lt $hh ]; do</li>
+			<li>j=0</li>
+			<li>while [ $j -lt $ww ]; do</li>
+			<li>k=`expr $ww \* $i + $j`</li>
+			<li>echo " point ${xArray[$k]},${yArray[$k]}"</li>
+			<li>j=`expr $j + 1`</li>
+			<li>done</li>
+			<li>i=`expr $i + 1`</li>
+			<li>done</li>
+			<li>) | eval convert mvg:- \$tmp$color</li>
+			<li>done</li>
+			<li>convert $tmpRed $tmpGreen $tmpBlue -combine $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

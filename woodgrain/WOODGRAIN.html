@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/woodgrain/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: WOODGRAIN</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - woodgrain - simulates a woodgrain texture.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, woodgrain, wood, grain, texture, fine, coarse, curviness, wiggles, color">
+<link rel="stylesheet" href="./WOODGRAIN_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="0d21d43221a568eaa4b9afbe3e09734c"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="woodgrain">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./WOODGRAIN_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+WOODGRAIN
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Simulates a woodgrain texture.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=woodgrain&amp;dirname=woodgrain">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 16, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: woodgrain [-p process] [-d dimensions] [-m maincolor] [-g graincolor] <br>
+		[-t thickness] [-e elongation] [-D densities] [-I intensities] [-c curviness] <br>
+		[-w wiggles] [-n newseeds] [-a amplify] [-s sharpen] [-r rotation] <br>
+		[-B brightness] [-S saturation] [-H hue] outfile<br>
+		<br>
+		USAGE: woodgrain [-help or -h]
+		</p>
+
+		<p align="left">
+		-p ... process ....... processing method; choices are 1 or 2; 1 is 1D expand  <br>
+		...................... and 2 is motion blur; default=1 <br>
+		-d ... dimensions .... dimensions of the output image; integers&gt;0; <br>
+		...................... WIDTHxHEIGHT; default=300x300<br>
+		-m ... maincolor ..... main (background) color of image; any valid opaque IM <br>
+		...................... color; default=burlywood<br>
+		-g ... graincolor .... grain (foreground) color of image; any valid opaque IM <br>
+		...................... color; default=tan4<br>
+		-t ... thickness ..... thickness of coarse grain texture; integer&gt;0; default=1<br>
+		-e ... elongation .... elongation of grain texture; integer&gt;0; default=30<br>
+		-D ... densities ..... densities for coarse and fine grain textures;  <br>
+		...................... comma separate integers&gt;0; COARSE,FINE densities;<br>
+		...................... default=50,50<br>
+		-I ... intensities ... intensities for coarse and fine grain textures;  <br>
+		...................... comma separate integers&gt;0; COARSE,FINE intesities<br>
+		...................... default=0,1<br>
+		-c ... curviness ..... curviness of coarse grain texture; integer&gt;=0; <br>
+		...................... default=5<br>
+		-w ... wiggles ....... wiggles of coarse grain texture; integer&gt;=0;<br>
+		...................... default=5<br>
+		-n ... newseeds ...... new seed values for coarse and fine grain textures;<br>
+		...................... comma separate integers&gt;0; COARSE,FINE,NOISE texture <br>
+		...................... seeds; default=100,200,300<br>
+		-a ... amplify ....... amplification factor for added noise; <br>
+		...................... float&gt;=0; default=2<br>
+		-s ... sharpen ....... sharpening of grain textures; integer&gt;=0; default=5<br>
+		-r ... rotation ...... rotation of texture pattern; 0&lt;=integer&lt;=360; <br>
+		...................... default=0<br>
+		-B ... brightness .... brightness factor for output image; integer&gt;=0;<br>
+		...................... default=100 (nominal value)<br>
+		-S ... saturation .... saturation factor for output image; integer&gt;=0;<br>
+		...................... default=100 (nominal value)<br>
+		-H ... hue ........... hue factor for output image; integer&gt;=0;<br>
+		...................... default=100 (nominal value)
+		</p>
+
+		<p align="left">
+		PURPOSE: To simulate a woodgrain texture.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: WOODGRAIN simulates a woodgrain texture. The user may control 
+		main (background) and grain (foreground) colors, coarse grain thickness, 
+		elongation, density, curviness and other factors. The newseed values allow 
+		the grain patterns to change. 
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-p process ... PROCESS is the processing method. Choices are 1 or 2. 1 is 
+		using 1D expand and 2 is using motion blur.  The results are different but 
+		comparable. Method 2 is faster, especially when rotations are involved.
+		The default=1
+		</p>
+
+		<p align="left">
+		-d dimensions ... DIMENSIONS of the output image. Values are "x" separated 
+		integers&gt;0 in the form of WIDTHxHEIGHT (with no spaces). 
+		The default=300x300
+		</p>
+
+		<p align="left">
+		-m maincolor ... MAIN (background) COLOR of the texture image. Any valid 
+		opaque IM color is allowed. The default=burlywood.
+		</p>
+
+		<p align="left">
+		-g graincolor ... GRAIN (foreground) COLOR of the texture image. Any valid 
+		opaque IM color is allowed. The default=tan4.
+		</p>
+
+		<p align="left">
+		-t thickness ... THICKNESS of the coarse grain texture. Values are integers&gt;0.
+		The default=1.
+		</p>
+
+		<p align="left">
+		-e elongation ... ELONGATION of grain texture. Values are integers&gt;0. 
+		The default=30.
+		</p>
+
+		<p align="left">
+		-D densities ... DENSITIES for coarse and fine grain textures. Values are 
+		comma separate integers&gt;=0 in the form COARSE,FINE (densities). 
+		(with no spaces). The default=50,50. Note a fine density of 0 will disable 
+		any fine grain texture.
+		</p>
+
+		<p align="left">
+		-I intensities ... INTENSITIES for coarse and fine grain textures. Values are 
+		comma separate integers&gt;=0 in the form COARSE,FINE (intensities) 
+		(with no spaces). The default=0,1. Note a fine intensity of 0 will disable 
+		any fine grain texture.
+		</p>
+
+		<p align="left">
+		-c curviness ... CURVINESS of coarse grain texture. Values are integers&gt;=0. 
+		The default=5.
+		</p>
+
+		<p align="left">
+		-w wiggles ... WIGGLES are the wiggle amount of the coarse grain texture.
+		Values are integers&gt;=0. The default=5.
+		</p>
+
+		<p align="left">
+		-n newseeds ... NEWSEEDS are the new seed values for coarse grain, fine grain 
+		and noise textures. Values are comma separate integers&gt;=0 in the form 
+		COARSE,FINE,NOISE (seeds) (with no spaces). The default=100,200,300. 
+		Note that changing these values causes the grain patterns to change. However, 
+		using the same value for all three newseeds should be avoided.
+		</p>
+
+		<p align="left">
+		-a amplify ... AMPLIFY is the amplification factor for added noise texture. 
+		Values are floast&gt;=0. The default=2. Note a value of zero will disable any 
+		noise added to the texture.
+		</p>
+
+		<p align="left">
+		-s sharpen ... SHARPEN is the sharpening of the grain textures. Values are 
+		integers&gt;=0. The default=5.
+		</p>
+
+		<p align="left">
+		-r rotation ... ROTATION of the texture pattern. Values are 0&lt;=integer&lt;=360. 
+		The default=0.
+		</p>
+
+		<p align="left">
+		-B brightness ... BRIGHTNESS factor for the output image. Values are 
+		integers&gt;=0. The default=100 (nominal value).
+		</p>
+
+		<p align="left">
+		-S saturation ... SATURATION factor for the output image. Values are 
+		integers&gt;=0. The default=100 (nominal value).
+		</p>
+
+		<p align="left">
+		-H hue ... HUE factor for the output image. Values are 
+		integers&gt;=0. The default=100 (nominal value).
+		</p>
+
+		<p align="left">
+		NOTE: Results cannot be tiled without special processing.
+		</p>
+
+		<p align="left">
+		REFERENCES:<br>
+		<a href="http://www.myinkblog.com/creating-a-realistic-wood-texture-using-photoshop/" target="_blank">http://www.myinkblog.com/creating-a-realistic-wood-texture-using-photoshop/</a><br>
+		<a href="http://www.tutorial9.net/tutorials/photoshop-tutorials/custom-wood-texture-in-adobe-photoshop/" target="_blank">http://www.tutorial9.net/tutorials/photoshop-tutorials/custom-wood-texture-in-adobe-photoshop/</a><br>
+		<a href="http://www.youtube.com/watch?v=_BfQ7IjWt_4" target="_blank">http://www.youtube.com/watch?v=_BfQ7IjWt_4</a><br>
+		<a href="http://www.youtube.com/watch?v=dyaGb6SK7Cw&amp;feature=relmfu" target="_blank">http://www.youtube.com/watch?v=dyaGb6SK7Cw&amp;feature=relmfu</a><br>
+		<a href="http://www.youtube.com/watch?v=gEkqe6_ZSFk" target="_blank">http://www.youtube.com/watch?v=gEkqe6_ZSFk</a>
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 1 - Variations in Colors
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m bisque -g tan4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m bulywood -g tan4
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_bisque_tan4_B100_S100_H100.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_burlywood_tan4_B100_S100_H100.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m peachpuff -g darkorange4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m peru -g darkorange4
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_peachpuff_darkorange4_B100_S100_H100.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_peru_darkorange4_B100_S100_H100.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B100_S100_H100.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 2 - Variations in Thickness
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -t 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -t 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t3_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 3 - Variations in Elongation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -e 30 -c 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -e 10 -c 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e10_d50x50_i0x1_r0_c3_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 4 - Variations in Curviness and Wiggles
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -c 5 -w 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -c 5 -w 10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w10_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -c 10 -w 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -c 10 -w 10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c10_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c10_w10_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 5 - Variations in Intensity
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -i 0,1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -i 3,1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i3x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 6 - Variations in Seeds
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -n 100,200,300
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -n 1000,2000,3000
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n1000x2000x3000_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 7 - Variations in Rotation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -r 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -r 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r20_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 8 - Disable Fine Grain
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -D 50,50
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -D 50,0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x0_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 9 - Disable Fine Grain and Disable Noise
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -D 50,50 -a 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m "rgb(240,190,57)" -g tan4 -B 120 -S 80 -H 97 -D 50,0 -a 0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x50_i0x1_r0_c5_w5_n100x200x300_a2_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_t1_e30_d50x0_i0x1_r0_c5_w5_n100x200x300_a0_s5_rgb_240x190x57_tan4_B120_S80_H97.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 10 - Variation in Method
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_m1_peachpuff_darkorange4.gif" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_m2_peachpuff_darkorange4.gif" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -r 20 
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -r 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_m1_peachpuff_darkorange4_r20.gif" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./WOODGRAIN_files/woodgrain_m2_peachpuff_darkorange4_r20.gif" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a random grayscale noise</li>
+			<li>Stretches and rotates and crops the random noise image</li>
+			<li>Blurs the original random grayscale image with larger blur for displacement map</li>
+			<li>Displaces the blurred stretched, rotated, cropped random noise image</li>
+			<br>
+			<li>Creates another random grayscale noise with different noise</li>
+			<li>Stretches and rotates and crops the random noise image</li>
+			<li>Blurs the previous stretched image slightly</li>
+			<li>Subtract the last two to get an edge image</li>
+			<br>
+			<li>Adds the two processed images together</li>
+			<li>Adds noise, sharpens and adds color</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for tint case.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>ww=`echo "$dim" | cut -dx -f 1`</li>
+			<li>hh=`echo "$dim" | cut -dx -f 2`</li>
+			<li>hh=`convert xc: -format "%[fx:$hh*$elongation]" info:`</li>
+			<li>density1=$((100-density1))</li>
+			<li>density2=$((100-density2))</li>
+			<li>convert \( -size $dim xc: -virtual-pixel tile -seed $newseed1 +noise random \<br>
+			-set colorspace RGB -channel g -separate +channel -level ${density1}x100% \) \<br>
+			\( -clone 0 -blur 0x$thickness -auto-level -resize ${ww}x${hh}! \<br>
+			-compose over -virtual-pixel edge -distort SRT $rotation \<br>
+			-gravity center -crop ${dim}+0+0 +repage -level 50x100% -unsharp 0x1+$intensity1% \) \<br>
+			\( -clone 0 -blur 0x$curviness -auto-level \) \<br>
+			-delete 0 -define compose:args=${wiggles}x${wiggles} -compose displace -composite \<br>
+			$tmpA1</li>
+			<li>convert \( -size $dim xc: -virtual-pixel tile -seed $newseed2 +noise random \<br>
+			-set colorspace RGB -channel g -separate +channel \) \<br>
+			\( -clone 0 -blur 0x1 -auto-level -resize ${ww}x${hh}! \<br>
+			-compose over -virtual-pixel edge -distort SRT $rotation \<br>
+			-gravity center -crop ${dim}+0+0 +repage -level ${density2}x100% -unsharp 0x1+$intensity2% \) \<br>
+			\( -clone 1 -blur 0x1 -auto-level \) \<br>
+			-delete 0 +swap -compose minus -composite -auto-level \<br>
+			$tmpB1</li>
+			<li>convert $tmpA1 $tmpB1 -compose plus -composite \<br>
+			-virtual-pixel tile -attenuate $amplify -seed $newseed3 +noise gaussian -blur 0x1 \<br>
+			-sharpen 0x$sharpen +level-colors $maincolor,$graincolor \<br>
+			-modulate $bri,$sat,$hue $outfile</li>
+			</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

@@ -1,0 +1,1524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/autogamma/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: AUTOGAMMA</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - autogamma - modifies an image to automatically apply a gamma correction.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, autogamma, gamma, stretch, dynamic range, intensity, luminosity, brightness, lightness, colorspace">
+<link rel="stylesheet" href="./AUTOGAMMA_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="4c3548bc708208148b8b7f4b9b09b565"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="autogamma">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./AUTOGAMMA_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<ul id="nav">
+	<li id="t_homepage"><a href="http://www.fmwconcepts.com/imagemagick/index.php">Home Page</a></li>
+	<li id="t_2colorthresh"><a href="http://www.fmwconcepts.com/imagemagick/2colorthresh/index.php">2colorthresh
+		<span>Automatically thresholds an image to binary (b/w) format using
+		an adaptive spatial subdivision color reduction technique</span></a></li>
+	<li id="t_3Dbox"><a href="http://www.fmwconcepts.com/imagemagick/3Dbox/index.php">3Dbox
+		<span>Generates a perspective view of a 3D box at any orientation with 
+		pictures pasted on each of its sides</span></a></li>
+	<li id="t_3Dcover"><a href="http://www.fmwconcepts.com/imagemagick/3Dcover/index.php">3Dcover
+		<span>Wraps an image around the front and left or right side of box viewed 
+		in rotated perspective</span></a></li>
+	<li id="t_3Dreflection"><a href="http://www.fmwconcepts.com/imagemagick/3Dreflection/index.php">3Dreflection
+		<span>Adds a fading reflection below an image and views it in perspective</span></a></li>
+	<li id="t_3Drotate"><a href="http://www.fmwconcepts.com/imagemagick/3Drotate/index.php">3Drotate
+		<span>Applies a perspective distortion to an image by providing three 
+		rotation angles, zoom, offsets, background color, perspective exaggeration 
+		and auto zoom/centering</span></a></li>
+	<li id="t_3Dtext"><a href="http://www.fmwconcepts.com/imagemagick/3Dtext/index.php">3Dtext
+		<span>Converts text into an image with a 3D extrusion effect</span></a></li>
+	<li id="t_accentedges"><a href="http://www.fmwconcepts.com/imagemagick/accentedges/index.php">accentedges
+		<span>Applies accented edges to an image</span></a></li>
+	<li id="t_adaptivegamma"><a href="http://www.fmwconcepts.com/imagemagick/adaptivegamma/index.php">adaptivegamma
+		<span>Enhances the contrast/brightness in an image using a locally adaptive gamma method</span></a></li>
+	<li id="t_adaptivegamma2"><a href="http://www.fmwconcepts.com/imagemagick/adaptivegamma2/index.php">adaptivegamma2
+		<span>Enhances the contrast/brightness in an image using an adaptive gamma method</span></a></li>
+	<li id="t_anglegradient"><a href="http://www.fmwconcepts.com/imagemagick/anglegradient/index.php">anglegradient
+		<span>Creates a gradient effect at a specific orientation angle</span></a></li>
+	<li id="t_aspect"><a href="http://www.fmwconcepts.com/imagemagick/aspect/index.php">aspect
+		<span>Resizes an image to a specific size allowing either cropping or 
+		padding to deal with the aspect ratio change</span></a></li>
+	<li id="t_aspectcrop"><a href="http://www.fmwconcepts.com/imagemagick/aspectcrop/index.php">aspectcrop
+		<span>Crops an image to a specified aspect ratio</span></a></li>
+	<li id="t_aspectpad"><a href="http://www.fmwconcepts.com/imagemagick/aspectpad/index.php">aspectpad
+		<span>Pads an image with a color to a specified aspect ratio 
+		and orientation</span></a></li>
+	<li id="t_autocaption"><a href="http://www.fmwconcepts.com/imagemagick/autocaption/index.php">autocaption
+		<span>Places text automatically in a specified square size region that has 
+		the least color variation</span></a></li>
+	<li id="t_autocolor"><a href="http://www.fmwconcepts.com/imagemagick/autocolor/index.php">autocolor
+		<span>Automatically color balances an image</span></a></li>
+	<li id="t_autogamma"><a href="http://www.fmwconcepts.com/imagemagick/autogamma/index.php">autogamma
+		<span>Modifies an image to automatically apply a gamma correction</span></a></li>
+	<li id="t_autolevel"><a href="http://www.fmwconcepts.com/imagemagick/autolabel/index.php">autolabel
+		<span>Places text automatically in a specified size region that best matches a 
+		reference color</span></a></li>
+	<li id="t_autolevel"><a href="http://www.fmwconcepts.com/imagemagick/autolevel/index.php">autolevel
+		<span>Modifies an image to automatically stretch the dynamic range between 
+		full black and white and automatically apply a gamma correction</span></a></li>
+	<li id="t_autotone"><a href="http://www.fmwconcepts.com/imagemagick/autotone/index.php">autotone
+		<span>Automatically tone balances an image</span></a></li>
+	<li id="t_autotone2"><a href="http://www.fmwconcepts.com/imagemagick/autotone2/index.php">autotone2
+		<span>Automatically tone balances an image</span></a></li>
+	<li id="t_autotrim"><a href="http://www.fmwconcepts.com/imagemagick/autotrim/index.php">autotrim
+		<span>Automatically trims the background border around a normally oriented or 
+		rotated image</span></a></li>
+	<li id="t_autowhite"><a href="http://www.fmwconcepts.com/imagemagick/autowhite/index.php">autowhite
+		<span>Automatically adjusts the white balance of an image</span></a></li>
+	<li id="t_balance"><a href="http://www.fmwconcepts.com/imagemagick/balance/index.php">balance
+		<span>Transforms the image to enhance the shadows, midtones and highlight 
+		regions of the image</span></a></li>
+	<li id="t_bcimage"><a href="http://www.fmwconcepts.com/imagemagick/bcimage/index.php">bcimage
+		<span>Changes the brightness, contrast and/or saturation of 
+		an image</span></a></li>
+	<li id="t_bcmatch"><a href="http://www.fmwconcepts.com/imagemagick/bcmatch/index.php">bcmatch
+		<span>Modifies one image to try to match its brightness, contrast 
+		and optionally saturation to that of another image</span></a></li>
+	<li id="t_bevel"><a href="http://www.fmwconcepts.com/imagemagick/bevel/index.php">bevel
+		<span>Applies an inner bevel or outer bevel or emboss effect 
+		to an image</span></a></li>
+	<li id="t_bevelborder"><a href="http://www.fmwconcepts.com/imagemagick/bevelborder/index.php">bevelborder
+		<span>Applies a bevel effect to border of an image</span></a></li>
+	<li id="t_bilinearwarp"><a href="http://www.fmwconcepts.com/imagemagick/bilinearwarp/index.php">bilinearwarp
+		<span>bilinearwarp --- Generates a proper four-point bilinear warp of the 
+		input image</span></a></li>
+	<li id="t_binomial"><a href="http://www.fmwconcepts.com/imagemagick/binomial/index.php">binomial
+		<span>Generates high pass or low pass filtered images based upon convolution 
+		kernels whose weights are derived from the binomial coefficients</span></a></li>
+	<li id="t_binomialedge"><a href="http://www.fmwconcepts.com/imagemagick/binomialedge/index.php">binomialedge
+		<span>Sharpens (or blurs) an image near edges using a Binomial 
+		shaped filter.</span></a></li>
+	<li id="t_bokeh"><a href="http://www.fmwconcepts.com/imagemagick/bokeh/index.php">bokeh
+		<span>Applies a bokeh blurring effect to an image.</span></a></li>
+	<li id="t_bordereffects"><a href="http://www.fmwconcepts.com/imagemagick/bordereffects/index.php">bordereffects
+		<span>Creates various dispersion-like effects in the border of 
+		an image</span></a></li>
+	<li id="t_bordergrid"><a href="http://www.fmwconcepts.com/imagemagick/bordergrid/index.php">bordergrid
+		<span>Creates various grid effects in the border of an image</span></a></li>
+	<li id="t_bubblewarp"><a href="http://www.fmwconcepts.com/imagemagick/bubblewarp/index.php">bubblewarp
+		<span>Applies or reverses a warp of an image onto a bubble</span></a></li>
+	<li id="t_bump"><a href="http://www.fmwconcepts.com/imagemagick/bump/index.php">bump
+		<span>Applies a hemispherical-like bump distortion to 
+		an image</span></a></li>
+	<li id="t_bumptext"><a href="http://www.fmwconcepts.com/imagemagick/bumptext/index.php">bumptext
+		<span>Applies a raised text effect onto an image.</span></a></li>
+	<li id="t_camerablur"><a href="http://www.fmwconcepts.com/imagemagick/camerablur/index.php">camerablur
+		<span>Blurs an image in the frequency domain using an ideal blurring filter for 
+		either motion blur or lens defocus</span></a></li>
+	<li id="t_cameradeblur"><a href="http://www.fmwconcepts.com/imagemagick/cameradeblur/index.php">cameradeblur
+		<span>Deblurs an image in the frequency domain using an ideal deblurring filter 
+		for either motion blur or lens defocus</span></a></li>
+	<li id="t_captcha"><a href="http://www.fmwconcepts.com/imagemagick/captcha/index.php">captcha
+		<span>Creates a six-alphanumeric-character image for use as a challenge 
+		response test</span></a></li>
+	<li id="t_cartoon"><a href="http://www.fmwconcepts.com/imagemagick/cartoon/index.php">cartoon
+		<span>Creates a cartoon-like appearance to an image</span></a></li>
+	<li id="t_centertrim"><a href="http://www.fmwconcepts.com/imagemagick/centertrim/index.php">centertrim
+		<span>Trims an image so as to preserve the image center</span></a></li>
+	<li id="t_cepstrum"><a href="http://www.fmwconcepts.com/imagemagick/cepstrum/index.php">cepstrum
+		<span>Creates the cepstrum to depict the type, amount and orientation 
+		of camera type blurring in an image</span></a></li>
+	<li id="t_chrome"><a href="http://www.fmwconcepts.com/imagemagick/chrome/index.php">chrome
+		<span>Applies a chrome effect to a binary image</span></a></li>
+	<li id="t_clip"><a href="http://www.fmwconcepts.com/imagemagick/clip/index.php">clip
+		<span>Stretches the channels of an image to full black and white 
+		according to a clip amount on each end of the histogram</span></a></li>
+	<li id="t_collage"><a href="http://www.fmwconcepts.com/imagemagick/collage/index.php">collage
+		<span>Creates a multi-variant collage of the input image</span></a></li>
+	<li id="t_color2alpha"><a href="http://www.fmwconcepts.com/imagemagick/color2alpha/index.php">color2alpha
+		<span>Creates a ramped alpha channel from the input image according to the specified color.</span></a></li>
+	<li id="t_color2gray"><a href="http://www.fmwconcepts.com/imagemagick/color2gray/index.php">color2gray
+		<span>Mixes the color channels from an image into a single grayscale image 
+		using a weighted combination</span></a></li>
+	<li id="t_coloration"><a href="http://www.fmwconcepts.com/imagemagick/coloration/index.php">coloration
+		<span>Mixes the color channels from an image into a grayscale image 
+		and then tints it</span></a></li>
+	<li id="t_colorbalance"><a href="http://www.fmwconcepts.com/imagemagick/colorbalance/index.php">colorbalance
+		<span>Manually color balances an image</span></a></li>
+	<li id="t_colorbalance2"><a href="http://www.fmwconcepts.com/imagemagick/colorbalance2/index.php">colorbalance2
+		<span>Manually color balances an image</span></a></li>
+	<li id="t_colorboost"><a href="http://www.fmwconcepts.com/imagemagick/colorboost/index.php">colorboost
+		<span>Enhances the color in an under saturated image</span></a></li>
+	<li id="t_colorcells"><a href="http://www.fmwconcepts.com/imagemagick/colorcells/index.php">colorcells
+		<span>Randomly modifies the color of rectangular cells of an image</span></a></li>
+	<li id="t_colorconverter"><a href="http://www.fmwconcepts.com/imagemagick/colorconverter/index.php">colorconverter
+		<span>To convert any valid ImageMagick color specification to the other 
+		ImageMagick color representations</span></a></li>
+	<li id="t_colorcoords"><a href="http://www.fmwconcepts.com/imagemagick/colorcoords/index.php">colorcoords
+		<span>Locates in the image the first location and/or last location for the closest 
+		pixel within the fuzz value to the color specified</span></a></li>
+	<li id="t_colorfilter"><a href="http://www.fmwconcepts.com/imagemagick/colorfilter/index.php">colorfilter
+		<span>Applies a photographic color filter to an image</span></a></li>
+	<li id="t_colorfulness"><a href="http://www.fmwconcepts.com/imagemagick/colorfulness/index.php">colorfulness
+		<span>Computes a metric that represents the colorfulness of an image</span></a></li>
+	<li id="t_colorglow"><a href="http://www.fmwconcepts.com/imagemagick/colorglow/index.php">colorglow
+		<span>Applies a color glow effect to an image</span></a></li>
+	<li id="t_colorspectrum"><a href="http://www.fmwconcepts.com/imagemagick/colorspectrum/index.php">colorspectrum
+		<span>Generates a spectrum-like image from the colors in an image</span></a></li>
+	<li id="t_colortemp"><a href="http://www.fmwconcepts.com/imagemagick/colortemp/index.php">colortemp
+		<span>Transforms an image's overall color balance according to a desired color 
+		temperature change</span></a></li>
+	<li id="t_colortoning"><a href="http://www.fmwconcepts.com/imagemagick/colortoning/index.php">colortoning
+		<span>Color tones an image in highlights and/or shadows and/or overall</span></a></li>
+	<li id="t_cone"><a href="http://www.fmwconcepts.com/imagemagick/cone/index.php">cone
+		<span>Draws a cone-shaped object on an image</span></a></li>
+	<li id="t_conformal"><a href="http://www.fmwconcepts.com/imagemagick/conformal/index.php">conformal
+		<span>Applies a conformal mapping to an image</span></a></li>
+	<li id="t_contour"><a href="http://www.fmwconcepts.com/imagemagick/contour/index.php">contour
+		<span>Applies a contour outline to the image content</span></a></li>
+	<li id="t_corners"><a href="http://www.fmwconcepts.com/imagemagick/corners/index.php">corners
+		<span>Detects corner structures in an image</span></a></li>
+	<li id="t_cosinebell"><a href="http://www.fmwconcepts.com/imagemagick/cosinebell/index.php">cosinebell
+		<span>Creates a cosine-bell-shaped tapered alpha channel in an image and optionally 
+		blends the image into a background image.</span></a></li>
+	<li id="t_crosshatch"><a href="http://www.fmwconcepts.com/imagemagick/crosshatch/index.php">crosshatch
+		<span>Applies a crosshatch effect to an image</span></a></li>
+	<li id="t_crossprocess"><a href="http://www.fmwconcepts.com/imagemagick/crossprocess/index.php">crossprocess
+		<span>Applies a color crossprocessing effect to an image</span></a></li>
+	<li id="t_crystallize"><a href="http://www.fmwconcepts.com/imagemagick/crystallize/index.php">crystallize
+		<span>Creates random crystal-like regions in an image</span></a></li>
+	<li id="t_cube2sphericalpano"><a href="http://www.fmwconcepts.com/imagemagick/cube2sphericalpano/index.php">cube2sphericalpano
+		<span>Transforms 6 cube face images into a spherical panorama image</span></a></li>
+	<li id="t_cumhist"><a href="http://www.fmwconcepts.com/imagemagick/cumhist/index.php">cumhist
+		<span>Creates the combined grayscale cumulative histogram of 
+		one or more images</span></a></li>
+	<li id="t_curves"><a href="http://www.fmwconcepts.com/imagemagick/curves/index.php">curves
+		<span>Generate a smoothly interpolated, curved mapping look up table from a 
+		set of break points and applies it to an image</span></a></li>
+	<li id="t_cylinderize"><a href="http://www.fmwconcepts.com/imagemagick/cylinderize/index.php">cylinderize
+		<span>Applies a cylinder distortion to an image so that the image is wrapped 
+		about the cylinder</span></a></li>
+	<li id="t_cylinderwarp"><a href="http://www.fmwconcepts.com/imagemagick/cylinderwarp/index.php">cylinderwarp
+		<span>Applies a cylinder distortion to an image using a displacement map and 
+		arguments provided by the script cylinderize</span></a></li>
+	<li id="t_davehilleffect"><a href="http://www.fmwconcepts.com/imagemagick/davehilleffect/index.php">davehilleffect
+		<span>Applies a DaveHill-like effect to an image</span></a></li>
+	<li id="t_defisheye"><a href="http://www.fmwconcepts.com/imagemagick/defisheye/index.php">defisheye
+		<span>Corrects for fisheye distortion in an image</span></a></li>
+	<li id="t_denoise"><a href="http://www.fmwconcepts.com/imagemagick/denoise/index.php">denoise
+		<span>Reduces the noise in an image</span></a></li>
+	<li id="t_derivative"><a href="http://www.fmwconcepts.com/imagemagick/derivative/index.php">derivative
+		<span>Applies a first directional derivative filter to an image</span></a></li>
+	<li id="t_diagcollage"><a href="http://www.fmwconcepts.com/imagemagick/diagcollage/index.php">diagcollage
+		<span>Collages three images in a diagonal orientation</span></a></li>
+	<li id="t_dice"><a href="http://www.fmwconcepts.com/imagemagick/dice/index.php">dice
+		<span>Randomly rotates each successive square-sized patch 
+		in the image</span></a></li>
+	<li id="t_disperse"><a href="http://www.fmwconcepts.com/imagemagick/disperse/index.php">disperse
+		<span>Applies a dispersion effect to an image</span></a></li>
+	<li id="t_dog"><a href="http://www.fmwconcepts.com/imagemagick/dog/index.php">dog
+		<span>Create an edge extracted image using the difference of 
+		two Gaussian blurs</span></a></li>
+	<li id="t_dominantcolor"><a href="http://www.fmwconcepts.com/imagemagick/dominantcolor/index.php">dominantcolor
+		<span>Finds the dominant color in an image</span></a></li>
+	<li id="t_dotproductcorr"><a href="http://www.fmwconcepts.com/imagemagick/dotproductcorr/index.php">dotproductcorr
+		<span>Computes the dot product correlation surface to find where a small image best matches 
+		within a larger image</span></a></li>
+	<li id="t_downsize"><a href="http://www.fmwconcepts.com/imagemagick/downsize/index.php">downsize
+		<span>Downsizes (reduces) an image to a specified file size</span></a></li>
+	<li id="t_draganeffect"><a href="http://www.fmwconcepts.com/imagemagick/draganeffect/index.php">draganeffect
+		<span>Applies a Dragan-like effect to an image to enhance wrinkles 
+		creating a 'gritty' effect</span></a></li>
+	<li id="t_dualtonemap"><a href="http://www.fmwconcepts.com/imagemagick/dualtonemap/index.php">dualtonemap
+		<span>Enhances the shadows and/or highlight regions in an image</span></a></li>
+	<li id="t_duotonemap"><a href="http://www.fmwconcepts.com/imagemagick/duotonemap/index.php">duotonemap
+		<span>Enhances the shadows and/or highlight regions in an image</span></a></li>
+	<li id="t_edgefx"><a href="http://www.fmwconcepts.com/imagemagick/edgefx/index.php">edgefx
+		<span>Extracts the edges in an image and optionally composes them 
+		with the image to create interesting effects</span></a></li>
+	<li id="t_edges"><a href="http://www.fmwconcepts.com/imagemagick/edges/index.php">edges
+		<span>Applies edge extraction to image</span></a></li>
+	<li id="t_emboss"><a href="http://www.fmwconcepts.com/imagemagick/emboss/index.php">emboss
+		<span>Applies an emboss effect to an image</span></a></li>
+	<li id="t_embroidery"><a href="http://www.fmwconcepts.com/imagemagick/embroidery/index.php">embroidery
+		<span>Applies an embroidery effect to each color in an image</span></a></li>
+	<li id="t_endpoints"><a href="http://www.fmwconcepts.com/imagemagick/endpoints/index.php">endpoints
+		<span>Applies a Photoshop-like curves operation on an image that only adjusts 
+		the linear endpoints</span></a></li>
+	<li id="t_enhancelab"><a href="http://www.fmwconcepts.com/imagemagick/enhancelab/index.php">enhancelab
+		<span>Applies brightness/contrast/colorization enhancement on an image via 
+		LAB colorspace</span></a></li>
+	<li id="t_enrich"><a href="http://www.fmwconcepts.com/imagemagick/enrich/index.php">enrich
+		<span>Enhances an image by high pass filtering and composition</span></a></li>
+	<li id="t_entropy"><a href="http://www.fmwconcepts.com/imagemagick/entropy/index.php">entropy
+		<span>Computes the normalized entropy of an image channel-by-channel</span></a></li>
+	<li id="t_exposure"><a href="http://www.fmwconcepts.com/imagemagick/exposure/index.php">exposure
+		<span>Changes the exposure level of an image</span></a></li>
+	<li id="t_feather"><a href="http://www.fmwconcepts.com/imagemagick/feather/index.php">feather
+		<span>Feathers (smoothes) the white-to-black transition in a 
+		binary mask image</span></a></li>
+	<li id="t_fftconvol"><a href="http://www.fmwconcepts.com/imagemagick/fftconvol/index.php">fftconvol
+		<span>Performs convolution on an image in the frequency domain</span></a></li>
+	<li id="t_fftdeconvol"><a href="http://www.fmwconcepts.com/imagemagick/fftdeconvol/index.php">fftdeconvol
+		<span>Performs deconvolution on an image in the frequency domain</span></a></li>
+	<li id="t_fftfilter"><a href="http://www.fmwconcepts.com/imagemagick/fftfilter/index.php">fftfilter
+		<span>Performs filtering on an image in the frequency domain</span></a></li>
+	<li id="t_filmgrain"><a href="http://www.fmwconcepts.com/imagemagick/filmgrain/index.php">filmgrain
+		<span>Applies film grain noise to an image</span></a></li>
+	<li id="t_fisheye"><a href="http://www.fmwconcepts.com/imagemagick/fisheye/index.php">fisheye
+		<span>Applies a fisheye distortion to an image</span></a></li>
+	<li id="t_fisheye2pano"><a href="http://www.fmwconcepts.com/imagemagick/fisheye2pano/index.php">fisheye2pano
+		<span>Generates a strip panoramic image from a linear type fisheye image 
+		with optional vertical perspective correction</span></a></li>
+	<li id="t_fisheye2rect"><a href="http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php">fisheye2rect
+		<span>Generates a perspective (rectilinear) image from a region of a vertically 
+		viewed fisheye image</span></a></li>
+	<li id="t_flicker"><a href="http://www.fmwconcepts.com/imagemagick/flicker/index.php">flicker
+		<span>Displays and optionally save an animation of the input images</span></a></li>
+	<li id="t_flickerchannel"><a href="http://www.fmwconcepts.com/imagemagick/flickerchannel/index.php">flickerchannel
+		<span>Displays and optionally save an animation of the channels in 
+		an image</span></a></li>
+	<li id="t_frosted"><a href="http://www.fmwconcepts.com/imagemagick/frosted/index.php">frosted
+		<span>Applies a frosted glass effect to an image</span></a></li>
+	<li id="t_furrowed"><a href="http://www.fmwconcepts.com/imagemagick/furrowed/index.php">furrowed
+		<span>Applies a furrowed-looking effect to an image to enhance wrinkles 
+		creating a "gritty" look</span></a></li>
+	<li id="t_fuzzythresh"><a href="http://www.fmwconcepts.com/imagemagick/fuzzythresh/index.php">fuzzythresh
+		<span>Automatically thresholds an image to binary (b/w) format using the 
+		fuzzy c-means technique</span></a></li>
+	<li id="t_fxtransitions"><a href="http://www.fmwconcepts.com/imagemagick/fxtransitions/index.php">fxtransitions
+		<span>Creates an animated transition between two images using a special 
+		effect distortion</span></a></li>
+	<li id="t_gaussian"><a href="http://www.fmwconcepts.com/imagemagick/gaussian/index.php">gaussian
+		<span>Generates high pass or low pass filtered images based upon a Gaussian 
+		shaped convolution</span></a></li>
+	<li id="t_gaussianedge"><a href="http://www.fmwconcepts.com/imagemagick/gaussianedge/index.php">gaussianedge
+		<span>Sharpens (or blurs) an image near edges using a Gaussian 
+		shaped filter.</span></a></li>
+	<li id="t_glasseffects"><a href="http://www.fmwconcepts.com/imagemagick/glasseffects/index.php">glasseffects
+		<span>Modifies an image so that it appears to be viewed through 
+		textured and/or tiled glass</span></a></li>
+	<li id="t_glow"><a href="http://www.fmwconcepts.com/imagemagick/glow/index.php">glow
+		<span>Creates a glowing effect in an image</span></a></li>
+	<li id="t_gradient"><a href="http://www.fmwconcepts.com/imagemagick/gradient/index.php">gradient
+		<span>Applies a gradient filter to an image.</span></a></li>
+	<li id="t_graytoning"><a href="http://www.fmwconcepts.com/imagemagick/graytoning/index.php">graytoning
+		<span>Mixes color channels from an image into a grayscale image and 
+		optionally tints it.</span></a></li>
+	<li id="t_greenscreen"><a href="http://www.fmwconcepts.com/imagemagick/greenscreen/index.php">greenscreen
+		<span>Removes background green color in a green screen image.</span></a></li>
+	<li id="t_grid"><a href="http://www.fmwconcepts.com/imagemagick/grid/index.php">grid
+		<span>Superimposes a set of horizontal and/or vertical grid lines 
+		on an image</span></a></li>
+	<li id="t_halo"><a href="http://www.fmwconcepts.com/imagemagick/halo/index.php">halo
+		<span>Applies a circular halo to an image</span></a></li>
+	<li id="t_hamming"><a href="http://www.fmwconcepts.com/imagemagick/hamming/index.php">hamming
+		<span>Computes the percent hamming distance between two binary string 
+		perceptual hashes</span></a></li>
+	<li id="t_hexagons"><a href="http://www.fmwconcepts.com/imagemagick/hexagons/index.php">hexagons
+		<span>Creates a hexagonal grid of the randomly rotated input image</span></a></li>
+	<li id="t_histcompare"><a href="http://www.fmwconcepts.com/imagemagick/histcompare/index.php">histcompare
+		<span>Computes one of several metrics characterizing the difference between 
+		the histograms of two images</span></a></li>
+	<li id="t_histmatch"><a href="http://www.fmwconcepts.com/imagemagick/histmatch/index.php">histmatch
+		<span>Modifies one image to try to match its histogram and 
+		optionally saturation to that of another image</span></a></li>
+	<li id="t_histog"><a href="http://www.fmwconcepts.com/imagemagick/histog/index.php">histog
+		<span>Generates an output image which is composed of the histograms
+		from each channel of the input image</span></a></li>
+	<li id="t_houghlines"><a href="http://www.fmwconcepts.com/imagemagick/houghlines/index.php">houghlines
+		<span>Uses the Hough Transform technique to compute and display straight lines 
+		from a binary edge image</span></a></li>
+	<li id="t_huemap"><a href="http://www.fmwconcepts.com/imagemagick/huemap/index.php">huemap
+		<span>Transforms the hues in an image from one range to another</span></a></li>
+	<li id="t_imageborder"><a href="http://www.fmwconcepts.com/imagemagick/imageborder/index.php">imageborder
+		<span>Appends an image border by extending the outer regions of 
+		the image</span></a></li>
+	<li id="t_innercrop"><a href="http://www.fmwconcepts.com/imagemagick/innercrop/index.php">innercrop
+		<span>Crops an image to a rectangle that will just trim any 
+		irregularly shaped outer boundary color</span></a></li>
+	<li id="t_interleave"><a href="http://www.fmwconcepts.com/imagemagick/interleave/index.php">interleave
+		<span>Interleaves the channels of a single image or each image of a set of 
+		multiple images</span></a></li>
+	<li id="t_interweave"><a href="http://www.fmwconcepts.com/imagemagick/interweave/index.php">interweave
+		<span>Interleaves two images together in swaths</span></a></li>
+	<li id="t_isodatathresh"><a href="http://www.fmwconcepts.com/imagemagick/isodatathresh/index.php">isodatathresh
+		<span>Automatically thresholds an image to binary (b/w) format using the 
+		isodata technique</span></a></li>
+	<li id="t_isolatecolor"><a href="http://www.fmwconcepts.com/imagemagick/isolatecolor/index.php">isolatecolor
+		<span>Isolates a particular color in an image</span></a></li>
+	<li id="t_isonoise"><a href="http://www.fmwconcepts.com/imagemagick/isonoise/index.php">isonoise
+		<span>Reduces isolated noise in an image</span></a></li>
+	<li id="t_juliaset"><a href="http://www.fmwconcepts.com/imagemagick/juliaset/index.php">juliaset
+		<span>Creates a julia set fractal image</span></a></li>
+	<li id="t_kaleidoscope"><a href="http://www.fmwconcepts.com/imagemagick/kaleidoscope/index.php">kaleidoscope
+		<span>Applies a kaleidoscope effect to an image</span></a></li>
+	<li id="t_kaleidoscopic"><a href="http://www.fmwconcepts.com/imagemagick/kaleidoscopic/index.php">kaleidoscopic
+		<span>Applies a kaleidoscope effect to an image</span></a></li>
+	<li id="t_kapurthresh"><a href="http://www.fmwconcepts.com/imagemagick/kapurthresh/index.php">kapurthresh
+		<span>Automatically thresholds an image to binary (b/w) format using 
+		Kapur's entropy technique</span></a></li>
+	<li id="t_kmeans"><a href="http://www.fmwconcepts.com/imagemagick/kmeans/index.php">kmeans
+		<span>Applies k-means color reduction to an image</span></a></li>
+	<li id="t_kmeansthresh"><a href="http://www.fmwconcepts.com/imagemagick/kmeansthresh/index.php">kmeansthresh
+		<span>Automatically thresholds an image to binary (b/w) format using 
+		the k-means technique</span></a></li>
+	<li id="t_kneemap"><a href="http://www.fmwconcepts.com/imagemagick/kneemap/index.php">kneemap
+		<span>Creates a symmetric soft knee-shaped curved mapping look up table 
+		and applies it to an image</span></a></li>
+	<li id="t_kuwahara"><a href="http://www.fmwconcepts.com/imagemagick/kuwahara/index.php">kuwahara
+		<span>Applies a Kuwahara type edge preserving noise reduction filter 
+		to an image</span></a></li>
+	<li id="t_laplacian"><a href="http://www.fmwconcepts.com/imagemagick/laplacian/index.php">laplacian
+		<span>Applies a laplacian filter to an image</span></a></li>
+<!-- 
+	<li id="t_lenswarp"><a href="http://www.fmwconcepts.com/imagemagick/lenswarp/index.php">lenswarp
+		<span>simulates the effect of looking at a picture through a curved lens 
+		sitting with one flat side against the picture</span></a></li>
+ -->
+	<li id="t_levelcolors"><a href="http://www.fmwconcepts.com/imagemagick/levelcolors/index.php">levelcolors
+		<span>Applies a color level transformation to an image 
+		channel-by-channel</span></a></li>
+	<li id="t_levelcolors"><a href="http://www.fmwconcepts.com/imagemagick/levels/index.php">levels
+		<span>Applies a Photoshop-like levels operation on an image</span></a></li>
+	<li id="t_levelcolors"><a href="http://www.fmwconcepts.com/imagemagick/lichtenstein/index.php">lichtenstein
+		<span>Applies a Roy Lichtenstein newspaper cartoon effect to an image</span></a></li>
+	<li id="t_limitedtrim"><a href="http://www.fmwconcepts.com/imagemagick/limitedtrim/index.php">limitedtrim
+		<span>Trims an image on all sides by a maximum amount specified by the user</span></a></li>
+	<li id="t_localthresh"><a href="http://www.fmwconcepts.com/imagemagick/localthresh/index.php">localthresh
+		<span>Automatically thresholds an image to binary (b/w) format using a moving 
+		window adaptive thresholding approach</span></a></li>
+	<li id="t_locatecolors"><a href="http://www.fmwconcepts.com/imagemagick/locatecolors/index.php">locatecolors
+		<span>Modifies an image showing only those pixels which are within the specified 
+		color range</span></a></li>
+	<li id="t_logpolar"><a href="http://www.fmwconcepts.com/imagemagick/logpolar/index.php">logpolar
+		<span>Applies either a rectangular (cartesian) to log-polar transformation or   
+		a log-polar to rectangular (cartesian) transformation on an image</span></a></li>
+	<li id="t_lomography"><a href="http://www.fmwconcepts.com/imagemagick/lomography/index.php">lomography
+		<span>Applies a lomographic effect to an image</span></a></li>
+	<li id="t_lucisarteffect"><a href="http://www.fmwconcepts.com/imagemagick/lucisarteffect/index.php">lucisarteffect
+		<span>Applies a LucisArt-like effect to an image</span></a></li>
+	<li id="t_lupe"><a href="http://www.fmwconcepts.com/imagemagick/lupe/index.php">lupe
+		<span>Applies a magnifying glass effect in a local area of 
+		an image</span></a></li>
+	<li id="t_magicwand"><a href="http://www.fmwconcepts.com/imagemagick/magicwand/index.php">magicwand
+		<span>Isolates a contiguous region of an image based upon a color 
+		determined from a user specified image coordinate</span></a></li>
+	<li id="t_mandala"><a href="http://www.fmwconcepts.com/imagemagick/mandala/index.php">mandala
+		<span>Creates a Mandala type image from simple graphic figures</span></a></li>
+	<li id="t_mandalascope"><a href="http://www.fmwconcepts.com/imagemagick/mandalascope/index.php">mandalascope
+		<span>Converts an image into a mandala-like kaleidoscope image</span></a></li>
+	<li id="t_mandelbrot"><a href="http://www.fmwconcepts.com/imagemagick/mandelbrot/index.php">mandelbrot
+		<span>Creates a mandelbrot set fractal image</span></a></li>
+	<li id="t_mapcolors"><a href="http://www.fmwconcepts.com/imagemagick/mapcolors/index.php">mapcolors
+		<span>Maps or translates one set of colors in an image to another 
+		set of colors</span></a></li>
+	<li id="t_matchimage"><a href="http://www.fmwconcepts.com/imagemagick/matchimage/index.php">matchimage
+		<span>Matches the brightness and contrast of one image to another image</span></a></li>
+	<li id="t_maxima"><a href="http://www.fmwconcepts.com/imagemagick/maxima/index.php">maxima
+		<span>Locate one or more local maxima in a grayscale image</span></a></li>
+	<li id="t_maxrgb"><a href="http://www.fmwconcepts.com/imagemagick/maxrgb/index.php">maxrgb
+		<span>Converts an RGB image to keep only the channel with the maximum 
+		value at each pixel</span></a></li>
+	<li id="t_median"><a href="http://www.fmwconcepts.com/imagemagick/median/index.php">median
+		<span>Computes the median value of an image</span></a></li>
+	<li id="t_melt"><a href="http://www.fmwconcepts.com/imagemagick/melt/index.php">melt
+		<span>Creates a melting-like blur effect in an image</span></a></li>
+	<li id="t_meshwarp"><a href="http://www.fmwconcepts.com/imagemagick/meshwarp/index.php">meshwarp
+		<span>Warps an image according to a user supplied triangular mesh</span></a></li>
+	<li id="t_mesmerize"><a href="http://www.fmwconcepts.com/imagemagick/mesmerize/index.php">mesmerize
+		<span>Creates a mesmerizing animation from an image</span></a></li>
+	<li id="t_midgradient"><a href="http://www.fmwconcepts.com/imagemagick/midgradient/index.php">midgradient
+		<span>Creates a two-color gradient with adjustable mid-color location</span></a></li>
+	<li id="t_midtonebalance"><a href="http://www.fmwconcepts.com/imagemagick/midtonebalance/index.php">midtonebalance
+		<span>Color balances an image in the midtones in a manner similar to Photoshop</span></a></li>
+	<li id="t_mirrorize"><a href="http://www.fmwconcepts.com/imagemagick/mirrorize/index.php">mirrorize
+		<span>Creates a mirror effect in an image</span></a></li>
+	<li id="t_mode"><a href="http://www.fmwconcepts.com/imagemagick/mode/index.php">mode
+		<span>Computes the mode value of an image.</span></a></li>
+	<li id="t_modulatecolor1"><a href="http://www.fmwconcepts.com/imagemagick/modulatecolor1/index.php">modulatecolor1
+		<span>Changes brightness, saturation and/or hue for any primary or secondary 
+		color in an image.</span></a></li>
+	<li id="t_modulatecolor2"><a href="http://www.fmwconcepts.com/imagemagick/modulatecolor2/index.php">modulatecolor2
+		<span>Changes brightness, saturation and/or hue for any primary or secondary 
+		color in an image.</span></a></li>
+	<li id="t_moments"><a href="http://www.fmwconcepts.com/imagemagick/moments/index.php">moments
+		<span>Computes shift, scale and rotation invariant image moments as well as 
+		elliptical shape descriptors</span></a></li>
+	<li id="t_morphology"><a href="http://www.fmwconcepts.com/imagemagick/morphology/index.php">morphology
+		<span>Performs binary or grayscale morphologic operations on an image, including 
+		dilate, erode, open and close</span></a></li>
+	<li id="t_mosaictiles"><a href="http://www.fmwconcepts.com/imagemagick/mosaictiles/index.php">mosaictiles
+		<span>Applies a mosaic tiles effect to image</span></a></li>
+	<li id="t_mottle"><a href="http://www.fmwconcepts.com/imagemagick/mottle/index.php">mottle
+		<span>Applies various mottle effects to an image</span></a></li>
+	<li id="t_multicrop"><a href="http://www.fmwconcepts.com/imagemagick/multicrop/index.php">multicrop
+		<span>Crops and unrotates multiple images from a scanned image</span></a></li>
+	<li id="t_multicrop2"><a href="http://www.fmwconcepts.com/imagemagick/multicrop2/index.php">multicrop2
+		<span>Crops and unrotates multiple images from a scanned image</span></a></li>
+	<li id="t_multigradient"><a href="http://www.fmwconcepts.com/imagemagick/multigradient/index.php">multigradient
+		<span>Creates either a linear or radial gradient image with two or more 
+		color stops</span></a></li>
+	<li id="t_nearestcolor"><a href="http://www.fmwconcepts.com/imagemagick/nearestcolor/index.php">nearestcolor
+		<span>Finds the nearest color value in an image to a reference color</span></a></li>
+	<li id="t_neg2pos"><a href="http://www.fmwconcepts.com/imagemagick/neg2pos/index.php">neg2pos
+		<span>Converts from a (scanned film) negative image to a positive image</span></a></li>
+	<li id="t_negative2positive"><a href="http://www.fmwconcepts.com/imagemagick/negative2positive/index.php">negative2positive
+		<span>Converts from a (scanned film) negative image to a positive image</span></a></li>
+	<li id="t_nightvision"><a href="http://www.fmwconcepts.com/imagemagick/nightvision/index.php">nightvision
+		<span>Simulates a picture as viewed through night vision goggles</span></a></li>
+	<li id="t_noisecleaner"><a href="http://www.fmwconcepts.com/imagemagick/noisecleaner/index.php">noisecleaner
+		<span>Iteratively cleans noise from an image</span></a></li>
+	<li id="t_normcrosscorr"><a href="http://www.fmwconcepts.com/imagemagick/normcrosscorr/index.php">normcrosscorr
+		<span>Computes the normalized cross correlation surface to find where a small image 
+		best matches within a larger image</span></a></li>
+	<li id="t_notch"><a href="http://www.fmwconcepts.com/imagemagick/notch/index.php">notch
+		<span>Creates and applies a notch filter to an image in the frequency domain 
+		to remove dither patterns and other regular noise patterns</span></a></li>
+	<li id="t_omnistretch"><a href="http://www.fmwconcepts.com/imagemagick/omnistretch/index.php">omnistretch
+		<span>Enhances the dynamic range of brightness values and optionally saturation 
+		values in an image</span></a></li>
+	<li id="t_ortoneffect"><a href="http://www.fmwconcepts.com/imagemagick/ortoneffect/index.php">ortoneffect
+		<span>Applies an Orton effect to an image</span></a></li>
+	<li id="t_otsuthresh"><a href="http://www.fmwconcepts.com/imagemagick/otsuthresh/index.php">otsuthresh
+		<span>Automatically thresholds an image to binary (b/w) format using 
+		Otsu's between class variance technique</span></a></li>
+	<li id="t_outfit"><a href="http://www.fmwconcepts.com/imagemagick/outfit/index.php">outfit
+		<span>Transforms a pattern image to place it over an image of some piece 
+		of clothing or outfit</span></a></li>
+	<li id="t_outfitwarper"><a href="http://www.fmwconcepts.com/imagemagick/outfitwarper/index.php">outfitwarper
+		<span>Transforms a pattern image to place it over an image of some piece 
+		of clothing or outfit using a lighting file, a displacement map a mask and  
+		arguments provided by the script outfit</span></a></li>
+	<li id="t_overlapcrop"><a href="http://www.fmwconcepts.com/imagemagick/overlapcrop/index.php">overlapcrop
+		<span>Creates a sequence of cropped subsections permitting optional overlap 
+		of the subsections</span></a></li>
+	<li id="t_pagecurl"><a href="http://www.fmwconcepts.com/imagemagick/pagecurl/index.php">pagecurl
+		<span>Applies a pagecurl effect to the lower right corner of an image</span></a></li>
+	<li id="t_pagepeel"><a href="http://www.fmwconcepts.com/imagemagick/pagepeel/index.php">pagepeel
+		<span>Applies a pagepeel effect to the lower right corner of an image</span></a></li>
+	<li id="t_painteffect"><a href="http://www.fmwconcepts.com/imagemagick/painteffect/index.php">painteffect
+		<span>Applies a paint type effect to an image</span></a></li>
+	<li id="t_pano2fisheye"><a href="http://www.fmwconcepts.com/imagemagick/pano2fisheye/index.php">pano2fisheye
+		<span>Transforms a spherical panorama to a fisheye view</span></a></li>
+	<li id="t_pano2rect"><a href="http://www.fmwconcepts.com/imagemagick/pano2rect/index.php">pano2rect
+		<span>Applies vertical perspective correction to an angular 
+		panoramic image</span></a></li>
+	<li id="t_peelingpaint"><a href="http://www.fmwconcepts.com/imagemagick/peelingpaint/index.php">peelingpaint
+		<span>Applies a peeling paint effect to an image</span></a></li>
+	<li id="t_perforations"><a href="http://www.fmwconcepts.com/imagemagick/perforations/index.php">perforations
+		<span>Applies film-like perforations to two opposite edges of an image</span></a></li>
+	<li id="t_perlin"><a href="http://www.fmwconcepts.com/imagemagick/perlin/index.php">perlin
+		<span>Creates an image composed of Perlin type noise</span></a></li>
+	<li id="t_phasecorr"><a href="http://www.fmwconcepts.com/imagemagick/phasecorr/index.php">phasecorr
+		<span>Computes the phase correlation surface to find where a small image best 
+		matches within a larger image</span></a></li>
+	<li id="t_phashcompare"><a href="http://www.fmwconcepts.com/imagemagick/phashcompare/index.php">phashcompare
+		<span>Compares two 168 digit phash strings to compute a phash metric</span></a></li>
+	<li id="t_phashconvert"><a href="http://www.fmwconcepts.com/imagemagick/phashconvert/index.php">phashconvert
+		<span>Converts the 42 phash float values for an image to a string of 
+		168 digits</span></a></li>
+	<li id="t_phashes"><a href="http://www.fmwconcepts.com/imagemagick/phashes/index.php">phashes
+		<span>Computes and stores one or more perceptual hashes for all 
+		provided images</span></a></li>
+	<li id="t_picframe"><a href="http://www.fmwconcepts.com/imagemagick/picframe/index.php">picframe
+		<span>Adds a picture frame around an image</span></a></li>
+	<li id="t_picturefold"><a href="http://www.fmwconcepts.com/imagemagick/picturefold/index.php">picturefold
+		<span>Applies a map-like folded appearance to an image</span></a></li>
+	<li id="t_pinbarrel"><a href="http://www.fmwconcepts.com/imagemagick/pinbarrel/index.php">pinbarrel
+		<span>Applies or corrects pincushion and/or barrel lens distortion to an image</span></a></li>
+	<li id="t_pip"><a href="http://www.fmwconcepts.com/imagemagick/pip/index.php">pip
+		<span>Creates a picture-in-picture effect</span></a></li>
+	<li id="t_pixelize"><a href="http://www.fmwconcepts.com/imagemagick/pixelize/index.php">pixelize
+		<span>Creates a pixelized or blocky effect in an image</span></a></li>
+	<li id="t_plm"><a href="http://www.fmwconcepts.com/imagemagick/plm/index.php">plm
+		<span>Generates a piece-wise linear mapping grayscale 
+		look up table and applies it to an image</span></a></li>
+	<li id="t_plmlut"><a href="http://www.fmwconcepts.com/imagemagick/plmlut/index.php">plmlut
+		<span>Generates a piece-wise linear mapping grayscale 
+		look up table</span></a></li>
+	<li id="t_plot"><a href="http://www.fmwconcepts.com/imagemagick/plot/index.php">plot
+		<span>Generates a profile of an image row or column or 
+		an image histogram.</span></a></li>
+	<li id="t_plot3D"><a href="http://www.fmwconcepts.com/imagemagick/plot3D/index.php">plot3D
+		<span>Generates a 3D plot of a single channel or grayscale image</span></a></li>
+	<li id="t_polar"><a href="http://www.fmwconcepts.com/imagemagick/polar/index.php">polar
+		<span>Applies either a rectangular (cartesian) to polar transformation or 
+		a polar to rectangular (cartesian) transformation on an image</span></a></li>
+	<li id="t_polarblur"><a href="http://www.fmwconcepts.com/imagemagick/polarblur/index.php">polarblur
+		<span>Applies a polar blur to an image</span></a></li>
+	<li id="t_polyring"><a href="http://www.fmwconcepts.com/imagemagick/polyring/index.php">polyring
+		<span>Creates a polygon ring image from one or more images</span></a></li>
+	<li id="t_popart"><a href="http://www.fmwconcepts.com/imagemagick/popart/index.php">popart
+		<span>Creates a pop art style image</span></a></li>
+	<li id="t_position"><a href="http://www.fmwconcepts.com/imagemagick/position/index.php">position
+		<span>Positions (aligns) one image relative to another image</span></a></li>
+	<li id="t_postagestamp"><a href="http://www.fmwconcepts.com/imagemagick/postagestamp/index.php">postagestamp
+		<span>Applies a perforated postage stamp like border around an image</span></a></li>
+	<li id="t_posteredges"><a href="http://www.fmwconcepts.com/imagemagick/posteredges/index.php">posteredges
+		<span>Applies posterized edges to an image</span></a></li>
+	<li id="t_profile"><a href="http://www.fmwconcepts.com/imagemagick/profile/index.php">profile
+		<span>Generates a profile of an image row or column</span></a></li>
+	<li id="t_pseudocolor"><a href="http://www.fmwconcepts.com/imagemagick/pseudocolor/index.php">pseudocolor
+		<span>Generates a pseudocolored image or pseudocolored animation from grayscale 
+		image using a rainbow colored transformation</span></a></li>
+	<li id="t_ptilethresh"><a href="http://www.fmwconcepts.com/imagemagick/ptilethresh/index.php">ptilethresh
+		<span>Automatically thresholds an image to binary (b/w) format at a specified 
+		percentile on the cumulative histogram</span></a></li>
+	<li id="t_puzzle"><a href="http://www.fmwconcepts.com/imagemagick/puzzle/index.php">puzzle
+		<span>Applies a puzzle like effect to an image</span></a></li>
+	<li id="t_radialgradient"><a href="http://www.fmwconcepts.com/imagemagick/radialgradient/index.php">radialgradient
+		<span>Creates a radial gradient image</span></a></li>
+	<li id="t_radialgrid"><a href="http://www.fmwconcepts.com/imagemagick/radialgrid/index.php">radialgrid
+		<span>Superimposes circular grid lines on an image</span></a></li>
+	<li id="t_randomblob"><a href="http://www.fmwconcepts.com/imagemagick/randomblob/index.php">randomblob
+		<span>Creates an image composed of a moderate sized black random blob shape 
+		on a white background</span></a></li>
+	<li id="t_randomclipart"><a href="http://www.fmwconcepts.com/imagemagick/randomclipart/index.php">randomclipart
+		<span>Randomly distributes clip art over the image</span></a></li>
+	<li id="t_rangethresh"><a href="http://www.fmwconcepts.com/imagemagick/rangethresh/index.php">rangethresh
+		<span>Converts an image to binary using range values for each channel of the input</span></a></li>
+	<li id="t_recursion"><a href="http://www.fmwconcepts.com/imagemagick/recursion/index.php">recursion
+		<span>Creates a recursive affine composite effect in an image</span></a></li>
+	<li id="t_redeye"><a href="http://www.fmwconcepts.com/imagemagick/redeye/index.php">redeye
+		<span>Removes redeye from an image</span></a></li>
+	<li id="t_redist"><a href="http://www.fmwconcepts.com/imagemagick/redist/index.php">redist
+		<span>Modifies an image so that its (grayscale) histogram has a 
+		either Gaussian, distribution or a Uniform Distribution</span></a></li>
+	<li id="t_reflect"><a href="http://www.fmwconcepts.com/imagemagick/reflect/index.php">reflect
+		<span>Splits an image, reflects each side and appends them to form horizontally 
+		symmetric images</span></a></li>
+	<li id="t_remap"><a href="http://www.fmwconcepts.com/imagemagick/remap/index.php">remap
+		<span>Remaps the colors in an image using a 3D color distance metric 
+		relative to a color table map image</span></a></li>
+	<li id="t_removecolorcast"><a href="http://www.fmwconcepts.com/imagemagick/removecolorcast/index.php">removecolorcast
+		<span>Removes a color cast from an image</span></a></li>
+	<li id="t_replacecolor"><a href="http://www.fmwconcepts.com/imagemagick/replacecolor/index.php">replacecolor
+		<span>Changes one color to another color in an image</span></a></li>
+	<li id="t_retinex"><a href="http://www.fmwconcepts.com/imagemagick/retinex/index.php">retinex
+		<span>Enhances detail and color in an image using the multiscale 
+		retinex algorithm</span></a></li>
+	<li id="t_rgbdots"><a href="http://www.fmwconcepts.com/imagemagick/rgbdots/index.php">rgbdots
+		<span>Transforms an image into dots in primary and secondary colors</span></a></li>
+	<li id="t_ripples"><a href="http://www.fmwconcepts.com/imagemagick/ripples/index.php">ripples
+		<span>Applies various circular ripple effects to an image</span></a></li>
+	<li id="t_rmsecorr"><a href="http://www.fmwconcepts.com/imagemagick/rmsecorr/index.php">rmsecorr
+		<span>Computes the root mean squared correlation surface to find where a small image 
+		best matches within a larger image</span></a></li>
+	<li id="t_rotate3D"><a href="http://www.fmwconcepts.com/imagemagick/rotate3D/index.php">rotate3D
+		<span>Applies a perspective distortion to an image by providing three 
+		rotation angles and an optional perspective exaggeration</span></a></li>
+	<li id="t_sahoothresh"><a href="http://www.fmwconcepts.com/imagemagick/sahoothresh/index.php">sahoothresh
+		<span>Automatically thresholds an image to binary (b/w) format using 
+		Sahoo's entropy technique</span></a></li>
+	<li id="t_saturation"><a href="http://www.fmwconcepts.com/imagemagick/saturation/index.php">saturation
+		<span>Changes the color saturation in an image</span></a></li>
+	<li id="t_scalescroll"><a href="http://www.fmwconcepts.com/imagemagick/scalescroll/index.php">scalescroll
+		<span>Creates a scaled scrolling animation</span></a></li>
+	<li id="t_scatter"><a href="http://www.fmwconcepts.com/imagemagick/scatter/index.php">scatter
+		<span>Generates a channel-by-channel scatter diagram between two images</span></a></li>
+	<li id="t_scatterchannels"><a href="http://www.fmwconcepts.com/imagemagick/scatterchannels/index.php">scatterchannels
+		<span>Generates a scatter diagram between channels of an image</span></a></li>
+	<li id="t_screeneffects"><a href="http://www.fmwconcepts.com/imagemagick/screeneffects/index.php">screeneffects
+		<span>Applies screen-like effects to an image</span></a></li>
+	<li id="t_scriptbatch"><a href="http://www.fmwconcepts.com/imagemagick/scriptbatch/index.php">scriptbatch
+		<span>Runs another script over a folder of images</span></a></li>
+	<li id="t_separate"><a href="http://www.fmwconcepts.com/imagemagick/separate/index.php">separate
+		<span>Identifies each separate white shape in a binary image</span></a></li>
+	<li id="t_shadowhighlight"><a href="http://www.fmwconcepts.com/imagemagick/shadowhighlight/index.php">shadowhighlight
+		<span>Adjusts the tone in shadow and highlight areas of an image</span></a></li>
+	<li id="t_shadows"><a href="http://www.fmwconcepts.com/imagemagick/shadows/index.php">shadows
+		<span>Applies drop shadows to an image that has an alpha channel</span></a></li>
+	<li id="t_shapecluster"><a href="http://www.fmwconcepts.com/imagemagick/shapecluster/index.php">shapecluster
+		<span>Creates a division of the image into 5 separated rectangular regions</span></a></li>
+	<li id="t_shapecompare"><a href="http://www.fmwconcepts.com/imagemagick/shapecompare/index.php">shapecompare
+		<span>Compares two images' shapes using metrics computed from Hu image moments</span></a></li>
+	<li id="t_shapemorph"><a href="http://www.fmwconcepts.com/imagemagick/shapemorph/index.php">shapemorph
+		<span>Create a shape morphing animation sequence between two images</span></a></li>
+	<li id="t_shapemorph2"><a href="http://www.fmwconcepts.com/imagemagick/shapemorph2/index.php">shapemorph2
+		<span>Create a shape morphing animation sequence between two images</span></a></li>
+	<li id="t_sharp"><a href="http://www.fmwconcepts.com/imagemagick/sharp/index.php">sharp
+		<span>Adaptively sharpens an image or extract edges</span></a></li>
+	<li id="t_sharpedge"><a href="http://www.fmwconcepts.com/imagemagick/sharpedge/index.php">sharpedge
+		<span>Adaptively sharpens (or blurs) an image near edges</span></a></li>
+	<li id="t_shimmer"><a href="http://www.fmwconcepts.com/imagemagick/shimmer/index.php">shimmer
+		<span>Creates a reflected heat shimmering effect animation</span></a></li>
+	<li id="t_shuffle"><a href="http://www.fmwconcepts.com/imagemagick/shuffle/index.php">shuffle
+		<span>Randomly shuffles positions of square sized tiles in an image</span></a></li>
+	<li id="t_sigmoidal"><a href="http://www.fmwconcepts.com/imagemagick/sigmoidal/index.php">sigmoidal
+		<span>Applies a sigmoidal brightness and/or contrast adjustment to an image</span></a></li>
+	<li id="t_similar"><a href="http://www.fmwconcepts.com/imagemagick/similar/index.php">similar
+		<span>Computes the normalized cross correlation similarity metric between 
+		two equal dimensioned images</span></a></li>
+	<li id="t_sinescrollimage"><a href="http://www.fmwconcepts.com/imagemagick/sinescrollimage/index.php">sinescrollimage
+		<span>Creates a sinusoidal curved scrolling image banner animation</span></a></li>
+	<li id="t_sinescrolltext"><a href="http://www.fmwconcepts.com/imagemagick/sinescrolltext/index.php">sinescrolltext
+		<span>Creates a sinusoidal curved scrolling text banner animation</span></a></li>
+	<li id="t_sketch"><a href="http://www.fmwconcepts.com/imagemagick/sketch/index.php">sketch
+		<span>Applies a sketch effect to an image</span></a></li>
+	<li id="t_sketcher"><a href="http://www.fmwconcepts.com/imagemagick/sketcher/index.php">sketcher
+		<span>Applies a sketch effect to an image</span></a></li>
+	<li id="t_sketchetch"><a href="http://www.fmwconcepts.com/imagemagick/sketchetch/index.php">sketchetch
+		<span>Creates an etch-like sketch from an image</span></a></li>
+	<li id="t_sketching"><a href="http://www.fmwconcepts.com/imagemagick/sketching/index.php">sketching
+		<span>Applies a sketch effect to an image</span></a></li>
+	<li id="t_skew"><a href="http://www.fmwconcepts.com/imagemagick/skew/index.php">skew
+		<span>Applies a skew distortion to an image</span></a></li>
+	<li id="t_slantedlight"><a href="http://www.fmwconcepts.com/imagemagick/slantedlight/index.php">slantedlight
+		<span>Applies slanted lighting to an image</span></a></li>
+	<li id="t_slice"><a href="http://www.fmwconcepts.com/imagemagick/slice/index.php">slice
+		<span>Thresholds an image (inclusively) between a range of graylevels 
+		and optionally colorizes inside and/or outside the threshold range</span></a></li>
+	<li id="t_smartcrop"><a href="http://www.fmwconcepts.com/imagemagick/smartcrop/index.php">smartcrop
+		<span>Automatically crops an image to a given size around the hightest 
+		detail region</span></a></li>
+	<li id="t_smarttrim"><a href="http://www.fmwconcepts.com/imagemagick/smarttrim/index.php">smarttrim
+		<span>Automatically trims an image around the region of highest detail 
+		in the image</span></a></li>
+	<li id="t_softfocus"><a href="http://www.fmwconcepts.com/imagemagick/softfocus/index.php">softfocus
+		<span>Applies a softfocus effect to an image</span></a></li>
+	<li id="t_softlight"><a href="http://www.fmwconcepts.com/imagemagick/softlight/index.php">softlight
+		<span>Applies soft light to an image</span></a></li>
+	<li id="t_space"><a href="http://www.fmwconcepts.com/imagemagick/space/index.php">space
+		<span>Applies a spatially adaptive contrast (and brightness) enhancement 
+		filter to an image</span></a></li>
+	<li id="t_space2"><a href="http://www.fmwconcepts.com/imagemagick/space2/index.php">space2
+		<span>Applies a spatially adaptive contrast (and brightness) enhancement 
+		filter to an image</span></a></li>
+	<li id="t_spectrum"><a href="http://www.fmwconcepts.com/imagemagick/spectrum/index.php">spectrum
+		<span>Computes the spectrum image from the magnitude of the Fourier Transform 
+		of an image.</span></a></li>
+	<li id="t_spectrumhist"><a href="http://www.fmwconcepts.com/imagemagick/spectrumhist/index.php">spectrumhist
+		<span>Creates either a color spectrum or histogram of the colors in an image.</span></a></li>
+	<li id="t_sphere"><a href="http://www.fmwconcepts.com/imagemagick/sphere/index.php">sphere
+		<span>Creates a colored sphere with a combination of diffuse and specular illumination</span></a></li>
+	<li id="t_sphericalpano2cube"><a href="http://www.fmwconcepts.com/imagemagick/sphericalpano2cube/index.php">sphericalpano2cube
+		<span>Transforms a spherical panorama into a cubical representation</span></a></li>
+	<li id="t_sphericalpano2rect"><a href="http://www.fmwconcepts.com/imagemagick/sphericalpano2rect/index.php">sphericalpano2rect
+		<span>Generate a perspective (rectilinear) image from a region of a 
+		spherical panorama image</span></a></li>
+	<li id="t_spherize"><a href="http://www.fmwconcepts.com/imagemagick/spherize/index.php">spherize
+		<span>Warps an image onto a (hemi-)sphere</span></a></li>
+	<li id="t_splice"><a href="http://www.fmwconcepts.com/imagemagick/splice/index.php">splice
+		<span>Applies a jagged cut and splice effect to an image</span></a></li>
+	<li id="t_spline"><a href="http://www.fmwconcepts.com/imagemagick/spline/index.php">spline
+		<span>Draws a spline curve on an image based upon supplied points</span></a></li>
+	<li id="t_splitcrop"><a href="http://www.fmwconcepts.com/imagemagick/splitcrop/index.php">splitcrop
+		<span>Crops an image into two or four sections according to the given 
+		x,y coordinates</span></a></li>
+	<li id="t_splitimage"><a href="http://www.fmwconcepts.com/imagemagick/splitimage/index.php">splitimage
+		<span>Generates a side-by-side append of two partial images with an option to 
+		animate the amount of each image used in the append</span></a></li>
+	<li id="t_splittone1"><a href="http://www.fmwconcepts.com/imagemagick/splittone1/index.php">splittone1
+		<span>Applies a color splittone effect to an image</span></a></li>
+	<li id="t_splittone2"><a href="http://www.fmwconcepts.com/imagemagick/splittone2/index.php">splittone2
+		<span>Applies a color splittone effect to an image</span></a></li>
+	<li id="t_splittone3"><a href="http://www.fmwconcepts.com/imagemagick/splittone3/index.php">splittone3
+		<span>Applies a color splittone effect to an image</span></a></li>
+	<li id="t_spots"><a href="http://www.fmwconcepts.com/imagemagick/spots/index.php">spots
+		<span>Converts the image into a series or uniform-colored spots</span></a></li>
+	<li id="t_squareup"><a href="http://www.fmwconcepts.com/imagemagick/squareup/index.php">squareup
+		<span>Resizes an image and squares it up either by padding or 
+		cropping</span></a></li>
+	<li id="t_ssim"><a href="http://www.fmwconcepts.com/imagemagick/ssim/index.php">ssim
+		<span>Computes the structural similarity metric between two equal 
+		sized images.</span></a></li>
+	<li id="t_starburst"><a href="http://www.fmwconcepts.com/imagemagick/stainedglass/index.php">stainedglass
+		<span>Applies a stained glass cell effect to an image</span></a></li>
+	<li id="t_starburst"><a href="http://www.fmwconcepts.com/imagemagick/starburst/index.php">starburst
+		<span>Applies a starburst pattern to an image</span></a></li>
+	<li id="t_statsfilt"><a href="http://www.fmwconcepts.com/imagemagick/statsfilt/index.php">statsfilt
+		<span>Computes various localized (neighborhood) statistical 
+		filters on an image</span></a></li>
+	<li id="t_statsfilt"><a href="http://www.fmwconcepts.com/imagemagick/stdimage/index.php">stdimage
+		<span>Computes a pixel-by-pixel standard deviation or variance image from 
+		multiple input images</span></a></li>
+	<li id="t_stretch"><a href="http://www.fmwconcepts.com/imagemagick/stretch/index.php">stretch
+		<span>Modifies an image to automatically stretch the dynamic range between 
+		full black and white</span></a></li>
+	<li id="t_striations"><a href="http://www.fmwconcepts.com/imagemagick/striations/index.php">striations
+		<span>Applies radial or circular striations to image</span></a></li>
+	<li id="t_stripes"><a href="http://www.fmwconcepts.com/imagemagick/stripes/index.php">stripes
+		<span>stripes --- Adds a striped border to an image.</span></a></li>
+	<li id="t_stutter"><a href="http://www.fmwconcepts.com/imagemagick/stutter/index.php">stutter
+		<span>Creates a 'stuttered' offset-like effect in an image</span></a></li>
+	<li id="t_surroundblur"><a href="http://www.fmwconcepts.com/imagemagick/surroundblur/index.php">surroundblur
+		<span>Creates a blurred background region around the input image</span></a></li>
+	<li id="t_textcleaner"><a href="http://www.fmwconcepts.com/imagemagick/textcleaner/index.php">textcleaner
+		<span>Processes a scanned document of text to clean the text background</span></a></li>
+	<li id="t_textdeskew"><a href="http://www.fmwconcepts.com/imagemagick/textdeskew/index.php">textdeskew
+		<span>Unrotates (deskews) an image containing text</span></a></li>
+	<li id="t_textdistort"><a href="http://www.fmwconcepts.com/imagemagick/textdistort/index.php">textdistort
+		<span>Distorts repeated text to warp it to the shape of the image content</span></a></li>
+	<li id="t_texteffect"><a href="http://www.fmwconcepts.com/imagemagick/texteffect/index.php">texteffect
+		<span>Convert text to an image after applying various effects, styling 
+		and color</span></a></li>
+	<li id="t_texteffect2"><a href="http://www.fmwconcepts.com/imagemagick/texteffect2/index.php">texteffect2
+		<span>Converts large size text to an image with color, effects 
+		and styling</span></a></li>
+	<li id="t_textetch"><a href="http://www.fmwconcepts.com/imagemagick/textetch/index.php">textetch
+		<span>Adds text to an image to simulate etching on glass</span></a></li>
+	<li id="t_textglow"><a href="http://www.fmwconcepts.com/imagemagick/textglow/index.php">textglow
+		<span>Adds glowing text to an image or some background color</span></a></li>
+	<li id="t_texturize"><a href="http://www.fmwconcepts.com/imagemagick/texturize/index.php">texturize
+		<span>Creates a texture pattern and optionally applies it to the 
+		background of an input image</span></a></li>
+	<li id="t_thermography"><a href="http://www.fmwconcepts.com/imagemagick/thermography/index.php">thermography
+		<span>Simulates a picture taken with a thermal imaging camera</span></a></li>
+	<li id="t_thresholds"><a href="http://www.fmwconcepts.com/imagemagick/thresholds/index.php">thresholds
+		<span>Applies one or two thresholds to an image</span></a></li>
+	<li id="t_tileimage"><a href="http://www.fmwconcepts.com/imagemagick/tileimage/index.php">tileimage
+		<span>Tiles an image to a given size with various tile arrangements</span></a></li>
+	<li id="t_tiler"><a href="http://www.fmwconcepts.com/imagemagick/tiler/index.php">tiler
+		<span>Converts an image into a tilable texture</span></a></li>
+	<li id="t_tiltshift"><a href="http://www.fmwconcepts.com/imagemagick/tiltshift/index.php">tiltshift
+		<span>Applies a tiltshift effect to an image</span></a></li>
+	<li id="t_tintilize"><a href="http://www.fmwconcepts.com/imagemagick/tintilize/index.php">tintilize
+		<span>Applies a color tint to the mid-range of a grayscale image</span></a></li>
+	<li id="t_tinyplanet"><a href="http://www.fmwconcepts.com/imagemagick/tinyplanet/index.php">tinyplanet
+		<span>Transforms a spherical panorama to a linear fisheye view</span></a></li>
+	<li id="t_tonemap1"><a href="http://www.fmwconcepts.com/imagemagick/tonemap1/index.php">tonemap1
+		<span>Enhances the shadows and/or highlight regions in an image using a 
+			non-linear log or gamma function</span></a></li>
+	<li id="t_tonemap2"><a href="http://www.fmwconcepts.com/imagemagick/tonemap2/index.php">tonemap2
+		<span>Enhances the shadows and/or highlight regions in an image using a 
+			non-linear log or gamma function plus another extra processing 
+			function</span></a></li>
+	<li id="t_tonemap3"><a href="http://www.fmwconcepts.com/imagemagick/tonemap3/index.php">tonemap3
+		<span>Enhances the shadows and/or highlight regions in an image using a 
+			non-linear log or gamma function plus another extra processing 
+			function</span></a></li>
+	<li id="t_tonemap4"><a href="http://www.fmwconcepts.com/imagemagick/tonemap4/index.php">tonemap4
+		<span>Enhances the shadows and/or highlight regions in an image using a 
+			dual gamma function plus an extra processing function</span></a></li>
+	<li id="t_toon"><a href="http://www.fmwconcepts.com/imagemagick/toon/index.php">toon
+		<span>Applies a cartoon effect to an image</span></a></li>
+	<li id="t_toonify"><a href="http://www.fmwconcepts.com/imagemagick/toonify/index.php">toonify
+		<span>Applies a cartoon effect to an image</span></a></li>
+	<li id="t_toonizarro"><a href="http://www.fmwconcepts.com/imagemagick/toonizarro/index.php">toonizarro
+		<span>Applies a Superman Bizarro-like cartoon effect to an image</span></a></li>
+	<li id="t_toycamera"><a href="http://www.fmwconcepts.com/imagemagick/toycamera/index.php">toycamera
+		<span>Simulates pictures taken by lomographic or holga type toy cameras</span></a></li>
+	<li id="t_transfercolor"><a href="http://www.fmwconcepts.com/imagemagick/transfercolor/index.php">transfercolor
+		<span>Transfers the coloring from one image to another image</span></a></li>
+	<li id="t_transitions"><a href="http://www.fmwconcepts.com/imagemagick/transitions/index.php">transitions
+		<span>Applies an animated transition between two images</span></a></li>
+	<li id="t_trianglethresh"><a href="http://www.fmwconcepts.com/imagemagick/trianglethresh/index.php">trianglethresh
+		<span>Automatically thresholds an image to binary (b/w) format using the 
+		triangle technique</span></a></li>
+	<li id="t_tricolorize"><a href="http://www.fmwconcepts.com/imagemagick/tricolorize/index.php">tricolorize
+		<span>Smoothly colorizes a grayscale image with either one, two or three 
+		different colors</span></a></li>
+	<li id="t_trim2detail"><a href="http://www.fmwconcepts.com/imagemagick/trim2detail/index.php">trim2detail
+		<span>Trims an image to the bounding rectangle about the image's 
+		main content</span></a></li>
+	<li id="t_trim2rect"><a href="http://www.fmwconcepts.com/imagemagick/trim2rect/index.php">trim2rect
+		<span>Automatically trims the sides of an image until no outer row or column 
+		contains the background color</span></a></li>
+	<li id="t_trimcorners"><a href="http://www.fmwconcepts.com/imagemagick/trimcorners/index.php">trimcorners
+		<span>Automatically crops the image to removed rounded corners</span></a></li>
+	<li id="t_trimmer"><a href="http://www.fmwconcepts.com/imagemagick/trimmer/index.php">trimmer
+		<span>Trims the background from any number of specified sides of 
+		an image</span></a></li>
+	<li id="t_tshirt"><a href="http://www.fmwconcepts.com/imagemagick/tshirt/index.php">tshirt
+		<span>Transforms an image to place it in a region of a tshirt image.</span></a></li>
+	<li id="t_tshirtwarp"><a href="http://www.fmwconcepts.com/imagemagick/tshirtwarp/index.php">tshirtwarp
+		<span>Transforms an image to place it in a region of a tshirt image using a lighting file, 
+		a displacement map and arguments provided by the script tshirt</span></a></li>
+	<li id="t_tshirtwarper"><a href="http://www.fmwconcepts.com/imagemagick/tshirtwarper/index.php">tshirtwarper
+		<span>Transforms an image to place it in a region of a tshirt image using a lighting file, 
+		a displacement map and arguments provided by the script tshirt</span></a></li>
+	<li id="t_tunnelize"><a href="http://www.fmwconcepts.com/imagemagick/tunnelize/index.php">tunnelize
+		<span>Creates a tunnel-like effect on an image</span></a></li>
+	<li id="t_turbulence"><a href="http://www.fmwconcepts.com/imagemagick/turbulence/index.php">turbulence
+		<span>Applies a turbulence-like warping of the image</span></a></li>
+	<li id="t_turn"><a href="http://www.fmwconcepts.com/imagemagick/turn/index.php">turn
+		<span>Simultaneously rotates and crops an image to eliminate 
+		any background</span></a></li>
+	<li id="t_typewriter"><a href="http://www.fmwconcepts.com/imagemagick/typewriter/index.php">typewriter
+		<span>Creates a typewriter style scrolling text animation</span></a></li>
+	<li id="t_unrotate"><a href="http://www.fmwconcepts.com/imagemagick/unperspective/index.php">unperspective
+		<span>Automatically removes pespective distortion from an image</span></a></li>
+	<li id="t_unrotate"><a href="http://www.fmwconcepts.com/imagemagick/unrotate/index.php">unrotate
+		<span>Automatically unrotates a rotated image and trims the surrounding 
+		border</span></a></li>
+	<li id="t_unrotate2"><a href="http://www.fmwconcepts.com/imagemagick/unrotate2/index.php">unrotate2
+		<span>Automatically unrotates a rotated image and trims the surrounding 
+		border</span></a></li>
+	<li id="t_unrotate3"><a href="http://www.fmwconcepts.com/imagemagick/unrotate3/index.php">unrotate3
+		<span>Automatically unrotates a rotated image and trims the surrounding 
+		border</span></a></li>
+	<li id="t_unsaturatehue"><a href="http://www.fmwconcepts.com/imagemagick/unsaturatehue/index.php">unsaturatehue
+		<span>Desaturates a given hue (range) in an image</span></a></li>
+	<li id="t_uwcorrect"><a href="http://www.fmwconcepts.com/imagemagick/uwcorrect/index.php">uwcorrect
+		<span>Corrects the color balance for red light attenuation in pictures taken 
+		underwater</span></a></li>
+	<li id="t_variableblur"><a href="http://www.fmwconcepts.com/imagemagick/variableblur/index.php">variableblur
+		<span>Applies a variable blur to an image based upon a mask image</span></a></li>
+	<li id="t_vibrance"><a href="http://www.fmwconcepts.com/imagemagick/vibrance/index.php">vibrance
+		<span>Applies a non-linear change to the saturation of an image</span></a></li>
+	<li id="t_vibrance2"><a href="http://www.fmwconcepts.com/imagemagick/vibrance2/index.php">vibrance2
+		<span>Applies a non-linear change to the chroma channel of an image</span></a></li>
+	<li id="t_vibrance3"><a href="http://www.fmwconcepts.com/imagemagick/vibrance3/index.php">vibrance3
+		<span>Applies a non-linear change to the chroma channel of an image</span></a></li>
+	<li id="t_videoglitch"><a href="http://www.fmwconcepts.com/imagemagick/videoglitch/index.php">videoglitch
+		<span>Applies a video glitch effect to an image</span></a></li>
+	<li id="t_vignette"><a href="http://www.fmwconcepts.com/imagemagick/vignette/index.php">vignette
+		<span>Applies a vignette effect to a picture</span></a></li>
+	<li id="t_vignette2"><a href="http://www.fmwconcepts.com/imagemagick/vignette2/index.php">vignette2
+		<span>Applies a vignette effect to a picture</span></a></li>
+	<li id="t_vignette3"><a href="http://www.fmwconcepts.com/imagemagick/vignette3/index.php">vignette3
+		<span>Applies a vignette effect to a picture</span></a></li>
+	<li id="t_vintage1"><a href="http://www.fmwconcepts.com/imagemagick/vintage1/index.php">vintage1
+		<span>Applies a classic blue-green vintage effect to an image</span></a></li>
+	<li id="t_vintage2"><a href="http://www.fmwconcepts.com/imagemagick/vintage2/index.php">vintage2
+		<span>Applies a colorful vintage effect to an image</span></a></li>
+	<li id="t_vintage3"><a href="http://www.fmwconcepts.com/imagemagick/vintage3/index.php">vintage3
+		<span>Applies an old, heritage style vintage effect to an image</span></a></li>
+	<li id="t_vividize"><a href="http://www.fmwconcepts.com/imagemagick/vividize/index.php">vividize
+		<span>Enhances the colors in an image</span></a></li>
+	<li id="t_warholeffect"><a href="http://www.fmwconcepts.com/imagemagick/warholeffect/index.php">warholeffect
+		<span>Creates an Andy Warhol style colorization image</span></a></li>
+	<li id="t_warplog"><a href="http://www.fmwconcepts.com/imagemagick/warplog/index.php">warplog
+		<span>Resizes an image according to a logarithmic transformation</span></a></li>
+	<li id="t_watercolor"><a href="http://www.fmwconcepts.com/imagemagick/watercolor/index.php">watercolor
+		<span>Applies a watercolor effect to an image</span></a></li>
+	<li id="t_whitebalance"><a href="http://www.fmwconcepts.com/imagemagick/wavemap/index.php">wavemap
+		<span>Transforms the graylevels in each RGB channel according to a 
+		sinusoidal wave function</span></a></li>
+	<li id="t_weave"><a href="http://www.fmwconcepts.com/imagemagick/weave/index.php">weave
+		<span>Applies an irregular linear weave-like distortion to an image</span></a></li>
+	<li id="t_whitebalance"><a href="http://www.fmwconcepts.com/imagemagick/whitebalance/index.php">whitebalance
+		<span>Transform an image's overall color balance according to a desired change in a 
+		specified white point color</span></a></li>
+	<li id="t_whitebalancing"><a href="http://www.fmwconcepts.com/imagemagick/whitebalancing/index.php">whitebalancing
+		<span>Applies white balancing to an image according to a gray world method
+		 in LAB colorspace</span></a></li>
+	<li id="t_whiteboard"><a href="http://www.fmwconcepts.com/imagemagick/whiteboard/index.php">whiteboard
+		<span>Processes a picture of a whiteboard to clean up the background and correct 
+		the perspective</span></a></li>
+	<li id="t_wiggle"><a href="http://www.fmwconcepts.com/imagemagick/wiggle/index.php">wiggle
+		<span>Creates a sinusoidal wiggling animation</span></a></li>
+	<li id="t_woodbrand"><a href="http://www.fmwconcepts.com/imagemagick/woodbrand/index.php">woodbrand
+		<span>Creates a branded effect in a wood grain image using a binary image 
+		as the brand</span></a></li>
+	<li id="t_woodcut"><a href="http://www.fmwconcepts.com/imagemagick/woodcut/index.php">woodcut
+		<span>Applies a woodcut effect to an image</span></a></li>
+	<li id="t_woodgrain"><a href="http://www.fmwconcepts.com/imagemagick/woodgrain/index.php">woodgrain
+		<span>Simulates a woodgrain texture</span></a></li>
+	<li id="t_xpand"><a href="http://www.fmwconcepts.com/imagemagick/xpand/index.php">xpand
+		<span>Applies a non-uniform outward stretch of the image in 
+		one direction</span></a></li>
+	<li id="t_xposure"><a href="http://www.fmwconcepts.com/imagemagick/xposure/index.php">xposure
+		<span>Changes the exposure level of an image by 
+		photographic stops</span></a></li>
+	<li id="t_xtract"><a href="http://www.fmwconcepts.com/imagemagick/xtract/index.php">xtract
+		<span>Uses Hough lines to extract and rectify a quadrilateral area 
+		from an image</span></a></li>
+	<li id="t_zerocrossing"><a href="http://www.fmwconcepts.com/imagemagick/zerocrossing/index.php">zerocrossing
+		<span>Applies a zero crossing edge detector to an image</span></a></li>
+	<li id="t_zoomblur"><a href="http://www.fmwconcepts.com/imagemagick/zoomblur/index.php">zoomblur
+		<span>Applies a radial or zoom blur to an image</span></a></li>
+	<li id="t_zoomrotatetext"><a href="http://www.fmwconcepts.com/imagemagick/zoomrotatetext/index.php">zoomrotatetext
+		<span>Creates a zoomed rotating text animation</span></a></li>
+</ul>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+AUTOGAMMA
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Modifies an image to automatically apply a gamma correction.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=autogamma&amp;dirname=autogamma">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: autogamma [-c colormode] infile outfile<br>
+		USAGE: autogamma [-h or -help]
+		</p>
+
+		<p align="left">
+		-c .... colormode ..... colorspace/channel to use to compute <br>
+		....................... gamma statistics; choices are: gray, <br>
+		....................... intensity, luminance, lightness, brightness, <br>
+		....................... average, magnitude, rgb; default=luminance <br>
+		-m .... midrange ...... midrange value from which to compute gamma; <br>
+		....................... 0&lt;float&lt;1; default=0.5
+		</p>
+
+		<p align="left">
+		PURPOSE: To modify an image to automatically apply a gamma correction.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: AUTOGAMMA modifies an image to automatically apply a gamma
+		correction. The gamma value may be computed from various graylevel
+		representations of the image or individually channel-by-channel. The
+		script then passes the gamma value to the IM function -gamma. If the
+		minimum and maximum image statistics are not pure black and white, then
+		you may want to use the autolevel script, so that you get the full
+		benefit of the dynamic range stretch as well.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-c colormode ... COLORMODE is the colorspace/channel to use to compute
+		the minimum, maximum and gamma values. The choices are: gray, intensity, 
+		luminance, lightness, brightness, average, magnitude and rgb. Values  
+		of gray and intensity are equivalent. The default is luminance.
+		</p>
+
+		<p align="left">
+		-m midrange ... MIDRANGE value from which to compute gamma. Values are
+		0&lt;floats&lt;1. Default=0.5.
+		</p>
+
+		<p align="left">
+		Gray or Intensity uses statistics from -colorspace Gray.<br>
+		Luminance uses statistics from -colorspace Rec709Luma.<br>
+		Lightness uses statistics from the lightness channel of -colorspace HSL.<br>
+		Brightness uses statistics from the brightness channel of -colorspace HSB.<br>
+		Average uses statistics from the first channel of -colorspace OHTA.<br>
+		Magnitude uses aggregate statistics from all the channels.<br>
+		RGB uses statistics independently from each channel of -colorspace sRGB/RGB.<br>
+		See definitions at: 
+		<a href="http://www.imagemagick.org/script/command-line-options.php#colorspace" target="_blank">http://www.imagemagick.org/script/command-line-options.php#colorspace</a>
+		</p>
+
+		<p align="left">
+		Note: generally there are only slight differences between the various 
+		non-rgb colormode results. Colormode=rgb can cause color balance shifts.
+		</p>
+
+		<p align="left">
+		Gamma = log(mean)/log(mid-dynamic-range)
+		</p>
+		
+		<p align="left">
+		Note: there is one internal parameter, midrange, that can be adjusted 
+		if you want to bias the gamma slightly. See the default values section.
+		You can also change the default colormode in the default values.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="6">
+		<p align="center">
+		Colormode Results On Dark Image
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c rgb
+		</p>
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_rgb.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray (or intensity)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c average
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c lightness
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c magnitude
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c brightness
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_luminance.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_gray.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_average.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_lightness.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_magnitude.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/zelda2_autogamma_brightness.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<h3 align="center">The Following Images Were Obtained At http://images.google.com/</h3>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/arms1.jpg" width="200" height="250" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/arms1_autogamma.jpg" width="200" height="250" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/bright_lights1.jpg" width="324" height="241" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/bright_lights1_autogamma.jpg" width="324" height="241" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/daffodil1.jpg" width="300" height="223" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/daffodil1_autogamma.jpg" width="300" height="223" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/fire_eater.jpg" width="300" height="450" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/fire_eater_autogamma.jpg" width="300" height="450" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/lioncuddle1.jpg" width="350" height="280" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/lioncuddle1_autogamma.jpg" width="350" height="280" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/mushroom1.jpg" width="358" height="239" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/mushroom1_autogamma.jpg" width="358" height="239" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c luminance<br>
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/redhat.jpg" width="254" height="255" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOGAMMA_files/redhat_autogamma.jpg" width="254" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Converts the image to RGB</li>
+			<li>Generates a copy of the image in the desired colorspace/channel</li>
+			<li>Accesses the mean statistics for this image</li>
+			<li>Computes a gamma value from the mean</li>
+			<li>Passes the gamma value to -gamma and applies to <br>
+			each channel of the RGB image</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the luminosity colormode.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert $infile -colorspace RGB $tmp1</li>
+			<li>convert $tmp1 -colorspace Rec709Luma $tmp2</li>
+			<li>mean=`convert $tmp2 -format "%[mean]" info:`</li>
+			<li>mean=`convert xc: -format "%[fx:100*$mean/quantumrange]" info:`</li>
+			<li>gammaval=`convert xc: -format "%[fx:log($mean/100)/log($midrange)]" info:`</li>
+			<li>convert $tmp1 -gamma ${gammaval} $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

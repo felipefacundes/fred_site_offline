@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://www.fmwconcepts.com/imagemagick/cylinderwarp/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/cylinderwarp/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: CYLINDERWARP</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - cylinderwarp - applies a cylinder distortion to an image using an external displacement map">
+<meta name="keywords" content="ImageMagick, scripts, image processing, cylinderwarp, distortion, wrap, warp, pitch, tilt, rotate, cylinder, composite, overlay">
+<link rel="stylesheet" href="./CYLINDERWARP_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="cylinderwarp">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./CYLINDERWARP_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+CYLINDERWARP
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies a cylinder distortion to an image using an external displacement map
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=cylinderwarp&amp;dirname=cylinderwarp">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: April 06, 2019</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: cylinderwarp angle displacementfile infile [backgroundfile] outfile
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a cylinder distortion to an image using a displacement 
+		map and arguments provided by the script cylinderize.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: CYLINDERIZE applies a cylinder distortion to an image using 
+		a displacement map and arguments provided by the script cylinderize. The 
+		arguments must be copied from cylinderize output at the terminal and pasted 
+		in the arguments section of this script.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		angle ... ANGLE is the rotation of the cylinder about its axis. It is a required 
+		argument. The values are floats with -360&lt;=angle&lt;=360. If angle="", then it 
+		will be controlled from the roll argument provided in this file as exported 
+		from the cylinderize script.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM 6.5.3.4 due to the use of -compose displace -composite. 
+		Also requires the preprocessing of cylinderize in export mode (-E) to get  
+		the displacement image (displace.png) and to get the needed internal   
+		arguments that must be pasted in this script below.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		First Run Cylinderize With Option -E To Get Displacement Map and Terminal Listing
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/wallpaper.png" width="533" height="400" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.customizedcoffeemug.info/wp-content/uploads/custom%20coffee%20mugs%20gifts.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1.jpg" width="240" height="232" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-E -m vertical -r 73 -l 120 -w 100 -p 5 -n 94 -e 2 <br>
+		-a 0 -v background -b none -f none -o +24+10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Output Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1_wallpaper_0.png" width="240" height="232" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displacement Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/displace.png" width="533" height="133" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Terminal Listing
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		mode="vertical"<br>
+		trim="no"<br>
+		scale="100"<br>
+		fcolor="none"<br>
+		vpmethod="background"<br>
+		bgcolor="none"<br>
+		width="533"<br>
+		height="400"<br>
+		length2="30"<br>
+		pwidth="533"<br>
+		pheight="400"<br>
+		width1=""<br>
+		height1="132.725"<br>
+		xc="266.5"<br>
+		yc="200"<br>
+		radius2="12.7247"<br>
+		coords="0,0 0,0  532,0 532,0  532,132 516.04,132  0,132 15.96,132"<br>
+		offsets="+24+10"<br>
+		rotation="0"<br>
+		wbg="240"<br>
+		hbg="232"<br>
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Now Copy And Past the Terminal Text into the Cylinderwarp Script and Run It
+		( speed gain about 4x )
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displacement Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/displace.png" width="533" height="133" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/wallpaper.png" width="533" height="400" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.spaceworks.co.uk/images/products/WA4022.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1_wallpaper_a0.png" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Animation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displacement Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/displace.png" width="533" height="133" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input Image <br>
+		(<a href="http://3.bp.blogspot.com/-xblpXVqQraQ/Tm3EUp5-gzI/AAAAAAAAAuA/_GZ0ast2m2Y/s1600/sharks.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/wallpaper.png" width="533" height="400" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background Image <br>
+		(<a href="http://www.spaceworks.co.uk/images/products/WA4022.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		Animation Code:<br><br>
+		(<br>
+		for ((i=0; i&lt;360; i=i+20)); do<br>
+		echo &gt;&amp;2 "$i"<br>
+		cylinderwarp $i displace.png wallpaper.png coffee_mug1.jpg miff:-<br>
+		done<br>
+		) | convert -delay 20 - -loop 0 coffee_mug1_wallpaper_anim.gif
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CYLINDERWARP_files/coffee_mug1_wallpaper_anim.gif" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Requires that Cylinderize Script be run first with option -E<br>
+				to export the displacement map image and arguments listed to the terminal</li>
+			<li>Copy and paste the arguments from the terminal into the Cylinderwarp Script<br>
+				where specified</li>
+			<li>Run Cylinderwarp with the displacement map image, input image and <br>
+				optionally background image with the angle argument specified</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

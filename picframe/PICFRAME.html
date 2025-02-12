@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)http://www.fmwconcepts.com/imagemagick/picframe/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: PICFRAME</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - picframe - adds a picture frame around an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, border, frame, picture, matte">
+<link rel="stylesheet" href="./PICFRAME_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="5d903b413c5e8311782a5a8a4c991c39"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="picframe">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./PICFRAME_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+PICFRAME
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Adds a picture frame around an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=picframe&amp;dirname=picframe">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<p align="center" class="purple">
+Download Frames<br>
+<a href="http://www.fmwconcepts.com/imagemagick/picframe/picframecorners.tar.gz">tar.gz format</a><br>
+<a href="http://www.fmwconcepts.com/imagemagick/picframe/picframecorners.zip">zip format</a><br>
+</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: picframe [-f frameid] [-m mattesize] [-c mattecolor] [-b bordersize] [-s shade] [-a adjust] [-o opacity ] [-d distance] infile outfile<br>
+		USAGE: picframe [-h or -help]
+		</p>
+
+		<p align="left">
+		-f .... frameid            id number of picture frame; Value are <br>
+		.......................... between 1 and number of png files in <br>
+		.......................... picframecorners directory; default=1;<br>
+		.......................... see below for id to name correspondences<br>
+		-m .... mattesize ........ surrounding matte thickness in pixels; <br>
+		.......................... default=0 or no matte<br>
+		-c .... mattecolor ....... color to use for surrounding matte<br>
+		.......................... default=cornsilk<br>
+		-b .... bordersize ....... thickness of black border between image and matte<br>
+		.......................... default=0 or no border<br>
+		-s .... shade ............ percent shading to add to the border; <br>
+		.......................... shade ranges from 1 to 100; integer; default=0<br>
+		-a .... adjust ........... adjust the brightness, saturation and hue of <br>
+		.......................... the frame. This is useful as shading reduces the <br>
+		.......................... saturation. Values are expressed as three integers <br>
+		.......................... percentage changes separated by commas. See -modulate.<br>
+		.......................... Default is 100,100,100 for no change.<br>
+		-o .... opacity .......... inner shadow opacity for upper and left sides; <br>
+		.......................... 0&lt;=integer&lt;=100; default=50<br>
+		-d .... distance ......... inner shaddow distance in pixels for upper and <br>
+		.......................... left sides; integer&gt;=0; if distance=0, then no <br>
+		.......................... shadow will created; default=0
+		</p>
+
+		<p align="left">
+		PURPOSE: To add a picture frame around and image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: PICFRAME adds a picture frame around an image using pictures 
+		of actual frames. There is an option to add a black border around the image 
+		and/or a colored matte.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-f frameid ... FRAMEID is the id number for the picture frame. The following  
+		id and frame types are allowd: 1) oak, 2) rustic mahogany, 3) light rosewood, 
+		4) light gold, 5) dark rosewood, 6) gold finish, 7) ornate rosewood, 
+		8) onate silver, 9) ornate walnut, 10) maple, 11) ornate gold and 12) mahogany.
+		The default is 1) oak.
+		</p>
+
+		<p align="left">
+		-m mattesize ... MATTESIZE is the thicknesses in pixels for the optional matte  
+		around the image. The default is 0 or no matte.
+		</p>
+
+		<p align="left">
+		-c mattecolor ... MATTECOLOR is the color of the optional matte surrounding the   
+		image. Any IM color specification is valid. Be sure to enclose it in double quotes. 
+		The default is cornsilk. For colornames see <a href="http://imagemagick.org/script/color.php" target="_blank">http://imagemagick.org/script/color.php</a>
+		</p>
+
+		<p align="left">
+		-b bordersize ... BORDERSIZE is the thickness of the optional black border around 
+		the image. The default is 0 or no black border.
+		</p>
+
+		<p align="left">
+		-s shade ... SHADE is the percentage shading from an upper left light source. Values 
+		range from 0 to 100. Default is 0 or no shading.
+		</p>
+
+		<p align="left">
+		-a adjust ... ADJUST affects the brightness, saturation and hue of the frame. It is 
+		represented as three integer representing percentage changes separated by commas. 
+		This is useful as shading decreases the saturation of the frame. Values greater/less 
+		than 100 for the brightness and saturation will increase/decrease them. Values 
+		greater/less than 100 for the hue will shift the color towards the green/red. A 
+		value of 100,100,100 is the default and will make no change.
+		</p>
+
+		<p align="left">
+		-o opacity ... OPACITY is the inner shadow opacity for upper and left sides. 
+		Values are integers between 0 and 100. The default=50.
+		</p>
+
+		<p align="left">
+		-d distance ... DISTANCE is the inner shaddow distance in pixels for upper and 
+		left sides. Values are integers&gt;=0. If distance=0, then no shadow will created.
+		The default=0
+		</p>
+
+		<p align="left">
+		NOTE: Be sure to download the picframecorners folder and place it where you want it. 
+		Then modify the framedir location in the defaults section just below to point 
+		to where you have placed the brcorners folder.
+		</p>
+
+		<p align="left">
+		If you want to add your own frames, simply cut out a square section of the 
+		lower right corner of a picture frame whose dimensions are the thickness of 
+		the frame and place it in the picframecorners directory with a name of 
+		"brcorner#.png" where # is the next available integer. All picture corners 
+		must be in PNG format.
+		</p>
+
+		<p align="left">
+		Thanks to Anthony Thyssen for the shading technique. See 
+		<a href="http://www.imagemagick.org/Usage/thumbnails/#frame_edge" target="_blank">http://www.imagemagick.org/Usage/thumbnails/#frame_edge</a>
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Picture Frame Styles
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		1) Oak
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2) Rustic Mahogany
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		3) Light Rosewood
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		4) Light Gold
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_1.jpg" width="96" height="146" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_2.jpg" width="96" height="146" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_3.jpg" width="96" height="146" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_4.jpg" width="94" height="144" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		5) Dark Rosewood
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		6) Gold Finish
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		7) Ornate Rosewood
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		8) Ornate Silver
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_5.jpg" width="100" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_6.jpg" width="92" height="142" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_7.jpg" width="100" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_8.jpg" width="100" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		9) Ornate Walnut
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		10) Maple
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		11) Ornate Gold
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		12) Mahogany
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_9.jpg" width="100" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_10.jpg" width="100" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_11.jpg" width="92" height="142" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/white_12.jpg" width="98" height="148" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Picture In Frame
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original<br>
+		<a href="http://www.yamabay.com/showpic.asp?n=Monet+Paintings&amp;s=celebrity&amp;id=31044746" target="_blank">http://www.yamabay.com/showpic.asp?n=Monet+Paintings&amp;s=celebrity&amp;id=31044746</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="2">
+		<img src="./PICFRAME_files/monet2.jpg" width="265" height="333" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1<br>
+		Arguments:<br>
+		-f 1 (default)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 2<br>
+		Arguments:<br>
+		-f 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1.jpg" width="311" height="379" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f2.jpg" width="311" height="379" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border And Matte<br>
+		Arguments:<br>
+		-f 1 -m 20 -b 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 2 With Border And Matte<br>
+		Arguments:<br>
+		-f 2 -m 20 -b 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f2_m20_b1.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border, Matte And Shading<br>
+		Arguments:<br>
+		-f 1 -m 20 -b 1 -s 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border, Matte, Shading And Saturation<br>
+		Arguments:<br>
+		-f 2 -m 20 -b 1 -s 25 -a 100,150,100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1_s25.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1_s25_a100x150x100.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border, Matte, Shading, Saturation and Green Shift<br>
+		Arguments:<br>
+		-f 1 -m 20 -b 1 -s 25 -a 100,150,110
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border, Matte, Shading, Saturation and Red Shift<br>
+		Arguments:<br>
+		-f 2 -m 20 -b 1 -s 25 -a 100,150,90
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1_s25_a100x150x110.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1_s25_a100x150x90.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Frame 1 With Border, Matte, Shading and Shadow<br>
+		Arguments:<br>
+		-f 1 -m 20 -b 1 -s 25 -o 50 -d 6
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./PICFRAME_files/monet2_f1_m20_b1_s25_o50_d6.jpg" width="353" height="421" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does for the case of no shading and no adjust is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Starts with the bottom right corner piece of a frame</li>
+			<li>Extrudes the right and bottom sides from the first row<br>
+				and first column of the corner</li>
+			<li>Flips and flops the corner and the right and bottom to<br>
+				fill out the remaining corners and sides</li>
+			<li>Composites them all together with the image.</li>
+		</ul>
+		<p></p>
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands:
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+			<li>convert \( -size ${w4}x${h4} xc:white \) \<br>
+			\( $brcorner -rotate 180 \) -gravity NorthWest -composite \<br>
+			\( $brcorner[1x${h2}+0+0] -filter point -resize $size1 -flip \) -gravity North -composite \<br>
+			\( $brcorner -flip \) -gravity NorthEast -composite \<br>
+			\( $brcorner[${w2}x1+0+0] -filter point -resize $size2 -flop \) -gravity West -composite \<br>
+			\( $infile -bordercolor black -border ${bordersize}x${bordersize} -bordercolor $mattecolor \<br>
+			-border ${mattesize}x${mattesize} \) -gravity Center -composite \<br>
+			\( $brcorner[${w2}x1+0+0] -filter point -resize $size2 \) -gravity East -composite \<br>
+			\( $brcorner -flop \) -gravity SouthWest -composite \<br>
+			\( $brcorner[1x${h2}+0+0] -filter point -resize $size1 \) -gravity South -composite \<br>
+			\( $brcorner \) -gravity SouthEast -composite \<br>
+			$outfile
+</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

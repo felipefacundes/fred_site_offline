@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://www.fmwconcepts.com/imagemagick/denoise/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: DENOISE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - denoise - reduces noise in an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, denoise, noise reduction, spatially adaptive filter, noise, local mean, local standard deviation">
+<link rel="stylesheet" href="./DENOISE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="2c4319edcb7a4566f8463c5a12f7ea6f"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="denoise">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./DENOISE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+DENOISE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Reduces noise in an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=denoise&amp;dirname=denoise">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: denoise [-m method] [-f filter] [-s subsection] [-n nstd] [-u unsharp] [-g gain] infile outfile<br>
+		USAGE: denoise [-h or -help]
+		</p>
+
+		<p align="left">
+		-m .... method .......... method of filtering; mean or median; default=mean<br>
+		-f .... filter .......... filter size; float&gt;0; default=2<br>
+		-s .... subsection ...... subsection of image to compute noise standard deviation;<br>
+		......................... WIDTHxHEIGHT+XOFF+YOFF; default is no subsection<br>
+		......................... and get noise standard deviation from nstd argument<br>
+		-n .... nstd ............ noise standard deviation estimate expressed as <br>
+		......................... percentage of std value in range 0 to 1; <br>
+		......................... 0&lt;=float&lt;=100; default is estimated automatically<br>
+		-u .... unsharp ......... unsharp masking sigma to apply after filtering;<br>
+		......................... float&gt;=0; default is no unsharp masking<br>
+		-g .... gain ............ unsharp masking gain to apply after filtering;<br>
+		......................... float&gt;=0; default=1
+		</p>
+
+		<p align="left">
+		PURPOSE: To reduces the noise in an image.
+		filter. 
+		</p>
+
+		<p align="left">
+		DESCRIPTION: DENOISE reduces the noise in an image. It uses the formula:
+		input + gain*(input - mean), where mean is a local mean computed in the 
+		neighborhood of each pixel and gain=max(0,(std-nstd)/std), where std 
+		is the local standard deviation computed in the neighborhood of each 
+		pixel. This is an implementation of the Lee Filter.  See Lee, J.S., 
+		1981. Speckle Analysis and Smoothing of Synthetic Aperture Radar Images. 
+		Computer Graphics and Image Processing, Vol. 17:24-32.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-m method ... METHOD of filtering. Choices are: mean or median. Default=mean.
+		</p>
+
+		<p align="left">
+		-f filter ... FILTER size. Values are floats&gt;0. The default=2.
+		</p>
+
+		<p align="left">
+		-s subsection ... Subsection is a rectangular homogeneous region where the 
+		noise standard deviation will be computed if provided. Otherwise, nstd, 
+		must be provided. The values are in the form of the usual IM subsection 
+		expressed as WIDTHxHEIGHT+XOFF+YOFF. The default is no subsection provided.
+		</p>
+
+		<p align="left">
+		-n nstd ... NSTD is an estimate of the noise standard deviation in the image
+		expressed as a percentage (100 times std values in the range of 0 to 1). Thus values 
+		for nstd are 0&lt;=float&lt;=100. The default is estimated automatically.
+		</p>
+
+		<p align="left">
+		-u unsharp ... UNSHARP masking sigma to apply as a post processing step to 
+		sharpen the image. Values are floats&gt;=0. The default=0 for no unsharp masking.
+		</p>
+
+		<p align="left">
+		-g gain ... unsharp masking GAIN to apply as a post processing step to 
+		sharpen the image. Values are floats&gt;=0. The default=1.
+		</p>
+
+		<p align="left">
+		References:<br>
+		Lee, J.S., 1981. Speckle Analysis and Smoothing of Synthetic Aperture Radar Images. Computer Graphics and Image Processing, Vol. 17:24-32.<br>
+		<a href="http://www.isprs.org/proceedings/XXXVI/1-W41/makaleler/Rajabi_Specle_Noise.pdf" target="_blank">http://www.isprs.org/proceedings/XXXVI/1-W41/makaleler/Rajabi_Specle_Noise.pdf</a><br>
+		J. Immerkaer, "Fast Noise Variance Estimation", Comput. Vis. Image Understand., vol. 64, pp. 300-302, Sep. 1996<br>
+		<a href="http://www.iaeng.org/IJCS/issues_v37/issue_1/IJCS_37_1_09.pdf" target="_blank">http://www.iaeng.org/IJCS/issues_v37/issue_1/IJCS_37_1_09.pdf</a>
+		</p>
+
+		<p align="left">
+		NOTE: This script may be a bit slow due to the use of -fx for versions of IM
+		prior to 6.8.0.5.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">PROCESS NOISY IMAGE</h3>
+
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Create Noisy Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Clean Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DENOISE_files/lena.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		Noisy Image 1<br>
+		mean=`convert lena.jpg -format "%[fx:mean]" info:`<br>
+		mix=0.1<br>
+		const=`convert xc: -format "%[fx:-$mix*$mean]" info:`<br>
+		convert lena.jpg \<br>
+		\( -size 256x256 xc: -attenuate 1 +noise random \) \<br>
+		+swap -compose mathematics \<br>
+		-set option:compose:args "0,1,$mix,$const" -composite \<br>
+		lena_random_a1_m0p1.jpg	
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="left">
+		Noisy Image 2<br>
+		mean=`convert lena.jpg -format "%[fx:mean]" info:`<br>
+		mix=0.2<br>
+		const=`convert xc: -format "%[fx:-$mix*$mean]" info:`<br>
+		convert lena.jpg \<br>
+		\( -size 256x256 xc: -attenuate 1 +noise random \) \<br>
+		+swap -compose mathematics \<br>
+		-set option:compose:args "0,1,$mix,$const" -composite \<br>
+		lena_random_a1_m0p2.jpg	
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Technique To Measure Noise Standard Deviation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="left">
+		Homogeneous Subsection<br>
+		To Get Noise Standard Deviation<br>
+		20x20+203+152<br><br>
+		Computation of NSTD<br>
+		convert lena_random_a1_m0p2.jpg[20x20+203+152] \<br>
+		-format "%[fx:100*standard_deviation]" info:<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_rect.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation In Noise Amount
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 2 -s "20x20+203+152"
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p1_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 2 -s "20x20+203+152"
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Variation In Filter Size
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 1 -s "20x20+203+152"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 2 -s "20x20+203+152"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 3 -s "20x20+203+152"
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f3.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Variation In Estimate Of Noise Standard Deviation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 1 -n 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 2 -n 6<br>
+		(approx. computed nstd)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 3 -n 12
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_n3.png" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_n6.png" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_n12.png" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Automatic Noise Estimation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-f 2 <br>
+		(nstd estimated as 3.24476)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_auto.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Comparison To Other Techniques
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		-despeckle
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-f 2 -s "20x20+203+152"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-enhance
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_despeckle.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_enhance.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Denoising Without And With Post-Sharpening
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-f 2 -s "20x20+203+152"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-f 2 -s "20x20+203+152" -u 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_u1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Variation In Method: Mean vs Median
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-f 2 -s "20x20+203+152" -m mean
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-f 2 -s "20x20+203+152" -m median
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DENOISE_files/lena_random_a1_m0p2_f2_med.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows for a edge sharpened image:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Computes local mean and local standard deviation images.</li>
+			<li>Uses the nstd and the local standard deviation image to compute a gain image</li>
+			<li>Computes the output imagae as (input - mean)*gain + mean</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>if [ "$nstd" = "" -a "$subsection" = "" ]; then<br>
+				errMsg "--- EITHER NSTD OR SUBSECTION MUST BE PROVIDED ---"<br>
+				elif [ "$subsection" != "" ]; then	<br>
+				nstd=`convert $infile[$subsection] -format "%[fx:100*standard_deviation]" info:`<br>
+				fi</li>
+			<li>convert $infile \( -clone 0 -blur 0x$filter -write $tmpM1 \) \<br>
+				\( -clone 0 -clone 0 -compose multiply -composite -blur 0x$filter \) \<br>
+				\( -clone 1 -clone 1 -compose multiply -composite \) \<br>
+				-delete 0,1 +swap -compose minus -composite -gamma 2 $tmpS1</li>
+			<li>convert $tmpS1 \( +clone -evaluate subtract ${nstd}% \) \<br>
+				-compose divide -composite -evaluate max 0 $tmpG1</li>
+			<li>convert $infile $tmpM1 $tmpG1 \<br>
+				\( -clone 0 -clone 2 -compose multiply -composite \) \<br>
+				\( -clone 1 -clone 2 -compose multiply -composite \) \<br>
+				-delete 0,2 -swap 0,1 -swap 1,2 -monitor \<br>
+				-fx "u[0]-u[1]+u[2]" +monitor $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

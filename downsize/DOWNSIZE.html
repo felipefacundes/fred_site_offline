@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: DOWNSIZE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - downsize - downsizes (reduces) an image to a specified file size.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, downsize, reduce, shrink, minify, file size">
+<link rel="stylesheet" href="DOWNSIZE_files/style.css">
+</head>
+<body id="downsize" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="DOWNSIZE_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+DOWNSIZE
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Downsizes (reduces) an image to a specified file size.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=downsize&amp;dirname=downsize">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: August 01, 2021</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: downsize [-s size] [-t toler] [-m maxiter] [-c copy] [-S strip] infile outfile<br>
+		USAGE: downsize [-help]
+		</p>
+
+		<p align="left">
+		-s .... size ........ desired output file size in kilobytes; float&gt;0; <br>
+		..................... default=200<br>
+		-t .... toler ....... tolerance or allowed size of result greater than <br>
+		..................... desired size expressed as percent of desired size;<br> 
+		..................... float&gt;=0; default=10<br>
+		-m .... maxiter ..... maximum number of iterations to stop; integer&gt;1; <br> 
+		..................... default=20<br> 
+		-c .... copy ........ copy to output when not downsizing and no image <br> 
+        ..................... format change; yes (y) or no (n); default=yes<br>
+		-S .... strip ....... strip all meta data; yes (y) or no (n); default=yes<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To downsize (reduce) an image to a specified file size.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: DOWNSIZE reduces an image's dimensions to achieve a specified 
+		file size. For non-JPG images, processing will continue until either the 
+		desired tolerance is achieved or the maximum number of iterations is reached. 
+		For JPG images, processing will continue as above, but may stop when no 
+		change of file size (or quality) occurs. Thus the desired file size may not 
+		full be achieved to within the specified tolerance. Approximately 1% 
+		tolerance is practical amount that can be achieved for non-JPG images. For 
+		JPG images, the value may or may not be achieved. When strip is no, 
+		processing will be skipped, if the input file size is less than or equal to 
+		the combined desired file size plus the size of the meta data or if the  
+		desired size is less than the meta data size.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-s size ... SIZE is the desired output image size in kilobytes. Values are 
+		floats&gt;0. The default=200
+		</p>
+
+		<p align="left">
+		-t toler ... TOLER is allowed size of the result within than the desire 
+		size expressed as a percent of the desired size. Values are floats&gt;=0. 
+		The default=10. Processing will iterate until the resulting image size 
+		is within the tolerance. If the tolerance is too low, then iterations will  
+		stop when it reaches a value of maxiter. The default=10 (10%). If both toler 
+		and maxiter are too small, then iteration could continue indefinitely, 
+		since the algorithm may not be able to get as close as desired.
+		</p>
+
+		<p align="left">
+		-m maxiter ... MAXITER is the maximum number of iterations to stop. Values 
+		are integer&gt;1. The default=20. If both toler and maxiter are too small, 
+		then iteration could continue indefinitely, since the algorithm may not 
+		be able to get as close as desired.
+		</p>
+
+		<p align="left">
+		-c copy ... COPY will copy the input to the output when both no downsize 
+		processing happens and the input and output formats are the same.
+		Values are either: yes (y) or no (n). Yes means make a copy of the input 
+		with the output name and no means simply skip processing and do not copy 
+		The input data to the output file. The default=yes.
+		</p>
+
+		<p align="left">
+		-S strip ... STRIP all meta data. Choices are: yes (y) or no (n). The default=yes. 
+		Note that if you do not strip, the file size will be limited to the size 
+		of the meta data.
+		</p>
+
+		<p align="left">
+		NOTE: Images will be converted to 8 bits/pixel/channel.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 class="red" align="center">NOTE: The algorithm has been changed. Results below may not be identical.</h3>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original:<br>
+		(756 x 572; 726.153 KB)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="DOWNSIZE_files/zelda.png" width="756" vspace="0" hspace="0" height="572" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-s 200 -t 1 -c yes<br>
+		(default)<br>
+		(404 x 305; 200.249 KB)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="DOWNSIZE_files/zelda_downsize_s200_t1_c.png" width="404" vspace="0" hspace="0" height="305" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>copies the image to the same file type (format) <br>
+				in case IM has different compression</li>
+			<li>computes the size of copied image</li>
+			<li>computes the resize ratio between the copied image size <br>
+				and the desired size</li>
+			<li>resizes the copied image</li>
+			<li>iterates if the resized image is larger than the desired <br>
+				size by the tolerance amount.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the default case
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert -quiet -regard-warnings "$infile" -strip +repage "$tmpA1"</li>
+			<li>fullsize=`convert $tmpA1 ${ftype}:- | convert - -ping -format "%b" info:`</li>
+			<li>size2=`convert xc: -format "%[fx:$size*1000]" info:`</li>
+			<li>i=1</li>
+			<li>diffsize=0</li>
+			<li>iterate=1</li>
+			<li>while [ $iterate -eq 1 ]; do<br>
+				size2=`convert xc: -format "%[fx:$size2-($diffsize*1000)]" info:`<br>
+				pratio=`convert xc: -format "%[fx:100*sqrt($size2/$fullsize)]" info:`<br>
+				convert $tmpA1 -resize ${pratio}% ${ftype}:$outfile<br>
+				newsize=`convert $outfile -ping -format "%b" info:`<br>
+				newsize=`convert xc: -format "%[fx:$newsize/1000]" info:`<br>
+				echo "i=$i; newsize=${newsize}kB"<br>
+				diffsize=`convert xc: -format "%[fx:($newsize-$size)]" info:`<br>
+				iterate=`convert xc: -format "%[fx:$diffsize&gt;($toler*$size/100)?1:0]" info:`<br>
+				i=$(($i+1))<br>
+				done</li>
+		</ul>
+	</td></tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="DOWNSIZE_files/app.js" type="text/javascript"></script></body></html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://www.fmwconcepts.com/imagemagick/phashes/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: PHASHES</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - phashes - computes and stores one or more perceptual hashes for all provided images">
+<meta name="keywords" content="ImageMagick, scripts, image processing, phashes, perceptual hash, block mean hash, block difference hash, annular variance hash, polar fft hash">
+<link rel="stylesheet" href="./PHASHES_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="0dd202d3945501b0d422c6651ed08140"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="phashes">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./PHASHES_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+PHASHES
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Computes and stores one or more perceptual hashes for all provided images.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=phashes&amp;dirname=phashes">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: January 15, 2023</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: phashes [-m method] [-d directory] [-t types] [-f file] [-s save] [-j jsonfile] [infile1 ... infileN]<br>
+		USAGE: phashes [-h|-help]
+		</p>
+
+		<p align="left">
+		-m ... methods ..... hash methods; one or more of: bmh, bdh, avh, pfh as a list of <br>
+		.................... space or comma separate values or "all"; default=bmh<br>
+		-d ... directory ... optional path to directory holding images; default is no <br>
+		.................... directory; infiles have precedence over directory<br>
+		-t ... types ....... types of file formats to process from directory as a space or <br>
+		.................... comma separate list; default will process all files in the <br>
+		.................... directory<br>
+		-f ... file ........ optional text file containing a list of paths to input images <br>
+		.................... with one image per row; directory has precedence over file<br>
+		-s ... save ........ save the hash values to either the "comment" or "label" field in <br>
+		.................... the image meta data or "neither"; default=comment<br>
+		-j ... jsonfile .... json file to hold list of images, methods and hash values in <br>
+		.................... addition to the save option specified<br>
+		-p ... progress .... show progress to the terminal; choices are: 0 (nothing), <br>
+		.................... 1 (image only), 2 (image and method) or 3 (image, method and hash);<br>
+		.................... default=0; output can be redirected to a tab delimited text file <br>
+		.................... that can be imported into Excel
+		</p>
+
+		<p align="left">
+		PURPOSE: To compute and store one or more perceptual hashes for all provided images.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: PHASHES will compute and store one or more perceptual hashes for all 
+		provided images. If multiple images are provided, they can be listed in the 
+		commmand line or obtained from a directory or they can be provided via a text file 
+		containing a list one image per row using the -f option. There are four different 
+		hashes that can be used: bmh (block mean hash), bdh (block difference hash), 
+		avh (annular variance hash) and pfh (polar fft hash). 
+		<br><br>
+		In all listed hashes, the images are first preprecessed to rec709luma grayscale 
+		removing the alpha channel and any virtual canvas removed. Then they scaled to a 
+		size of 256x256, stretched to full dynamic range and blurred with sigma=1.
+		<br><br>
+		<b>Block Mean Hash (bmh):</b> The preprocess image is scale to 16x16 pixels, which is the 
+		same as averaging non-overlapping blocks of 16x16 pixels. The hash is computed by 
+		comparing the global mean of the 256x256 image to each of the 16x16 pixel value. If  
+		the value is larger than the global mean, the hash is set to 1; otherwise 0. This  
+		forms a 256 length binary string for the hash.
+		<br><br>
+		<b>Block Difference Hash (bdh):</b> The preprocessed image is scale to 9x8 pixels. Then each 
+		pixel is subtracted from its neighbor to the right, thresholded at 0 and divided by 
+		255. This forms a 128 length binary string. The preprocessed image is scale again,  
+		but this time to 8x9 pixels. Then each pixel is subtracted from its neighbor below, 
+		thresholded at 0 and divided by 255. This forms another 128 length binary string. 
+		Finally the two 128 length strings are appended to form a 256 length string for 
+		the binary hash.
+		<br><br>
+		<b>Annular Variance Hash (avh):</b> The preprocessed image is converted to 256x256 polar 
+		format with the columns representing angles and the rows representing radius. Thus 
+		each row is an annulus (circular ring) of the preprocessed image. The variance of 
+		each row is computed to get the variance as a function of radius as a list of 256 
+		values. Each value is compared to the next one. If the next one is larger, then a 
+		value of 1 is assigned; othewise a value of 0 is assigned. This produces a 255 length 
+		binary string for the hash.
+		<br><br>
+		<b>Polar FFT Hash (pfh):</b> The preprocessed image is converted to 256x256 polar format 
+		with the columns representing angles and the rows representing radius. The FFT 
+		magnitude is then computed and the center 15x15 pixels are extracted and listed 
+		as 225 graylevel values in row first order. Each pixel's graylevel is then compared 
+		to the next one. If the next one is larger, then a value of 1 is assigned; othewise 
+		a value of 0 is assigned. This produces a 224 length binary string for the hash.
+		<br><br>
+		Attack Tests; Brightness, Contrast, Gamma, Blur, Compression, Color Noise, Grayscale 
+		Noise, Resizing, Rotation (cropped to original size), Flip-Flop-Transpose-Transverse, 
+		Watermark, Shear, Arc, Barrel, Pincushion and Other Images.
+		<br><br>
+		Pros and Cons:
+		<br><br>
+		Block Mean Hash is insensitive to all but geometry (rotation and distortion) attacks.   
+		Note that it is insensitive only to small rotations (&lt;=5 deg) and small distortions, 
+		but none of the flip-flop-transpose-transverse attacks.
+		<br><br>
+		Block Difference Hash is insensitive to all but geometry (rotation and distortion) 
+		attacks. Note that it is insensitive only to small rotations (&lt;=5 deg) and 
+		distortions, but none of the flip-flop-transpose-transverse attacks. It is slightly 
+		better than the Block Mean Hash with respect to the distortion attacks from my tests.
+		<br><br>
+		Annular Variance Hash is insenstive to all but the distortion attacks. It is 
+		especially insensitive to all rotations and the flip-flop-transpose-transverse 
+		attacks. It is insensitive only to very small amounts of watermark, shear and arc. 
+		It is sensitive to all barrel and pincushion attacks.
+		<br><br>
+		Polar FFT HASH is insensitive to all rotations, but not the 
+		flip-flop-transpose-transverse attacks. It is insensitive to all the other 
+		non-distortion attacks. It is insensitive only to very small amounts of watermark, 
+		shear, arc and barrel. It is sensitive to all pincushion attacks.
+		<br><br>
+		Test Results<br>
+		<a href="http://www.fmwconcepts.com/imagemagick/phashes/phashing_mean1.pdf" target="blank">http://www.fmwconcepts.com/imagemagick/phashes/phashing_mean1.pdf</a><br>
+		<a href="http://www.fmwconcepts.com/imagemagick/phashes/phashing_diff1.pdf" target="blank">http://www.fmwconcepts.com/imagemagick/phashes/phashing_diff1.pdf</a><br>
+		<a href="http://www.fmwconcepts.com/imagemagick/phashes/phashing_annularvar1.pdf" target="blank">http://www.fmwconcepts.com/imagemagick/phashes/phashing_annularvar1.pdf</a><br>
+		<a href="http://www.fmwconcepts.com/imagemagick/phashes/phashing_polarfft1.pdf" target="blank">http://www.fmwconcepts.com/imagemagick/phashes/phashing_polarfft1.pdf</a>
+		<br><br>
+		References:<br>
+		<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=11&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjsvISLz5zaAhWrg1QKHQSJBJ04ChAWCCYwAA&amp;url=https%3A%2F%2Fdigi.lib.ttu.ee%2Fi%2Ffile.php%3FDLID%3D2816%26t%3D1&amp;usg=AOvVaw1qDKiIDQI80WZGUe7DbJEm" target="blank">https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=11&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjsvISLz5zaAhWrg1QKHQSJBJ04ChAWCCYwAA&amp;url=https%3A%2F%2Fdigi.lib.ttu.ee%2Fi%2Ffile.php%3FDLID%3D2816%26t%3D1&amp;usg=AOvVaw1qDKiIDQI80WZGUe7DbJEm</a><br>
+		<a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=38&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjZzIXRt-rXAhVHrVQKHUOEDWc4HhAWCFUwBw&amp;url=http%3A%2F%2Fjournals.dbuniversity.ac.in%2Fojs%2Findex.php%2FAJET%2Farticle%2Fdownload%2F15%2Fpdf_2&amp;usg=AOvVaw03c7wUi1rCmj-uG25ea4fQ" target="blank">https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=38&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjZzIXRt-rXAhVHrVQKHUOEDWc4HhAWCFUwBw&amp;url=http%3A%2F%2Fjournals.dbuniversity.ac.in%2Fojs%2Findex.php%2FAJET%2Farticle%2Fdownload%2F15%2Fpdf_2&amp;usg=AOvVaw03c7wUi1rCmj-uG25ea4fQ</a><br>
+		<a href="https://pdfs.semanticscholar.org/b59b/14d3a0d7047a63cbbcfc25582fb915f60664.pdf" target="blank">https://pdfs.semanticscholar.org/b59b/14d3a0d7047a63cbbcfc25582fb915f60664.pdf</a><br>
+		<a href="http://www.diva-portal.se/smash/get/diva2:946365/FULLTEXT01.pdf" target="blank">http://www.diva-portal.se/smash/get/diva2:946365/FULLTEXT01.pdf</a><br>
+		<a href="http://www.phash.org/docs/design.html" target="blank">http://www.phash.org/docs/design.html</a><br>
+		<a href="https://tech.okcupid.com/evaluating-perceptual-image-hashes-okcupid/" target="blank">https://tech.okcupid.com/evaluating-perceptual-image-hashes-okcupid/</a><br>
+		<a href="http://qtandopencv.blogspot.my/2016/06/speed-up-image-hashing-of-opencvimghash.html" target="blank">http://qtandopencv.blogspot.my/2016/06/speed-up-image-hashing-of-opencvimghash.html</a><br>
+		<a href="https://hal.archives-ouvertes.fr/hal-01222780/document" target="blank">https://hal.archives-ouvertes.fr/hal-01222780/document</a><br>
+		<a href="http://www.eurasip.org/Proceedings/Eusipco/2002/articles/paper745.pdf" target="blank">http://www.eurasip.org/Proceedings/Eusipco/2002/articles/paper745.pdf</a><br>
+		<a href="http://radioeng-test.urel.feec.vutbr.cz/fulltexts/2007/07_04_076_081.pdf" target="blank">http://radioeng-test.urel.feec.vutbr.cz/fulltexts/2007/07_04_076_081.pdf</a><br>
+		<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5118381/" target="blank">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5118381/</a><br>
+		<a href="https://www.cs.tau.ac.il/~amir1/PS/30_PolarFFT_ACHA.pdf" target="blank">https://www.cs.tau.ac.il/~amir1/PS/30_PolarFFT_ACHA.pdf</a><br>
+		<a href="https://pdfs.semanticscholar.org/4c32/f6cab7cb79b70af00e2e2912d875bd58a799.pdf" target="blank">https://pdfs.semanticscholar.org/4c32/f6cab7cb79b70af00e2e2912d875bd58a799.pdf</a>
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-m methods ... hash METHODS. One or more of: bmh (block mean hash), 
+		bdh (block difference hash), avh (annular variance hash) and pfh (polar fft hash) 
+		as a list of comma separate values or "all". The default=bmh.
+		</p>
+
+		<p align="left">
+		-d directory ... optional path to DIRECTORY holding images. The default is no 
+		directory. The infiles have precedence over the directory.
+		</p>
+
+		<p align="left">
+		-t types ... limit of types of file formats to process from directory as a comma 
+		separate list. The default will process all files in the directory. This may not 
+		be a good idea if other than image files reside in the directory.
+		</p>
+
+		<p align="left">
+		-f file ... optional text FILE containing a list of paths to the input images 
+		with one image per row. The directory has precedence over the file.
+		</p>
+
+		<p align="left">
+		-s save ... SAVE the hash values to either the "comment" or "label" field in the 
+		image meta data. Choices are: comment (c), label (l) or neither/none (n). 
+		The default=comment
+		</p>
+
+		<p align="left">
+		-j jsonfile ... optional JSON FILE to hold list of images, methods and hash values. 
+		The jsonfile is a simple text file that can be used in addition to the save option.
+		</p>
+
+		<p align="left">
+		-p progress ... show PROGRESS to the terminal. The choices are: 0 (nothing), 
+		1 (image only), 2 (image and method) or 3 (image, method and hash). The default=0. 
+		The output can be redirected to a tab delimited text file one row at a time that 
+		can be imported into Excel.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Example
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Original Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		<img src="./PHASHES_files/lena.png" width="256" height="256">&nbsp;&nbsp;
+		<img src="./PHASHES_files/barn.jpg" width="400" height="299">
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Command To Create And Store Perceptual Hashes<br><br>
+		phashes -m all -s comment test/lena.png test/barn.jpg<br>
+		or<br>
+		phashes -m all -s comment -d test
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Retrieve Lena Data Command<br><br>
+		convert test/lena.png -format "%c\n" info:<br><br>
+		</p>
+		<p align="left">
+		<nobr>bmh 1100111110111100110001111011110001000011111110000100001111101001010001111111100101001110011100110100100011100011010000011110011101000001010001110100000111000111010000011100111101000000110011110100000011001010010000001111111001000000111101000100000111110000</nobr>
+		<br><br>
+		<nobr>bdh 0110010001110110011101000111000101111001010010010101101101011011000110110011001100010011010100110101101101011010010111000111110000000011110000010101111001111011110010000000011001110001100011000110011010011011010010000001101010000111111101001000001110010000</nobr>
+		<br><br>
+		<nobr>avh 111111110000000000000111000011111111111110001111111111111111000010100000000000000000000000011111111110000000011111111111111111111111111100111100000000000000000000000000000000101110101111100000000000100000000000011111111111111111111111111111111111111111111</nobr>
+		<br><br>
+		<nobr>pfh 11111010111111101111111010111110101110101111111111010101011101011010101111111111111010110101101010101101101110011111111011111010010110110101011111101110101010101011011011111011101111111010111111111111101101111011111110111111</nobr>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Retrieve Barn Data Command<br><br>
+		convert test/barn.jpg -format "%c\n" info:<br><br>
+		</p>
+		<p align="left">
+		<nobr>bmh 1111111111111111111111111111111111111111111111111111111111111111111111011111101101111100111101110000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000001111101000000000000000001110111100100000</nobr>
+		<br><br>
+		<nobr>bdh 1111000011010000110010001100101011011001110010010100110101101110101010101010101110011101100110100111000001111100010111001000010110111110011111110000110010100010000000000000000000000000000000000111000011110001111111111111111011000111111111111111111000000001</nobr>
+		<br><br>
+		<nobr>avh 111111111110111111111111111111111100000000111111111111111111111111111111111111111000000001111111111111110000111111111000000000000000000000011111000000000011111110000000011111111111111000000110111111111111111111000000111101000000000000011111111110011100000</nobr>
+		<br><br>
+		<nobr>pfh 11111101111111111111101111111111111101101111110101101101110110101010111101110111101011010110111010001011010111101011011111011010101101111101101101011011101101111111111111101111111111111101111111111111111111111111111111111111</nobr>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		Command To Create And Store Perceptual Hashes In JSON file As Well As In Image Comment Field<br><br>
+		phashes -m all -s comment -j lena_barn.json test/lena.png test/barn.jpg<br>
+		or<br>
+		phashes -m all -s comment -j lena_barn.json -d test
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+		<p align="left">
+		JSON File Output<br><br>
+		</p>
+		<pre>{
+	"PerceptualHashes":[
+		{"lena.png":[
+			{"method":"bmh", "phash":"1100111110111100110001111011110001000011111110000100001111101001010001111111100101001110011100110100100011100011010000011110011101000001010001110100000111000111010000011100111101000000110011110100000011001010010000001111111001000000111101000100000111110000"},
+			{"method":"bdh", "phash":"0110010001110110011101000111000101111001010010010101101101011011000110110011001100010011010100110101101101011010010111000111110000000011110000010101111001111011110010000000011001110001100011000110011010011011010010000001101010000111111101001000001110010000"},
+			{"method":"avh", "phash":"111111110000000000000111000011111111111110001111111111111111000010100000000000000000000000011111111110000000011111111111111111111111111100111100000000000000000000000000000000101110101111100000000000100000000000011111111111111111111111111111111111111111111"},
+			{"method":"pfh", "phash":"11111010111111101111111010111110101110101111111111010101011101011010101111111111111010110101101010101101101110011111111011111010010110110101011111101110101010101011011011111011101111111010111111111111101101111011111110111111"}
+			]},
+		{"barn.jpg":[
+			{"method":"bmh", "phash":"1111111111111111111111111111111111111111111111111111111111111111111111011111101101111100111101110000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000001111101000000000000000001110111100100000"},
+			{"method":"bdh", "phash":"1111000011010000110010001100101011011001110010010100110101101110101010101010101110011101100110100111000001111100010111001000010110111110011111110000110010100010000000000000000000000000000000000111000011110001111111111111111011000111111111111111111000000001"},
+			{"method":"avh", "phash":"111111111110111111111111111111111100000000111111111111111111111111111111111111111000000001111111111111110000111111111000000000000000000000011111000000000011111110000000011111111111111000000110111111111111111111000000111101000000000000011111111110011100000"},
+			{"method":"pfh", "phash":"11111101111111111111101111111111111101101111110101101101110110101010111101110111101011010110111010001011010111101011011111011010101101111101101101011011101101111111111111101111111111111101111111111111111111111111111111111111"}
+			]}
+	]
+}
+		</pre>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+</body></html>

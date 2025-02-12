@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: COLORATION</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - coloration - mixes the color channels from an image into a single grayscale image using a weighted combination and then tints it.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, coloration, tint, tone, colorize, mid-range, grayscale, channels, mix, combine">
+<link rel="stylesheet" href="COLORATION_files/style.css">
+</head>
+<body id="coloration" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="COLORATION_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+COLORATION
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Mixes the color channels from an image into a single grayscale image 
+		using a weighted combination and then tints it
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=coloration&amp;dirname=coloration">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: coloration [-h hue] [-s sat] [-l light] [-r red] [-g green] [-b blue] <br>
+		[-B bright] [-C contrast] infile outfile [lutfile]<br>
+		<br>
+		USAGE: coloration [-help]
+		</p>
+
+		<p align="left">
+		-h ... hue ........ hue value to use for coloration; values are integers <br>
+		................... either in range 0 to 360 (degrees) or 0 to 100 (percent)<br>
+		................... depending upon the units argument; default=0 (red)<br>
+		-s ... sat ........ saturation value to use for coloration; values are <br>
+		................... integers in range 0 to 100 (percent); default=50<br>
+		-l ... light ...... lightness value to use for coloration; values are <br>
+		................... integers in range -100 to 100(percent); default=0<br>
+		-u ... units ...... units for hue; choices are: degrees (d) or percent (p); <br>
+		................... default=degrees<br>
+		-r ... red ........ red mixing percent; float; default=29.9<br>
+		-g ... green ...... green mixing percent; float; default=58.7<br>
+		-b ... blue ....... blue mixing percent; float; default=11.4<br>
+		-B ... bright ..... percent brightness change in coloration processing; <br>
+		................... -100&lt;=float&lt;=100; default=10 (to match GIMP better)<br>
+		-C ... contrast ... percent contrast change in coloration processing; <br>
+		................... -100&lt;=float&lt;=100; default=-10 (to match GIMP better)
+		</p>
+
+		<p align="left">
+		PURPOSE: To mix the color channels from an image into a grayscale image and 
+		tints it.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: COLORATION mixes the color channels from an image into a 
+		single grayscale image using a weighted combination and then tints it in a 
+		manner similar to GIMP Colorize and using argument values similar to those 
+		used by GIMP. The script generates a color look up table (lut) and applies it 
+		against the grayscale version of the image. The lut can be saved, if desired, 
+		for future use and will have a size of 256x20 pixels.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-h hue ... HUE value to use for coloration. The values are integers either 
+		in the range 0 to 360(degrees) or 0 to 100(percent) depending upon the units  
+		argument. The default=0 (red).
+		</p>
+
+		<p align="left">
+		-s sat ... SAT is the saturation value to use for coloration. The values are 
+		integers in the range 0 to 100 (percent). The default=50.
+		</p>
+
+		<p align="left">
+		-l light ... LIGHT is the lightness value to use for coloration. The values 
+		are integers in range -100 to 100(percent). The default=0 is the normal 
+		amount of lightness. Larger values will use IM colorize to mix pure white 
+		with the result. Smaller values will use IM colorize to mix pure black 
+		with the result.
+		</p>
+
+		<p align="left">
+		-u units ... UNITS for specifying hue values. The choices are: raw (r) or 
+		percent (p). The default=raw
+		</p>
+
+		<p align="left">
+		-r red ... RED is the red mix percent (weight) in forming the grayscale 
+		image. Values are (pos. or neg.) floats. The default=29.9 is equivalent to 
+		IM non-linear grayscale. Nominally the r,g,b,o weights should total 100%. 
+		Weights are not relevant to form=desat.
+		</p>
+
+		<p align="left">
+		-g green ... GREEN is the red mix percent (weight) in forming the grayscale 
+		image. Values are (pos. or neg.) floats. The default=58.7 is equivalent to 
+		IM non-linear grayscale. Nominally the r,g,b,o weights should total 100%. 
+		Weights are not relevant to form=desat.
+		</p>
+
+		<p align="left">
+		-b blue ... BLUE is the red mix percent (weight) in forming the grayscale 
+		image. Values are (pos. or neg.) floats. The default=11.4 is equivalent to 
+		IM non-linear grayscale. Nominally the r,g,b,o weights should total 100%. 
+		Weights are not relevant to form=desat.
+		</p>
+
+		<p align="left">
+		-B bright ... BRIGHT is the percent change in brightness during processing. 
+		Values are floats in the range of -100 to 100. The default=10 
+		(to match GIMP better).
+		</p>
+
+		<p align="left">
+		-C contrast ... CONTRAST is the percent change in contrast during processing. 
+		image. Values are floats in the range of -100 to 100. The default=-10 
+		(to match GIMP better).
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">REFERENCE CHART</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="left">
+		convert \( -size 151x151 xc:"rgb(100%,0%,0%)" -colorspace hsl \) \<br>
+		\( -size 100x300 gradient: -rotate 90 +distort Polar '75,0,.5,.5' +repage -rotate 90 \) \<br>
+		-compose CopyRed -composite -colorspace RGB \<br>
+		\( -size 151x151 xc:black -fill white -draw "circle 75.5,75.5 75.5,151" -alpha off \) \<br>
+		-compose copy_opacity -composite polar_rainbow_white.jpg
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/hue_chart.jpg" width="474" height="379">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="6" valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="6" valign="middle" align="center">
+		<img src="COLORATION_files/zelda3.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Hue \ Sat and Light
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		-s 50 -l 0
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		-s 25 -l 0
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		-s 75 -l 0
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		-s 50 -l -25
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		-s 50 -l 25
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 0
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h0_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h0_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h0_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h0_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h0_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 30
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h30_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h30_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h30_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h30_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h30_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 60
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h60_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h60_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h60_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h60_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h60_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 90
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h90_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h90_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h90_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h90_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h90_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 120
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h120_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h120_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h120_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h120_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h120_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 150
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h150_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h150_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h150_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h150_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h150_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 180
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h180_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h180_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h180_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h180_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h180_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 210
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h210_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h210_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h210_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h210_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h210_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 240
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h240_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h240_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h240_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h240_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h240_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 270
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h270_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h270_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h270_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h270_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h270_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 300
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h300_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h300_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h300_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h300_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h300_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		-h 330
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h330_s50_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h330_s25_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h330_s75_l0.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h330_s50_lm25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORATION_files/zelda3_coloration_h330_s50_l25.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a color look up table image as follows:</li>
+			<li>Convert R,G,B mix percents to fractions</li>
+			<li>Create lookup table (lut) image for coloration processing</li>
+			<li>Convert input image to grayscale according to the mixing fractions</li>
+			<li>Apply the lut to apply the color tint to the grayscale image</li>
+			<li>Combine some pure black or pure white to the image <br>
+				using -colorize according the amount of light specified</li>
+			<li>Applies the LUT to the image using -clut</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for units=degrees.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>rf=`convert xc: -format "%[fx:$red/100]" info:`</li>
+			<li>gf=`convert xc: -format "%[fx:$green/100]" info:`</li>
+			<li>bf=`convert xc: -format "%[fx:$blue/100]" info:`</li>
+			<li>test=`convert xc: -format "%[fx:$light&lt;0?0:1]" info:`</li>
+			<li>light=`convert xc: -format "%[fx:abs($light)]" info:`</li>
+			<li>if [ $test -eq 0 ]; then<br>
+			fillcolor="black"<br>
+			else<br>
+			fillcolor="white"<br>
+			fi</li>
+			<li>bright=`convert xc: -format "%[fx:$bright*128/100]" info:`</li>
+			<li>convert -size 1x1 xc:black xc:"hsl($hue%,$sat%,50%)" xc:white +append \<br>
+				-filter $filter -resize 256x1! \<br>
+			    -set colorspace RGB -contrast-stretch 0 \<br>
+				-virtual-pixel edge -fx "u.p{(i-(w/2))*(100+$contrast)/(100)+(w/2)+$bright,j}" \<br>
+				$tmpL</li>
+			<li>convert $infile -color-matrix "\<br>
+				$rf $gf $bf \<br>
+				$rf $gf $bf \<br>
+				$rf $gf $bf \<br>
+				" \<br>
+				$tmpL -clut \<br>
+				-fill $fillcolor -colorize $light% \<br>
+				$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="COLORATION_files/app.js" type="text/javascript"></script></body></html>

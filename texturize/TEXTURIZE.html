@@ -1,0 +1,761 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/texturize/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: TEXTURIZE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - texturize - creates a texture pattern and optionally applies it to the background of an input image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, texturize, random noise, cross-hatch pattern, texture, bump">
+<link rel="stylesheet" href="./TEXTURIZE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="31f22edd9af0be562ab15b74aa1d014e"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="texturize">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./TEXTURIZE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+TEXTURIZE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Creates a texture pattern and optionally applies it to the background 
+		of an input image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=texturize&amp;dirname=texturize">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 16, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: texturize [-d dimensions] [-n newseed] [-t threshold] [-b blur] <br>
+		[-w widen] [-s spread] [-g gnoise] [-f format] [-m mix] [-c contrast] <br>
+		[infile] outfile<br><br>
+		USAGE: texturize [-help or -h]
+		</p>
+
+		<p align="left">
+		-d ... dimensions ... dimensions of texture image to create if no input<br> 
+		..................... image is provided; WIDTHxHEIGHT; default=128x128<br>
+		-n ... newseed ...... seed value to use for random noise generator; <br>
+		..................... integer&gt;0; default=1<br>
+		-t ... threshold .... white-threshold percent applied to random noise; <br>
+		..................... 0&lt;=float&lt;=100; default=2<br>
+		-b ... blur ......... sigma of 1D Gaussian blur used to create cross-hatch<br>
+		..................... pattern from the random noise; float&gt;=0; default=9<br>
+		-w ... widen ........ sigma of 2D blur to apply to noise as a widening <br>
+		..................... effect; float&gt;=0; default=0 (no widenning)<br>
+		-s ... spread ....... amount of spread to apply; float&gt;=0; default=0<br>
+		-g ... gnoise ....... amplitude of additive Gaussian noise added to final<br>
+		..................... effect; float&gt;=0; default=5<br>
+		-f ... format ....... format of texture patten; choices are: plain or bump;<br>
+		..................... default=bump<br>
+		-m ... mix .......... mix percent of texture with the infile; 0&lt;=float&lt;=100; <br>
+		..................... default=25; ignored if no infile<br>
+		-c ... contrast ..... percent contrast increase of image prior to mixing; <br>
+		..................... float&gt;=0; ignored if no infile<br><br>
+		If infile is provided, then -d dimensions will be ignored.
+		</p>
+
+		<p align="left">
+		PURPOSE: To create a texture pattern and optionally apply it to the 
+		background of an input image
+		</p>
+
+		<p align="left">
+		DESCRIPTION: TEXTURIZE creates a noise or cross-hatch texture pattern that 
+		can be saved or applied to the background of an image. The cross-hatch 
+		pattern is generated from 1D vertical and horizontal blurring of thresholded 
+		random noise. The pattern may be widened some or spread to make it more 
+		noisy.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-d dimensions ... DIMENSIONS of texture image to create if no input 
+		image is provided. Dimensions are specified as integers WIDTHxHEIGHT.
+		The default=128x128.
+		</p>
+
+		<p align="left">
+		-n newseed ... NEWSEED is the seed value to use for the random noise 
+		generator. Values are integers&gt;0. The default=1.
+		</p>
+
+		<p align="left">
+		-t threshold ... THRESHOLD is the white-threshold percent to apply to the 
+		random noise. Values are in the range from 0 to 100. The default=2.
+		</p>
+
+		<p align="left">
+		-b blur ... BLUR is the sigma of 1D Gaussian blur used to create the 
+		cross-hatch pattern from the random noise. It is applied both vertically 
+		and horizontally. Values are floats&gt;=0. The default=9.
+		</p>
+
+		<p align="left">
+		-w widen ... WIDEN is the sigma of 2D Gaussian blur used to create a 
+		widening effect on the pattern. Values are floats&gt;=0; The default=0.
+		</p>
+
+		<p align="left">
+		-s spread ... SPREAD is the amount of the spread effect to apply to the 
+		pattern. More spread will dissolve the cross-hatch and create more of a 
+		random noise pattern. Values are floats&gt;=0. The default=0.
+		</p>
+
+		<p align="left">
+		-g gnoise ... GNOISE is the amplitude of additive Gaussian noise added to 
+		the final effect. Values are floats&gt;=0. The default=5.
+		</p>
+
+		<p align="left">
+		-f format ... FORMAT is the format of the texture patten. Choices are: 
+		plain (p) or bump (b). The default=bump.
+		</p>
+
+		<p align="left">
+		-m mix ... MIX is mixing percentage of the texture with the infile. 
+		Values are in the range from 0 to 100. The default=25. Mix is ignored, 
+		if an infile is not provided.
+		</p>
+
+		<p align="left">
+		-c contrast ... CONTRAST is the percent contrast increase of the image 
+		prior to mixing. Values are floats&gt;=0. The default=0. Contrast is 
+		ignored, if an infile is not provided.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: 1D morphology convolution kernels which probably were 
+		introduced at about IM 6.6.2.0
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./TEXTURIZE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 9 -g 5 -f plain
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 9 -g 5 -f plain
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f plain
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t0.5_w_b9_g5_s_plain.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t1_w_b9_g5_s_plain.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s_plain.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 9 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 9 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t0.5_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t1_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 5 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 9 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 15 -g 5 -f bump
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t0.5_w_b5_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t0.5_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t0.5_w_b15_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 5 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 9 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 15 -g 5 -f bump
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t1_w_b5_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t1_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t1_w_b15_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 5 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 15 -g 5 -f bump
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b5_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b15_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 5 -g 5 -f bump -w 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -w 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 15 -g 5 -f bump -w 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w1_b5_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w1_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w1_b15_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 5 -g 5 -f bump -w 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -w 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 15 -g 5 -f bump -w 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w2_b5_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w2_b9_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w2_b15_g5_s_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -s 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -s 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s1_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s2_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/texturize_n1_t2_w_b9_g5_s3_bump.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./TEXTURIZE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 0.5 -b 9 -g 5 -f bump -m 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 9 -g 5 -f bump -m 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 1 -b 9 -g 5 -f bump -m 25
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t0.5_w_b9_g5_s_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t1_w_b9_g5_s_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -s 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -s 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s1_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s2_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s3_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -c 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -c 10
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t 2 -b 9 -g 5 -f bump -m 25 -c 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s_bump_m25.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s_bump_m25_c10.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./TEXTURIZE_files/zelda3_texturize_n1_t2_w_b9_g5_s_bump_m25_c20.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a gray random noise pattern image</li>
+			<li>Applies a white threshold to it</li>
+			<li>Applies a 2D Gaussian blur to the previous result</li>
+			<li>Independently applies a vertical and horizontal Gaussian blur <br>
+				to the previous result</li>
+			<li>Multiplies the two 1D Gaussian blur results together</li>
+			<li>Stretches the product result to full dynamic range</li>
+			<li>Adds 2D Gaussian noise to the previous result</li>
+			<li>Optionally applies some spread to the previous result</li>
+			<li>Applies shading to the previous result to create a bump effect</li>
+			<li>Optionally increases the image contrast to make up for the <br>
+				decrease due to the mixing of a color image with the <br>
+				grayscale noise image.</li>
+			<li>Blends the previous result with any input image provided</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>ww=`identify -ping -format "%w" $infile`</li>
+			<li>hh=`identify -ping -format "%h" $infile`</li>
+			<li>convert -size ${ww}x${hh} xc:gray -seed 1000 +noise random \<br>
+			-channel g -separate +channel \<br>
+			-white-threshold $thresh% \<br>
+			-blur 0x$widen \<br>
+			\( -clone 0 -virtual-pixel mirror -morphology Convolve Blur:0x${blur} \) \<br>
+			\( -clone 0 -virtual-pixel mirror -morphology Convolve Blur:0x${blur},90 \) \<br>
+			-delete 0 -compose multiply -composite -auto-level \<br>
+			-evaluate GaussianNoise $gnoise \<br>
+			-channel g -separate +channel \<br>
+			-spread $spread \<br>
+			-shade 135x45 \<br>
+			$tmpA2</li>
+			<li>convert $infile \( $tmpA2 -brightness-contrast 0,$contrast \) \
+			-compose blend -define compose:args=$mix% -composite \<br>
+			$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/autowhite/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: AUTOWHITE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - autowhite - automatically adjusts the white balance of an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, autowhite, auto white balance, white, balance, automatic, color balance">
+<link rel="stylesheet" href="./AUTOWHITE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="709f16b43fcfb950427f8996a1563b62"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="autowhite">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./AUTOWHITE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+AUTOWHITE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Automatically adjusts the white balance of an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=autowhite&amp;dirname=autowhite">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: autowhite [-m method] [-p percent] infile outfile<br>
+		USAGE: autowhite [-help]
+		</p>
+
+		<p align="left">
+		-m .... method .......... method to adjust white balance;<br>  
+		......................... method=1 is multiplicative adjust;<br>
+		......................... method=2 is additivie adjust; default=1<br>
+		-p .... percent ......... percent pixels closest to white to get average;<br>
+		......................... float; 0&lt;=percent&lt;=100; default=1
+		</p>
+
+		<p align="left">
+		PURPOSE: To automatically adjust the white balance of an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: AUTOWHITE automatically adjusts the white balance of an 
+		image. Two methods are available. Method 1 uses a multiplicative 
+		adjustment using -recolor (-color-matrix). Method 2 uses an additive 
+		adjustment using -evaluate add. Both methods compute RGB channel averages 
+		of a user specified percentage of pixels closest to white. The channel 
+		averages are used in a ratio compared with white in method 1 and as  
+		a difference from white in method 2.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-m method ... METHOD defines how the white balance adjustment will 
+		be handled. Method 1 uses a multiplicative adjustment using -recolor 
+		(-color-matrix), where the matrix values are the ratios of 100% to the  
+		channel averages in percent graylevel. Method 2 uses an additive adjustment 
+		using -evaluate add, where the additive amount is the percent difference 
+		of the channel averages from 100%. Method 1 is generally superior. 
+		Method 2 often shifts the overall color oddly. The default is method=1.
+		</p>
+
+		<p align="left">
+		-p percent ... PERCENT is the percentage of pixels closest in color 
+		to white that is used to compute the average graylevel of each RGB 
+		channel in the image. Values are floats between 0 and 100. Default=1
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Variation In Percent Pixels Used To Compute Average
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m1_p0.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m1_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m1_p5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m2_p0.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m2_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/zelda3_autowhite_m2_p5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Comparison Method 1 And 2 --- Percent=1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/mandril_autowhite_m1_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/mandril_autowhite_m2_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Comparison Method 1 And 2 --- Percent=1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/peppers.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/peppers_autowhite_m1_p1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/peppers_autowhite_m2_p1.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Comparison Method 1 And 2 --- Percent=1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/picture1.jpg" width="126" height="129" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/picture1_autowhite_m1_p1.jpg" width="126" height="129" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/picture1_autowhite_m2_p1.jpg" width="126" height="129" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Comparison Method 1 And 2 --- Percent=1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 1 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2 -p 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/redhat.jpg" width="254" height="255" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/redhat_autowhite_m1_p1.jpg" width="254" height="255" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./AUTOWHITE_files/redhat_autowhite_m2_p1.jpg" width="254" height="255" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Converts the image to RGB and separates channels</li>
+			<li>Creates a mask from the negated saturation channel <br>
+				multiplied by the brightness channel from HSB <br>
+				so that the most intense 1% (default) pixels are white <br>
+				and the rest black</li>
+			<li>Multiplies the mask image by each channel image</li>
+			<li>Computes the mean of the mask image (maskmean) and the <br>
+				mean of each masked channel image (mean)</li>
+			<li>Computes the ratio of maskmean/mean for each channel</li>
+			<li>Applies -recolor to the original image using the ratios <br>
+				for the main diagonal elements of the matrix and zero elsewhere</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for method=1.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert $infile -colorspace RGB -channel R -separate $tmpR1</li>
+			<li>convert $infile -colorspace RGB -channel G -separate $tmpG1</li>
+			<li>convert $infile -colorspace RGB -channel B -separate $tmpB1</li>
+			<li>convert $tmpA1 -colorspace HSB -channel G -negate -channel GB -separate +channel \<br>
+				-compose multiply -composite +channel \<br>
+				-contrast-stretch 0,${percent}% -fill black +opaque white \<br>
+				$tmpM1</li>
+			<li>maskmean=`convert $tmpM1 -format "%[mean]" info:`</li>
+			<li>convert $tmpR1 $tmpM1 -compose multiply -composite $tmpT1</li>
+			<li>mean=`convert $tmpT1 -format "%[mean]" info:`</li>
+			<li>redratio=`convert xc: -format "%[fx:$maskmean/$mean]" info:`</li>
+			<li>convert $tmpG1 $tmpM1 -compose multiply -composite $tmpT1</li>
+			<li>mean=`convert $tmpT1 -format "%[mean]" info:`</li>
+			<li>greenratio=`convert xc: -format "%[fx:$maskmean/$mean]" info:`</li>
+			<li>convert $tmpB1 $tmpM1 -compose multiply -composite $tmpT1</li>
+			<li>mean=`convert $tmpT1 -format "%[mean]" info:`</li>
+			<li>blueratio=`convert xc: -format "%[fx:$maskmean/$mean]" info:`</li>
+			<li>convert $tmpA1 -recolor "$redratio 0 0 0 $greenratio 0 0 0 $blueratio" $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

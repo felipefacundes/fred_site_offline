@@ -1,0 +1,929 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://www.fmwconcepts.com/imagemagick/xtract/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: XTRACT</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - xtract - Uses Hough lines to extract and rectify a quadrilateral area from an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, xtract, Canny, edges, Hough, lines, rectify, distortion, extract, remove, removal, deskew, unperspective, unrotate, perspective, affine, rotation, skew, aspect ratio, correct">
+<link rel="stylesheet" href="./XTRACT_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="91e9a68618b8ac1f642b72a8bddab77a"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="xtract">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./XTRACT_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+XTRACT
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Uses Hough lines to extract and rectify a quadrilateral area from an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=xtract&amp;dirname=xtract">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 16, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: xtract [-p procedure] [-c coords] [-b bgcolor] [-e extend] [-t1 thresh1] 
+		[-t2 thresh2] [-t3 thresh3] [-f filtsize] [-a aspect] [-w width] [-h height]  
+		[-d dimension] [-s scolor] [-L linewidth] [-m mcolor] [u unrotate] [-C crop]  
+		[-F fuzzval] [-R rotate] [-I info] [-S show] infile outfile<br><br>
+		USAGE: xtract [-help]
+		</p>
+
+		<p align="left">
+		-p ... procedure ... procedure (technique) for processing; choices are: deskew,<br> 
+		.................... unrotate, mask or perspective; default=perspective<br>
+		-c ... coords ...... pixel coordinate to extract background color; <br>
+		.................... may be expressed as gravity value (e.g. northwest) or <br>
+		.................... as "x,y" value; default is 0,0<br>
+		-b ... bcolor ...... background color outside the quadrilateral region; <br>
+		.................... any valid IM color; default determined by coords argument<br>
+		-e ... extend ...... extend (pad) the input with background color as preprocessing <br>
+		.................... to keep corners away from bounding edges of input image; <br>
+		.................... integer&gt;=0; default=10<br>
+		-t1 ... thresh1 .... lower Canny edge detector threshold value in percent; <br>
+		.................... 0&lt;=integer&lt;=100; default=10<br>
+		-t2 ... thresh2 .... upper Canny edge detector threshold value in percent; <br>
+		.................... 0&lt;=integer&lt;=100; default=75; nominal 75-90; smaller values  <br>
+		.................... include more edges<br>
+		-t3 ... thresh3 .... Hough line detector threshold value in percent; 0&lt;=integer&lt;=100; <br>
+		.................... default=10; percent of longest dimension of input image; <br>
+		.................... too large values remove longest lines; typically 5-20%<br>
+		-f1 ... filtsize ... Hough line detector filter size in pixels; integer&gt;=0;<br>  
+		.................... default=15; needs to be larger for larger images; typically 9-15; <br>
+		.................... larger values condense close, nearly parallel edges<br>
+		-a ... aspect ...... desired width/height aspect ratio; float&gt;0; or "edges" <br>
+		.................... or "points"; default=edges; used only for procedure=unperspective<br>
+		.................... default will be computed automatically<br>
+		-w ... width ....... desired width of output in pixels; integer&gt;0; default determined <br>
+		.................... automatically from dimension parameter below;<br>
+		.................... only one of width or height may be specified<br>
+		-h ... height ...... desired height of output in pixels; integer&gt;0; default determined <br>
+		.................... automatically from dimension parameter below;<br>
+		.................... only one of width or height may be specified<br>
+		-d ... dimension ... output dimension method; choices are: el <br>
+		.................... (length of longest edge of quadrilaterl, bh (quadrilateral <br>
+		.................... bounding box height), bw (quadrilateral bounding box width),<br>
+		.................... h (input image height), w (input image width); default=el<br>
+		-s ... scolor ...... stroke color for showing the Hough lines on an ancillary image<br>
+		.................... when -S show != none, described below; any valid IM color; <br>
+		.................... default=red<br>
+		-L ... linewidth ... linewidth of stroke for showing the Hough lines on an ancillary<br>
+		.................... image when -S show != none, described below; integer&gt;=0; default=2<br>
+		-m ... mcolor ...... desired masking background color to show outside the extracted <br>
+		.................... quadrilateral when procedure=mask; any valid IM color; <br>
+		.................... default=none<br>
+		-u ... unrotate .... unrotate the masked result and trim to its bounding box when <br>
+		.................... procedure=mask; choices are: yes or no; default=no; <br>
+		.................... requires separate unrotate script<br>
+		-C ... crop ........ crop (trim) the masked result (without unrotating) when <br>
+		.................... procedure=mask; choices are: yes or no; default=no<br>
+		-F ... fuzzval ..... fuzzvalue to use to extract the background when unrotate=yes; <br>
+		.................... 0&lt;=integer&lt;=100; default=10<br>
+		-R ... rotate ...... rotate the image in 90 degree amounts as postprocessing; <br>
+		.................... choices are: 0, 90, 180, 270, -90; default=0<br>
+		-I ... info ........ list various information to the terminal depending upon <br> 
+		.................... procedure, including: rotation angle, crop box, aspect ratio <br>
+		.................... and/or control points used for perspective correction<br>
+		-S ... show ........ show ancillary images for deskewed/unrotated image, <br>
+		.................... Canny edges, Hough lines superimposed on image; choices are: <br>
+		.................... none, view (to display) or save (to disk); default=none
+		</p>
+
+		<p align="left">
+		PURPOSE: To use Hough lines to extract and rectify a quadrilateral area from an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: XTRACT attempts to extract and correct orientation and/or perspective in 
+		an image using the Canny edge detector followed by the Hough line detector to find 
+		the four sides of a quadrilateral region of an image inside a background color.
+		There are four approaches that may be used. 
+		</p>
+
+		<p align="left">
+		If the image has a nearly solid color background and the quadrilateral is a  
+		rectangle that is rotate by 5 degrees or less, one can use the procedure=deskew.
+		</p>
+
+		<p align="left">
+		If the image has a nearly solid color background and the quadrilateral is a  
+		rectangle that is rotate by more than 5 degrees, one can use the procedure=unrotate. 
+		This will estimate the rotation angle from the orientation of longest Hough line 
+		as determined by the Hough accumulator value.
+		</p>
+
+		<p align="left">
+		Otherwise, one can use procedure=unperspective to process the image. This will attempt 
+		to correct the perspective distortion. However, it needs to use the aspect ratio 
+		of the corrected image. One may provide the aspect ratio as a float value or let the 
+		script attempt to estimate the aspect ratio. There are two approaches that may be 
+		use for the estimation. One is to use the lengths of the edges of the quadrilateral  
+		as determined by the Hough line intersection. The other approach is to use the 
+		Hough line intersection vertices. The latter is more subject to inaccurate estimations.
+		</p>
+
+		<p align="left">
+		Lastly, one can just mask the quadrilateral region with an option to unrotate and  
+		trim the image or just trim the image to its bounding box. If unrotate=yes, then 
+		my separate script, unrotate, will be needed.
+		</p>
+
+		<p align="left">
+		The script works best when the quadrilateral area is cleanly separated by good 
+		contrast from the background area and contains no very long, high contrast edges in it. 
+		The three most important arguments are: thresh2, thresh3 and filtsize.
+		</p>
+
+		<p align="left">
+		The script will error out, if fewer than 4 edges are extracted. The script will use 
+		the longest 4 edges, but will error out, if other than 4 intersection points are 
+		located within the bounds of the input image.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-p procedure ... PROCEDURE (technique) for processing. Choices are: deskew, unrotate, 
+		mask or perspective. The default=perspective.
+		</p>
+
+		<p align="left">
+		-c coords ... COORDS is any location within the input image for the algorithm to find 
+		the background color. It may be specified in terms of gravity parameters 
+		(NorthWest, North, NorthEast, East, SouthEast, South, SouthWest or West) or as a 
+		pixel coordinate "x,y". The default is the upper left corner = NorthWest = "0,0". 
+		</p>
+
+		<p align="left">
+		-b bcolor ... BCOLOR is the background color outside the quadrilateral region. 
+		Any valid IM color is permitted. The default will be determined by the coords argument.
+		</p>
+
+		<p align="left">
+		-e extend ... EXTEND (pad) the input with background color as a preprocessing step 
+		in order to keep the corners of the quadrilateral area away from bounding edges of 
+		input image. Values are integer&gt;=0. The default=10.
+		</p>
+
+		<p align="left">
+		-t1 thresh1 ... THRESH1 is the lower Canny edge detector threshold value in percent. 
+		Values are 0&lt;=integers&lt;=100. The default=10.
+		</p>
+
+		<p align="left">
+		-t2 thresh2 ... THRESH2 is the upper Canny edge detector threshold value in percent. 
+		Values are 0&lt;=integers&lt;=100. The default=75. Typical values are in the range 75-90. 
+		Smaller values will include more edges.
+		</p>
+
+		<p align="left">
+		-t3 thresh3 ... THRESH3 is the Hough line detector threshold value in percent of 
+		the longest dimension of input image converted to pixels. Values are 0&lt;=integers&lt;=100. 
+		The default=10. Too large values remove longer lines. Typical values are in the 
+		range of 5-20.
+		</p>
+
+		<p align="left">
+		-f1 filtsize ... FILTSIZE is the Hough line detector filter size in pixels. Value are 
+		integers&gt;=0. The default=15. Values needs to be larger for larger image dimensions. 
+		Typical values are in the range 9-15. Larger values condense close, nearly parallel 
+		edges.
+		</p>
+
+		<p align="left">
+		-a aspect ... ASPECT is the desired width/height aspect ratio. Values are either 
+		floats&gt;0; or "edges" or "points". The default will be computed automatically
+		using the lengths of the four quadrilateral edges. Aspect is used only for 
+		procedure=unperspective.
+		</p>
+
+		<p align="left">
+		-w width ... WIDTH is the desired width of the output. Values are integers&gt;0. 
+		The default is determined automatically from the dimensions parameter below. 
+		Only one of width or height may be specified. Note: the output size will only 
+		be close to the value specified.
+		</p>
+
+		<p align="left">
+		-h height ... HEIGHT is the desired height of the output. Values are 
+		integers&gt;0. The default is determined automatically from the dimensions 
+		parameter below. Only one of width or height may be specified. Note: the 
+		output size will only be close to the value specified.
+		</p>
+
+		<p align="left">
+		-d dimensions ... DIMENSIONS specifies how to compute the output dimension. Choices 
+		are: el (length of the longest edge of the quadrilateral), bh (quadrilateral
+		bounding box height), bw (quadrilateral bounding box width), h (input image height), 
+		or w (input image width). The default=el.
+		</p>
+
+		<p align="left">
+		-s scolor ... SCOLOR is the stroke color used for showing the Hough lines on an 
+		ancillary image when -S show != none, as described below.  Any valid IM color is 
+		allowed. The default=red.
+		</p>
+
+		<p align="left">
+		-L linewidth ... LINEWIDTH of the stroke color for showing the Hough lines on an 
+		ancillary image when -S show != none, described below. Values are integers&gt;=0. The 
+		default=2.
+		</p>
+
+		<p align="left">
+		-m mcolor ... MCOLOR is the desired masking background color to show outside the 
+		extracted quadrilateral when procedure=mask. Any valid IM color is allowed.  
+		The default=none.
+		</p>
+
+		<p align="left">
+		-u unrotate ... UNROTATE the masked result and trim to its bounding box when 
+		procedure=mask. The choices are: yes or no. The default=no. Note that this 
+		requires my separate unrotate script.
+		</p>
+
+		<p align="left">
+		-C  crop ... CROP (trim) the masked result (without unrotating) when procedure=mask. 
+		The choices are: yes or no. The default=no.
+		</p>
+
+		<p align="left">
+		-F fuzzval ... FUZZVAL is the fuzz value to use to extract the background when 
+		unrotate=yes. Values are 0&lt;=integers&lt;=100. The default=10.
+		</p>
+
+		<p align="left">
+		-R rotate ... ROTATE the output image in 90 degree amounts as a postprocessing step. 
+		The choices are: 0, 90, 180, 270, -90. The default=0.
+		</p>
+
+		<p align="left">
+		-I info ... INFO list various information to the terminal depending upon  
+		procedure, including: rotation angle, crop box, aspect ratio and/or control points 
+		used for the perspective correction.
+		</p>
+
+		<p align="left">
+		-S show ... SHOW ancillary images: deskewed/unrotated image, Canny edge image, and 
+		Hough lines superimposed on input image. Choices are: none, view (to display) or 
+		save (to disk). The default=none.
+		</p>
+
+		<p align="left">
+		REFERENCES for aspect=points:<br>
+		<a href="http://www.sagenb.org/home/pub/704/" target="blank">http://www.sagenb.org/home/pub/704/</a><br>
+		<a href="http://research.microsoft.com/users/zhang/Papers/WhiteboardRectification.pdf" target="blank">http://research.microsoft.com/users/zhang/Papers/WhiteboardRectification.pdf</a><br>
+		<a href="http://research.microsoft.com/en-us/um/people/zhang/papers/tr03-39.pdf" target="blank">http://research.microsoft.com/en-us/um/people/zhang/papers/tr03-39.pdf</a>
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: Imagemggick 6.8.9-0 is needed by the Canny edge detector. 
+		The argument -u unrotate requires my unrotate script.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/postcard.jpg" width="600" height="372" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p deskew
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/postcard_deskew_black_ta10_tb75_tc10_f15.png" width="561" height="330" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unrotate
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/postcard_unrotate_black_ta10_tb75_tc10_f15.png" width="561" height="335" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a edges -d el
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/postcard_unperspective_black_ta10_tb75_tc10_f15_edges_el_r0.png" width="561" height="338" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a points -d el<br>
+		(aspect not well determined in this example)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/postcard_unperspective_black_ta10_tb75_tc10_f15_points_el_r0.png" width="561" height="228" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p mask -u yes<br>
+		(requires unrotate script)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" class="bgimage">
+		<img src="./XTRACT_files/postcard_mask_black_ta10_tb75_tc10_f15_F10_none_uyes_cno.png" width="564" height="337" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p mask -u no
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" class="bgimage">
+		<img src="./XTRACT_files/postcard_mask_black_ta10_tb75_tc10_f15_F10_none_uno_cno.png" width="610" height="382" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_out.jpg" width="285" height="287" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a edges -d el
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_out_unperspective_black_ta10_tb75_tc10_f15_edges_el_r0.png" width="287" height="277" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 3 -- With Ancillary Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Canny Edges<br>
+		(-p unperspective -a edges -d el -r 0)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_canny.gif" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Hough Lines<br>
+		(-p unperspective -a edges -d el -r 0)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_hough.png" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a edges -d el -r 0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_unperspective_black_ta10_tb75_tc10_f15_edges_el_r0.png" width="213" height="221" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a edges -d el -r -90
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_unperspective_black_ta10_tb75_tc10_f15_edges_el_rm90.png" width="221" height="213" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-p unperspective -a points -d el -r -90<br>
+		(aspect determined acceptably)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_unperspective_black_ta10_tb75_tc10_f15_points_el_rm90.png" width="209" height="221" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 4 -- Potential Issue -- thresh2 too large -- too few and too short Canny Edges<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Canny Edges<br>
+		(-p unperspective -a edges -d el -r 0 -t2 90)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_canny_t2-90.gif" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Hough Lines<br>
+		(-p unperspective -a edges -d el -r 0 -t2 90)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_hough_t2-90.png" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 5 -- Potential Issue -- thresh3 too large -- too few Hough lines<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Canny Edges<br>
+		(-p unperspective -a edges -d el -r 0 -t3 50)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_canny_t3-50.gif" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Hough Lines<br>
+		(-p unperspective -a edges -d el -r 0 -t3 50)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_hough_t3-50.png" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 6 -- Potential Issue -- filtsize too small -- too many Hough lines<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Canny Edges<br>
+		(-p unperspective -a edges -d el -r 0 -f 3)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_canny_f-3.gif" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Hough Lines<br>
+		(-p unperspective -a edges -d el -r 0 -f 3)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_hough_f-3.png" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Longest 4 Hough Lines<br>
+		(-p unperspective -a edges -d el -r 0 -f 3)<br>
+		(still acceptable)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_hough_longest4_f-3.png" width="266" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		-p unperspective -a edges -d el -r 0 -f 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./XTRACT_files/mandril2_p30_t30_r60_zc_unperspective_black_ta10_tb75_tc10_f3_edges_el_r0.png" width="213" height="221" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Applies a Canny Edge extraction on the image</li>
+			<li>Uses the Canny Edge to find Hough Lines</li>
+			<li>Takes the longest 4 Hough Lines and gets all their intersections</li>
+			<li>If the number of intersections falling inside the image is 4, then <br>
+				it sorts them by angle and computes the aspect from the edge lengths</li>
+			<li>Uses the aspect and the longest edge to compute the output dimensions <br>
+				and corresponding corner points</li>
+			<li>Uses +distort perspective with the 4 sets of corresponding control <br> 
+				points to warp the image to remove the perspective distortion <br>
+				and crop to the output size</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

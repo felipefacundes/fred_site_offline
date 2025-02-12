@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.fmwconcepts.com/imagemagick/multicrop2/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: MULTICROP2</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - multicrop2 - crops and unrotates multiple images from a scanned image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, multicrop2, crop, separate, scanned image, unrotate, connected components">
+<link rel="stylesheet" href="./MULTICROP2_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="d5df9b6aad81ed124212e2fbcd09c177"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="multicrop2">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./MULTICROP2_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+MULTICROP2
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Crops and unrotates multiple images from a scanned image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=multicrop2&amp;dirname=multicrop2">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: March 20, 2022</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: multicrop2 [-c coords] [-b bcolor] [-f fuzzval] [-d discard] [-u unrotate] 
+		[-i innertrim] [-e extend] [-m mask] [-t threshold] [-D density] [-s showstats] 
+		infile outfile<br>
+		USAGE: multicrop [-h or -help]
+		</p>
+
+		<p align="left">
+		-c ... coords ...... pixel coordinate to extract background color; <br>
+		.................... may be expressed as gravity value (NorthWest, etc)<br>
+		.................... or as "x,y" value; default is NorthWest=(0,0)<br>
+		-b ... bcolor ...... background color to use instead of option -c;<br>
+		.................... any valid IM color; default is to use option -c<br>
+		-f ... fuzzval ..... fuzz value for separating background color; expressed <br>
+		.................... as (integer) percent 0 to 100; default=10 (0 is uniform color)<br>
+		-d ... discard ..... discard any region that has an area smaller than<br>
+		.................... this size; integer&gt;0; default is to keep all<br>
+		-u ... unrotate .... unrotate method; choices are 1 for -deskew,<br> 
+		.................... 2 for unrotate script, 3 for no unrotate and <br> 
+		.................... 4 for innercrop; default=1<br>
+		-i ... innertrim ... trims inside the cropped area to an orthogonal rectangle;<br>
+		.................... yes or no; default=no  <br>    
+		-e ... extend ...... extend crop on each side in pixels; integer; default=0  <br>
+		-m ... mask ........ mask presentation method; choices are view, <br>
+		.................... save (to file) or output mask only; default <br>
+		.................... is none of the above, just output the images<br>
+		-t ... threshold ... threshold on number of objects; aborts if more than <br>
+		.................... threshold number of objects are detected; integer&gt;0; <br>
+		.................... default is no abort and keep all objects.<br>
+		-D ... density ..... density to use when reading a single page of a PDF; <br>
+		.................... integer&gt;0; default is no assigned density<br>
+		-S ... sortval ..... sort regions by upper left bounding box x,y coordinates <br>
+		.................... rounded to the specified positive integer increment; <br>
+		.................... default is no sorting<br>
+		-s ... showstats ... show connected components stats; yes or no; default=no<br>
+		-v ................. keep virtual canvas; default is not to keep virtual canvas; <br>
+	    .................... only valid for -u=3 (no unrotate) and for output format that <br>
+		.................... supports virtual canvas such as PNG or TIFF.
+		</p>
+
+		<p align="left">
+		PURPOSE: To crop and unrotate multiple images from a scanned image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: MULTICROP crops and unrotates multiple images from a scanned image.
+		The images must be well separate so that background color shows between them. 
+		The process uses a floofill technique based upon a seed coordinate and a fuzz 
+		value to separate the individual images from the background of the scan. 
+		The correct choice of fuzz factor is very important. If too small, the images 
+		will not be separate. If too larger, parts of the outer area of the image 
+		containing similar colors will be lost and the image may be separated into 
+		multiple parts. There are two unrotate methods. The first uses the IM deskew 
+		function, but is limited to 5 degrees of rotate or less. The second uses my 
+		unrotate script. It allows much larger rotations, but will be slower. If 
+		using the second method, my unrotate script must be downloaded and installed.
+		</p>
+
+		<p align="left">
+		IMPORTANT: The images in the scanned file must be well separated in x and y
+		so that their bounding boxes do not overlap. This is especially important 
+		if the images have a significant rotation.
+		</p>
+
+		<p align="left">
+		The output images will be named from the specified outfile and -000, -001, 
+		-002 etc, will be appended before the .suffix.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-c coords ... COORDS is any location within the background (non-image) area 
+		for the algorithm to find the background color. It may be specified in terms  
+		of gravity parameters (NorthWest, North, NorthEast, East, SouthEast, South, 
+		SouthWest or West) or as a pixel coordinate "x,y". The default is the 
+		upper left corner = NorthWest = "0,0".
+		</p>
+
+		<p align="left">
+		-b bcolor ... BCOLOR is the background color to use for flood fill instead 
+		of extracting this color from the image. This is useful when an image has 
+		no borders with sub-images hard against the edges. Any valid IM color is 
+		allowed. The default is to use option -c.
+		</p>
+
+		<p align="left">
+		-f fuzzval ... FUZZVAL is the fuzz amount specified as an integer percent 
+		value between 0 to 100 (without the % sign). # The correct choice of fuzz 
+		factor is very important. If too small, the images will not be separate. 
+		If too larger, parts of the outer area of the image containing similar 
+		colors will be lost and the image may be separated into multiple parts. 
+		Typical values are probably between 5 and 20 percent. The default=10
+		</p>
+
+		<p align="left">
+		-d discard ... DISCARD any region that has a width or height smaller than 
+		the specified discard size. Values are integer&gt;0. The default is to keep 
+		all regions.
+		</p>
+
+		<p align="left">
+		-u unrotate ... UNROTATE is the unrotation method. Choices are: 1, 2, 3 or 4.
+		The default is unrotate=1, which is fast and uses the IM -deskew function, 
+		but is limited to images that are rotated no more than 5 degrees in the scan. 
+		Option unrotate=2 uses my unrotate script. It can handle larger rotations, 
+		but is slower. If using the latter method, my unrotate script must be 
+		downloaded and also installed so that it is available for this script to use.
+		Option unrotate=3 makes no attempt to unrotate the images. Option unrotate=4 
+		uses my script, autotrim, to do an inner crop to a rectangle.
+		</p>
+
+		<p align="left">
+		-i innertrim ... INNERTRIM trims inside the cropped area to an orthogonal 
+		rectangle. Requires my script, autotrim. The choices are: yes or no. 
+		The default=no.
+		</p>
+
+		<p align="left">
+		-e extend ... EXTEND crop on each side for the output images in pixels. 
+		The extended region will come from the background of the image. Values are integers. 
+		Positive makes the results larger. Negative makes the results smaller. Positive 
+		values are only allowed for unrotate=3 (no unrotation) and innertrim=no. The default=0.
+		</p>
+
+		<p align="left">
+		-m mask ... MASK provides several options for reviewing the initial mask that 
+		is generated by the fuzz value. The choices are: view (display to X11 window),
+		save (to disk) along with the images, or output (without processing the images).
+		The default is to simply process the images without showing or saving the mask.
+		If using the view mode, then processing will stop until the image is closed. 
+		But this allows you to then kill the script if the mask is not appropriate. 
+		A good approach is to use the output mode repeatedly with various fuzzvals 
+		until a reasonable mask is created. Note that the mask must separate the 
+		images, but the background can "eat" a little into the images so long as no 
+		full edge is lost or the images is split into multiple parts.
+		</p>
+
+		<p align="left">
+		-t threshold ... THRESHOLD on the number of objects. The script aborts, if 
+		more than the threshold number of objects are detected. Value must be 
+		integers greater than 0. The default is no abort and keep all objects. 
+		To avoid an abort, use the -d discard option. 
+		</p>
+
+		<p align="left">
+		-D density ... DENSITY to use when reading a single page of a PDF. Multipage pdf 
+		files are not permitted. Values are integers&gt;0. The default is no assigned density.
+		</p>
+
+		<p align="left">
+		-S sortval ... SORT regions by their upper left bounding box x,y coordinates 
+		rounded to the specified positive integer increment. The default is 
+		no sorting.
+		</p>
+
+		<p align="left">
+		-s showstats ... SHOWSTATS shows the connected components statistics. 
+		Choices are: yes (y) or no (n). The default=no.
+		</p>
+
+		<p align="left">
+		-v ... keep VIRTUAL CANVAS. The default is not to keep virtual canvas. This option  
+		is only valid for -u=3 (no unrotate) and for output format that supports virtual 
+		canvas such as PNG or TIFF.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM 6.8.9.10 due to the use of -connected-components.<br>
+		If using unrotate method 2, then my script, unrotate, is required. <br>
+		If using innertrim, then my script, autotrim is required.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 1: Images Are Rotated 3 Degrees<br>
+		(unrotate=1; fuzzval=10 is a good value)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies1.jpg" width="660" height="588" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Mask
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies1_f10_u1_mask.gif" width="660" height="588" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Arguments:<br>
+		-f 10 -u 1 -m save
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies1_f10_u1-000.jpg" width="310" height="402" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies1_f10_u1-001.jpg" width="260" height="259" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies1_f10_u1-002.jpg" width="257" height="258" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 2: Images Are Rotated 5 to 10 Degrees<br>
+		(unrotate=2; fuzzval=10 is good value)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2.jpg" width="700" height="636" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Mask
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f10_u2_mask.gif" width="700" height="636" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Arguments:<br>
+		-f 10 -u 2 -m save
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f10_u2-000.jpg" width="310" height="402" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f10_u2-001.jpg" width="257" height="257" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f10_u2-002.jpg" width="256" height="257" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 3: Images Are Rotated 5 to 10 Degrees<br>
+		(unrotate=2; fuzzval=20 is too large and leaves small features)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2.jpg" width="620" height="580" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Mask
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f20_u2_t3_mask.gif" width="620" height="580" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Arguments:<br>
+		-f 20 -u 2 -m save -t 3 -s yes 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="left">
+Objects (id: bounding-box centroid area mean-color):<br>
+  0: 700x636+0+0 366.4,321.2 192038 gray(0)<br>
+  2: 342x426+346+100 516.3,312.2 123370 gray(255)<br>
+  3: 289x289+27+330 170.2,474.2 65157 gray(255)<br>
+  1: 293x295+16+11 161.5,158.4 64614 gray(255)<br>
+  4: 4x4+292+363 293.3,364.2 <b class="red">10</b> gray(255)<br>
+  10: 1x2+298+374 298.0,374.5 <b class="red">2</b> gray(255)<br>
+  11: 1x2+296+378 296.0,378.5 <b class="red">2</b> gray(255)<br>
+  5: 2x1+296+365 296.5,365.0 <b class="red">2</b> gray(255)<br>
+  12: 1x1+232+606 232.0,606.0 <b class="red">1</b> gray(255)<br>
+  6: 1x1+290+366 290.0,366.0 <b class="red">1</b> gray(255)<br>
+  7: 1x1+296+368 296.0,368.0 <b class="red">1</b> gray(255)<br>
+  8: 1x1+298+369 298.0,369.0 <b class="red">1</b> gray(255)<br>
+  9: 1x1+288+371 288.0,371.0 <b class="red">1</b> gray(255)<br>
+<br>
+--- TOO MANY OBJECTS DETECTED ---
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Arguments:<br>
+		-f 20 -u 2 -d 20<br>
+		(remove any objects smaller than 20 pixels area) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f20_u2_d20-000.jpg" width="310" height="401" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f20_u2_d20-001.jpg" width="257" height="257" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" bgcolor="gray" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #3b454a;">
+		<img src="./MULTICROP2_files/3ladies2_f20_u2_d20-002.jpg" width="255" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a binary mask by floodfilling the background with transparency <br>
+				and making the images white and background black</li>
+			<li>Use -connected-components on the mask to find all isolated regions <br>
+				equal to or above the discard area</li>
+			<li>Loop over the list of objects and crop each bounding box in the input image</li>
+ 			<li>Unrotate if desired</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the unrotate=1 case:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert -quiet "$infile" +repage $tmpA1</li>
+			<li>outnameArr=(`echo "$outfile" | sed -n 's/^\(.*\)[.]\([^.]*\)$/\1 \2/p'`)</li>
+			<li>outname="${outnameArr[0]}"</li>
+			<li>suffix="${outnameArr[1]}"</li>
+			<li>convert $tmpA1 -fuzz ${fuzzval}% -fill none \<br>
+				-bordercolor $bcolor -border 1x1 \<br>
+				-draw "alpha $coords floodfill" \<br>
+				-shave 1x1 -fill white +opaque none \<br>
+				-background black -alpha background -alpha off -type bilevel \<br>
+				$tmpA2</li>
+			<li>data=`convert $tmpA2 \<br>
+				-define connected-components:verbose=true \<br>
+				-define connected-components:area-threshold=$discard \<br>
+				-connected-components 4 null:`</li>
+			<li>bboxArr=(`echo "$data" | tail -n +2 | sed 's/^[ ]*//' | cut -d\  -f2`)</li>
+			<li>colorArr=(`echo "$data" | tail -n +2 | sed 's/^[ ]*//' | cut -d\  -f5`)</li>
+			<li>num=${#bboxArr[*]}</li>
+			<li>for ((i=0; i&lt;num; i++)); do<br>
+					color="${colorArr[$i]}"<br>
+					if [ "$color" != "gray(0)" ]; then<br>
+						echo "Processing Image $k"<br>
+						kk=`printf "%03d" "$k"`<br>
+						echo "Bounding Box: ${bboxArr[$i]}"<br>
+						echo ""<br>
+						convert $tmpA1 -crop "${bboxArr[$i]}" +repage -deskew 40% \<br>
+							-bordercolor "$bcolor" -border 2 -fuzz ${fuzzval}% -trim +repage \<br>
+							"${outname}-${kk}.${suffix}"<br>
+						k=$((k+1))<br>
+					fi<br>
+				done
+</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

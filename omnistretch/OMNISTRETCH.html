@@ -1,0 +1,1264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://www.fmwconcepts.com/imagemagick/omnistretch/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: OMNISTRETCH</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - omnistretch - enhances the dynamic range of brightness values and optionally saturation values in an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, omnistretch, histogram stretch, brightness, contrast, saturation">
+<link rel="stylesheet" href="./OMNISTRETCH_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="ebe000f33cd983cf584db548f5b3b6f8"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="omnistretch">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./OMNISTRETCH_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+OMNISTRETCH
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Enhances the dynamic range of brightness values and 
+		optionally saturation values in an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=omnistretch&amp;dirname=omnistretch">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">USAGE: omnistretch [option1] [option2] [option3] [option4] infile outfile</p>
+
+		<p align="left">
+		Option1 (choice of one only):<br>
+		  -h or -help ................ get help<br>
+		  -st ........................ get image statistics; requires input_file<br>
+  		  -m or -model ............... processing (color) model (HSL, HSB, RGB);<br>
+  		  ............................ requires infile and outfile; default HSL if none specified
+		</p>
+
+		<p align="left">
+		Option2 (choice of one only):<br>
+  		  -b ... low,[high[,gamma]] .. process w/ brightness 0-100 for low,high; gamma 0-10<br>
+		  -c ... low,[high[,gamma]] .. process w/ histogram counts &gt;=0 for low,high; gamma 0-10<br>
+		  -pc .. low,[high[,gamma]] .. process w/ % of max histogram counts 0-100 for low,high; gamma 0-10<br>
+		  -cc .. low,[high[,gamma]] .. process w/ cumulative histogram counts &gt;=0 for low,high; gamma 0-10<br>
+		  -cd .. low,[high[,gamma]] .. process w/ cumulative histogram count differences &gt;=0 for low,high; gamma 0-10<br>
+		  -ab .. gamma_method ........ auto process w/ default brightness values of min,max,gamma<br>
+		  -ac .. gamma_method ........ auto process w/ default histogram counts of 30,30,gamma<br>
+		  -apc . gamma_method ........ auto process w/ default % of max histogram counts of 10,10,gamma<br>
+		  -acc . gamma_method ........ auto process w/ default % cumulative histogram counts of .6,.6,gamma<br>
+		  -acd . gamma_method ........ auto process w/ default % cumulative histogram count differences of .06,.06,gamma
+		</p>
+
+		<p align="left">
+		Option2:<br>
+		  -s ... sgamma .............. process w/ saturation; sgamma 0-10
+		</p>
+
+		<p align="left">
+		Option3:<br>
+		 -g ......................... display graph of intensity mapping function,<br>
+		  ............................ but must be used in conjunction with option 1 or 2,<br>
+		  ............................ but not -h or -help or -st
+		</p>
+
+
+		<p align="left">
+		PURPOSE: To enhance the dynamic range of brightness values and 
+		optionally saturation values in an image. 
+		</p>
+
+
+		<p align="left">
+		DESCRIPTION: OMNISTRETCH is designed to enhance the dynamic 
+		range of brightness values and optionally saturation values 
+		in an image. It has various means of linearly doing this as 
+		described below. If a gamma value is also supplied, then a 
+		non-linear change is affected on top of the linear change. 
+		It works by computing a grayscale histogram, which is then 
+		used to compute a low and high value to map to black and 
+		white, respectively in the image as a whole or on either the 
+		Lightness or Brightness channels, depending upon which 
+		colorspace model is selected. The script uses the IM -level 
+		function to do the processing. If a saturation change is 
+		desired, then the IM -gamma function will be applied to 
+		the saturation channel. No saturation processing is allowed 
+		if the image is grayscale. The graph is normally just 
+		viewed, but a default parameter in the program can be set to 
+		allow it to be saved as outfilename_graph.gif. To end the 
+		script, close/quit the graph image. 
+		</p>
+
+		<p align="left">
+		Argument: ........ displays help information. 
+		</p>
+
+		<p align="left">
+		Argument: -h ..... displays help information. 
+		</p>
+
+		<p align="left">
+		Argument: -g ..... displays graph of intensity mapping function. 
+		</p>
+
+		<p align="left">
+		Argument: -st .... displays image statistics, including:  
+		minimum, maximum, mean, standard deviation and histogram 
+		in a range of brightness values scaled to 0-100. An 
+		input_file is required with no output_file specified. 
+		</p>
+
+		<p align="left">
+		Argument: -m  ---  defines the processing color model to use for the 
+		processing of a color image. If HSL or HSB are specified, then the 
+		the image is first transformed into that color space and the 
+		corresponding channels are separated. Either the L or B channels 
+		will then be used to compute a histogram, which is then used 
+		to determine the low and high values to map to black and white, 
+		within that channel. The channels are then put back together and 
+		output in RGB format. If RGB is selected, the image is first 
+		converted to RGB format and used to generate a grayscale image. 
+		The grayscale image is then used to compute a histogram. The 
+		histogram is then used to determine the low and high values which 
+		are then stretched in the RGB image to black and white, respectively. 
+		The default for a color image is HSL. If a grayscale image is the 
+		input file, then the processing color model is ignored. Note that 
+		results for HSB tend to be undersaturated and for RGB tend to be 
+		oversaturated.
+		</p>
+		
+		<p align="left">
+		Argument: -b ..... defines the method using brightness values 
+		for low and high in the range of 0-100 to be linearly stretch 
+		to full black (0) and full white (100). If high is not provided, 
+		high=100-low. A value of 0,[100,[1]] leaves the image unchanged. 
+		Optionally, a gamma value may be included in the range 
+		of 0 upward; but, nominally 0-10, where 1 is no change, 
+		&lt;1 is less contrast and &gt;1 is more contrast. Gamma is a 
+		non-linear adjustment. 
+		</p>
+		
+		<p align="left">
+		Argument: -c ..... defines the method using histogram counts 
+		for low and high. The method finds the first occurrences of 
+		the specified count (or higher) from each end of the histogram 
+		to locate the corresponding low and high brightness values to 
+		linearly stretch to full black (0) and full white (100). If only 
+		one count is specified, it will be used for both low and high. 
+		A value of 0,[0,[1]] leaves the image unchanged. Optionally, a 
+		gamma value may be included in the range of &gt;=0; but, nominally 
+		0-10, where 1 (default) is no change, &lt;1 is less contrast and &gt;1 
+		is more contrast. Gamma is a non-linear adjustment. 
+		</p>
+		
+		<p align="left">
+		Argument: -pc .... defines the method using percent of maximum 
+		histogram counts for low and high. The method finds the first 
+		occurrences of the specified percent of maximum histogram count 
+		(or higher) from each end of the histogram to locate the 
+		corresponding low and high brightness values to linearly stretch 
+		to full black (0) and full white (100). If only one count is 
+		specified, it will be used for both low and high. Counts for low 
+		and high are expressed as percent of the maximum count in the 
+		histogram, but the % symbol is not specified. A value of 
+		0,[0,[1]] leaves the image unchanged. Optionally, a gamma value 
+		may be included in the range of &gt;=0; but, nominally 0-10, where 
+		1 (default) is no change, &lt;1 is less contrast and &gt;1 is more 
+		contrast. Gamma is a non-linear adjustment. 
+		</p>
+		
+		<p align="left">
+		Argument: -cc .... defines the method using cumulative histogram 
+		counts in percent of total count for low and high. The method 
+		finds the first occurrences of the specified cumulative count 
+		(or higher) from each end of the histogram to locate the 
+		corresponding low and high brightness values to linearly stretch 
+		to full black (0) and full white (100). If only one cumulative 
+		count is specified, it will be used for both low and high. 
+		A value of 0,[0,[1]] indicates no change in the image. Cumulative 
+		counts for low and high are expressed as percent of total pixels 
+		in the image, but the % symbol is not specified. Optionally, 
+		a gamma value may be included in the range of &gt;=0; but, 
+		nominally 0-10, where 1 (default) is no change, &lt;1 is less 
+		saturation and &gt;1 is more saturation. Gamma is a non-linear 
+		adjustment. 
+		</p>
+		
+		<p align="left">
+		Argument: -cd .... defines the method using cumulative percent 
+		histogram count differences between successive histogram values 
+		equal to or exceeding low and high. The method finds the first 
+		occurrences of the specified cumulative count differences 
+		(or higher) from each end of the histogram to locate the 
+		corresponding low and high brightness values to linearly stretch 
+		to full black (0) and full white (100). If only one cumulative 
+		count difference is specified, it will be used for both low and high. 
+		A value of 0,[0,[1]] indicates no change in the image. Cumulative 
+		count differences for low and high are expressed as percent of total 
+		pixels in the image, but the % symbol is not specified. This method 
+		is basically looking for where the slope of the histogram, starting 
+		from each end, increases above a threshold given by low and high. 
+		Optionally, a gamma value may be included in the range of &gt;=0; but, 
+		nominally 0-10, where 1 (default) is no change, &lt;1 is less 
+		saturation and &gt;1 is more saturation. Gamma is a non-linear 
+		adjustment. 
+		</p>
+		
+		<p align="left">
+		Argument: -ab .... automatic version of -b using the image's 
+		actual minimum and maximum values for low and high. gamma_method=1 
+		sets gamma=1. gamma_method=2 determines gamma from the computed low 
+		and high. gamma_method=3 determines gamma from the image's standard 
+		deviation. 
+		</p>
+		
+		<p align="left">
+		Argument: -ac .... automatic version of -c using low and high 
+		counts of 30. gamma_method=1 sets gamma=1. gamma_method=2 determines 
+		gamma from computed low and high. gamma_method=3 determines gamma from 
+		the image's standard deviation. 
+		</p>
+		
+		<p align="left">
+		Argument: -apc ... automatic version of -pc using low and high 
+		percent of maximum counts of 10. gamma_method=1 sets gamma=1. 
+		gamma_method=2 determines gamma from computed low and high. 
+		gamma_method=3 determines gamma from the image's standard deviation. 
+		</p>
+		
+		<p align="left">
+		Argument: -acc ... automatic version of -cc using low and high 
+		cumulative counts of 0.6. gamma_method=1 sets gamma=1. gamma_method=2 
+		determines gamma from computed low and high. gamma_method=3 determines 
+		gamma from the image's standard deviation 
+		</p>
+		
+		<p align="left">
+		Argument: -acd ... automatic version of -cd using low and high 
+		cumulative count differences of 0.06. gamma_method=1 sets gamma=1. 
+		gamma_method=2 determines gamma from computed low and high. 
+		gamma_method=3 determines gamma from the image's standard deviation 
+		</p>
+		
+		<p align="left">
+		OBSERVATION: All these algorithms tend to work better on image's which 
+		have long, low histogram tails or do not span the full range of 0-100. 
+		Typically, this means low contrast images. 
+		</p>
+		
+		<p align="left">
+		REMARK: Feel free to change the default values below for the 
+		automatic methods: -ac, -apc and -acc, if you find that those 
+		values work better for your class of imagery. Also the methods for 
+		automatically determining gamma are not well tested. Method 2 is 
+		limited to histograms for which low &gt; 0 and/or high &lt; 100. 
+		Method 3 seems to work for both low and high contrast images.
+		</p>
+		
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<p align="center"><u>Autolevels</u></p>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		artificially brightened and contrast lowered<br>
+		convert lena.jpg -fx ".724u+.310" lenap.jpg
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+ 
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		histogram min and max graylevels are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 50.5 (128 in range 0 - 255)<br>
+		Histogram Grayscale Value Mapped To White = 100.0 (255 in range 0 - 255)<br>
+		Break Points = 0,0 50.5,0 100.0,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -ab 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -ab 1 -s 1.5</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab1_s1p5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		same but with saturation  <br>
+		increased by 50%; <br>
+		graph will be the same and <br>
+		does not show such changes
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		The example above on the right does the following:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Separates the RGB image into HSB channels.</li>
+			<li>Applies the linear stretch to the Brightness channel from graylevel 50.5 to black and 100 to white</li>
+			<li>Applies a gamma of 1.5 to the Saturation channel.</li>
+			<li>Merges the Hue, Saturation and Brightness channels back together as an RGB image.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands:<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert lenap.jpg -colorspace HSB -channel R -separate tmp0.jpg</li>
+			<li>convert lenap.jpg -colorspace HSB -channel G -separate tmp1.jpg</li>
+			<li>convert lenap.jpg -colorspace HSB -channel B -separate tmp2.jpg</li>
+			<li>convert tmp2.jpg -level 50.5%,100.0%,1 tmp2p.jpg</li>
+			<li>convert tmp1.jpg -gamma 1.5 tmp1p.jpg</li>
+			<li>convert tmp0.jpg -colorspace HSB tmp0.jpg -compose CopyRed -composite \ <br>
+			tmp1p.jpg -compose CopyGreen -composite tmp2p.jpg -compose CopyBlue -composite \ <br>
+			-colorspace RGB lenap-hsbmethod-ab1_s1p5.jpg</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -ab and Processing Model: HSL<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 41.7 (106 in range 0 - 255) <br>
+		Histogram Grayscale Value Mapped To White = 96.2 (245 in range 0 - 255) <br>
+		Break Points = 0,0 41.7,0 96.2,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -ab 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -ab 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -ab 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-ab3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -ab and Processing Model: HSB<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 50.5 (128 in range 0 - 255) <br>
+		Histogram Grayscale Value Mapped To White = 100.0 (255 in range 0 - 255) <br>
+		Break Points = 0,0 50.5,0 100.0,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -ab 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -ab 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -ab 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-ab3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -ab and Processing Model: RGB<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 37.2 (94 in range 0 - 255) <br>
+		Histogram Grayscale Value Mapped To White = 92.5 (235 in range 0 - 255) <br>
+		Break Points = 0,0 37.2,0 92.5,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -ab 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -ab 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -ab 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-ab3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -acc and Processing Model: HSL<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 44.7 (113 in range 0 - 255) <br>
+		Histogram Grayscale Value Mapped To White = 92.5 (235 in range 0 - 255) <br>
+		Break Points = 0,0 44.7,0 92.5,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -acc 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -acc 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSL -acc 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hslmethod-acc3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -acc and Processing Model: HSB<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 53.7 (136 in range 0 - 255)<br>
+		Histogram Grayscale Value Mapped To White = 100.0 (255 in range 0 - 255)<br>
+		Break Points = 0,0 53.7,0 100.0,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -acc 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -acc 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m HSB -acc 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-hsbmethod-acc3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Autolevels: -acc and Processing Model: RGB<br>
+		first occurrence of graylevel from either end corresponding to <br>
+		cumulative histogram count=0.6% are automatically stretched to <br>
+		0 and 100 (0 and 255)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Histogram Grayscale Value Mapped To Black = 43.9 (111 in range 0 - 255) <br>
+		Histogram Grayscale Value Mapped To White = 86.2 (219 in range 0 - 255) <br>
+		Break Points = 0,0 43.9,0 86.2,100.0 100.0,100.0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">source image</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -acc 1 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -acc 2 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">arguments:<br> -m RGB -acc 3 -g</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">original image</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lena.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc1_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc2_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap-rgbmethod-acc3_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" width="150">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		The example above for arguments:<br> -m HSB -acc 3 does the following:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Separates the RGB image into HSB channels.</li>
+			<li>Applies the linear stretch to the Brightness channel from graylevel 53.7 to black and 100 to white.</li>
+			<li>and also applies a gamma of 1.52 to the Brightness channel.
+			</li><li>Merges the Hue, Saturation and Brightness channels back together as an RGB image.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands:<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert lenap.jpg -colorspace HSB -channel R -separate tmp0.jpg</li>
+			<li>convert lenap.jpg -colorspace HSB -channel G -separate tmp1.jpg</li>
+			<li>convert lenap.jpg -colorspace HSB -channel B -separate tmp2.jpg</li>
+			<li>convert tmp2.jpg -level 53.7%,100.0%,1.52 tmp2p.jpg</li>
+			<li>convert tmp0.jpg -colorspace HSB tmp0.jpg -compose CopyRed -composite \ <br>
+			tmp1.jpg -compose CopyGreen -composite tmp2p.jpg -compose CopyBlue -composite \ <br>
+			-colorspace RGB lenap-hsbmethod-acc3.jpg</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+
+<p align="center"><u>Autolevels From Other Imaging Tools</u></p>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">Photoshop</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">GraphicConverter</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">GIMP</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap_psal.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap_gcal.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./OMNISTRETCH_files/lenap_gpal.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p align="center">
+<u>Option -st: Image Statistics (for artificially modified image and processing model HSB)</u>
+<br><br>
+These are provided to assist in the manual selection of low and high values 
+to map to black and white, respectively.
+</p>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="10" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="center">
+		Image Statistics:
+		<br><br>
+		Colorspace = RGB
+		<br><br>
+		Width = 128<br>
+		Height = 128<br>
+		Total Pixels = 16384
+		<br><br>
+		Min (0-100) = 50.5<br>
+		Max (0-100) = 100.0<br>
+		Mean (0-100) = 82.2<br>
+		Std (0-...) = 13.5<br>
+		<br><br>
+		Histogram:
+		<br><br>
+		Total Values=127<br>
+		Mid Point=63<br>
+		Max Count = 511<br>
+		Tot Count = 16384<br>
+		<br><br>
+		B=brightness 0-100(0-255)<br>
+		C=count<br>
+		PC=percent of maximum count<br>
+		CC=cumulative count percent<br>
+		CD=cumulative count percent difference
+		<br><br>
+		</p><table border="0" cellspacing="0" cellpadding="5" align="center">
+		<tbody><tr><td>1</td><td>B=50.5(128)</td><td>C=3</td><td>PC=.5</td><td>CC=.01</td><td>CD=.01</td></tr>
+		<tr><td>2</td><td>B=50.9(129)</td><td>C=1</td><td>PC=.1</td><td>CC=.02</td><td>CD=0</td></tr>
+		<tr><td>3</td><td>B=51.3(130)</td><td>C=7</td><td>PC=1.3</td><td>CC=.06</td><td>CD=.04</td></tr>
+		<tr><td>4</td><td>B=51.7(131)</td><td>C=10</td><td>PC=1.9</td><td>CC=.12</td><td>CD=.06</td></tr>
+		<tr><td>5</td><td>B=52.1(132)</td><td>C=12</td><td>PC=2.3</td><td>CC=.20</td><td>CD=.07</td></tr>
+		<tr><td>6</td><td>B=52.5(133)</td><td>C=17</td><td>PC=3.3</td><td>CC=.30</td><td>CD=.10</td></tr>
+		<tr><td>7</td><td>B=52.9(134)</td><td>C=15</td><td>PC=2.9</td><td>CC=.39</td><td>CD=.09</td></tr>
+		<tr><td>8</td><td>B=53.3(135)</td><td>C=17</td><td>PC=3.3</td><td>CC=.50</td><td>CD=.10</td></tr>
+		<tr><td>9</td><td>B=53.7(136)</td><td>C=27</td><td>PC=5.2</td><td>CC=.66</td><td>CD=.16</td></tr>
+		<tr><td>10</td><td>B=54.1(137)</td><td>C=35</td><td>PC=6.8</td><td>CC=.87</td><td>CD=.21</td></tr>
+		<tr><td>11</td><td>B=54.5(138)</td><td>C=42</td><td>PC=8.2</td><td>CC=1.13</td><td>CD=.25</td></tr>
+		<tr><td>12</td><td>B=54.9(139)</td><td>C=63</td><td>PC=12.3</td><td>CC=1.51</td><td>CD=.38</td></tr>
+		<tr><td>13</td><td>B=55.2(140)</td><td>C=67</td><td>PC=13.1</td><td>CC=1.92</td><td>CD=.40</td></tr>
+		<tr><td>14</td><td>B=55.6(141)</td><td>C=87</td><td>PC=17.0</td><td>CC=2.45</td><td>CD=.53</td></tr>
+		<tr><td>15</td><td>B=56.0(142)</td><td>C=108</td><td>PC=21.1</td><td>CC=3.11</td><td>CD=.65</td></tr>
+		<tr><td>16</td><td>B=56.4(143)</td><td>C=115</td><td>PC=22.5</td><td>CC=3.82</td><td>CD=.70</td></tr>
+		<tr><td>17</td><td>B=56.8(144)</td><td>C=132</td><td>PC=25.8</td><td>CC=4.62</td><td>CD=.80</td></tr>
+		<tr><td>18</td><td>B=57.2(145)</td><td>C=148</td><td>PC=28.9</td><td>CC=5.52</td><td>CD=.90</td></tr>
+		<tr><td>19</td><td>B=57.6(146)</td><td>C=138</td><td>PC=27.0</td><td>CC=6.37</td><td>CD=.84</td></tr>
+		<tr><td>20</td><td>B=58.0(147)</td><td>C=168</td><td>PC=32.8</td><td>CC=7.39</td><td>CD=1.02</td></tr>
+		<tr><td>21</td><td>B=58.4(148)</td><td>C=168</td><td>PC=32.8</td><td>CC=8.42</td><td>CD=1.02</td></tr>
+		<tr><td>22</td><td>B=58.8(149)</td><td>C=169</td><td>PC=33.0</td><td>CC=9.45</td><td>CD=1.03</td></tr>
+		<tr><td>23</td><td>B=59.2(150)</td><td>C=132</td><td>PC=25.8</td><td>CC=10.26</td><td>CD=.80</td></tr>
+		<tr><td>24</td><td>B=59.6(151)</td><td>C=150</td><td>PC=29.3</td><td>CC=11.17</td><td>CD=.91</td></tr>
+		<tr><td>25</td><td>B=60.0(153)</td><td>C=115</td><td>PC=22.5</td><td>CC=11.87</td><td>CD=.70</td></tr>
+		<tr><td>26</td><td>B=60.3(153)</td><td>C=117</td><td>PC=22.8</td><td>CC=12.59</td><td>CD=.71</td></tr>
+		<tr><td>27</td><td>B=60.7(154)</td><td>C=107</td><td>PC=20.9</td><td>CC=13.24</td><td>CD=.65</td></tr>
+		<tr><td>28</td><td>B=61.1(155)</td><td>C=98</td><td>PC=19.1</td><td>CC=13.84</td><td>CD=.59</td></tr>
+		<tr><td>29</td><td>B=61.5(156)</td><td>C=86</td><td>PC=16.8</td><td>CC=14.36</td><td>CD=.52</td></tr>
+		<tr><td>30</td><td>B=61.9(157)</td><td>C=85</td><td>PC=16.6</td><td>CC=14.88</td><td>CD=.51</td></tr>
+		<tr><td>31</td><td>B=62.3(158)</td><td>C=98</td><td>PC=19.1</td><td>CC=15.48</td><td>CD=.59</td></tr>
+		<tr><td>32</td><td>B=62.7(159)</td><td>C=69</td><td>PC=13.5</td><td>CC=15.90</td><td>CD=.42</td></tr>
+		<tr><td>33</td><td>B=63.1(160)</td><td>C=90</td><td>PC=17.6</td><td>CC=16.45</td><td>CD=.54</td></tr>
+		<tr><td>34</td><td>B=63.5(161)</td><td>C=65</td><td>PC=12.7</td><td>CC=16.85</td><td>CD=.39</td></tr>
+		<tr><td>35</td><td>B=63.9(162)</td><td>C=64</td><td>PC=12.5</td><td>CC=17.24</td><td>CD=.39</td></tr>
+		<tr><td>36</td><td>B=64.3(163)</td><td>C=61</td><td>PC=11.9</td><td>CC=17.61</td><td>CD=.37</td></tr>
+		<tr><td>37</td><td>B=64.7(164)</td><td>C=57</td><td>PC=11.1</td><td>CC=17.96</td><td>CD=.34</td></tr>
+		<tr><td>38</td><td>B=65.0(165)</td><td>C=58</td><td>PC=11.3</td><td>CC=18.31</td><td>CD=.35</td></tr>
+		<tr><td>39</td><td>B=65.4(166)</td><td>C=63</td><td>PC=12.3</td><td>CC=18.70</td><td>CD=.38</td></tr>
+		<tr><td>40</td><td>B=65.8(167)</td><td>C=58</td><td>PC=11.3</td><td>CC=19.05</td><td>CD=.35</td></tr>
+		<tr><td>41</td><td>B=66.2(168)</td><td>C=58</td><td>PC=11.3</td><td>CC=19.40</td><td>CD=.35</td></tr>
+		<tr><td>42</td><td>B=66.6(169)</td><td>C=44</td><td>PC=8.6</td><td>CC=19.67</td><td>CD=.26</td></tr>
+		<tr><td>43</td><td>B=67.0(170)</td><td>C=57</td><td>PC=11.1</td><td>CC=20.02</td><td>CD=.34</td></tr>
+		<tr><td>44</td><td>B=67.4(171)</td><td>C=72</td><td>PC=14.0</td><td>CC=20.46</td><td>CD=.43</td></tr>
+		<tr><td>45</td><td>B=67.8(172)</td><td>C=53</td><td>PC=10.3</td><td>CC=20.78</td><td>CD=.32</td></tr>
+		<tr><td>46</td><td>B=68.2(173)</td><td>C=67</td><td>PC=13.1</td><td>CC=21.19</td><td>CD=.40</td></tr>
+		<tr><td>47</td><td>B=68.6(174)</td><td>C=71</td><td>PC=13.8</td><td>CC=21.63</td><td>CD=.43</td></tr>
+		<tr><td>48</td><td>B=69.0(175)</td><td>C=64</td><td>PC=12.5</td><td>CC=22.02</td><td>CD=.39</td></tr>
+		<tr><td>49</td><td>B=69.4(176)</td><td>C=58</td><td>PC=11.3</td><td>CC=22.37</td><td>CD=.35</td></tr>
+		<tr><td>50</td><td>B=69.8(177)</td><td>C=62</td><td>PC=12.1</td><td>CC=22.75</td><td>CD=.37</td></tr>
+		<tr><td>51</td><td>B=70.1(178)</td><td>C=47</td><td>PC=9.1</td><td>CC=23.04</td><td>CD=.28</td></tr>
+		<tr><td>52</td><td>B=70.5(179)</td><td>C=52</td><td>PC=10.1</td><td>CC=23.35</td><td>CD=.31</td></tr>
+		<tr><td>53</td><td>B=70.9(180)</td><td>C=58</td><td>PC=11.3</td><td>CC=23.71</td><td>CD=.35</td></tr>
+		<tr><td>54</td><td>B=71.3(181)</td><td>C=67</td><td>PC=13.1</td><td>CC=24.12</td><td>CD=.40</td></tr>
+		<tr><td>55</td><td>B=71.7(182)</td><td>C=59</td><td>PC=11.5</td><td>CC=24.48</td><td>CD=.36</td></tr>
+		<tr><td>56</td><td>B=72.1(183)</td><td>C=69</td><td>PC=13.5</td><td>CC=24.90</td><td>CD=.42</td></tr>
+		<tr><td>57</td><td>B=72.5(184)</td><td>C=74</td><td>PC=14.4</td><td>CC=25.35</td><td>CD=.45</td></tr>
+		<tr><td>58</td><td>B=72.9(185)</td><td>C=81</td><td>PC=15.8</td><td>CC=25.84</td><td>CD=.49</td></tr>
+		<tr><td>59</td><td>B=73.3(186)</td><td>C=50</td><td>PC=9.7</td><td>CC=26.15</td><td>CD=.30</td></tr>
+		<tr><td>60</td><td>B=73.7(187)</td><td>C=63</td><td>PC=12.3</td><td>CC=26.53</td><td>CD=.38</td></tr>
+		<tr><td>61</td><td>B=74.1(188)</td><td>C=53</td><td>PC=10.3</td><td>CC=26.86</td><td>CD=.32</td></tr>
+		<tr><td>62</td><td>B=74.5(189)</td><td>C=65</td><td>PC=12.7</td><td>CC=27.25</td><td>CD=.39</td></tr>
+		<tr><td>63</td><td>B=74.9(190)</td><td>C=69</td><td>PC=13.5</td><td>CC=27.67</td><td>CD=.42</td></tr>
+		<tr><td>64</td><td>B=75.2(191)</td><td>C=83</td><td>PC=16.2</td><td>CC=72.32</td><td>CD=.50</td></tr>
+		<tr><td>65</td><td>B=75.6(192)</td><td>C=108</td><td>PC=21.1</td><td>CC=71.81</td><td>CD=.65</td></tr>
+		<tr><td>66</td><td>B=76.0(193)</td><td>C=82</td><td>PC=16.0</td><td>CC=71.15</td><td>CD=.50</td></tr>
+		<tr><td>67</td><td>B=76.4(194)</td><td>C=82</td><td>PC=16.0</td><td>CC=70.65</td><td>CD=.50</td></tr>
+		<tr><td>68</td><td>B=76.8(195)</td><td>C=88</td><td>PC=17.2</td><td>CC=70.15</td><td>CD=.53</td></tr>
+		<tr><td>69</td><td>B=77.2(196)</td><td>C=81</td><td>PC=15.8</td><td>CC=69.61</td><td>CD=.49</td></tr>
+		<tr><td>70</td><td>B=77.6(197)</td><td>C=82</td><td>PC=16.0</td><td>CC=69.12</td><td>CD=.50</td></tr>
+		<tr><td>71</td><td>B=78.0(198)</td><td>C=90</td><td>PC=17.6</td><td>CC=68.62</td><td>CD=.54</td></tr>
+		<tr><td>72</td><td>B=78.4(199)</td><td>C=90</td><td>PC=17.6</td><td>CC=68.07</td><td>CD=.54</td></tr>
+		<tr><td>73</td><td>B=78.8(200)</td><td>C=100</td><td>PC=19.5</td><td>CC=67.52</td><td>CD=.61</td></tr>
+		<tr><td>74</td><td>B=79.2(201)</td><td>C=103</td><td>PC=20.1</td><td>CC=66.91</td><td>CD=.62</td></tr>
+		<tr><td>75</td><td>B=79.6(202)</td><td>C=125</td><td>PC=24.4</td><td>CC=66.28</td><td>CD=.76</td></tr>
+		<tr><td>76</td><td>B=80.0(204)</td><td>C=125</td><td>PC=24.4</td><td>CC=65.52</td><td>CD=.76</td></tr>
+		<tr><td>77</td><td>B=80.3(204)</td><td>C=154</td><td>PC=30.1</td><td>CC=64.75</td><td>CD=.93</td></tr>
+		<tr><td>78</td><td>B=80.7(205)</td><td>C=166</td><td>PC=32.4</td><td>CC=63.81</td><td>CD=1.01</td></tr>
+		<tr><td>79</td><td>B=81.1(206)</td><td>C=187</td><td>PC=36.5</td><td>CC=62.80</td><td>CD=1.14</td></tr>
+		<tr><td>80</td><td>B=81.5(207)</td><td>C=155</td><td>PC=30.3</td><td>CC=61.66</td><td>CD=.94</td></tr>
+		<tr><td>81</td><td>B=81.9(208)</td><td>C=152</td><td>PC=29.7</td><td>CC=60.71</td><td>CD=.92</td></tr>
+		<tr><td>82</td><td>B=82.3(209)</td><td>C=133</td><td>PC=26.0</td><td>CC=59.79</td><td>CD=.81</td></tr>
+		<tr><td>83</td><td>B=82.7(210)</td><td>C=114</td><td>PC=22.3</td><td>CC=58.97</td><td>CD=.69</td></tr>
+		<tr><td>84</td><td>B=83.1(211)</td><td>C=112</td><td>PC=21.9</td><td>CC=58.28</td><td>CD=.68</td></tr>
+		<tr><td>85</td><td>B=83.5(212)</td><td>C=125</td><td>PC=24.4</td><td>CC=57.59</td><td>CD=.76</td></tr>
+		<tr><td>86</td><td>B=83.9(213)</td><td>C=124</td><td>PC=24.2</td><td>CC=56.83</td><td>CD=.75</td></tr>
+		<tr><td>87</td><td>B=84.3(214)</td><td>C=157</td><td>PC=30.7</td><td>CC=56.07</td><td>CD=.95</td></tr>
+		<tr><td>88</td><td>B=84.7(215)</td><td>C=169</td><td>PC=33.0</td><td>CC=55.12</td><td>CD=1.03</td></tr>
+		<tr><td>89</td><td>B=85.0(216)</td><td>C=164</td><td>PC=32.0</td><td>CC=54.08</td><td>CD=1.00</td></tr>
+		<tr><td>90</td><td>B=85.4(217)</td><td>C=163</td><td>PC=31.8</td><td>CC=53.08</td><td>CD=.99</td></tr>
+		<tr><td>91</td><td>B=85.8(218)</td><td>C=180</td><td>PC=35.2</td><td>CC=52.09</td><td>CD=1.09</td></tr>
+		<tr><td>92</td><td>B=86.2(219)</td><td>C=187</td><td>PC=36.5</td><td>CC=50.99</td><td>CD=1.14</td></tr>
+		<tr><td>93</td><td>B=86.6(220)</td><td>C=203</td><td>PC=39.7</td><td>CC=49.85</td><td>CD=1.23</td></tr>
+		<tr><td>94</td><td>B=87.0(221)</td><td>C=172</td><td>PC=33.6</td><td>CC=48.61</td><td>CD=1.04</td></tr>
+		<tr><td>95</td><td>B=87.4(222)</td><td>C=177</td><td>PC=34.6</td><td>CC=47.56</td><td>CD=1.08</td></tr>
+		<tr><td>96</td><td>B=87.8(223)</td><td>C=192</td><td>PC=37.5</td><td>CC=46.48</td><td>CD=1.17</td></tr>
+		<tr><td>97</td><td>B=88.2(224)</td><td>C=221</td><td>PC=43.2</td><td>CC=45.31</td><td>CD=1.34</td></tr>
+		<tr><td>98</td><td>B=88.6(225)</td><td>C=252</td><td>PC=49.3</td><td>CC=43.96</td><td>CD=1.53</td></tr>
+		<tr><td>99</td><td>B=89.0(226)</td><td>C=271</td><td>PC=53.0</td><td>CC=42.42</td><td>CD=1.65</td></tr>
+		<tr><td>100</td><td>B=89.4(227)</td><td>C=285</td><td>PC=55.7</td><td>CC=40.77</td><td>CD=1.73</td></tr>
+		<tr><td>101</td><td>B=89.8(228)</td><td>C=285</td><td>PC=55.7</td><td>CC=39.03</td><td>CD=1.73</td></tr>
+		<tr><td>102</td><td>B=90.1(229)</td><td>C=276</td><td>PC=54.0</td><td>CC=37.29</td><td>CD=1.68</td></tr>
+		<tr><td>103</td><td>B=90.5(230)</td><td>C=240</td><td>PC=46.9</td><td>CC=35.60</td><td>CD=1.46</td></tr>
+		<tr><td>104</td><td>B=90.9(231)</td><td>C=239</td><td>PC=46.7</td><td>CC=34.14</td><td>CD=1.45</td></tr>
+		<tr><td>105</td><td>B=91.3(232)</td><td>C=266</td><td>PC=52.0</td><td>CC=32.68</td><td>CD=1.62</td></tr>
+		<tr><td>106</td><td>B=91.7(233)</td><td>C=227</td><td>PC=44.4</td><td>CC=31.06</td><td>CD=1.38</td></tr>
+		<tr><td>107</td><td>B=92.1(234)</td><td>C=197</td><td>PC=38.5</td><td>CC=29.67</td><td>CD=1.20</td></tr>
+		<tr><td>108</td><td>B=92.5(235)</td><td>C=196</td><td>PC=38.3</td><td>CC=28.47</td><td>CD=1.19</td></tr>
+		<tr><td>109</td><td>B=92.9(236)</td><td>C=237</td><td>PC=46.3</td><td>CC=27.27</td><td>CD=1.44</td></tr>
+		<tr><td>110</td><td>B=93.3(237)</td><td>C=254</td><td>PC=49.7</td><td>CC=25.83</td><td>CD=1.55</td></tr>
+		<tr><td>111</td><td>B=93.7(238)</td><td>C=313</td><td>PC=61.2</td><td>CC=24.27</td><td>CD=1.91</td></tr>
+		<tr><td>112</td><td>B=94.1(239)</td><td>C=336</td><td>PC=65.7</td><td>CC=22.36</td><td>CD=2.05</td></tr>
+		<tr><td>113</td><td>B=94.5(240)</td><td>C=317</td><td>PC=62.0</td><td>CC=20.31</td><td>CD=1.93</td></tr>
+		<tr><td>114</td><td>B=94.9(241)</td><td>C=306</td><td>PC=59.8</td><td>CC=18.38</td><td>CD=1.86</td></tr>
+		<tr><td>115</td><td>B=95.2(242)</td><td>C=260</td><td>PC=50.8</td><td>CC=16.51</td><td>CD=1.58</td></tr>
+		<tr><td>116</td><td>B=95.6(243)</td><td>C=230</td><td>PC=45.0</td><td>CC=14.92</td><td>CD=1.40</td></tr>
+		<tr><td>117</td><td>B=96.0(244)</td><td>C=173</td><td>PC=33.8</td><td>CC=13.52</td><td>CD=1.05</td></tr>
+		<tr><td>118</td><td>B=96.4(245)</td><td>C=164</td><td>PC=32.0</td><td>CC=12.46</td><td>CD=1.00</td></tr>
+		<tr><td>119</td><td>B=96.8(246)</td><td>C=146</td><td>PC=28.5</td><td>CC=11.46</td><td>CD=.89</td></tr>
+		<tr><td>120</td><td>B=97.2(247)</td><td>C=170</td><td>PC=33.2</td><td>CC=10.57</td><td>CD=1.03</td></tr>
+		<tr><td>121</td><td>B=97.6(248)</td><td>C=181</td><td>PC=35.4</td><td>CC=9.53</td><td>CD=1.10</td></tr>
+		<tr><td>122</td><td>B=98.0(249)</td><td>C=194</td><td>PC=37.9</td><td>CC=8.43</td><td>CD=1.18</td></tr>
+		<tr><td>123</td><td>B=98.4(250)</td><td>C=186</td><td>PC=36.3</td><td>CC=7.25</td><td>CD=1.13</td></tr>
+		<tr><td>124</td><td>B=98.8(251)</td><td>C=189</td><td>PC=36.9</td><td>CC=6.11</td><td>CD=1.15</td></tr>
+		<tr><td>125</td><td>B=99.2(252)</td><td>C=168</td><td>PC=32.8</td><td>CC=4.96</td><td>CD=1.02</td></tr>
+		<tr><td>126</td><td>B=99.6(253)</td><td>C=134</td><td>PC=26.2</td><td>CC=3.93</td><td>CD=.81</td></tr>
+		<tr><td>127</td><td>B=100.0(255)</td><td>C=511</td><td>PC=100.0</td><td>CC=3.11</td><td>CD=3.11</td></tr>
+		</tbody></table>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+
+
+
+</body></html>

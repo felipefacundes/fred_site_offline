@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://www.fmwconcepts.com/imagemagick/colorbalance/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/colorbalance/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: COLORBALANCE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - colorbalance - manually color balance and image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, color, balance, midtones, highlights, shadows">
+<link rel="stylesheet" href="./COLORBALANCE_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="colorbalance">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./COLORBALANCE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+COLORBALANCE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Manually color balances an image in midtones, highlights, shadows or overall.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=colorbalance&amp;dirname=colorbalance">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: colorbalance [-c color] [-a amount] [-r region] [-m mid] [-f factor] [-l low] [-h high] [-t taper] infile outfile<br>
+		USAGE: colorbalance [-help]
+		</p>
+
+		<p align="left">
+		-c .... color ..... color to modify: red (r), yellow (y), green (g), <br>
+		................... cyan (c), blue (b), magenta (m); default=red<br>
+		-a .... amount .... amount of color change; 0&lt;=float&lt;=100; default=10<br>
+		-r .... region .... region to change: midtones (m), shadows (s), <br>
+		................... highlights (h), all (a); default=all<br>
+		-m .... mid ....... mid value threshold; 0&lt;=float&lt;=100; default=mean<br>
+		-l .... low ....... low value threshold; 0&lt;=float&lt;=100; <br>
+		................... default=mean-factor*std<br>
+		-h .... high ...... high value threshold; 0&lt;=float&lt;=100; <br>
+		................... default=mean+factor*std<br>
+		-f .... factor .... standard deviation factor; float&gt;0; default=0.5<br>
+		-t .... taper ..... taper for range thresholds in pixels; integer&gt;=0; <br>
+		................... default=10
+		</p>
+
+		<p align="left">
+		PURPOSE: To manually color balance an image in midtones, highlights, shadows or overall.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: COLORBALANCE manually color balances an image according to a 
+		user selected color, region and amount. The regions are midtones, shadows, 
+		highlights or all (i.e. the whole image). The regions thresholds default to 
+		mean +/- factor*standard-deviation of the appropriate channel or can be set 
+		manually. The region boundaries can be tapered so that they change gradually.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-c color ... COLOR to modify. The choices are: red (r), yellow (y), 
+		green (g), cyan (c), blue (b) or magenta (m). The default=red
+		</p>
+
+		<p align="left">
+		-a amount ... AMOUNT of color change. Values are in the range 0&lt;=float&lt;=100. 
+		The default=10.
+		</p>
+
+		<p align="left">
+		-r region ... REGION of image to change. The choices are: midtones (m), 
+		shadows (s), highlights (h) or all (a) for the whole image. The 
+		default=all.
+		</p>
+
+		<p align="left">
+		-m mid ... MID is the threshold value that determines the center of the 
+		midtone range. Values are in the range 0&lt;=float&lt;=100. The default is the 
+		appropriate channel mean.
+		</p>
+
+		<p align="left">
+		-l low ... LOW is the threshold value that determines the low end of the 
+		midtones and the high end of the shadows. Values are in the range 
+		0&lt;=float&lt;=100. The default is the appropriate channel 
+		mean - factor*standard-deviation
+		</p>
+
+		<p align="left">
+		-h high ... HIGH is the threshold value that determines the high end of the 
+		midtones and the low end of the highlights. Values are in the range 
+		0&lt;=float&lt;=100. The default is the appropriate channel 
+		mean + factor*standard-deviation
+		</p>
+
+		<p align="left">
+		-f factor ... FACTOR is the multiplication factor for the standard deviation 
+		used for the low and high threshold values. Values are floats&gt;0. The 
+		default=0.5.
+		</p>
+
+		<p align="left">
+		-t taper ... TAPER is the taper for range the thresholds in pixels. Values 
+		are integers&gt;=0. The default=10
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="6">
+		<p align="center">
+		Variation In Color Over Whole Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="6">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="6">
+		<img src="./COLORBALANCE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red -a 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c yellow -a 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c green -a 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c cyan -a 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c blue -a 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c magenta -a 25
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_red_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_yellow_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_green_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_cyan_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_blue_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_magenta_a25_all.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Variation In Range For Color Red
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="4">
+		<img src="./COLORBALANCE_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red -a 10 -r all
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red -a 10 -r midtones
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red -a 10 -r highlights
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red -a 10 -r shadows
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_red_a10_all_t10_f0m5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_red_a10_midtones_t10_f0m5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_red_a10_highlights_t10_f0m5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./COLORBALANCE_files/zelda3_colorbalance_red_a10_shadows_t10_f0m5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Selects the appropriate channel</li>
+			<li>Uses -level to process that channel</li>
+			<li>Creates a mask for the desired region as appropriate</li>
+			<li>Uses the mask to composite the processed and original images</li>
+		</ul>
+		<p></p>
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands for the case of midtones:
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+			<li>convert -quiet -regard-warnings "$infile" $dir/tmpI.mpc</li>
+			<li>case "$color" in <br>
+				red) color2="red" ;;<br>
+				yellow) color2="blue" ;;<br>
+				green) color2="green" ;;<br>
+				cyan) color2="red" ;;<br>
+				blue) color2="blue" ;;<br>
+				magenta) color2="green" ;;<br>
+				esac</li>
+			<li>case "$color" in <br>
+				red) color3="r" ;;<br>
+				yellow) color3="b" ;;<br>
+				green) color3="g" ;;<br>
+				cyan) color3="r" ;;<br>
+				blue) color3="g" ;;<br>
+				magenta) color3="b" ;;<br>
+				esac</li>
+			<li>if [ "$color" = "red" -o "$color" = "green" -o "$color" = "blue" ]; then<br>
+				amount=`convert xc: -format "%[fx:100-$amount]" info:`<br>
+				process="-channel $color2 -level 0x${amount}% +channel"<br>
+				else<br>
+				process="-channel $color2 -level ${amount}x100% +channel"<br>
+				fi</li>
+			<li>mean=`convert $dir/tmpI.mpc -format "%[fx:mean.$color3]" info:`</li>
+			<li>std=`convert $dir/tmpI.mpc -format "%[fx:standard_deviation.$color3]" info:`</li>
+			<li>[ "$mid" = "" ] &amp;&amp; mid=`convert xc: -format "%[fx:100*$mean]" info:`</li>
+			<li>[ "$low" = "" ] &amp;&amp; low=`convert xc: -format "%[fx:100*($mean-$factor*$std)]" info:`</li>
+			<li>[ "$high" = "" ] &amp;&amp; high=`convert xc: -format "%[fx:100*($mean+$factor*$std)]" info:`</li>
+			<li>convert $dir/tmpI.mpc \( -clone 0 $process \) \<br>
+			\( -clone 0 -channel $color2 -separate +channel \<br>
+			-white-threshold ${high}% -fill black -opaque white \<br>
+			-black-threshold ${low}% -fill white +opaque black \<br>
+			-blur ${taper}x65000 -level 0x50% \) \<br>
+			-compose over -composite "$outfile"</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

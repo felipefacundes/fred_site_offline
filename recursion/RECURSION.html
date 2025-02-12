@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: RECURSION</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - recursion - creates a recursive affine composite effect in an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, recursion, effect, affine, scale, rotate, translate, transformation">
+<link rel="stylesheet" href="RECURSION_files/style.css">
+</head>
+<body id="recursion" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="RECURSION_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+RECURSION
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Creates a recursive affine composite effect in an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=recursion&amp;dirname=recursion">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: recursion [-d dist] [-z zoom ] [-a angle] [- r rot] [-i iter] infile outfile<br>
+		USAGE: recursion [-h or -help]
+		</p>
+
+		<p align="left">
+		-d ..... dist ..... distance to shift on each iteration;<br>
+		................... float&gt;=0; default=10<br>
+		-z ..... zoom ..... zoom factor for each iteration;<br>
+		................... 0&lt;float&lt;=1; default=.8<br>
+		-a ..... angle .... angular direction to shift on each iteration;<br>
+		................... -180&lt;=float&lt;180 degree; default=0<br>
+		-r ..... rot ...... amount of rotation of image on each iteration;<br>
+		................... -180&lt;=float&lt;180 degrees; default=0<br>
+		-i ..... iter ..... number of iterations; integer&gt;0; default=8<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To create a recursive affine composite effect in an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: RECURSION create a recursive affine composite effect in an image.
+		The image is scaled, rotated and shifted by the specified amount on each 
+		iteration and then composited over the previous result.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-d dist ... DIST is distance to shift the image on each iterations. 
+		Values are floats &gt;= 0. Typical values are between 10 and 20. The default=10.
+		</p>
+
+		<p align="left">
+		-z zoom ... ZOOM is scale factor to apply to the image on each iteration. 
+		Values are 0<float<=1. typical="" values="" are="" slightly="" less="" than="" 1.="" the="" default=".8" <="" p="">
+
+		</float<=1.></p><p align="left">
+		-a angle ... ANGLE is the direction angle to shift the image on each iteration. 
+		It is specified as a counterclockwise rotation -180&lt;=float&lt;=180 degrees. Typical 
+		values are between 0 and 90. The default is 0 (along the positive x direction).
+		</p>
+
+		<p align="left">
+		-r rot ... ROT is the amount to rotate the image on each iteration. 
+		It is specified as a clockwise rotation -180&lt;=float&lt;=180 degrees. Typical values 
+		are betwen 0 and 30. The default is 0.
+		</p>
+
+		<p align="left">
+		-i iter ... ITER is the number of iterations in the recursion. Typical values are 
+		between 5 and 20. Values are integers&gt;0.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="center">
+		<p align="center">
+		Recursion<br>
+		<a href="http://www.jhlabs.com/ip/filters/" target="_blank">http://www.jhlabs.com/ip/filters/</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td colspan="3" valign="middle" align="center">
+		<img src="RECURSION_files/flower.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 10 -a 0 -r 0 -z 0.8 -i 8
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 10 -a 90 -r 0 -z 0.85 -i 8
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 10 -a 45 -r 0 -z 0.85 -i 8
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle0_dist10_rot0_zoom0p8_iter8.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle90_dist10_rot0_zoom0p85_iter8.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle45_dist15_rot0_zoom0p85_iter8.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 15 -a 0 -r 45 -z 0.85 -i 8
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 15 -a 45 -r 10 -z 0.85 -i 8
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-d 20 -a 45 -r 20 -z 0.8 -i 10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle0_dist15_rot45_zoom0p85_iter8.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle45_dist15_rot10_zoom0p85_iter8.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="RECURSION_files/flower_angle45_dist20_rot20_zoom0p8_iter10.jpg" width="240" vspace="0" hspace="0" height="160" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Recursively scales, rotates and rranslates the image</li>
+			<li>Then composites it over the previous result</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>xc=`convert $infile -format "%[fx:w/2]" info:`</li>
+			<li>yc=`convert $infile -format "%[fx:h/2]" info:`</li>
+			<li>xo=`convert xc: -format "%[fx:$xc+$dist*cos($angle*pi/180)]" info:`</li>
+			<li>yo=`convert xc: -format "%[fx:$yc-$dist*sin($angle*pi/180)]" info:`</li>
+			<li>convert $infile $tmpA</li>
+			<li>convert $tmpA $tmpC</li>
+			<li>i=1</li>
+			<li>while [ $i -le $iter ]; do</li>
+			<li>convert $tmpC -channel RGBA -matte -virtual-pixel transparent \<br>
+			-distort SRT "$xc,$yc $zoom $rot $xo,$yo" $tmpC</li>
+			<li>convert $tmpA $tmpC -composite $tmpA</li>
+			<li>i=`expr $i + 1`</li>
+			<li>done</li>
+			<li>convert $tmpA $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="RECURSION_files/app.js" type="text/javascript"></script></body></html>

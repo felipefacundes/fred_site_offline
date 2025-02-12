@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: PICTUREFOLD</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - picturefold - applies a map-like folded appearance to an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, picturefold, picture, image, map, fold, shading, border, shadow">
+<link rel="stylesheet" href="PICTUREFOLD_files/style.css">
+</head>
+<body id="picturefold" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="PICTUREFOLD_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+PICTUREFOLD
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Applies a map-like folded appearance to an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=picturefold&amp;dirname=picturefold">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: February 07, 2019</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: picturefold [-n numfolds] [-a angle] [-h height] [-l location] 
+[-y yoffset] [-s shading] [-t thickness] [-b bdcolor] [-B bgcolor] [-o 
+opacity] [-d distance] [-r ramp] infile outfile<br>
+		USAGE: picturefold [-help]
+		</p>
+
+		<p align="left">
+		-n ... numfolds .... number of folds; integer&gt;=2; default=5<br>
+		-a ... angle ....... angle of fold; 0&lt;=integer&lt;=40; default=10<br>
+		-h ... height ...... crop height as percent; 5&lt;=integer&lt;=95; default=95<br>
+		-l ... location .... vertical crop location; north, south or center; <br>
+		.................... default=center<br>
+		-y ... yoffset ..... percent vertical offset from the crop location; <br>
+		.................... -100&lt;=integer&lt;=100; default=0<br>
+		-s ... shading ..... shading brightness value; 0&lt;=integer&lt;=100; default=70 <br>
+		-t ... thickness ... border thickness; integer&gt;=0; default=0 (off)<br>
+		-b ... bdcolor ..... border color; any valid IM color is allowed; <br>
+		.................... default=red<br>
+		-B ... bgcolor ..... background color; any valid IM color is allowed; <br>
+		.................... default=white<br>
+		-o ... opacity ..... shadow opacity; 0&lt;=integer&lt;=100; default=0 (off)<br>
+		-d ... distance .... shadow distance; integer&gt;=0; default=5<br>
+		-r ... ramp ........ shadow ramping (tapering); integer&gt;=0; default=5
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a map-like folded appearance to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: PICTUREFOLD applies a map-like folded appearance to an image.
+		A border or shadow optionally may be placed around the image.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-n numfolds ... NUMFOLDS is the number of folds. Values are integers&gt;=2. 
+		The default=5.
+		</p>
+
+		<p align="left">
+		-a angle ... ANGLE of fold. Values are 0&lt;=integer&lt;=40. The default=10.
+		</p>
+
+		<p align="left">
+		-h height ... HEIGHT is the crop height as percent of the image height for 
+		desired region. Values are 5&lt;=integers&lt;=95. The default=95.
+		</p>
+
+		<p align="left">
+		-l location ... LOCATION is the desired vertical crop location. Values are: 
+		north, south or center. The default=center.
+		</p>
+
+		<p align="left">
+		-y yoffset ... YOFFSET is the percent vertical offset from the crop location.  
+		Values are -100&lt;=integer&lt;=100. The default=0.
+		</p>
+
+		<p align="left">
+		-s shading ... SHADING brightness value. Values are 0&lt;=integer&lt;=100. A value 
+		of 0 is black and 100 is full image brightness. The default=70.
+		</p>
+
+		<p align="left">
+		-t thickness ... THICKNESS is the border thickness. Values are integers&gt;=0. 
+		However, for thickness=1, thickness will be set to 2 for functionality  
+		reasons. The default=0 (no border).
+		</p>
+
+		<p align="left">
+		-b bdcolor ... BDCOLOR is the border color. Any valid IM color is allowed.  
+		The default=red.
+		</p>
+
+		<p align="left">
+		-B bgcolor ... BGCOLOR is the background color. Any valid IM color is 
+		allowed. The default=white.
+		</p>
+
+		<p align="left">
+		-o opacity ... OPACITY is the shadow opacity. Values are 0&lt;=integer&lt;=100. 
+		The default=0 (no shadow).
+		</p>
+
+		<p align="left">
+		-d distance ... DISTANCE is the shadow distance (length). Values are 
+		integers&gt;=0. The default=5.
+		</p>
+
+		<p align="left">
+		-r ramp ... RAMP is the shadow ramping (tapering). Values are integer&gt;=0. 
+		The default=5.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 1 - Variation Of Parameters
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://www.thecartoonpictures.com/r-cartoon-animal-224-cartoon-parrot-1465.htm" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2.jpg" width="512" height="410">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a10_n5_t0_c_002.jpg" width="510" height="408">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-t 8
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a10_n5_t8_c_002.jpg" width="528" height="404">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-o 80
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a10_n5_t0_cred_.jpg" width="530" height="420">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-t 8 -o 80
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a10_n5_t8_cred_.jpg" width="540" height="416">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-n 10 -t 8
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a10_n10_t8_cred.jpg" width="528" height="404">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-a 20 -t 8
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a20_n5_t8_cred_.jpg" width="528" height="407">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-a 40 -t 8
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h95_lcenter_y0_s70_a40_n5_t8_cred_.jpg" width="528" height="406">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-t 8 -h 60 -y -5
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/cartoon_parrot2_imagefold_h60_lcenter_ym5_s70_a10_n5_t8_cred.jpg" width="528" height="282">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 2 - Variation Of Parameters
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://goo.gl/maps/h9k4U" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map.jpg" width="680" height="681">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-h 50
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map_imagefold_h50_lcenter_y0_s70_a10_n5.jpg" width="680" height="365">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-t 8 -h 50
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map_imagefold_h50_lcenter_y0_s70_a1_003.jpg" width="698" height="383">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-o 80 -h 50
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map_imagefold_h50_lcenter_y0_s70_a1_004.jpg" width="700" height="385">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-t 8 -o 80 -h 50
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map_imagefold_h50_lcenter_y0_s70_a1_002.jpg" width="710" height="395">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-h 95
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="PICTUREFOLD_files/san_francisco_google_map_imagefold_h95_lcenter_y0_s70_a10_n5.jpg" width="680" height="671">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Crops the image as desired</li>
+			<li>Creates a vertically striped mask with alternating sections of <br>
+				bright and dark and multiplies it with the image</li>
+			<li>Creates a white on black mask with alternately sheared sections <br>
+				and puts it in the alpha channel of the image</li>
+			<li>Optionally adds a border</li>
+			<li>Optionally adds a shadow</li>
+		</ul>
+		<p></p>
+		
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+<script src="PICTUREFOLD_files/app.js" type="text/javascript"></script></body></html>

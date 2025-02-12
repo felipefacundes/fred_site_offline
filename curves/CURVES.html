@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://www.fmwconcepts.com/imagemagick/curves/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: CURVES</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - curves - generate a smoothly interpolated, curved mapping look up table from a set of break points and applies it to an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, curves, curve, spline, catmull rom, catmull-rom, catrom, mapping, transformation, look up table, intensity transformation, intensity mapping">
+<link rel="stylesheet" href="./CURVES_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="2f2b143cd6a01ae81c8f1c233d24899d"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="curves">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./CURVES_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+CURVES
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Generate a smoothly interpolated, curved mapping look up table 
+		from a set of break points and applies it to an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=curves&amp;dirname=curves">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: curves [-s xscale,yscale] [-g graphmode] "x1,y1 x2,y2 ..." infile outfile<br>
+		USAGE: curves [-s xscale,yscale] [-g graphmode] -f point_file infile outfile<br>
+		USAGE: curves [-h or -help]
+		</p>
+
+		<p align="left">
+		"x1,y1 x2,y2 ..." ....... break point values of piece-wise linear transformation<br>
+		......................... enclosed in quotes; minimum of one (x,y) break point pair;<br>
+		......................... x corresponds to the graylevel in the input image;<br>
+		......................... y corresponds to the graylevel in the outut image;<br>
+		......................... x,y non-negative floats enclosed in quotes;  <br>
+		......................... list must be specified just prior to lutfile<br>
+		-c ... channel .......... channel to process; options are: red, green, blue, <br>
+		......................... lightness, brightness, luma and luminosity; <br>
+        ......................... default=all rgb channels<br>
+		-f ... point_file ....... text file containing list of break points;<br>
+		......................... one x,y pair per line<br>
+		-s ... xscale,yscale .... range of values for x,y breakpoint pairs from 0 to xscale,yscale;<br>
+		......................... positive integers; default=100,100<br>
+		-g ... graphmode ........ enables the creation of a graph of the transformation<br>
+		......................... and optionally the original break point, which is then <br>
+		......................... displayed automatically. The choices are: curve (C) or<br> 
+		......................... points (P), where the latter shows the original user <br>
+		......................... specified break points in addition to the curve. The <br>
+		......................... default is curve (C). There is a default setting below <br>
+		......................... that can be changed to enable this to be save to a file <br>
+		......................... named outfile_graph.gif
+		</p>
+
+		<p align="left">
+		PURPOSE: To generate a smoothly interpolated, curved mapping look up table 
+		from a set of break point and applies it to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: CURVES takes the supplied break point pairs and generates a  
+		dimensional spline curve that is then used to create a 1-D look up table image. 
+		The look up table image is then used to change grayscale values in the channels 
+		of the input image. At least one point pair must be supplied either as an argument 
+		or in a text file with one pair per line supplied. The x value is the position in the 
+		look up table which is associated with the grayscale value of the desired channels of 
+		the input image and the y value is the associated grayscale value for the corresponding 
+		channels in the resulting output image. A Catmull-Rom spline is used to generate the 
+		the curve and does go through the supplied point pairs.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		"x1,y1 x2,y2" ... List of x,y break-points for the curved
+		transformation. The x,y values are non-negative break-point pairs for
+		the curved transformation. There is a minimum one point pair that must
+		be supplied. The x and y values are associated with the input and output
+		grayscale values of the look up table, where x,y values can range from 0
+		to xscale,yscale. xscale determines the length of the 1D lookup table
+		(length=xscale + 1); that is, the range of x (input) values and yscale
+		determines the range of y (output) values. Both xscale and yscale must
+		be positive integers and their defaults are 100. If the first pair is
+		not 0,0 or the last pair is not xscale,yscale then those points will be
+		added automatically to the list of point pairs. IMPORTANT: the list of
+		break-point pairs must be specified just prior to infile outfile.
+		</p>
+
+		<p align="left">
+		-f point_file ... point-file is a text file containing the list of break 
+		points, one x,y pair per line.
+		</p>
+
+		<p align="left">
+		-s  xscale,yscale ...    xscale,yscale is the range of values for the
+		x,y breakpoint pairs which go from 0 to xscale,yscale; positive
+		integers. The default is 100,100. Larger values for xscale and yscale
+		can be used for more accuracy. For example with xscale=yscale=100, x and
+		y values are specified between 0 and 100 and the length of the output
+		image is 101 pixels. For xscale=yscale=255, x and y values are specified
+		# between 0 and 255 and the length of the output image is 256. Equal
+		values for xscale and yscale are not required.
+		</p>
+		
+		<p align="left">
+		-c channel ... CHANNEL to process. Options are: red, green, blue, lightness 
+		(L from HSL), brightness (B from HSB), luma (Y from YCbCr) and luminosity 
+		(L from Lab). The default=all rgb channels.
+		</p>
+
+		<p align="left">
+		-g graphmode... enables the creation of a graph of the curved transformation, 
+		which is then displayed automatically. The choices are: curve (C) or 
+		points (P), where the latter shows the original user specified break points 
+		in addition to the curve. The default is no graph if this option is not used. 
+		There is also a default setting below that can be changed to enable this to be 
+		save to a file named outfile_graph.gif. The graph will be scaled to size 100x100. 
+		IMPORTANT: To end the script, close/quit the graph image.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM 6.7.8.2 or higher when using channel=luminosity.
+		</p>
+
+		<p align="left">
+		NOTE: Due to changes in IM colorspace, results for versions 6.7.7.8 - 6.8.5.4 
+		will be brighter for channels other than r,g,b
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<p align="center" class="red">Thanks to Anthony Thyssen for the technique used to draw the points efficiently</p>
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		One-Point Curve<br>
+		(simulates -gamma)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Dark Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		arguments:<br>
+		"25,75"<br>
+		(0,0 25,75 100,100)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve only)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve with points drawn)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda2_25x75_c.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda2_25x75_c_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda2_25x75_p_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		S-Curve<br>
+		(simulates -sigmoidal-contrast)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		arguments:<br>
+		"0,0 25,15 50,50 75,85 100,100"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve only)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve with points drawn)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x15_50x50_75x85_100x100_c.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x15_50x50_75x85_100x100_c_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x15_50x50_75x85_100x100_p_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Rounded Peak<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		arguments:<br>
+		"0,0 50,100 100,0"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve only)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve with points drawn)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_50x100_100x0_c.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_50x100_100x0_c_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_50x100_100x0_p_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Oscillation<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		arguments:<br>
+		"0,0 25,75 50,50 75,25 100,100"
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve only)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Transformation Graph<br>
+		(curve with points drawn)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x75_50x50_75x25_100x100_c.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x75_50x50_75x25_100x100_c_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CURVES_files/zelda3_0x0_25x75_50x50_75x25_100x100_p_graph.gif" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a black background image</li>
+			<li>Uses a Catmull-Rom spline to smoothly interpolate between break points</li>
+			<li>Draws a filled white polygon using interpolated break points <br>
+				and additional points needed to make a closed polygon</li>
+			<li>Removes the first row of the image</li>
+			<li>Do a box average of each column in the image to create the lut</li>
+			<li>Apply the lut to the image</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Spline interpolate break points</li>
+			<li>convert $infile \<br>
+				\( -size 101x101 xc:black -fill white \<br>
+				-draw "polygon $points" \<br>
+				-crop 101x100+0+1 +repage \<br>
+				-scale 101x1! \) \<br>
+				-clut $outfile
+</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

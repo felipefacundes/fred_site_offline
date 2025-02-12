@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.fmwconcepts.com/imagemagick/tshirtwarp/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: TSHIRTWARP</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - tshirtwarp - transforms an image to place it in a region of a tshirt image using an external lighting and displacement map">
+<meta name="keywords" content="ImageMagick, scripts, image processing, tshirtwarp, distortion, warp, lighting, wrinkles, composite, overlay">
+<link rel="stylesheet" href="./TSHIRTWARP_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="895e42b77be39862c64fbb3a38bc9fc3"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="tshirtwarp">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./TSHIRTWARP_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+TSHIRTWARP
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Transforms an image to place it in a region of a tshirt image using an external lighting and displacement map
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=tshirtwarp&amp;dirname=tshirtwarp">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: July 17, 2020</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: tshirtwarp lightingfile displacementfile infile backgroundfile outfile<br>
+		or<br>
+		USAGE: tshirtwarp datadirectory infile backgroundfile outfile<br>
+		<br>
+		infile is the image to be placed onto the tshirt<br>
+		<br>
+		backgroundfile is the tshirt image<br>
+		<br>
+		lighting file and displacement file are generated by the script tshirt with 
+		the -E option<br>
+		<br>
+		datadirectory is specified and/or created by the tshirt script and will contain 
+		the lighting file, dispacement file and textfile of arguments named tshirtdata.txt 
+		exported using the -E and -D directory options.
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply an image to a region of of a tshirt image using a lighting
+		file, a displacement map and arguments provided by the script tshirt.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: TSHIRTWARP applies an image to a region of a tshirt image 
+		using a lighting file, a displacement map and arguments provided by the 
+		script tshirt. The arguments must be copied from the tshirt script output 
+		at the terminal and pasted in the arguments section of this script, if no directory 
+		file was specified during the running of the tshirt script. If a directory was 
+		specified, then all the images and textual data will be written to that directory 
+		and only the directory needs to be specified with the infile and backgroundfile and 
+		outfile. The latter mode with the directory permits one tshirtwarp script to be used 
+		with all style tshirts, rather than save a customized script for each style tshirt.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM 6.3.6-0 due to the use of the current control point 
+		ordering. Also requires the preprocessing of the tshirt script in export 
+		mode (-E) to get the lighting image (lighting.png), the displacement image 
+		(displace.png) and to get the needed internal arguments that must be pasted 
+		in this script below.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		First Run Tshirt Script With Option -E To Get Lighting Image, Displacement Map and Terminal Listing
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input (Overlay) Image <br>
+		(<a href="http://en.wikipedia.org/wiki/File:Vincent_Willem_van_Gogh_128.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/flowers_van_gogh.jpg" width="479" height="599" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background (Tshirt )Image <br>
+		(<a href="http://www.kohls.com/product/prd-1493783/sonoma-life-style-solid-washed-crew-tee-men.jsp" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_gray.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-r "130x130+275+175" -R -3 -o 5,0 -E
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_gray_flowers_none_Rm3_o5x0.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lighting Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/lighting.png" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displacement Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/displace.png" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Terminal Listing
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		coordinates="0,0 276,179 478,0 405,172 478,478 411,300 0,478 283,307"<br>
+		sharpen="1"<br>
+		displace="10"<br>
+		modulating=""<br>
+		compose="hardlight"<br>
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Now Copy And Past the Terminal Text into the Tshirtwarp Script<br> 
+		 in the Marked Section, Save With a New Name and Run It<br>
+		( speed gain about 2x )<br><br>
+		tshirtwarp_custom lighting.png displace.png overlayfile tshirtfile outputfile<br><br>
+		(provide paths as needed)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lighting Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/lighting.png" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displacement Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/displace.png" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input (Overlay) Image <br>
+		(<a href="http://en.wikipedia.org/wiki/File:Vincent_Willem_van_Gogh_128.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/flowers_van_gogh.jpg" width="479" height="599" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background (Tshirt )Image <br>
+		(<a href="http://www.kohls.com/product/prd-1493783/sonoma-life-style-solid-washed-crew-tee-men.jsp" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_wine.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(none needed)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirtwarp_wine_flowers_none_Rm3_o5x0.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Alternately, Run Tshirt Script With Option -E -D path2/data_directory<br>
+		(where you specify some data_directory to put all the needed files)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input (Overlay) Image <br>
+		(<a href="http://en.wikipedia.org/wiki/File:Vincent_Willem_van_Gogh_128.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/flowers_van_gogh.jpg" width="479" height="599" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background (Tshirt )Image <br>
+		(<a href="http://www.kohls.com/product/prd-1493783/sonoma-life-style-solid-washed-crew-tee-men.jsp" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_gray.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-r "130x130+275+175" -R -3 -o 5,0 -E -D path2/data_directory
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_gray_flowers_none_Rm3_o5x0.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Textual Data listed At the terminal and written to a file called tshirtdata.txt in the data_directory
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="left">
+		coordinates="0,0 276,179 478,0 405,172 478,478 411,300 0,478 283,307"<br>
+		sharpen="1"<br>
+		displace="10"<br>
+		modulating=""<br>
+		compose="hardlight"<br>
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Now Run The tshirtwarp script supplying data_directory followed by your overlayfile, tshirtfile and outputfile<br>
+		( speed gain about 2x )<br><br>
+		tshirtwarp data_directory overlayfile tshirtfile outputfile<br><br>
+		(provide paths as needed)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input (Overlay) Image <br>
+		(<a href="http://en.wikipedia.org/wiki/File:Vincent_Willem_van_Gogh_128.jpg" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/flowers_van_gogh.jpg" width="479" height="599" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background (Tshirt )Image <br>
+		(<a href="http://www.kohls.com/product/prd-1493783/sonoma-life-style-solid-washed-crew-tee-men.jsp" target="_blank">Source Image</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirt_wine.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(none needed)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TSHIRTWARP_files/tshirtwarp_wine_flowers_none_Rm3_o5x0.jpg" width="662" height="662" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Requires that Tshirt Script be run first with option -E<br>
+				to export the lighting and displacement map image and arguments<br>
+			    listed to the terminal</li>
+			<li>Copy and paste the arguments from the terminal into the Tshirtwarp Script<br>
+				where specified.</li>
+			<li>Run Tshirtwarp with the lighting image, displacement map image, <br>
+				input image and background image.</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

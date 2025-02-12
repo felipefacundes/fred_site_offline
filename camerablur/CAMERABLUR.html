@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.fmwconcepts.com/imagemagick/camerablur/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/camerablur/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: CAMERABLUR</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - camerablur - blurs an image in the frequency domain using an ideal blurring filter for either motion blur or lens defocus.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, camerablur, convolution, Fourier Transform, real, imaginary, components, blurring, frequency domain, sinc, jinc">
+<link rel="stylesheet" href="./CAMERABLUR_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="camerablur">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./CAMERABLUR_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+CAMERABLUR
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Blurs an image in the frequency domain using an ideal blurring 
+		filter for either motion blur or lens defocus.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=camerablur&amp;dirname=camerablur">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: May 12, 2019</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: camerablur [-t type] [-a amount] [-r rotation] infile outfile<br>
+		USAGE: camerablur [-h or -help]
+		</p>
+
+		<p align="left">
+		-t ... type ........ type of blur; choices are: motion (or m) or <br>
+		.................... defocus (or d); default=defocus<br>
+		-a ... amount ...... amount of blur; either length of motion blur or <br>
+		.................... diameter of defocus; float&gt;0; default=10<br>
+		-r ... rotation .... rotation angle clockwise from horizontal for the <br>
+		.................... motion blur; floats; -180&lt;=rotation&lt;=180; default=0<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply motion blur or lens defocus to an image using an ideal 
+		frequency domain filter.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: CAMERABLUR blurs an image in the frequency domain using an
+		ideal frequency domain blurring filter for either motion blur or lens
+		defocus. The motion blur filter in the frequency domain is just an a rotated
+		1D sinc function depending upon the direction of the motion. The lens
+		defocus filter in the frequency domain is just a jinc function. The user
+		specifies the parameters needed to create those functions directly as
+		images. An explicit filter image is not input to the script. The internally
+		generated filter will then be multiplied by the Fourier transform of the
+		image created with +fft and the results will then be returned to the spatial
+		domain via the inverse Fourier transform using +ift. Any alpha channel on
+		the filter will be removed automatically before processing. If the image has
+		an alpha channel it will not be processed, but simply copied from the input
+		to the output.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-t type ... TYPE of blur. The choices are: motion (or m) and defocus (or d).  
+		The default=defocus.
+		</p>
+
+		<p align="left">
+		-a amount ... AMOUNT of blur. This is either the length of the motion blur or 
+		the diameter of the lens defocus. Values are float&gt;0. The default=10.
+		</p>
+
+		<p align="left">
+		-r rotation ... ROTATION angle in degrees specified clockwise from horizontal 
+		for the motion blur. Values are floats with -180&lt;=rotation&lt;=180. The default=0.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM version 6.5.4-7 or higher, but compiled with HDRI enabled 
+		in any quantum level of Q8, Q16 or Q32. Also requires the FFTW delegate 
+		library.
+		</p>
+
+		<p align="left">
+		LIMITATIONS: This script works well only with even, square images. Otherwise,   
+		the FFT will pad them with black to conform. However, there will be excessive 
+		ringing due to the color discontinuity associated with the padding. This 
+		even, square limitation is a ramification of the current IM implementation 
+		that needs addressing at some future time. It is not a limitation of FFTW.
+		</p>
+
+		<p align="left">
+		See <a href="http://www.fmwconcepts.com/imagemagick/fourier_transforms/fourier.html" target="_blank">Fourier Transform with ImageMagick</a>, for more details. 
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Horizontal Motion Blur
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Log Enhanced<br>Internally<br>Generated<br>Sinc Filter
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t motion -a 7 -r 0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/cameraman2.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/idealmotion7r0_filt_log100.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/cameraman2_idealmotion7r0.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Lens Defocus
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Input
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Log Enhanced<br>Internally<br>Generated<br>Jinc Filter
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t defocus -a 7
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/cameraman2.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/idealdefocus7_fast_filt_log100.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./CAMERABLUR_files/cameraman2_idealdefocus7_fast.png" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Computes the Fourier transform real and imaginary components <br>
+				of the image using +fft</li>
+			<li>Creates a Sinc function image for motion blur or <br>
+				a Jinc function image for defocus
+			</li><li>Performs complex number multiplication using the filter  
+				with the real and imaginary components</li>
+			<li>Converts the real and imaginary products back to the 
+				spatial domain</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for horizontal motion blur
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>width=`identify -ping -format "%w" $infile`</li>
+			<li>height=`identify -ping -format "%h" $infile`</li>
+			<li>w1=`convert xc: -format "%[fx:($width%2)==0?$width:($width+1)]" info:`</li>
+			<li>h1=`convert xc: -format "%[fx:($height%2)==0?$height:($height+1)]" info:`</li>
+			<li>cx=`convert xc: -format "%[fx:floor(($width+1)/2)]" info:`</li>
+			<li>cy=`convert xc: -format "%[fx:floor(($height+1)/2)]" info:`</li>
+			<li>d1=`convert xc: -format "%[fx:max($w1,$h1)]" info:`</li>
+			<li>fd1=`convert xc: -format "%[fx:$amount*pi/$d1]" info:`</li>
+			<li>sinang=`convert xc: -format "%[fx:sin($rotation*pi/180)]" info:`</li>
+			<li>cosang=`convert xc: -format "%[fx:cos($rotation*pi/180)]" info:`</li>
+			<li>convert -size ${w1}x1 xc: \<br>
+				-fx "zz=$fd1*(i-$cx)*$cosang; zz?sin(zz)/(zz):1" \<br>
+				-scale ${w1}x${h1}\! $tmpF</li>
+			<li>convert \( $infile -alpha off +fft \) \<br>
+				\( -clone 0 $tmpF -compose multiply -composite \) \<br>
+				\( -clone 1 $tmpF -compose multiply -composite \) \<br>
+				-delete 0,1 +ift -crop ${width}x${height}+0+0 +repage \<br>
+				$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

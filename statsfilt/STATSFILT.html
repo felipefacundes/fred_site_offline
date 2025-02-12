@@ -1,0 +1,976 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/statsfilt/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: STATSFILT</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - statsfilt - various statistical filters primarily used to reduce noise in an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, statsfilt, noise filters, statistical filters, noise reduction">
+<link rel="stylesheet" href="./STATSFILT_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="3c6f12082db73cf00eb79761292da159"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="statsfilt">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./STATSFILT_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+STATSFILT
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Various statistical filters primarily used to reduce noise in an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=statsfilt&amp;dirname=statsfilt">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: statsfilt [-s statistic] [-p power] infile outfile<br>
+		USAGE: statsfilt [-h or -help]
+		</p>
+
+		<p align="left">
+		Option<br>
+		-s ...... statistic ... id number for the statistical filter to compute; default=1 <br>
+		....................... statistic=1:  simple average (arithmetic mean) of neighborhood <br>
+		..................................... pixels <br>
+		....................... statistic=2: minimum value of neighborhood pixels <br>
+		....................... statistic=3: maximum value of neighborhood pixels <br>
+		....................... statistic=4: average of the minimum and maximum values <br>
+		....................... statistic=5: arithmetic mean excluding min and max values <br>
+		....................... statistic=6: standard deviation of neighborhood pixels <br>
+		....................... statistic=7: geometric mean of neighborhood pixels <br>
+		....................... statistic=8: harmonic mean of neighborhood pixels <br>
+		....................... statistic=9: Lp mean of neighborhood pixels;  <br>
+		.................................... requires p=integer option <br>
+		....................... statistic=10: contraharmonic mean of neighborhood pixels; <br>
+		..................................... require p=integer option <br>
+		....................... statistic=11: linear distance weighted average of <br>
+		..................................... neighborhood pixels, excluding the center <br>
+		....................... statistic=12: inverse distance weighted average of  <br>
+		..................................... neighborhood pixels, excluding the center <br>
+		....................... statistic=13: minimum or maximum whichever value is closest <br>
+		..................................... to center  <br>
+		....................... statistic=14: average (arithmetic mean) without the center pixel <br> 
+		-p ...... power ....... exponent value to use with statistic 9 and 10;  <br>
+		....................... exponent=integer; default=2 <br>
+		-h ...... get help <br>
+		-help ... get help
+		</p>
+
+
+
+		<p align="left">
+		PURPOSE: To compute various localized (neighborhood) statistical 
+		filters on an image. 
+		</p>
+
+
+		<p align="left">
+		DESCRIPTION: STATSFILT is a collection of localized (neighborhood) 
+		statistical filters most of which are used for mostly for noise 
+		reduction in an image.  Note that most noise reduction filters 
+		trade noise reduction for some degree of blurring.
+		</p>
+
+		<p align="left">
+		Arguments:
+		</p>
+
+		<p align="left">
+		-h or help ..... displays help information. 
+		</p>
+
+		<p align="left">
+		-s ..... statistic ..... statistic is a numerical id for the type of
+		statistic to be calculated. 
+		</p>
+
+		<p align="left">
+		A value of 1 replaces each input pixel with the simple average 
+		(or arithmetic mean) of all the pixels in the 3x3 neighborhood about 
+		that input pixel.
+		</p>
+		
+		<p align="left">
+		A value of 2 replaces the input pixel with the minimum value found in
+		the neighborhood.
+		</p>
+		
+		<p align="left">
+		A value of 3 replaces the input pixel with the maximum value found in
+		the neighborhood.
+		</p>
+		
+		<p align="left">
+		A value of 4 replace the input pixel with average of the minimum and
+		maximum values in the neighborhood.
+		</p>
+		
+		<p align="left">
+		A value of 5 replaces the input pixel with simple average of all the
+		pixels in the neighborhood, except the minimum and maximum values. 
+		Thus it is throwing out the two extreme outliers.
+		</p>
+		
+		<p align="left">
+		A value of 6 replaces the input pixel with the standard deviation of
+		all the pixels in the neighborhood. This is more of an edge operator
+		that a noise reduction operator.
+		</p>
+		
+		<p align="left">
+		A value of 7 replaces the input pixel with geometric mean of all the
+		pixels in the neighborhood. The geometric mean is computed by taking
+		the ln of each neigborhood pixel value, averaging these values and
+		then taking the exp of the result. The geometric mean is used 
+		especially for noise reduction when dealing with one-sided noise 
+		that is all bright spikes (but not well at all dark spikes).
+		</p>
+		
+		<p align="left">
+		A value of 8 replaces the input pixel with the harmonic mean of all
+		the pixels in the neighborhood. The harmonic mean is computed by
+		taking the inverse of each pixel value, averaging these results and
+		then taking the inverse of the result. The harmonic mean is used 
+		especially for noise reduction when dealing with one-sided noise 
+		that is all bright spikes (but not well at all dark spikes).
+		</p>
+		
+		<p align="left">
+		A value of 9 replaces the input pixel with the Lp mean of all the
+		pixels in the neighborhood. The Lp mean is computed by raising each
+		pixel value in the neighborhood to some power, averaging these results
+		and then raising the result to the equivalent inverse power (i.e. the
+		negative value of the power). A choice of p=0 is not allowed.
+		Typically p is a low valued integer, i.e. 2 or -2. Note that p=1 is 
+		equivalent to the simple average (arithmetic mean) and p=-1 is 
+		equivalent to the harmonic mean. The Lp mean is used especially for 
+		noise reduction when dealing with one-sided noise that is either all 
+		bright spikes or all dark spikes. For all bright spikes, use negative 
+		p values and for all dark spikes, use positive p values.
+		</p>
+		
+		<p align="left">
+		A value of 10 replaces the input pixel with the contraharmonic mean 
+		of all the pixels in the neighborhood. The contraharmonic mean is
+		computed by taking the average of all the pixels in the neighborhood
+		raised to the power p+1 and dividing that by the average of all the
+		pixels in the neighborhood raised to the power p. The power p can be
+		any integer. A choice of p=-1 is not allowed. Note that p=0 is 
+		equivalent to the simple average (arithmetic mean). The contraharmonic 
+		mean is used especially for noise reduction when dealing with one-sided 
+		noise that is either all bright spikes or all dark spikes. For all bright 
+		spikes, use negative p values and for all dark spikes, use positive p 
+		values.
+		</p>
+
+		<p align="left">
+		A value of 11 replaces each pixel in the input image with a linear 
+		distance weighted average of all pixels in the neighborhood, except the
+		original center pixel. Weighting is measured as one minus the absolute 
+		difference between the graylevel of each neighbor and the center pixel.
+		Thus pixels with smaller differences (i.e. values closer to that of the 
+		the center pixel) are weighted higher.
+		</p>
+		
+		<p align="left">
+		A value of 12 replaces each pixel in the input image with an inverse 
+		distance weighted average of all pixels in the neighborhood, except the
+		original center pixel. Weighting is measured as inverse of the absolute 
+		difference between the graylevel of each neighbor and the center pixel.
+		Thus pixels with smaller differences (i.e. values closer to that of the 
+		the center pixel) are weighted higher.
+		</p>
+
+		<p align="left">
+		A value of 13 replaces each pixel in the input image with either the 
+		minimum or maximum value of all pixels in the neighborhood, whichever 
+		is closest in value to the given (center) pixel. This produces a 
+		sharpening effect on the image.
+		</p>
+		
+		<p align="left">
+		A value of 14 replaces each pixel in the input image with the average 
+		of all the pixels in the neighborhood, but the center pixel.
+		</p>
+
+		<p align="left">
+		All of these statistical filters are computed within a 3x3
+		neighborhood only. As it is, some of the latter statistics take a very
+		long time to compute as this script is based up the use of fx.
+		</p>
+
+		<p align="left">
+		-p ..... power ..... exponent value to use to raise the pixel value to the given power. 
+		The values may be positive or negative integers. The default is 2
+		</p>
+
+		<p align="left" class="red">
+		WARNING: Due to the use of -fx, some of these filters are slow. 
+		On a Macintosh PowerPC G4, 1.42GHz with 512 Mbytes 
+		RAM and an image size of 128x128 pixels, it takes only a few seconds 
+		to run filters 1-10, 13 and 14, but about 20 seconds for filters 11 and 12.
+		</p>
+			
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+<p align="center"><u>Some General Statistical Filters</u></p>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>(Average)<br>
+		Arguments: -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Minimum<br>
+		Arguments: -s 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Maximum<br>
+		Arguments: -s 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Average of<br>
+		Min and Max<br>
+		Arguments: -s 4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Standard Deviation <br>
+		Arguments: -s 6<br>
+		(and -normalize)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Min or Max  <br>
+		Whichever <br>
+		Value Is Closest <br>
+		Arguments: -s 13 <br>
+		(sharpening effect)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt4.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt6_norm.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_opt13.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+ 
+<br>
+<p align="center"><u>Filtering Of Bright and Dark Noise</u></p>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		Arguments: -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		without min and max<br>
+		Arguments: -s 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Geometic Mean<br>
+		Arguments: -s 7
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Harmonic Mean<br>
+		Arguments: -s 8
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt7.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt8.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt9_p2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Contraharmonic Mean<br>
+		Arguments: -s 10 -p 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear Distance<br>
+		Weighted Average<br>
+		Arguments: -s 11
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Inverse Distance<br>
+		Weighted Average<br>
+		Arguments: -s 12
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt10_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt11.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_noise_95_opt12.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+ 
+<br>
+<p align="center"><u>Filtering Of Bright Only Noise</u></p>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		Arguments: -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		without min and max<br>
+		Arguments: -s 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Geometic Mean<br>
+		Arguments: -s 7
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Harmonic Mean<br>
+		Arguments: -s 8
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p -2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt7.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt8.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt9_p-2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p -3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Contraharmonic Mean<br>
+		Arguments: -s 10 -p -2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt9_p-3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_95_opt10_p-2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<p align="center"><u>Filtering Of Dark Only Noise</u></p>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		Arguments: -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		without min and max<br>
+		Arguments: -s 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95_opt1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95_opt5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Contraharmonic Mean<br>
+		Arguments: -s 10 -p 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95_opt9_p2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95_opt9_p3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_negnoise_95_opt10_p1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<br>
+<p align="center"><u>Comparison To Other Methods For Dense Bright Noise</u></p>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Noisy Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		Arguments: -s 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		without min and max<br>
+		Arguments: -s 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		linear distance wts<br>
+		Arguments: -s 11
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arithmetic Mean<br>
+		inverse distance wts<br>
+		Arguments: -s 12
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s11.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s12.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Geometic Mean<br>
+		Arguments: -s 7
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Harmonic Mean<br>
+		Arguments: -s 8
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p -2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Lp Mean<br>
+		Arguments: -s 9 -p -6
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Contraharmonic Mean<br>
+		Arguments: -s 10 -p -2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s7.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s8.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s9_p-2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s9_p-6.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_s10_p-2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Median<br>
+		-median 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Median<br>
+		Second Iteration
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Median<br>
+		Third Iteration
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		IM Noise Removal<br>
+		-noise 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		IM Noise Removal<br>
+		Second Interation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_med.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_med_2x.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_med_3x.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_imnoise1.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./STATSFILT_files/lenag_posnoise_85_imnoise1_2x.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Access the 9 pixels in a 3x3 neighborhood of each pixel in the image.</li>
+			<li>Uses -fx to compute various kinds of statistical averages.</li>
+			<li>Outputs the computed statistic at each corresponding output pixel.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the case of <br>
+		arguments: -s 5 (the average without the min and max values).
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>pixels="aa=p[-1,-1]; ab=p[0,-1]; ac=p[+1,-1]; ba=p[-1,0]; \<br>
+				bb=p[0,0]; bc=p[+1,0]; ca=p[-1,+1]; cb=p[0,+1]; cc=p[+1,+1];"</li>
+			<li>tot="((aa)+(ab)+(ac)+(ba)+(bb)+(bc)+(ca)+(cb)+(cc))"</li>
+			<li>min="min(min(min(min(min(min(min(min(aa,ab),ac),ba),bb),bc),ca),cb),cc)"</li>
+			<li>max="max(max(max(max(max(max(max(max(aa,ab),ac),ba),bb),bc),ca),cb),cc)"</li>
+			<li>convert $infile -fx "$pixels u=($tot-$max-$min)/7" $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

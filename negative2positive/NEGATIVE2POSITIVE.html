@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: NEGATIVE2POSITIVE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - negative2positive - converts from a (scanned film) negative image to a positive image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, negative2positive, color, scanned, negative, positive, image">
+<link rel="stylesheet" href="NEGATIVE2POSITIVE_files/style.css">
+</head>
+<body id="negative2positive" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="NEGATIVE2POSITIVE_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+NEGATIVE2POSITIVE
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Converts from a (scanned film) negative image to a positive image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=negative2positive&amp;dirname=negative2positive">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: negative2positive [-a autostretch] [-l cliplow] [-h cliphigh] 
+		[ -c color] [-d density] [-cb colorbalance] [-P1 percent1] [-P2 percent2] <br>
+		infile outfile
+		</p>
+
+		<p align="left">
+		-a .... autostretch .... autostretch image channels; options are: <br>
+		........................ none (n), together (t), or separate (s); <br>
+		........................ default=separate<br>
+		-l .... cliplow ........ clip percent on low end of histogram; <br>
+		........................ float; 0&lt;=cliplow&lt;=100; default=1<br>
+		-h .... cliphigh ....... clip percent on high end of histogram;<br>
+		........................ float; 0&lt;=cliphigh&lt;=100; default=1<br>
+		-c .... color .......... desired filter color; any valid IM opaque color <br>
+		........................ value is valid default=yellow<br>
+		-d .... density ........ density of filter; 0&lt;=integer&lt;=100; 0 is no change; <br>
+		........................ 100 is most change towards the color;<br>
+		........................ default=15 for colorbalance != level and  <br>
+		........................ default=0 for colorbalance = level <br>
+		-cb ... colorbalance ... color balance mode; choices are level, gray, <br> 
+		........................ white, both, auto or none; default=auto<br>
+		-P1 ... percent ........ percent1 threshold for autolevel processing;<br>
+		........................ 0&lt;float&lt;00; default=1<br>
+		-P2 ... percent ........ percent threshold for detecting gray/white <br>
+		........................ for auto gray and auto white balance; 0&lt;float&lt;100;<br>
+		........................ default=1
+		</p>
+
+		<p align="left">
+		PURPOSE: To convert from a (scanned film) negative image to a positive image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: NEGATIVE2POSITIVE converts from a (scanned film) negative image 
+		to a positive image. Options include: autostretching the image channels with 
+		or without clipping, color filtering and to color balance via white balance, 
+		gray balance, both, automatic or via levels.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-a autostretch --- autostretch image channels as preprocessing step. The options
+		are: together (t), separate (s) or none (n). The default=separate. 
+		Note, for some images with severe channel autostretch, the option separate 
+		can cause severe color shifts.
+		</p>
+
+		<p align="left">
+		-l cliplow ... CLIPLOW is the cumulative percent at the low end of the 
+		histogram whose graylevel will be autostretched to full black. Values are 
+		floats between 0 and 100. If cliplow=0, then the autostretch will locate 
+		the minimum value in the channel histogram. The default=1.
+		</p>
+
+		<p align="left">
+		-h cliphigh ... CLIPHIGH is the cumulative percent at the high end of  
+		the histogram whose graylevel will be autostretched to full white. Values are 
+		floats between 0 and 100. If cliplow=0, then the autostretch will locate 
+		the maximum value in the channel histogram. The default=1.
+		</p>
+
+		<p align="left">
+		-c color ... COLOR is the desired filter color. Any valid IM opaque color 
+		value is valid. The default=yellow, since yellow is the complement of blue.
+		(After the image is negated, the color is mostly bluish and yellow will 
+		remove most of the blue tint).
+		</p>
+
+		<p align="left">
+		-d density ... DENSITY of the color filter. Values are 0&lt;=integers&lt;=100. 
+		0 is no color filter processing. 100 is most change towards the selected 
+		color. The default=15 for colorbalance != level and the default=0 for 
+		colorbalance = level. Density, generally, will not make any significant 
+		change when colorbalance = level.
+		</p>
+
+		<p align="left">
+		-cb colorbalance ... COLORBALANCE mode. The choices are none, gray, white, 
+		both, auto or level. The default=auto. Both will be an equal blend of gray and 
+		white. Auto will try to choose the better of gray or white depending upon 
+		which one's percent selected pixels' rmse value (from gray or white, 
+		respectively is the smallest value. Level uses an autolevel process to get 
+		the black point, white point and (gray point converted to) gamma values.
+		</p>
+
+		<p align="left">
+		-P1 percent2 ... PERCENT2 threshold for level processing. Values are 
+		0&lt;floats&lt;100; default=1.
+		</p>
+
+		<p align="left">
+		-P2 percent2 ... PERCENT2 is the percent threshold for detecting gray/white 
+		in the image for auto color balance. Values are 0&lt;floats&lt;100. The default=1.
+		</p>
+
+		<p align="left">
+		NOTE: I thank Dr. Guenter Grau for the suggestion to normalize the r,g,b 
+		ratios by their average in the color balance part of the code.
+		</p>
+
+		<p align="left">
+		REFERENCES AND TUTORIALS:<br>
+		http://www.colorpilot.com/silver.html<br>
+		http://www.instructables.com/id/How-to-Convert-Digitized-Film-Negatives-into-Quali/?ALLSTEPS<br>
+		http://www.computer-darkroom.com/tutorials/tutorial_6_1.htm<br>
+		https://stefanofoletti.wordpress.com/tag/silverfast/<br>
+		
+http://photo.stackexchange.com/questions/23942/does-a-filter-exist-to-color-correct-color-negatives-when-copying-them-with-a-ds<br>
+		http://howtoresolved.com/tube/NM5XzDYfG60/convert-film-negatives-to-positive-tutorial<br>
+		https://www.youtube.com/watch?v=B2gLT0SWzpQ<br>
+		http://petapixel.com/2012/05/18/how-to-scan-film-negatives-with-a-dslr/<br>
+		https://www.youtube.com/watch?v=iMO50AlGyrw
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		(<a href="http://www.computer-darkroom.com/tutorials/tutorial_6_1.htm" target="_blank">source</a>) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/house_negative.png" width="448" vspace="0" hspace="0" height="359" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb auto or gray 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/house_negative_d15_auto_or_gray.png" width="448" vspace="0" hspace="0" height="359" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		(<a href="http://www.instructables.com/id/How-to-Convert-Digitized-Film-Negatives-into-Quali/?ALLSTEPS" target="_blank">source</a>) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/boys_negative.png" width="550" vspace="0" hspace="0" height="352" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb auto or gray 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/boys_negative_d15_auto_or_gray.png" width="550" vspace="0" hspace="0" height="352" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		(<a href="http://www.colorpilot.com/silver.html" target="_blank">source</a>) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/lake_negative.png" width="391" vspace="0" hspace="0" height="246" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb auto or white 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/lake_negative_d15_auto_or_white.png" width="391" vspace="0" hspace="0" height="246" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Example 4
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		(<a href="https://stefanofoletti.wordpress.com/tag/silverfast/" target="_blank">source</a>) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/prova2_negative.jpg" width="350" vspace="0" hspace="0" height="236" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb auto or gray 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/prova2_negative_auto_or_gray.png" width="350" vspace="0" hspace="0" height="236" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Example 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		(<a href="http://photo.stackexchange.com/questions/23942/does-a-filter-exist-to-color-correct-color-negatives-when-copying-them-with-a-ds" target="_blank">source</a>) 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/palace_guard_negative.jpg" width="200" vspace="0" hspace="0" height="304" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb auto or white 
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cb level 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/palace_guard_negative_d15_auto_or_white.png" width="200" vspace="0" hspace="0" height="304" border="0">
+		</td>
+		<td valign="top" align="center">
+		<img src="NEGATIVE2POSITIVE_files/palace_guard_negative_d0_level.png" width="200" vspace="0" hspace="0" height="304" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Uses IM compare function to find the best match in the infile <br>
+				to a 1x1 pixel referenced colored image </li>
+			<li>Extracts the color of the matched pixel</li>
+			<li>Creates appended, labeled swatches for the refernce color and <br>
+				the matched color</li>
+		</ul>
+		<p></p>
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands for the case of rgb in 
+		the range 0 to 255:
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+	<li>data=`compare -metric rmse -fuzz 1000000% $infile \( -size 1x1 xc:$color \) null: 2&gt;&amp;1`</li>
+	<li>coords=`echo "$data" | cut -d\  -f4`</li>
+	<li>xx=`echo "$coords" | cut -d, -f1`</li>
+	<li>yy=`echo "$coords" | cut -d, -f2`</li>
+	<li>rmse=`echo "$data" | sed -n 's/^.*[(]\(.*\)[)].*$/\1/p'`</li>
+	<li>rmse=`convert xc: -format "%[fx:floor(255*$rmse)]" info:`</li>
+	<li>mcolor=`convert ${infile}[1x1+${xx}+${yy}] -format \<br>
+		"rgb(%[fx:floor(255*u.r)],%[fx:floor(255*u.g)],%[fx:floor(255*u.b)])" info:`</li>
+	<li>rcolor=`convert -size 1x1 xc:$color -format  \<br>
+	"rgb(%[fx:floor(255*u.r)],%[fx:floor(255*u.g)],%[fx:floor(255*u.b)])" info:`</li>
+	<li>echo ""</li>
+	<li>echo "RMSE Metric: $rmse"</li>
+	<li>echo "Reference Color: $rcolor"</li>
+	<li>echo "Nearest Image Color: $mcolor"</li>
+	<li>echo ""</li>
+<li>convert \
+	\( -background "$rcolor" \<br>
+	-fill $labelcolor -font $fontname -pointsize $point \<br>
+	-gravity northwest label:"Reference Color:\n\n\n$rcolor" \) \<br>
+	\( -background "$mcolor" \<br>
+	-fill $labelcolor -font $fontname -pointsize $point \<br>
+	-gravity northwest label:"Nearest Color:\n\n\n$mcolor" \) \<br>
+	+append $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="NEGATIVE2POSITIVE_files/app.js" type="text/javascript"></script></body></html>

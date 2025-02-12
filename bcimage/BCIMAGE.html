@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: BCIMAGE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - bcimage - change the brightness, contrast and/or saturation of an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, bcimage, histogram stretch, brightness, contrast, saturation">
+<link rel="stylesheet" href="BCIMAGE_files/style.css">
+</head>
+<body id="bcimage" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="BCIMAGE_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+BCIMAGE
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="center">
+		Changes the brightness and/or contrast of an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=bcimage&amp;dirname=bcimage">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: bcimage [-g] bri,con[,sat] infile outfile <br>
+		USAGE: bcimage [-h or -help]
+		</p>
+
+		<p align="left">
+		bri ................. percent change in brightness (+/-)<br>
+		con ................. percent change in contrast (+/-)<br>
+		sat ................. percent change in saturation (+/-)<br>
+		-g .................. display mapping function graph<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To change the brightness, contrast and/or saturation 
+		of an image. 
+		</p>
+
+
+		<p align="left">
+		DESCRIPTION: BCIMAGE is designed to change the brightness 
+		and/or contrast and optionally saturation of an image. It 
+		works by converting bri and con into slope and intercept and 
+		and then into break points. The break points are then 
+		converted into a 1-D image look up table. This LUT is then 
+		used with clut or -fx to process the image. If the 
+		image is not grayscale and a sat value provided, it will 
+		convert the image into HSL space and then modify the saturation 
+		channel by changing the gamma using -gamma. Both bri and con are 
+		required. The range of values for bri,con,sat are -100 to +100. 
+		A value of 0,0[,0] leaves the image unchanged. If the image is 
+		grayscale, then it simply processes the image for brightness and 
+		contrast. The -g option displays a graph of the piece-wise linear 
+		mapping function between the input and output grayscale domains 
+		(scaled to the range of 0 to 100). The graph is normally just 
+		viewed, but a default parameter in the program can be set to 
+		allow it to be saved as outfilename_graph.gif. To end the 
+		script, close/quit the graph image. 
+		</p>
+
+		<p align="left">
+		Arguments: -h or -help ....... displays help information. 
+		</p>
+
+		<p align="left">
+		Arguments: -g ................ displays graph of intensity mapping function.
+		</p>
+
+		<p align="left">
+		Note: -g must come before bri,con[,sat] 
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		artificially brightened and contrast lowered<br>
+		convert lena.jpg -fx ".724u+.310" lena_poor.jpg
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_poor.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+ 
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="center">
+		<p align="center">
+		Brightness, Contrast, (Saturation) Changes
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">arguments:<br> -20,20</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">arguments:<br> -10,10,30</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		arguments:<br> 0,100<br>
+		full contrast
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		arguments:<br> 0,-100<br>
+		zero contrast
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b-20_c20.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b-10_c10_s30.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b0_c100.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b0_c-100.jpg" width="128" vspace="0" hspace="0" height="128" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b-20_c20_graph.gif" width="150" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b-10_c10_s30_graph.gif" width="150" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b0_c100_graph.gif" width="150" vspace="0" hspace="0" height="150" border="0">
+		</td>
+		
+		<td valign="middle" align="center">
+		<img src="BCIMAGE_files/lena_b0_c-100_graph.gif" width="150" vspace="0" hspace="0" height="150" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		slope=1.256<br>
+		intcp=-.353<br>
+		break points:<br>
+		0,0 28,0 100,90
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		slope=1.121<br>
+		intcp=-.166<br>
+		sgamma=1.409<br>
+		Break Points:<br>
+		0,0 14,0 100,95
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		slope=501.000<br>
+		intcp=-250.000<br>
+		Break Points:<br>
+		0,0 49,0 50,100 100,100
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		slope=0<br>
+		intcp=.500<br>
+		Break Points:<br>
+		0,50 100,50<br>
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		The second example above from the left does the following:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Separates the RBG image into HSB channels and saves the Saturation channel</li>
+			<li>Convert the slope (1.121) and intercept (-.166) into break points (0,0 14,0 100,95)</li>
+			<li>Convert the break points into a LUT image</li>
+			<li>Applies the LUT image to each RGB channel</li>
+			<li>Separates the new RBG image into HSB channels</li>
+			<li>Applies a gamma of 1.409 to the new Saturation channel.</li>
+			<li>Merges the Hue, Saturation and Brightness channels back as an RBG image.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands:<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert lena_poor.jpg -colorspace RGB tmp0.jpg</li>
+			<li>convert tmp0.jpg tmplut.jpg -clut tmp0p.jpg</li>
+			<li>convert tmp0p.jpg -colorspace $colormodel -channel R -separate tmp1.jpg</li>
+			<li>convert tmp0p.jpg -colorspace $colormodel -channel G -separate tmp2.jpg</li>
+			<li>convert tmp0p.jpg -colorspace $colormodel -channel B -separate tmp3.jpg</li>
+			<li>convert tmp2.jpg -gamma 1.409 tmp2p.jpg</li>
+			<li>convert tmp0.jpg -colorspace HSB tmp1.jpg -compose CopyRed -composite \ <br>
+			tmp2p.jpg -compose CopyGreen -composite tmp3.jpg -compose CopyBlue -composite \ <br>
+			-colorspace RGB lena_b-10_c10_s30.jpg</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="BCIMAGE_files/app.js" type="text/javascript"></script></body></html>

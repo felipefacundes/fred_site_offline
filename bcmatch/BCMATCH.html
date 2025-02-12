@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://www.fmwconcepts.com/imagemagick/bcmatch/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/bcmatch/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: BCMATCH</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - bcmatch - modifies one image to try to match its brightness, contrast and optionally saturation to that of another image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, bcmatch, contrast, brightness, saturation, dynamic range, intensity, luminance, brightness, lightness, colorspace">
+<link rel="stylesheet" href="./BCMATCH_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="bcmatch">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./BCMATCH_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+BCMATCH
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Modifies one image to try to match its brightness, contrast and 
+		optionally saturation to that of another image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=bcmatch&amp;dirname=bcmatch">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: bcmatch [-c colormode] [-s satmode] infile1 infile2 outfile <br>
+		USAGE: bcmatch [-h or -help]
+		</p>
+
+		<p align="left">
+		-c .... colormode ..... colorspace/channel to use to compute <br>
+		....................... brightness and contrast statistics;  <br>
+		....................... choices are: gray, intensity, luminance,  <br>
+		....................... lightness, brightness, average, magnitude, <br> 
+		....................... rgb; default=gray <br>
+		-s .... satmode ....... colorspace mode to use to modify saturation; <br>
+		....................... choices are: HSB or HSL; default is no  <br>
+		....................... change in saturation. <br>
+		....................... infile2 will be modified to match infile1
+		</p>
+
+		<p align="left">
+		PURPOSE: To modify one image to try to match its brightness, contrast and
+		optionally saturation to that of another image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: BCMATCH modifies one image to try to match its brightness and 
+		contrast and optionally saturation to that of another image. The second 
+		image will be modified to match the first image. Saturation changes 
+		only apply to color images, not grayscale ones. The choice of colormode 
+		determines what colorspace or channel will be used to measure the mean 
+		and standard deviation of the two images. The differences in mean and 
+		standard deviation are equated to brightness and contrast changes, which 
+		then are converted to intercept and slope of a linear transformation. 
+		This linear transformation is then applied to the second image to make 
+		the output. If colormode=rgb, then each channel of the second image will 
+		be processed idependently. For all other colormodes, a common transformation 
+		will be applied to all channels of the second image.
+		</p>
+
+
+		<p align="left">
+		IMPORTANT: As this is a linear transformation, it may not do justice 
+		to any non-linear differences between the two images, such as gamma 
+		modifications. Furthermore, once information is lost, especially due 
+		to too much contrast change, it generally cannot be adequately recovered.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-c colormode ... COLORMODE is the colorspace/channel to use to compute
+		the brightness and contrast values of the two images. The choices are: 
+		gray, intensity, luminance, lightness, brightness, average, magnitude 
+		and rgb. Values of gray and intensity are equivalent. If colormode=rgb, 
+		then each channel of the image will be processed independently. The 
+		default is gray.
+		</p>
+
+		<p align="left">
+		Gray or Intensity uses statistics from -colorspace Gray.<br>
+		Luminance uses statistics from -colorspace Rec709Luma.<br>
+		Lightness uses statistics from the lightness channel of -colorspace HSL.<br>
+		Brightness uses statistics from the brightness channel of -colorspace HSB.<br>
+		Average uses statistics from the first channel of -colorspace OHTA.<br>
+		Magnitude uses aggregate statistics from all the channels.<br>
+		RGB uses statistics independently from each channel of -colorspace sRGB/RGB.<br>
+		See definitions at: 
+		<a href="http://www.imagemagick.org/script/command-line-options.php#colorspace" target="_blank">http://www.imagemagick.org/script/command-line-options.php#colorspace</a>
+		</p>
+
+		<p align="left">
+		Note: generally there are only slight differences between the various 
+		non-rgb colormode results. Colormode=rgb can cause color balance shifts.
+		</p>
+
+		<p align="left">
+		-s satmode ... SATMODE is the choice of saturation colorspace to use 
+		when modifying the saturation. Choices are: HSB and HSL. The default 
+		is to make no change in saturation. If used, I recommend HSB. This 
+		argument is only applicable when both images are color (not grayscale).
+		</p>
+		
+		<p align="left">
+		REQUIRES: IM version 6.4.8-9 or higher due to the use of -function polynomial
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Attempt To Increase Brightness And Contrast On Dark And Low Contrast Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Reference Image (infile1)
+		</p>
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Dark, Low Contrast Image (infile2)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./BCMATCH_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./BCMATCH_files/zelda3_bm20_cm20.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray<br>
+		(default)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray -s hsb
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray -s hsl
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c rgb
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_bm20_cm20_match_zelda3_gray.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_bm20_cm20_match_zelda3_gray_hsb.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_bm20_cm20_match_zelda3_gray_hsl.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_bm20_cm20_match_zelda3_rgb.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Attempt To Decrease Brightness And Contrast On Bright And High Contrast Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Reference Image (infile1)
+		</p>
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Dark, Low Contrast Image (infile2)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./BCMATCH_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./BCMATCH_files/zelda3_b20_c20.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray<br>
+		(default)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray -s hsb
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c gray -s hsl
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c rgb
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_b20_c20_match_zelda3_gray.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_b20_c20_match_zelda3_gray_hsb.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_b20_c20_match_zelda3_gray_hsl.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BCMATCH_files/zelda3_b20_c20_match_zelda3_rgb.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Converts both images to desired colorspace/channel</li>
+			<li>Extracts the saturation channels of both images if<br>
+			the images are in color and the user wants to adjust saturation</li>
+			<li>Gets the mean and standard deviation statistics from those images</li>
+			<li>Converts the mean and standard deviation to brightness and <br>
+			contrast changes and then those to a linear transformation <br>
+			intercept and slope</li>
+			<li>Uses the slope and intercept with -function polynomial to <br>
+			transform the second image</li>
+			<li>Uses -modulate to change the saturation if that is desired <br>
+			using the change in mean value between the two saturation channels</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the gray colormode <br>
+		and no saturation modification.
+		</p>
+		<p align="left">
+		</p><ul>
+		<li>convert $infile1 -colorspace Gray $tmpIA1</li>
+		<li>convert $infile2 -colorspace Gray $tmpIA2</li>
+		<li>m1=`convert $infile1 -format "%[mean]" info:`</li>
+		<li>m2=`convert $infile2 -format "%[mean]" info:`</li>
+		<li>s1=`convert $infile1 -format "%[standard-deviation]" info:`</li>
+		<li>s2=`convert $infile2 -format "%[standard-deviation]" info:`</li>
+		<li>a=`convert xc: -format "%[fx:1+($s1-$s2)/$s1]" info:`</li>
+		<li>bb=`convert xc: -format "%[fx:($m1-$m2)/$m1]" info:`</li>
+		<li>b=`convert xc: -format "%[fx:0.5*($a*$bb-$a+1)]" info:`</li>
+		<li>convert $infile2 -function polynomial "$a,$b" $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

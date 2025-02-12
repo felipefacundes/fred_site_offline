@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.fmwconcepts.com/imagemagick/defisheye/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: DEFISHEYE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - defisheye - corrects for fisheye distortion in an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, fisheye, perspective, warp, hemisphere, distortion, linear, equidistant, equalarea, equisolid, orthographic, stereographic, circular, fullframe">
+<link rel="stylesheet" href="./DEFISHEYE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="b49e5cb9fa2cfc0d28064a986a3cc749"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="defisheye">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./DEFISHEYE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+DEFISHEYE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Corrects for fisheye distortion in an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=defisheye&amp;dirname=defisheye">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: January 17, 2022</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: defisheye [-i ifov] [-o ofov] [-t type] [-f format] [-c xc,yc] [-r radius] [-a angle] infile outfile<br>
+		USAGE: defisheye -d [-c xc,yc] [-r radius] [-s strokecolor] infile outfile<br>
+		USAGE: defisheye [-h or -help]
+		</p>
+
+		<p align="left">
+		-i .... ifov ......... input (fisheye) image field of view in degrees;<br>
+		...................... float; 0&lt;ifov&lt;=180; default=180<br>
+		-o .... ofov ......... output (perspective) image field of view in degrees;<br>
+		...................... float; 0&lt;ifov&lt;180; default=120<br>
+		-t .... type ......... type of fisheye lens; linear, equalarea, <br>
+		...................... orthographic, stereographic; default=linear<br>
+		-f .... format ....... format of fisheye lens image; circular or fullframe;<br>
+		...................... default=circular<br>
+		-c .... xc,yc ........ coordinates of the center of the fisheye image area, <br>
+		...................... which will also become the center of the perspective <br>
+		...................... view; float; default=center of fisheye image<br>
+		-r .... radius ....... radius of fisheye area in the input image; float;<br>
+		...................... radius&gt;0; default=min(width,height)/2<br>
+		-a .... angle ........ angle of rotation (clockwise) for the perspective image;<br>
+		...................... float; 0&lt;=angle&lt;360; default=0<br>
+		-d ................... draw circle on the input fisheye image of specified radius, <br>
+		...................... center and color=scolor, which will then become the output<br>
+		-s .... scolor ....... scolor is the stroke color for a circle that will be <br>
+		...................... drawn on the input fisheye image; default=white
+		</p>
+
+		<p align="left">
+		PURPOSE: To correct for fisheye distortion in an image.
+		</p>
+
+		<p align="left">
+		 DESCRIPTION: DEFISHEYE is designed to transform a fisheye image into 
+		 a normal perspective view looking towards the center of the fisheye image.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-i ifov ... IFOV is the input fisheye image field of view in degrees. A 
+		value of 180 will correspond to a hemispherical fisheye image within the 
+		circular area. Values are floats in the range 0&lt;ifov&lt;=180. The default is 
+		180 degrees for a full hemisphere.
+		</p>
+
+		<p align="left">
+		-o ofov ... OFOV is the output perspective image field of view in
+		degrees. Values are floats in the range 0&lt;ofov&lt;180. The default is to
+		use 120 degrees both vertically and horizontally for a circular fisheye
+		and diagonally for a full frame fisheye. The value for ofov relative to
+		the ifov determines the proportional amount of the fisheye area that
+		will be transformed. Note that in comparison, a value of 48.8 degrees
+		corresponds to a diagonal field of view from a 35 mm camera (film size
+		36mm x 24mm) with a 50mm focal length lens, i.e. a "normal" view.
+		Similarly, when the image diagonal is equal to the focal length of the
+		camera, the field of view is about 53.1 degrees. Although the default
+		value is perhaps not appropriate to a normal perspective image, this
+		will produce an image that maximizes the area covered, but without too
+		much distortion. If the original fisheye image was viewed obliquely,
+		i.e. the camera was tilted between horizontal and vertical, then the
+		resulting perspective view will have perspective distortion. That is
+		vertical edges will be tilted outward or inward. Post processing with my
+		3Drotate or rotate3D script will then correct for this perspective
+		distortion. Perspective distortion will be more pronounced with larger
+		values for ofov.
+		</p>
+
+		<p align="left">
+		-t type ... TYPE is the type of fisheye lens. The choices are: linear 
+		(equidistant), equalarea (equisolid), orthographic and stereographic. 
+		The default is linear.
+		</p>
+
+		<p align="left">
+		-f format ... FORMAT is the format of the fisheye lens image. The choices are: 
+		circular (image fills a circle that spans the minimum of the width or height) 
+		or fullframe (image spans a circle that spans the diagonal dimension). The 
+		default is circular.
+		</p>
+
+		<p align="left">
+		-c xc,yc ... XC,YC are the pixel coordinates in the input fisheye  
+		image that correspond to the (circular fisheye area) center. The pixel at 
+		this coordinate will then become the center of the perspective image. The
+		default values are the center of the input fisheye image. Values  
+		are non-negative floats. You can use the -d option to validate your 
+		choice of center and radius for the fisheye image. See more below.
+		</p>
+
+		<p align="left">
+		-r radius ... RADIUS is the radius of the fisheye circular area in the 
+		input image. Values are floats greater than zero. The default is half the 
+		minimum value between the input image width and height.
+		</p>
+
+		<p align="left">
+		-a angle ... ANGLE is the clockwise positive rotation angle for the output 
+		perspective image relative to the orientation of the input fisheye image.  
+		Values are non-negative floats in range 0&lt;=angle&lt;360. The default is 0.
+		</p>
+
+		<p align="left">
+		-d ... Use of this argument produces an ouput image that is simply the input 
+		image with a circle drawn on it to show where the expected fisheye image 
+		area is located. You can specify a radius and center point if you want to 
+		adjust the transformation to use the precise center and radius that matches 
+		the area delimited by the circle. Radius and center default as described 
+		above.
+		</p>
+
+		<p align="left">
+		-s scolor ... SCOLOR is the stroke color to use to draw the circle when the 
+		-d argument is used. The default is white.
+		</p>
+
+		<p align="left">
+		See the following references for definitions and mathematical details of each 
+		type of fisheye lens: <br>
+		<a href="http://en.wikipedia.org/wiki/Fisheye_lens" target="_blank">http://en.wikipedia.org/wiki/Fisheye_lens</a><br>
+		<a href="http://www.bobatkins.com/photography/technical/field_of_view.html" target="_blank">http://www.bobatkins.com/photography/technical/field_of_view.html</a>
+		</p>
+
+		<p align="left">
+		NOTE: This script uses -fx and therefore will be rather slow.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Mandril (Square) Image - Artificially Created Fisheye Types / Circular <br>
+		(Created With FISHEYE Script: Perspective FOV=120; Fisheye FOV=180)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Fisheye Distorted Images
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear<br>
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Equal Area<br>
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Orthographic<br>
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Stereographic<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0"><br>
+		original
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_linear_circular.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_equalarea_circular.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_orthographic_circular.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_stereographic_circular.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Corrected Images
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Equal Area<br>
+		Arguments:<br>
+		-o 120 -i 180 -t equalarea <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Orthographic<br>
+		Arguments:<br>
+		-o 120 -i 180 -t orthographic <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Stereographic<br>
+		Arguments:<br>
+		-o 120 -i 180 -t stereographic <br>-f circular
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0"><br>
+		original
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_linear_circular_defish.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_equalarea_circular_defish.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_orthographic_circular_defish.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/mandril_fish_ofov180_ifov120_stereographic_circular_defish.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Woman (Non-Square Image) - Artificially Created Lineaer Fisheye - Circular vs. Fullframe <br>
+		(Created With FISHEYE Script: Perspective FOV=120; Fisheye FOV=180)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Fisheye Distorted Images
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear Circular<br>
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear Full Frame<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx.jpg" width="142" height="216" hspace="0" vspace="0" border="0"><br>
+		original
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx_fish_ofov180_ifov120_linear_circular.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx_fish_ofov180_ifov120_linear_fullframe.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Corrected Images
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear Circular<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear Full Frame<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear <br>-f fullframe
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx.jpg" width="142" height="216" hspace="0" vspace="0" border="0"><br>
+		original
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx_fish_ofov180_ifov120_linear_circular_defish.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/image3s_rtx_fish_ofov180_ifov120_linear_fullframe_defish.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Computer Generated Linear Circular Fisheye Image - Correct vs Incorrect Type<br>
+		<a href="http://www.path.unimelb.edu.au/~bernardk/tutorials/360/background/projections.html" target="_blank">http://www.path.unimelb.edu.au/~bernardk/tutorials/360/background/projections.html</a><br>
+		<a href="http://wiki.panotools.org/Fisheye_Projection" target="_blank">http://wiki.panotools.org/Fisheye_Projection</a><br>
+		<a href="http://wiki.panotools.org/Projections" target="_blank">http://wiki.panotools.org/Projections</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Equal Area<br>
+		Arguments:<br>
+		-o 120 -i 180 -t equalarea <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Orthographic<br>
+		Arguments:<br>
+		-o 120 -i 180 -t orthographic <br>-f circular
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Stereographic<br>
+		Arguments:<br>
+		-o 120 -i 180 -t stereographic <br>-f circular
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben2.jpg" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben2_defish_ofov120_ifov180_linear_circular.jpg" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben2_defish_ofov120_ifov180_equalarea_circular.jpg" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben2_defish_ofov120_ifov180_orthographic_circular.jpg" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben2_defish_ofov120_ifov180_stereographic_circular.jpg" width="150" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Computer Generated Linear Circular Fisheye Image (Full Size)<br>
+		<a href="http://www.path.unimelb.edu.au/~bernardk/tutorials/360/background/projections.html" target="_blank">http://www.path.unimelb.edu.au/~bernardk/tutorials/360/background/projections.html</a><br>
+		<a href="http://wiki.panotools.org/Fisheye_Projection" target="_blank">http://wiki.panotools.org/Fisheye_Projection</a><br>
+		<a href="http://wiki.panotools.org/Projections" target="_blank">http://wiki.panotools.org/Projections</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Linear<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear -f circular
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/bigben_defish_ofov120_ifov180_linear_circular.jpg" width="300" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Linear Full Frame Fisheye Image<br>
+		<a href="http://www.all-in-one.ee/~dersch/perspective/Wide_Angle_Perspective.html" target="_blank">http://www.all-in-one.ee/~dersch/perspective/Wide_Angle_Perspective.html</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/fffisheye135.jpg" width="450" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Corrected<br>
+		Arguments:<br>
+		-o 120 -i 180 -t linear -f circular
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/fffisheye135_defish_ofov120_ifov135_linear_fullframe.jpg" width="450" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Trimmed
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/fffisheye135_defish_ofov120_ifov135_linear_fullframe_trim.jpg" width="450" height="225" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Equisolid Full Frame Fisheye Image<br>
+		<a href="http://en.wikipedia.org/wiki/Fisheye_lens" target="_blank">http://en.wikipedia.org/wiki/Fisheye_lens</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/equisolid1_ff.jpg" width="456" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Corrected<br>
+		Arguments:<br>
+		-o 120 -i 170 -t linear -f circular
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/equisolid1_ff_defish_ofov120_ifov170_equalarea_fullframe.jpg" width="456" height="300" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Perspective Corrected<br>and Trimmed<br>
+		3Drotate tilt=30 auto=out
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/equisolid1_ff_defish_ofov120_ifov170_equalarea_fullframe_tilt30_trim.jpg" width="393" height="266" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Linear Circular Fisheye Image - Adjustments<br>
+		<a href="http://www.worldserver.com/turk/quicktimevr/defish/defish.html" target="_blank">http://www.worldserver.com/turk/quicktimevr/defish/defish.html</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original With<br>
+		Default Circle<br>
+		Arguments:<br>
+		-d [-r 193 -c 256,192.5]
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye_defish_ofov120_ifov180_linear_circular_xc256_yc192.5_rad193_drawcirc.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original With<br>
+		Adjusted Circle<br>
+		Arguments:<br>
+		-d -r 190 -c 260,192.5
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye_defish_ofov120_ifov180_linear_circular_xc260_yc192.5_rad190_drawcirc.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Under Corrected<br>
+		Outward Bowing<br>
+		Arguments:<br>
+		-o 120 -i 180  <br>-t linear -f circular <br>-r 190 -c 260,192.5
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye_defish_ofov120_ifov180_linear_circular_xc260_yc192.5_rad190.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Over Corrected<br>
+		Inward Bowing<br>
+		Arguments:<br>
+		-o 120 -i 190 <br>-t linear -f circular <br>-r 190 -c 260,192.5
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye_defish_ofov120_ifov190_linear_circular_xc260_yc192.5_rad190.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Good Correction<br>
+		Straight Edges<br>
+		Arguments:<br>
+		-o 120 -i 188 <br>-t linear -f circular <br>-r 190 -c 260,192.5
+		</p>
+		</td>
+		<td align="center" valign="top">
+		<img src="./DEFISHEYE_files/lobby_fisheye_defish_ofov120_ifov188_linear_circular_xc260_yc192.5_rad190.jpg" width="513" height="386" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>For a linear circular fisheye distortion, it applies the following equations:</li>
+			<li>perspective: r=f*tan(phi); f=(N/2)/tan((fov/2)*(pi/180))</li>
+			<li>fisheye: r=f*phi; f=(N/2)/((fov/2)*(pi/180)) where N=smaller dimension</li>
+		</ul>
+		<p></p>
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands for the case of a <br>
+		linear circular fisheye image of ${dim}x${dim} to perspective image:
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+			<li>compute image dimensions and center coordinates, etc</li>
+			<li>xd="xd=i-$xc;"</li>
+			<li>yd="yd=j-$yc;"</li>
+			<li>rd="rd=hypot(xd,yd);"</li>
+			<li>phi="phi=atan($ofocinv*rd);"</li>
+			<li>ifoc=`convert xc: -format "%[fx:($dim*180)/($ifov*pi)]" info:`</li>
+			<li>rr="rr=$ifoc*phi;"</li>
+			<li>xs="xs=(rd?rr/rd:0)*xd+$xc;"</li>
+			<li>ys="ys=(rd?rr/rd:0)*yd+$yc;"</li>
+			<li>convert $infile -virtual-pixel black -fx \<br>
+			"$xd $yd $rd $phi $rr $xs $ys u.p{xs,ys}" \<br>
+			$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

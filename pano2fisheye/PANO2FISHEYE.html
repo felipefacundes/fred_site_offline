@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://www.fmwconcepts.com/imagemagick/pano2fisheye/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: PANO2FISHEYE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - pano2fisheye - transforms a spherical panorama to a fisheye view">
+<meta name="keywords" content="ImageMagick, scripts, image processing, pano2fisheye, fisheye, panorama, spherical, equirectangular, linear, stereographic, orthographic">
+<link rel="stylesheet" href="./PANO2FISHEYE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="db020082bcb99712a7badee44b015a46"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style></head>
+<body marginwidth="0" marginheight="0" id="pano2fisheye">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./PANO2FISHEYE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+PANO2FISHEYE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Transforms a spherical panorama to a fisheye view.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=pano2fisheye&amp;dirname=pano2fisheye">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: pano2fisheye [-p projection] [-v viewtype] [-d dimension] [-b bgcolor] [-f fade] [-s smooth] [-n newseed] infile outfile<br>
+		USAGE: pano2fisheye [-h or -help]
+		</p>
+
+		<p align="left">
+		-p ... projection ... fisheye projection type: choices are linear, stereographic, or<br>
+		..................... orthographic; default=linear<br>
+		-v ... viewtype ..... type of view; choices are: planet or manhole; planet is a view <br>
+		..................... looking down from the sky; manhole is a view from the ground up; <br>
+		..................... default=planet<br>
+		-d ... dimension .... square dimension of output; integer&gt;0; default is the height <br>
+		..................... of the input<br>
+		-b ... bgcolor ...... bgcolor is the color for the area outside the <br>
+		..................... circle of the fisheye area; any valid IM color is permitted or <br>
+		..................... the special name of "stars" to create a black background with <br>
+		..................... random point star field; use none to make the background <br>
+		..................... transparent; default=white<br>
+		-f ... fade ......... amount of fade in pixels between the image and background color <br>
+		..................... at the top of the image for viewtype=planet; integer&gt;=0; <br>
+		..................... default=0<br>
+		-s ... smooth ....... amount of smoothing for antialiasing when bgcolor=none; <br>
+		..................... float&gt;=0; default=0<br>
+		-n ... newseed ...... random seed for creating the star field when bgcolor=stars
+		</p>
+
+		<p align="left">
+		PURPOSE: To transforms a spherical panorama to a fisheye view.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: FISHEYE is designed to transform a spherical (equirectangular) panorama 
+		to a fisheye view. There are 3 choices for the fisheye format: linear, stereographics 
+		and orthographic. The spherical (equirectangular) panorama's pixels represent 
+		x=longitude and y=latitude. That is, both x and y are angular units. Longitude 
+		corresponds to 360 degree range. Thus the left and right sides must wrap contiguously.
+		Thus a width to height aspect of 2:1. An image can be faked by cropping to w/h aspect 
+		of 2:1 (width is twice the height), then mirroring it horizontally, appending 
+		horizontally, then cropping the center half and rolling it horizontally 50%.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-p projection ... PROJECTION is the fisheye projection type. Choices are linear (l), 
+		stereographic (s), or orthographic (o). The default=linear.
+		</p>
+
+		<p align="left">
+		-v viewtype ... VIEWTYPE is the type of view. Choices are: planet (p) or manhole (m). 
+		The choice of planet is a view looking down from the sky. The choice of manhole is a 
+		view from the ground up. The default=planet.
+		</p>
+
+		<p align="left">
+		-d dimension ... DIMENSION is the square dimension of output image. Values are 
+		 integers&gt;0. The default is the height of the input.
+		</p>
+
+		<p align="left">
+		-b bgcolor ... BGCOLOR is the color for the area outside the circle of the fisheye 
+		region. Any valid IM color is permitted or the special name of "stars" to create 
+		a black background with random point star field. Use "none" to make the background 
+		transparent. The default=white.
+		</p>
+
+		<p align="left">
+		-f fade ... FADE is the amount of fade in pixels between the top of the input image 
+		and background color for viewtype=planet. This is a preprocessing step so that 
+		the outside of the fisheye circular region will fade to the background color. 
+		Values are integers&gt;=0. The default=0.
+		</p>
+
+		<p align="left">
+		-s smooth ... SMOOTH is the amount of smoothing for antialiasing when bgcolor=none or 
+		stars. Values are float&gt;=0. The default=0.
+		</p>
+
+		<p align="left">
+		-n newseed .. .NEWSEED is the random seed for creating the star field when 
+		bgcolor=stars. Values are integers&gt;=0. The default is totally random star placement 
+		from run-to-run.
+		</p>
+
+		<p align="left">
+		REFERENCES:<br>
+		<a href="http://en.wikipedia.org/wiki/Fisheye_lens" target="blank">http://en.wikipedia.org/wiki/Fisheye_lens</a><br>
+		<a href="http://www.bobatkins.com/photography/technical/field_of_view.html" target="blank">http://www.bobatkins.com/photography/technical/field_of_view.html</a><br>
+		<a href="http://www.photographymad.com/pages/view/little-planet-photos-5-simple-steps-to-making-panorama-worlds" target="blank">http://www.photographymad.com/pages/view/little-planet-photos-5-simple-steps-to-making-panorama-worlds</a>
+		</p>
+
+		<p align="left">
+		NOTE: This script will be slow due to the use of -fx.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 1 - Variation Of Projection For Viewtype=planet
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://www.flickr.com/photos/rudolf_schuba/417327148/sizes/o/in/photostream/" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o.jpg" width="997" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_linear_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p stereographic
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_stereographic_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p orthographic
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_orthographic_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 2 - Variation Of Projection For Viewtype=manhole
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://www.flickr.com/photos/rudolf_schuba/417327148/sizes/o/in/photostream/" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o.jpg" width="997" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_linear_manhole_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p stereographic
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_stereographic_manhole_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p orthographic
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_orthographic_manhole_white_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 3 - Viewtype=planet With Color Fade
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://www.flickr.com/photos/rudolf_schuba/417327148/sizes/o/in/photostream/" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o.jpg" width="997" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear -b #B4F2FE -f 100
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_linear_planet_B4F2FE_s0_f100.png" width="800" height="800">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 4 - Viewtype=planet With Stars
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://www.flickr.com/photos/rudolf_schuba/417327148/sizes/o/in/photostream/" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o.jpg" width="997" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear -b stars
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_linear_stars_s0_f0.png" width="800" height="800">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 5 - Viewtype=planet Composited On Background Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://www.flickr.com/photos/rudolf_schuba/417327148/sizes/o/in/photostream/" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o.jpg" width="997" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Background Image<br>
+		(<a href="http://wingsoffirefanon.wikia.com/wiki/File:Space_Space_Nebula_031550_.jpg" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/nebula_small.jpg" width="1024" height="640">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear -b none -s 2 -d 200
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/417327148_158bf17bf1_o_pano2fisheye_linear_planet_none_s2_f0_d200.png" width="200" height="200">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Compositing<br>
+		convert nebula_small.jpg \<br>
+		417327148_158bf17bf1_o_pano2fisheye_linear_planet_none_s2_f0_d200.png \<br>
+		-gravity +430+195 -compose over -composite nebula_tiny_planet.jpg<br>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/nebula_tiny_planet.jpg" width="1024" height="640">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 5 - Viewtype=planet Pseudo Panorama
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="https://https//st.depositphotos.com/1679308/1350/i/950/depositphotos_13509141-stock-photo-panoramic-view-of-a-disney.jpg" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/depositphotos_13509141-stock-photo-panoramic-view-of-a-disney.jpg" width="1024" height="517">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pre-Processing<br><br>
+		Mirror, Append, Crop Middle Half, Roll 50% Horizontally<br><br>
+		convert depositphotos_13509141-stock-photo-panoramic-view-of-a-disney.jpg \<br>
+		\( -clone 0 -flop \) +append \<br>
+		-gravity center -crop 1024x517+0+0 +repage \<br>
+		-roll +50%+0% \<br>
+		disneyland_aspect2to1.png
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/disneyland_aspect2to1.png" width="1034" height="517">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		-p linear -b #55B0F1 -f 20
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./PANO2FISHEYE_files/disneyland_aspect2to1_pano2fisheye_linear_planet_55B0F1_s0_f20.png" width="517" height="517">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Starts with a spherical panorama (equirectangular) image</li>
+			<li>Transforms it to one a 3 types of fisheye projections</li>
+		</ul>
+		<p></p>
+		
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands for the case of a linear fisheye.
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+			<li>ww=`convert -ping "$infile" -format "%w" info:`</li>
+			<li>hh=`convert -ping "$infile" -format "%h" info:`</li>
+			<li>ww2=`convert xc: -format "%[fx:floor($ww/2)-1]" info:`</li>
+			<li>hh2=`convert xc: -format "%[fx:floor($hh/2)-1]" info:`</li>
+			<li>wd=$hh</li>
+			<li>ht=$hh</li>
+			<li>xcd=`convert xc: -format "%[fx:floor($wd/2)-1]" info:`</li>
+			<li>ycd=`convert xc: -format "%[fx:floor($ht/2)-1]" info:`</li>
+			<li>px_per_theta=`convert xc: -format "%[fx:$ww/(2*pi)]" info:`</li>
+			<li>px_per_phi=`convert xc: -format "%[fx:$hh/(pi/2)]" info:`</li>
+			<li>xd="xd=(i-$xcd);"</li>
+			<li>yd="yd=(j-$ycd);"</li>
+			<li>rd="rd=hypot(xd,yd);"</li>
+			<li>theta="theta=atan2(yd,xd);"</li>
+			<li>rad_per_px=`convert xc: -format "%[fx:pi/$hh]" info:`</li>
+			<li>phiang="phiang=$rad_per_px*rd;"</li>
+			<li>xs="xs=$ww2+theta*$px_per_theta;"</li>
+			<li>ys="ys=$hh-phiang*$px_per_phi;"</li>
+			<li>convert -size ${wd}x${ht} xc: "$infile" -virtual-pixel background -background $bcolor \<br>
+			-monitor -fx \<br>
+			"$xd $yd $rd $theta $phiang $xs $ys (rd&gt;$hh2)?$bcolor:v.p{xs,ys}" +monitor \<br>
+			-rotate -90 \<br>
+			"$outfile"</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+</body></html>

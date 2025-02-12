@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true" style=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: ASPECTCROP</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - aspectcrop - crops an image to a specified aspect ratio.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, aspectcrop, aspect ratio, crop">
+<link rel="stylesheet" href="ASPECTCROP_files/style.css">
+</head>
+<body id="aspectcrop" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="ASPECTCROP_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+ASPECTCROP
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Crops an image to a specified aspect ratio.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=aspectcrop&amp;dirname=aspectcrop">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: aspectcrop [-a aspect] [-g gravity] infile outfile<br>
+		USAGE: aspectcrop [-help]
+		</p>
+
+		<p align="left">
+		-a ... aspect .... aspect ratio value desired; width to height ratio; values <br>
+		.................. can be either a float or as two floats separated by a  <br>
+		.................. colon; default is input aspect ratio (no change)<br>
+		-g ... gravity ... gravity alignment for cropping; any IM -gravity value; <br>
+		.................. default=center
+		</p>
+
+		<p align="left">
+		PURPOSE: To crop an image to a specified aspect ratio.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: ASPECTPAD crops an image to a specified aspect ratio.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-a aspect ... ASPECT is the desired width to height aspect ratio. Values are 
+		either floats&gt;0, such as 2 (landscape) or 0.5 (portrait), or two floats 
+		separate by a colon (and no spaces), such a 2:1 (landscale) or 1:2 (portrait).
+		The default is input aspect ratio (no change).
+		</p>
+
+		<p align="left">
+		-g gravity ... GRAVITY alignment for cropping; Any IM -gravity setting is 
+		allowed. Options are: center (c), north (n), south (s), east (e), west (w), 
+		northwest (nw), northeast (ne), southwest, (sw) or southeast (se). The 
+		default=center.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="center">
+		<p align="center">
+		Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-a 1:1
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-a 1:2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="ASPECTCROP_files/monet2.jpg" width="265" vspace="0" hspace="0" height="333" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="ASPECTCROP_files/monet2_aspectcrop_1x1.jpg" width="265" vspace="0" hspace="0" height="265" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="ASPECTCROP_files/monet2_aspectcrop_1x2.jpg" width="167" vspace="0" hspace="0" height="333" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		size 265x333<br>(aspect=0.80)
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		size 265x265<br>(aspect=1.00)
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		size 167x333<br>(aspect=0.50)
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original<br>
+		size 400x299<br>(aspect=1.50)
+		</p>
+		</td>
+		<td colspan="2" valign="middle" align="center">
+		<img src="ASPECTCROP_files/barn.jpg" width="400" vspace="0" hspace="0" height="299" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-a 1:1<br><br>
+		size 299x299<br>(aspect=1.00)
+		</p>
+		</td>
+		<td colspan="2" valign="middle" align="center">
+		<img src="ASPECTCROP_files/barn_aspectcrop_1x1.jpg" width="299" vspace="0" hspace="0" height="299" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-a 2:1<br><br>
+		size 400x200<br>(aspect=2.00)
+		</p>
+		</td>
+		<td colspan="2" valign="middle" align="center">
+		<img src="ASPECTCROP_files/barn_aspectcrop_2x1.jpg" width="400" vspace="0" hspace="0" height="200" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-a 2:1 -g south<br><br>
+		size 400x200<br>(aspect=2.00)
+		</p>
+		</td>
+		<td colspan="2" valign="middle" align="center">
+		<img src="ASPECTCROP_files/barn_aspectcrop_2x1_south.jpg" width="400" vspace="0" hspace="0" height="200" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>gets the aspect ratio of the image and compares it to <br>
+				the desired aspect</li>
+			<li>computes a new releveant width or height from these aspect ratios</li>
+			<li>uses -crop to crop the image</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the case of automatic mode
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>ww=`convert $tmpA1 -ping -format "%w" info:`</li>
+			<li>hh=`convert $tmpA1 -ping -format "%h" info:`</li>
+			<li>ratio=`convert xc: -format "%[fx:$ww/$hh]" info:`</li>
+			<li>aspect1=`echo $aspect | cut -d\: -f1`</li>
+			<li>aspect2=`echo $aspect | cut -d\: -f2`</li>
+			<li>test=`convert xc: -format "%[fx:($aspect2 == $aspect1)?1:0]" info:`</li>
+			<li>if [ "$aspect2" = "" ]; then<br>
+				aspect=$aspect1<br>
+				elif [ $test -eq 1 ]; then <br>
+				aspect=$aspect1<br>
+				else<br>
+				aspect=`convert xc: -format "%[fx:$aspect1/$aspect2]" info:`<br>
+				fi</li>
+			<li>test=`convert xc: -format "%[fx:$aspect&gt;=$ratio?1:0]" info:`</li>
+			<li>[ $test -eq 1 ] &amp;&amp; format="larger" || format="smaller" </li>
+			<li>if [ "$format" = "larger" ]; then<br>
+				width=$ww<br>
+				height=`convert xc: -format "%[fx:$hh*$ratio/$aspect]" info:`<br>
+				elif [ "$format" = "smaller" ]; then<br>
+				width=`convert xc: -format "%[fx:$ww*$aspect/$ratio]" info:`<br>
+				height=$hh<br>
+				fi	</li>
+			<li>convert $tmpA1 -gravity $gravity -crop ${width}x${height}+0+0 +repage $outfile</li>
+		</ul>
+	</td></tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="ASPECTCROP_files/app.js" type="text/javascript"></script></body></html>

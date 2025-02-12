@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://www.fmwconcepts.com/imagemagick/videoglitch/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/videoglitch/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: VIDEOGLITCH</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - videoglitch - applies a video glitch effect to an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, videoglitch, color offset, glitch, noise, jagged, video, offset, displacement, horizontal">
+<link rel="stylesheet" href="./VIDEOGLITCH_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="videoglitch">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./VIDEOGLITCH_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+VIDEOGLITCH
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies a video glitch effect to an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=videoglitch&amp;dirname=videoglitch">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: January 31, 2019</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: videoglitch [-c colors] [-d distance] [-a amplitude ] [-n number] 
+		[-t thickness] [-j jaggedness] [-r reseed] infile outfile<br>
+		USAGE: videoglitch [-h|-help]
+		</p>
+
+		<p align="left">
+		-c ... colors ....... colors to use in channel separation; choices are: red-cyan, <br>
+		..................... green-magenta and blue-yellow; default=red-cyan<br>
+		-d ... distance ..... separation distance of colors; integer (positive or negative); <br>
+		..................... default=-5<br>
+		-a ... amplitude .... amplitude of distortion; integer&gt;=0; default=45<br>
+		-n ... number ....... number of non-glitch spacer segments; integer&gt;0; default=5<br>
+		-t ... thickness .... thickness (height) of non-glitch spacer segments; integer&gt;=0; <br>
+		..................... default=25<br>
+		-j ... jaggedness ... jaggedness of glitches; integer&gt;0; default=20<br>
+		-r ... reseed ....... seed value for random number generator used for the glitches; <br>
+		..................... integer&gt;=0; default=101
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a video glitch effect to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: VIDEOGLITCH applies a video glitch effect to an image. The effect is 
+		composed of two parts. The first part is to make a horizontal separation between 
+		the red and cyan coloring channels. The second part is to add random horizontal 
+		offsets. The random offsets are created from a one column random image with height 
+		the same as the input image. Then random height constant gray segments are randomly  
+		placed over and replacing parts of the random column image. This image is then  
+		expanded horizontally to fill the the width of the input image and used as a 
+		displacement map applied to the input image.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-c colors ... COLORS to use in channel separation. The choices are: red-cyan (rc), 
+		green-magenta (gm) and blue-yellow (by). The default=red-cyan.
+		</p>
+
+		<p align="left">
+		-d distance ... DISTANCE is the separation distance of the red-cyan channels in the 
+		output. Values are integers (positive or negative which controls the direction). 
+		The default=-5.
+		</p>
+
+		<p align="left">
+		-a amplitude ... AMPLITUDE of the horizontal distortion of the glitches. Values 
+		are integers&gt;=0. The default=45.
+		</p>
+
+		<p align="left">
+		-n number ... NUMBER of non-glitch gray spacer segments in the displacement map. 
+		Values are integers&gt;0. The default=5.
+		</p>
+
+		<p align="left">
+		-t thickness ... THICKNESS (or height) of the non-glitch spacer segments. Values 
+		are integers&gt;=0. The default=25.
+		</p>
+
+		<p align="left">
+		-j jaggedness ... JAGGEDNESS of the glitches. Values are integers&gt;0. The default=20.
+		</p>
+
+		<p align="left">
+		-r reseed ... RESEED is the initial seed value for the random number generator. 
+		Values are integers&gt;=0. Default=101.
+		</p>
+
+		<p align="left">
+		NOTE: This script is not designed for images with transparency.
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: IM 6.9.9.26 or higher or IM 7.0.7.14 or higher due to the use of 
+		-compose stereo.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Example 1 -- Variation In Colors
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p></td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c red-cyan
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_rc_d5_a45_n5_t25_j20_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c green-magenta
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_gm_d5_a45_n5_t25_j20_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-c blue-yellow
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_by_d5_a45_n5_t25_j20_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Example 2 -- Variation In Jaggedness
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p></td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 2
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j2_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 5
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j5_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 10
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j10_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 20<br>
+		(default)
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j20_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 30
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j30_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 50
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j50_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-j 100
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./VIDEOGLITCH_files/lena_glitch_d5_a45_n5_t25_j100_r101.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Reads the input into MPC format</li>
+			<li>Creates random length lines for constant gray sections to overlay on random column image below</li>
+			<li>Clones the input and applies stereo composition to create the two color offset</li>
+			<li>Create a one column random grayscale noise image</li>
+			<li>Draw the randomly positioned constant gray line section over the one column noise image</li>
+			<li>Scale the one column image down to make less jagged</li>
+			<li>Scale that result back to the size of the input image in both width and height</li>
+			<li>Apply the previous image to the input image as a displacement map</li>
+			<li>Swap color channels as desired for the colors option</li>
+			<li>Save the output</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert -quiet "$infile" +repage $tmpA1</li>
+			<li>WxH=`convert -ping $tmpA1 -format "%wx%h" info:`</li>
+			<li>wd=`echo $WxH | cut -dx -f1`</li>
+			<li>ht=`echo $WxH | cut -dx -f2`</li>
+			<li>draw_args="line 0,0"</li>
+			<li>for ((i=0; i&lt;number; i++)); do<br>
+			y1=`convert xc: -seed $reseed -format "%[fx:round(($i+1)*$ht/$number + (random()&gt;0.5?1:-1)*$ht/(3*$number))]" info:`<br>
+			y2=$((y1+$thickness))<br>
+			draw_args="$draw_args 0,$y1 line 0,$y2"<br>
+			reseed=$((11*reseed+13))<br>
+			done</li>
+			<li>draw_args="$draw_args 0,$ht"</li>
+			<li>if [ "$colors" = "red-cyan" ]; then<br>
+				cproc=""<br>
+			elif [ "$colors" = "green-magenta" ]; then<br>
+				cproc="-separate -swap 0,1 -combine"<br>
+			elif [ "$colors" = "blue-yellow" ]; then<br>
+				cproc="-separate -swap 0,2 -combine"<br>
+			fi</li>
+			<li>convert $tmpA1 \( +clone \) -colorspace gray -geometry ${distance}+0 -compose stereo -composite \<br>
+			\( -size 1x$ht xc: -seed $reseed +noise random -colorspace gray \<br>
+			-fill gray -draw "$draw_args" -alpha off \<br>
+			-scale x${jaggedness}% -scale ${wd}X${ht}! \) \<br>
+			-define compose:args=${amplitude},0 -compose displace -composite \<br>
+			$cproc \<br>
+			"$outfile"</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://www.fmwconcepts.com/imagemagick/texteffect2/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: TEXTEFFECT2</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - texteffect2 - converts large size text to an image after applying various effects, styling and color">
+<meta name="keywords" content="ImageMagick, scripts, image processing, text, colors, styles, normal, bevel, chrome, stroke, hardshadow, shadow, glow, texture, rainbow, colors">
+<link rel="stylesheet" href="./TEXTEFFECT2_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="fd3d0db31a2d954728c25c3bf1390d7d"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="texteffect2">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./TEXTEFFECT2_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+TEXTEFFECT2
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Converts large size text to an image with color, effects and styling.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=texteffect2&amp;dirname=texteffect2">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: November 09, 2021</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: texteffect2 -t "some text" [-f font] [-p pointsize] [-e effect] 
+		[-c colors] [-s style] [-m mirror] [-mf mirrorfade] [-sc strokecolor] 
+		[-gc glowcolor] [-tf texturefile] [-lw linewidth] [-hw hardshadowwidth] 
+		[-sw shadowwidth] [-gw glowwidth] [-i intensity] [-h hardness] 
+		[-mg mirrorgap] [-pd pad] [-bg bgcolor] [-r rounding] [-d direction] 
+		[-ct chrometype] [-rt resizetexture] [-fv fuzzvalueue] [-ff fadefactor] 
+		[-B brightness] [-C contrast] outfile<br>
+		<br>
+		USAGE: texteffect2 [-help]
+		</p>
+
+		<p align="left">
+		-t .... "some text" ........ text to use; enclose in double quotes<br>
+		-f .... font ............... fontname; recommend a broad/wide font; <br>
+		............................ default=Ubuntu-Bold<br>
+		-p .... pointsize .......... pointsize for font; integer&gt;0; default=200; <br>
+		-e .... effect ............. effect for text: choices are normal, bevel and <br>
+		............................ chrome; default=normal<br>
+		-c .... colors ............. color or colors of text; default=red<br>
+		-s .... style .............. text style; choices are: plain, stroke, <br>
+		............................ hardshadow, shadow or glow; default=plain<br>
+		-m .... mirror ............. mirror text; choices are: yes or no; <br>
+		............................ default=no<br>
+		-mf ... mirrorfade ......... fade the bottom of the mirror image; choices <br>
+		............................ are yes or no; default=no<br>
+		-sc ... strokecolor ........ stroke color; default=black	<br>	
+		-gc ... glowcolor .......... glow color; default=black<br>
+		-tf ... texturefile ........ path to texture file; default is no texture<br>
+		-lw ... linewidth .......... stroke line width; integer&gt;0; default=3<br>
+		-hw ... hardshadowwidth .... hard shadow width; integer&gt;0; default=5<br>
+		-sw ... shadowwidth ........ shadow width; integer&gt;0; default=5<br>
+		-gw ... glowwidth .......... glow width; integer&gt;0; default=7<br>		
+		-i .... intensity .......... intensity of shadow and glow; 0&lt;=integer&lt;=100;<br>
+		............................ default=50<br>
+		-h .... hardness ........... hardness of shadow and glow; 0&lt;=integer&lt;=100;<br>
+		............................ default=50<br>
+		-mg ... mirrorgap .......... gap between mirror top and bottom; integer&gt;=0;<br>
+		............................ default=0<br>
+		-pd ... pad ................ pad of output; integer&gt;=0; default=0<br>
+		-bg ... bgcolor ............ background color; default=none<br>
+		-r .... rounding ........... rounding for bevel and chrome; default for <br>
+		............................ bevel=8; default for chrome=4<br>
+		-d .... direction .......... direction for multi-color gradient rainbow <br>
+		............................ when colors is more than one color; choices <br>
+		............................ are: horizontal or vertical; default=horizontal<br>
+		-ct ... chrometype ......... chrome type; choices are inner and outer; <br>
+		............................ default=inner<br>
+		-rt ... resizetexture ...... resize the texture to fit the text area or <br>
+		............................ just crop at full resolution; choices are: <br>
+		............................ yes (for resize) or no (for just crop); <br>
+		............................ default=yes<br>
+		-fv ... fuzzvalue .......... fuzz value as percent for trimming output; <br>
+		............................ integer&gt;=0; default=0 <br>                       
+		-ff ... fadefactor ......... fade factor for mirror fade; 0&lt;=float&lt;=1; <br>
+		............................ default=0.5<br>
+		-B .... brightness ......... brightness change for output; <br>
+		............................ -100&lt;=integer&lt;=100; default=0<br>
+		-C .... contrast ........... contrast change for output; <br>
+		............................ -100&lt;=integer&lt;=100; default=0<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To convert large size text to an image with color, effects and 
+		styling.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: TEXTEFFECT2 converts large size text to an image with color, 
+		effects and styling. Effect choices include: normal, bevel and chrome. 
+		Style choices include: plain, stroke, hardshadow, shadow and glow.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-t "some text" ... The text to use. Required parameter. Be sure to enclose 
+		it in double quotes.
+		</p>
+
+		<p align="left">
+		-f font ... FONT is the desired font for the text. Recommend using a broad 
+		(wide) font. The default=Ubuntu-Bold.
+		</p>
+
+		<p align="left">
+		-p pointsize ... POINTSIZE is the desired pointsize for the font. The output 
+		image will be generated to the size consistent with this pointsize (apart 
+		from any padding added). The default is 200.
+		</p>
+
+		<p align="left">
+		-e effect ... EFFECT is the effect for the text. The choices are: normal, 
+		bevel or chrome. The default=normal.
+		</p>
+
+		<p align="left">
+		-c colors ... COLOR(S) to apply to the text. Any single or list of colors 
+		may be used. If more than one color is provide, a gradient or rainbow style 
+		will be applied to the text. Multiple colors take precedent over a textfile.
+		The default is skyblue. See http://imagemagick.org/script/color.php for 
+		color definition.
+		</p>
+
+		<p align="left">
+		-s style ... STYLE is the style applied to the text. The choices are: plain, 
+		stroke, hardshadow, shadow or glow. The default=plain.
+		</p>
+
+		<p align="left">
+		-m mirror ... MIRROR applies a mirror style to the text. The choices are: 
+		yes or no. The default=no.
+		</p>
+
+		<p align="left">
+		-mf mirrorfade ... MIRRORFADE fades the bottom of the mirror image. The 
+		choices are yes or no. The default=no.
+		</p>
+
+		<p align="left">
+		-sc strokecolor ... STROKECOLOR is the stroke color. The default=black.
+		</p>
+
+		<p align="left">
+		-gc glowcolor ... GLOWCOLOR is the glow color. The default=black.
+		</p>
+
+		<p align="left">
+		-tf texturefile ... TEXTUREFILE is the path to a texture file that will be 
+		applied to the text. The default is no texture file.  Multiple colors 
+		take precedent over a texture file. A texture file take precedent over a 
+		single color.
+		</p>
+
+		<p align="left">
+		-lw linewidth ... LINEWIDTH is the outline stroke thickness in pixels. 
+		Values are integers greater than 0. The default=3.
+		</p>
+
+		<p align="left">
+		-hw hardshadowwidth ... HARDSHADOWWIDTH is the hardshadow thickness in pixels. 
+		Values are integers greater than 0. The default=5. Hardshadow color is black.
+		</p>
+
+		<p align="left">
+		-sw shadowwidth ... SHADOWWIDTH is the (soft) shadow thickness in pixels. 
+		Values are integers greater than 0. The default=5. Shadow color is black.
+		</p>
+
+		<p align="left">
+		-gw glowwidth ... GLOWWIDTH is the glow thickness in pixels. 
+		Values are integers greater than 0. The default=5.
+		</p>
+
+		<p align="left">
+		-i intensity ... INTENSITY is the intensity of the shadow or glow. Values 
+		are 0&lt;=integers&lt;=100. The default=50
+		</p>
+
+		<p align="left">
+		-h hardness ... HARDNESS is the hardness (darkness) of the shadow or glow. 
+		Values are 0&lt;=integesr&lt;=100. The default=50.
+		</p>
+
+		<p align="left">
+		-mg mirrorgap ... MIRRORGAP is the gap between the mirror top and bottom. 
+		Values are integers&gt;=0. The default=0
+		</p>
+
+		<p align="left">
+		-pd pad PAD is the padding of the output. Values are integers&gt;=0. The 
+		default=0.
+		</p>
+
+		<p align="left">
+		-bg bgcolor ... BGCOLOR is the background color. The default=none 
+		(transparent).
+		</p>
+
+		<p align="left">
+		-r rounding ... ROUNDING is the rounding applied for the bevel and chrome 
+		effects. Values are integers&gt;0. The default for bevel=8 and the default 
+		for chrome=4.
+		</p>
+
+		<p align="left">
+		-d direction ... DIRECTION is the direction for the multi-color gradient or 
+		rainbow when colors is more than one color. The choices are: horizontal or 
+		vertical. The default=horizontal.
+		</p>
+
+		<p align="left">
+		-ct chrometype ... CHROMETYPE is the chrome type. The choices are: inner or 
+		outer. The default=inner.
+		</p>
+
+		<p align="left">
+		-rt resizetexture ... RESIZETEXTURE is the the chhoice to either resize the 
+		texture to fit the text area or just crop the center of the texture at full 
+		resolution. The choices are: yes (for resize) or no (for just crop). The 
+		default=yes (resize texturefile). 
+		</p>
+
+		<p align="left">
+		-fv fuzzvalue ... FUZZVALUE is the fuzz value expressed as percent value 
+		(without the % symbol) for trimming of the output. Values are 
+		0&lt;=integers&lt;=100. The default=0.
+		</p>
+
+		<p align="left">
+		-ff fadefactor ... FADEFACTOR is the fade factor for the mirror fade. 
+		Values are 0&lt;=floats&lt;=1. The default=0.5. Smaller values make more of the 
+		text transparent and so fade faster. A value of 1 produces a linear fade 
+		from the top of the mirror section to its bottom.
+		</p>
+
+		<p align="left">
+		-B brightness	... BRIGHTNESS is the brightness change for the output. 
+		Values are -100&lt;=integers&lt;=100. The default=0.
+		</p>
+
+		<p align="left">
+		-C contrast ... CONTRAST is the contrast change for the output. Values are 
+		-100&lt;=integers&lt;=100. The default=0.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Normal Text Effects
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Plain Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s plain -f Ubuntu-Bold -p 200 -c red -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_plain_Ubuntu-Bold_p200_red_ecnone_ew_mno_mfno.png" width="653" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Stroke Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s stroke -f Ubuntu-Bold -p 200 -c red -sc blue -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_stroke_Ubuntu-Bold_p200_red_ecblue_ew3_mno_mfno.png" width="660" height="166">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Hardshadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s hardshadow -f Ubuntu-Bold -p 200 -c red -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_hardshadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="658" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Shadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s shadow -f Ubuntu-Bold -p 200 -c red -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_shadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="691" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Glow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s glow -f Ubuntu-Bold -p 200 -c red -gc red -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_glow_Ubuntu-Bold_p200_red_ecred_ew7_mno_mfno.png" width="691" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Single Color Stroke Mirror Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s stroke -f Ubuntu-Bold -p 200 -c "red" -lw 3 -m yes -mf yes -mg 20 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_stroke_Ubuntu-Bold_p200_red_ecblue_ew3_myes_mfyes_mg20.png" width="660" height="352">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Texture Plain Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s plain -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_plain_Ubuntu-Bold_p200_texture_ecnone_ew_mno_mfno.png" width="653" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Texture Stroke Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s stroke -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -sc black -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_stroke_Ubuntu-Bold_p200_texture_ecblack_ew3_mno_mfno.png" width="661" height="167">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Texture Hardshadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s hardshadow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_hardshadow_Ubuntu-Bold_p200_texture_ecblack_ew5_mno_mfno.png" width="658" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Texture Shadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s shadow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_shadow_Ubuntu-Bold_p200_texture_ecblack_ew5_mno_mfno.png" width="680" height="186">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Texture Glow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s glow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -gc black -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_glow_Ubuntu-Bold_p200_texture_ecblack_ew7_mno_mfno.png" width="691" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Multi-Color Plain Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s plain -f Ubuntu-Bold -p 200 -c "red lime" -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_plain_Ubuntu-Bold_p200_redlime_ecnone_ew_mno_mfno.png" width="653" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Multi-Color Stroke Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s stroke -f Ubuntu-Bold -p 200 -c "red lime" -sc blue -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_stroke_Ubuntu-Bold_p200_redlime_ecblue_ew3_mno_mfno.png" width="661" height="167">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Multi-Color Hardshadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s hardshadow -f Ubuntu-Bold -p 200 -c "red lime" -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_hardshadow_Ubuntu-Bold_p200_redlime_ecblack_ew5_mno_mfno.png" width="658" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Multi-Color Shadow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s shadow -f Ubuntu-Bold -p 200 -c "red lime" -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_shadow_Ubuntu-Bold_p200_redlime_ecblack_ew5_mno_mfno.png" width="690" height="198">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Normal Multi-Color Color Glow Text<br>
+		Arguments:<br>
+		-t "normal" -e normal -s glow -f Ubuntu-Bold -p 200 -c "red lime" -gc black -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_normal_glow_Ubuntu-Bold_p200_redlime_ecblack_ew7_mno_mfno.png" width="691" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bevel Text Effects
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Single Color Plain Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s plain -f Ubuntu-Bold -p 200 -c red -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_plain_Ubuntu-Bold_p200_red_ecnone_ew_mno_mfno.png" width="509" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Single Color Stroke Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s stroke -f Ubuntu-Bold -p 200 -c red -sc blue -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_stroke_Ubuntu-Bold_p200_red_ecblue_ew3_mno_mfno.png" width="516" height="166">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Single Color Hardshadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s hardshadow -f Ubuntu-Bold -p 200 -c red -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_hardshadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="514" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Single Color Shadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s shadow -f Ubuntu-Bold -p 200 -c red -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_shadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="547" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Single Color Glow Text<br>
+		Arguments:<br>
+		-t "normal" -e bevel -s glow -f Ubuntu-Bold -p 200 -c red -gc red -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_glow_Ubuntu-Bold_p200_red_ecred_ew7_mno_mfno.png" width="563" height="213">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Texture Plain Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s plain -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_plain_Ubuntu-Bold_p200_texture_ecnone_ew_mno_mfno.png" width="509" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Texture Stroke Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s stroke -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -sc black -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_stroke_Ubuntu-Bold_p200_texture_ecblack_ew3_mno_mfno.png" width="517" height="167">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Texture Hardshadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s hardshadow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_hardshadow_Ubuntu-Bold_p200_texture_ecblack_ew5_mno_mfno.png" width="514" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Texture Shadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s shadow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_shadow_Ubuntu-Bold_p200_texture_ecblack_ew5_mno_mfno.png" width="536" height="186">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Texture Glow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s glow -f Ubuntu-Bold -p 200 -tf "CrackedTexture1920x1080.png" -gc black -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_glow_Ubuntu-Bold_p200_texture_ecblack_ew7_mno_mfno.png" width="547" height="197">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Multi-Color Plain Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s plain -f Ubuntu-Bold -p 200 -c "red blue" -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_plain_Ubuntu-Bold_p200_redblue_ecnone_ew_mno_mfno.png" width="509" height="159">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Multi-Color Stroke Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s stroke -f Ubuntu-Bold -p 200 -c "red blue" -sc black -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_stroke_Ubuntu-Bold_p200_redblue_ecblack_ew3_mno_mfno.png" width="517" height="167">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Multi-Color Hardshadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s hardshadow -f Ubuntu-Bold -p 200 -c "red blue" -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_hardshadow_Ubuntu-Bold_p200_redblue_ecblack_ew5_mno_mfno.png" width="514" height="164">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Multi-Color Shadow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s shadow -f Ubuntu-Bold -p 200 -c "red blue" -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_shadow_Ubuntu-Bold_p200_redblue_ecblack_ew5_mno_mfno.png" width="548" height="198">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Bevel Multi-Color Color Glow Text<br>
+		Arguments:<br>
+		-t "bevel" -e bevel -s glow -f Ubuntu-Bold -p 200 -c "red lime" -gc black -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_bevel_glow_Ubuntu-Bold_p200_redblue_ecblack_ew7_mno_mfno.png" width="563" height="213">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Chrome Text Effects
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Chrome Single Color Plain Text<br>
+		Arguments:<br>
+		-t "chrome" -e chrome -s plain -f Ubuntu-Bold -p 200 -c red -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_chrome_plain_Ubuntu-Bold_p200_red_ecnone_ew_mno_mfno.png" width="713" height="190">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Chrome Single Color Stroke Text<br>
+		Arguments:<br>
+		-t "chrome" -e chrome -s stroke -f Ubuntu-Bold -p 200 -c red -sc blue -lw 3 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_chrome_stroke_Ubuntu-Bold_p200_red_ecblue_ew3_mno_mfno.png" width="709" height="173">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Chrome Single Color Hardshadow Text<br>
+		Arguments:<br>
+		-t "chrome" -e chrome -s hardshadow -f Ubuntu-Bold -p 200 -c red -hw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_chrome_hardshadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="705" height="170">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		Chrome Single Color Shadow Text<br>
+		Arguments:<br>
+		-t "chrome" -e chrome -s shadow -f Ubuntu-Bold -p 200 -c red -sw 5 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_chrome_shadow_Ubuntu-Bold_p200_red_ecblack_ew5_mno_mfno.png" width="733" height="203">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Chrome Single Color Glow Text<br>
+		Arguments:<br>
+		-t "chrome" -e chrome -s glow -f Ubuntu-Bold -p 200 -c red -gc red -gw 7 -bg none
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./TEXTEFFECT2_files/texteffect2_chrome_glow_Ubuntu-Bold_p200_red_ecred_ew7_mno_mfno.png" width="741" height="218">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Determines the output size by drawing the text once and trimming</li>
+			<li>Creates an image from the text with the specified font, pointsize, effect, style and colors</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the case of effect=normal and style=plain:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>buff=`convert xc: -format "%[fx:round(3*($strokewidth+$glowamt+$shadowamt+$hardshadowamt)/2)]" info:`</li>
+			<li>size=`convert -background none -font "$font" -pointsize $pointsize -gravity west -fill $colors \<br>
+				label:"$text" -bordercolor none -border ${buff} -format "%wx%h" info:`</li>
+			<li>eval 'convert -background none -size $size -font "$font" \<br>
+				-pointsize $pointsize -fill $colors -gravity west label:"$text" \<br>
+				-fuzz $fuzzvalue% -trim +repage \<br>
+				$tmpA1'</li>
+			<li>convert $tmpA1 \<br>
+				-background $bgcolor -flatten \<br>
+				-gravity center -bordercolor $bgcolor -border $pad \<br>
+				"$outfile"</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0060)http://www.fmwconcepts.com/imagemagick/dualtonemap/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: DUALTONEMAP</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - dualtonemap - enhances the shadows and/or highlight regions in an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, dualtonemap, enhancement, brightness, contrast, gamma, shadows, highlights">
+<link rel="stylesheet" href="./DUALTONEMAP_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="a5262f1e4129d476a104fb289d86c922"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style></head>
+<body marginwidth="0" marginheight="0" id="dualtonemap">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./DUALTONEMAP_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+DUALTONEMAP
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Enhances the shadows and/or highlight regions in an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=dualtonemap&amp;dirname=dualtonemap">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: dualtonemap [-c] [-g gamma] [-m mode] [-b bias] [-t thresh] [-s svals] [-h hvals] [-r ramp] infile outfile<br>
+		USAGE: dualtonemap [-help]
+		</p>
+
+		<p align="left">
+		-c .............. set colorspace of input image from sRGB to RGB <br>
+		................. before processing<br>
+		-g ... gamma .... apply non-linear gamma processing to input image before <br>
+		................. processing. Alternate to -c option. Nominal value is <br>
+		................. gamma=2. Values are floats&gt;0; default=1.<br>
+		-m ... mode ..... mode of operation; choices are: shadows, highlights or<br>
+		................. both; default=both<br>
+		-b ... bias ..... percent shift in mean value used as threshold between<br>
+		................. shadows and highlights; positive or negative floats; <br>
+		................. default is no change from mean of image.<br>
+		-t ... thresh ... threshold value between shadows and highlights; <br>
+		................. 0&lt;=float&lt;=100; overrides automatic mode of mean of <br>
+		................. image if provided<br>
+		-s ... svals .... blackpoint,whitepoint,gamma values to use in shadows;<br> 
+		................. 0&lt;=float&lt;=100 for blackpoint and whitepoint <br>
+		................. and float&gt;0 for gamma; svals=0,100,1 is no change; <br>
+		................. default=0,50,1<br>
+		-h ... hvals .... blackpoint,whitepoint,gamma values to use in highlights; <br>
+		................. 0&lt;=float&lt;=100 for blackpoint and whitepoint <br>
+		................. and float&gt;0 for gamma; hvals=0,100,1 is no change; <br>
+		................. default=50,100,1<br>
+		-r ... ramp ..... ramp of transition between shadows and highlights in <br>
+		................. pixels; integer&gt;=0; default=50
+		</p>
+
+		<p align="left">
+		PURPOSE: Enhances the shadows and/or highlight regions in an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: DUALTONEMAP enhances the shadows and/or highlight regions 
+		in an image. This is done by adjusting the -level blackpoint,whitepoint% 
+		in the shadows and/or highlight regions. This is similar to Photoshop's 
+		Shadows/Highlights function.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-c ... Set colorspace of input image from sRGB to RGB before processing. 
+		This provides an initial non-linear processing. The default=no.
+		</p>
+
+		<p align="left">
+		-g gamma ... GAMMA applies a non-linear gamma processing to input image before 
+		processing. Alternate to -c option. Do not use both. Values are floats&gt;0. 
+		Nominal value is gamma=2. The default=1 (no non-linear gamma processing).
+		</p>
+
+		<p align="left">
+		-m mode ... MODE of operation that specifies to adjust shadows or highlights 
+		or both. Choices are shadows (or s), highlights (or h) or both (or b). The
+		default=both
+		</p>
+
+		<p align="left">
+		-b bias ... BIAS is the percent shift of the mean value of the input that is 
+		is used as the nominal threshold value between shadows and highlights. 
+		Values are positive or negative floats. The default=0 indicates no change 
+		from the global mean value of all channels of the input image.
+		</p>
+
+		<p align="left">
+		-t thresh ... THRESH is the user specified threshold value. When used, it 
+		overrides the automatic value from the (mean + bias) value. Values are 
+		floats between 0 and 100. The default is to use automatic value from the 
+		(mean + bias).
+		</p>
+
+		<p align="left">
+		-s svals ... SVALS=blackpoint,whitepoint,gamma used by -level in the 
+		shadows region. Values of each blackpoint and whitepoint are float 
+		percents in the range of 0 to 100 and gamma is a float&gt;0. A value of 
+		svals=0,100,1 produces no change. The default=0,50,1.
+		</p>
+
+		<p align="left">
+		-h hvals ... HVALS=blackpoint,whitepoint,gamma used by -level in the 
+		highlights region. Values of each blackpoint and whitepoint are float 
+		percents in the range of 0 to 100 and gamma is a float&gt;0. A value of 
+		hvals=0,100,1 produces no change. The default=50,100,1.
+		</p>
+
+		<p align="left">
+		-r ramp ... RAMP is the transition distance in pixels between the shadows and 
+		highlights. Values are integers&gt;=0. The default=50.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-m shadows -s 0,30
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		-m shadows -s 0,100 -c
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image3s.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image3s_dualtonemap_shadows_s0x30.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image3s_dualtonemap_srgb_shadows_s0x100.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/image2.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,40
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,100 -c
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image2_dualtonemap_shadows_s0x40.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image2_dualtonemap_srgb_shadows_s0x100.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/image16.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,30
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,100,0.9 -c
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image16_dualtonemap_shadows_s0x30.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/image16_dualtonemap_srgb_shadows_s0x100x0p9.jpg" width="360" height="236" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 4
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/lioncuddle1.jpg" width="350" height="280" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,30
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,80 -c
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/lioncuddle1_dualtonemap_shadows_s0x30.jpg" width="350" height="280" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/lioncuddle1_dualtonemap_srgb_shadows_s0x80.jpg" width="350" height="280" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center" colspan="2">
+		Example 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p></td>
+		
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Photo1.jpg" width="775" height="343" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m both -s 0,30,2 -h 20,100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Photo1_dualtonemap_both_s0x30x2_h20x100.jpg" width="775" height="343" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m both -s 0,70 -h 50,100 -c
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Photo1_dualtonemap_srgb_both_s0x70_h50x100.jpg" width="775" height="343" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m both -s 0,70,1.5 -h 50,100 -c
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Photo1_dualtonemap_srgb_both_s0x70x1p5_h50x100.jpg" width="775" height="343" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 6
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/Figure1L.jpg" width="350" height="526" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,8
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m both -s 0,45 -h 50,100 -c
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Figure1L_dualtonemap_shadows_s0x8.jpg" width="350" height="526" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/Figure1L_dualtonemap_srgb_both_s0x45_h50x100.jpg" width="350" height="526" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 7
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/dualtonemap/images/IMG_3133And8more_640x480.hdr" target="_blank">Actual HDR Format Used</a>)
+		</p></td>
+		
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/IMG_3133And8more_640x480.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Arguments:<br>
+		-m both -s 0,18 -h 18,100 -c -r 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/IMG_3133And8more_640x480_dualtonemap_srgb_both_s0x18_h18x100_r3.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<p></p><table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 8
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original<br>
+		(<a href="http://www.fmwconcepts.com/imagemagick/dualtonemap/images/IMG_3256And8more_640x480.hdr" target="_blank">Actual HDR Format Used</a>)
+		</p></td>
+		
+		<td align="center" valign="middle" colspan="2">
+		<img src="./DUALTONEMAP_files/IMG_3256And8more_640x480.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,25 -c -r 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/IMG_3256And8more_640x480_dualtonemap_srgb_s0x25x1_r3.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Arguments:<br>
+		-m shadows -s 0,30 -c -r 3 -t25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./DUALTONEMAP_files/IMG_3256And8more_640x480_dualtonemap_srgb_shadows_t25_s0x30x1p5_r3.jpg" width="640" height="480" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Computes the mean of the image</li>
+			<li>Thresholds the image at the mean</li>
+			<li>Blurs the thresholded image over the ramp distance</li>
+			<li>Applies the highlight -level parameters to the input image</li>
+			<li>Applies the shadow -level parameters to the input image</li>
+			<li>Composites the two modified images using the mask image <br>
+				to generate the output</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>if [ "$cmode" = "yes" ]; then<br>
+				colormode="-set colorspace sRGB -colorspace RGB"<br>
+			else<br>
+				colormode=""<br>
+			fi</li>
+			<li>convert -quiet -regard-warnings "$infile" $colormode +repage "$tmpA1"</li>
+			<li>thresh=`convert $tmpA1 -format "%[fx:100*(mean+$bias/100)]" info:`</li>
+			<li>convert $tmpA1 -threshold ${thresh}% -blur ${ramp}x65000 $tmpA2</li>
+			<li>if [ "$mode" = "both" ]; then<br>
+				convert $tmpA1 -level ${sbp},${swp},${sg}% $tmpA3<br>
+				convert $tmpA1 -level ${hbp},${hwp},${hg}% $tmpA4<br>
+				convert $tmpA3 $tmpA4 $tmpA2 -compose over -composite $outfile<br>
+			elif [ "$mode" = "shadows" ]; then<br>
+				convert $tmpA1 -level ${sbp},${swp},${sg}% $tmpA3<br>
+				convert $tmpA3 $tmpA1 $tmpA2 -compose over -composite $outfile<br>
+			elif [ "$mode" = "highlights" ]; then<br>
+				convert $tmpA1 -level ${hbp},${hwp},${hg}% $tmpA4<br>
+				convert $tmpA1 $tmpA4 $tmpA2 -compose over -composite $outfile<br>
+			fi</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

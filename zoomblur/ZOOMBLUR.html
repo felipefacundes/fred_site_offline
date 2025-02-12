@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)http://www.fmwconcepts.com/imagemagick/zoomblur/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/zoomblur/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: ZOOMBLUR</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - zoomblur - applies a radial or zoom blur to an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, zoomblur, zoom, radial, blur">
+<link rel="stylesheet" href="./ZOOMBLUR_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="zoomblur">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./ZOOMBLUR_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+ZOOMBLUR
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies a radial or zoom blur to an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=zoomblur&amp;dirname=zoomblur">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 16, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: zoomblur [-z zoom] [-e] infile outfile<br>
+		USAGE: zoomblur [-h or -help]
+		</p>
+
+		<p align="left">
+		-a .... amount ..... amount of zoom blur; float; amount&gt;=1; default=1.2<br>
+		-e ................. expands the output image by the amount of zoom
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a radial or zoom blur to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: ZOOMBLUR applies a radial blur to an image by a 
+		process of iterative zooming and blending.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-a amount ... AMOUNT is the zoom factor. Values are floats  
+		greater than or equal to 1. A value of 1 produces no effect. Larger 
+		values increase the radial blur. Typical values are between 1 and 1.5. 
+		The default is 1.2. Note that the large the amount, the more iterations 
+		it will take.
+		</p>
+
+		<p align="left">
+		-e ... Expands the output image size by the amount of the zoom.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Zoom Blur<br>
+		<a href="http://www.jhlabs.com/ip/blurring.html" target="_blank">http://www.jhlabs.com/ip/blurring.html</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Original
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+		<img src="./ZOOMBLUR_files/flower.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.4
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1.1_iter14.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1.2_iter29.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1.3_iter43.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1.4_iter58.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Zoom Blur With vs Without Expand<br>
+		<a href="http://www.jhlabs.com/ip/blurring.html" target="_blank">http://www.jhlabs.com/ip/blurring.html</a>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./ZOOMBLUR_files/flower.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a 1.2 -e
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1p2_iter29.jpg" width="240" height="160" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./ZOOMBLUR_files/flower_zoom_1p2_iter29_expand.jpg" width="288" height="192" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Successively zooms the image by an increasing zoom factor</li>
+			<li>Blends the result with image</li>
+			<li>Repeats for each iteration until the full zoom value is reached</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>rad=`convert $infile -format "%[fx:hypot(w/2,h/2)]" info:`</li>
+			<li>zoomfrac=`convert xc: -format "%[fx:($amount-1)]" info:`</li>
+			<li>iter=`convert xc: -format "%[fx:int($zoomfrac*$rad)]" info:`</li>
+			<li>ww=`convert $infile -format "%w" info:`</li>
+			<li>hh=`convert $infile -format "%h" info:`</li>
+			<li>if [ "$expand" = "yes" ]; then</li>
+			<li>ww=`convert $infile -format "%[fx:floor(w*$amount)]" info:`</li>
+			<li>hh=`convert $infile -format "%[fx:floor(h*$amount)]" info:`</li>
+			<li>fi</li>
+			<li>i=1</li>
+			<li>convert $infile $tmpA</li>
+			<li>while [ $i -le $iter ]; do</li>
+			<li>j=`expr $i + 1`</li>
+			<li>new=`convert xc: -format "%[fx:100/$j]" info:`</li>
+			<li>old=`convert xc: -format "%[fx:100-$new]" info:`</li>
+			<li>s=`convert xc: -format "%[fx:1 + $zoomfrac*$i/$iter]" info:`</li>
+			<li>convert $tmpA -resize $s% -gravity center -crop ${ww}x${hh}+0+0 +repage $tmpC</li>
+			<li>composite -blend $old%x$new% -gravity center $tmpA $tmpC $tmpA</li>
+			<li>i=`expr $i + 1`</li>
+			<li>done</li>
+			<li>convert $tmpA $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

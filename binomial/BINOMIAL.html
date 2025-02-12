@@ -1,0 +1,793 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0057)http://www.fmwconcepts.com/imagemagick/binomial/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: BINOMIAL</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - binomial - generates high pass or low pass filtered images based upon convolution kernels whose weights are derived from the binomial coefficients.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, binomial coefficients, binomial filter, high pass filter, low pass filter, edge extraction, unsharp masking">
+<link rel="stylesheet" href="./BINOMIAL_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="ab93d82dff59639c466c399ca9b3bc6b"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="binomial">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./BINOMIAL_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+BINOMIAL
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Generates high pass or low pass filtered images based upon convolution 
+		kernels whose weights are derived from the binomial coefficients.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=binomial&amp;dirname=binomial">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: binomial [-w width] [-t type] [-m mix] [-b bias] infile outfile <br>
+		USAGE: binomial [-h or -help]
+		</p>
+
+		<p align="left">
+		-w ...... width .... width of square filter; width=3, 5 or 7; default=3 <br>
+		-t ...... type ..... type=high or low (pass filter); default=high <br>
+		-m ...... mix ...... mixing percent with original image;  <br>
+		.................... mix=integer 0 to 100; default=50 <br>
+		-b ...... bias ..... bias to add to result to brighten or darken; <br>
+		.................... bias=integer -100 to 100; default=0 <br>
+		-h or -help ........ get help information
+		</p>
+
+		<p align="left">
+		PURPOSE: To generate high pass or low pass filtered images based upon 
+		convolution kernels whose weights are derived from the binomial coefficients.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: BINOMIAL generates an output image which is a user defined mix 
+		or blend of the original image and a binomial convolution filtered version 
+		of the image. This is achieved by forming a single convolution kernel whose 
+		weights depend upon a mixing of the binomial coefficients and the identity 
+		kernel. 
+		</p>
+
+		<p align="left">
+		The basic blended low pass filtering formula is F = (1-m)*I + m*B, where I is
+		the original image, B is the binomial filtered image and m = mix/100. When
+		m=0, we get only the original image and when m=1, we get only the low pass
+		binomial filtered image. For intermediate value of m, we get a blend of the
+		image and the binomial low pass filtered image. Now, we can consider both I
+		and B as a convolution of some kernel with the original image, namely I = i x I 
+		and B = b x I, where x means convolution. Note that a convolution is
+		simply a weighted average of all the pixels in some neighborhood of a give
+		pixel. Usually an odd sized neighborhood, such as 3x3, 5x5, etc is used to
+		prevent having the resulting image be shifted a fractional pixel. The
+		convolution kernel values are simply the weights for the average. So here,
+		i is the identity kernel, which is all zeroes, except the center of the
+		kernel which has a value of 1. Similarly, b is the binomial kernel, formed
+		from the binomial coefficients as a 2D kernel. It is one form of a low pass
+		filter. Thus we can consider the final filtered image, F = f x I, where f =
+		(1-m)*i + m*b. Consequently, we only have to do one convolution using the
+		convolution kernel, f. For high pass filtering, we form the high pass
+		filter by subtracting the low pass filter from the original image. Thus 
+		in the formula above B is replaced by (I-B), so that 
+		F = (1-m)*I + m*(I-B). But likewise this can be converted into
+		one convolution kernel, namely, f = i - m*b. Note, that properly, all
+		convolution kernels, must be normalize so that the sum of weights is equal
+		to 1, except for pure high pass filter convolution kernels, whose weights
+		must sum to 0. The normalization to 1 is needed to keep the overall
+		brightness of the image unchanged. However, as IM does the normalization
+		automatically, you will notice that my binomial and blended convolution
+		kernels have weights that do not sum to 1. This allows the convolution
+		kernel weights to be presented primarily as easily read integers. So 
+		in order to compensate for the un-normalized binomial convolution kernel 
+		in order to keep the two components properly balanced, the two formulae 
+		become: f = s*(1-m)*i + m*b for the low pass filter kernel and 
+		f = s*i - m*b for the high pass filter kernel, where s is the sum of the 
+		weights for the un-normalized binomial kernel b.
+		</p>
+
+		<p align="left">
+		For width=3, the 1D binomial series is 1 2 1. For width=5, the 1D binomial 
+		series is 1 4 6 4 1. For width=7, the 1D binomial series is 1 6 15 20 15 6 1.
+		To form the 2D binomial filters, the outer product of the 1D column with the 
+		1D row is computed.
+		</p>
+
+		<p align="left">
+		For width=3, this becomes:<br>
+		1 2 1<br>
+		2 4 2<br>
+		1 2 1<br>  
+		</p>
+
+		<p align="left">
+		For width=5, this becomes:<br>
+		</p><table border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr>
+			<td align="center" valign="middle">
+			1  4  6  4 1<br>
+			4 16 24 16 4<br>
+			6 24 36 24 6<br>
+			4 16 24 16 4<br>
+			1  4  6  4 1<br>
+			</td>
+		</tr>
+		</tbody></table>
+		<p></p>
+		
+		<p align="left">
+		For width=7, this becomes:<br>
+		</p><table border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr>
+			<td align="center" valign="middle" class="fixedwidth">
+			 1   6  15  20  15   6  1<br>
+			 6  36  90 120  90  36  6<br>
+			15  90 225 300 225  90 15<br>
+			20 120 300 400 300 120 20<br>
+			15  90 225 300 225  90 15<br>
+			 6  36  90 120  90  36  6<br>
+			 1   6  15  20  15   6  1<br>
+			</td>
+		</tr>
+		</tbody></table>
+		<p></p>
+
+		<p align="left">
+		For more information about the binomial coefficients, see 
+		<a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle" target="_blank">Pascal's Triangle</a>.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-w width is dimension of a square convolution kernel. Width can be 3, 5 or 7. 
+		the default is 3. For example a width of 3 will generate a 3x3 convolution 
+		kernel.
+		</p>
+
+		<p align="left">
+		-t type is the kind of filter, either a high pass or low pass filter. 
+		Thus type=high or low. The default=high. A low pass filter will cause 
+		blurring. A high pass filtered image will produce either sharpening or 
+		it will extract edges. See below.
+		</p>
+
+		<p align="left">
+		-m mix is the percentage mixing factor to use to blend the filtered result 
+		with the original image. A value of mix=0, results in the original image. A 
+		value of mix=100 results in a pure high pass or pure low pass filtered image.
+		For low pass filtering, a larger value for mix will produce more blurring. For 
+		high pass filtering, a middle value will produce sharpening of the edges in 
+		the image; whereas a value of 100 will extract the edges from the image.
+		</p>
+
+		<p align="left">
+		-b bias is a percentage to brighten or darken the image. Values for bias 
+		are integers ranging from -100 to 100 (percent). Positive values will 
+		brighten the image and negative values will darken the image.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="5">
+		<p align="center">
+		Low Pass Filtering Of A True Color Image
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		equivalent to:<br>
+		Arguments: -m 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t low -m 50 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t low -m 100 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t low -m 100 -w 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t low -m 100 -w 7
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m50_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w7.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center" class="fixedwidth">
+		2D Kernel<br>
+		0 0 0<br>
+		0 1 0<br>
+		0 0 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center" class="fixedwidth">
+		2D Kernel<br>
+		.5  1 .5<br> 
+		 1 10  1<br>
+		.5  1 .5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center" class="fixedwidth">
+		2D Kernel<br>
+		1 2 1<br>
+		2 4 2<br>
+		1 2 1    
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center" class="fixedwidth">
+		2D Kernel<br>
+		1  4  6  4 1<br>
+		4 16 24 16 4<br>
+		6 24 36 24 6<br>
+		4 16 24 16 4<br>
+		1  4  6  4 1
+		</p></td>
+		<td align="center" valign="middle">
+		<p align="center" class="fixedwidth">
+		2D Kernel<br>
+		 1   6  15  20  15   6  1<br>
+		 6  36  90 120  90  36  6<br>
+		15  90 225 300 225  90 15<br>
+		20 120 300 400 300 120 20<br>
+		15  90 225 300 225  90 15<br>
+		 6  36  90 120  90  36  6<br>
+		 1   6  15  20  15   6  1
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		High Pass Filtering Of A True Color Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		equivalent to:<br>
+		Arguments: -m 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 25 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 50 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 75 -w 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m25_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m50_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m75_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		0 0 0<br>
+		0 1 0<br>
+		0 0 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-.25  -.5  -.25<br>   
+		-.5    15   -.5<br>   
+		-.25  -.5  -.25  
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-.5  -1  -.5<br>  
+		-1   14  -1<br>  
+		-.5  -1  -.5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-.75 -1.5 -.75<br>   
+		-1.5  13  -1.5<br> 
+		-.75 -1.5 -.75     
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Edge Extraction From A Grayscale Image
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		equivalent to:<br>
+		Arguments: -m 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 100 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 100 -w 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-t high -m 100 -w 7
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lenag.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lenag_high_m100_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lenag_high_m100_w5.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lenag_high_m100_w7.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		0 0 0<br>
+		0 1 0<br>
+		0 0 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-1 -2 -1<br>
+		-2 12 -2<br>
+		-1 -2 -1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-1  -4  -6  -4 -1<br>
+		-4 -16 -24 -16 -4<br>
+		-6 -24 220 -24 -6<br>
+		-4 -16  24 -16 -4<br>
+		-1  -4  -6  -4 -1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		2D Kernel<br>
+		-1    -6  -15  -20  -15   -6  -1<br>
+		-6   -36  -90 -120  -90  -36  -6<br>
+		-15  -90 -225 -300 -225  -90 -15<br>
+		-20 -120 -300 3696 -300 -120 -20<br>
+		-15  -90 -225 -300 -225  -90 -15<br>
+		-6   -36  -90 -120  -90  -36  -6<br> 
+		-1    -6  -15  -20  -15   -6  -1
+		</p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Filtering With Bias
+		</p>
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		equivalent to:<br>
+		Arguments: -m 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		High Pass<br>
+		Arguments:<br>
+		-t high -m 50 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		High Pass Lightened<br>
+		Arguments:<br>
+		-t high -m 50 -w 3 -b 10
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		High Pass Darkened<br>
+		Arguments:<br>
+		-t high -m 50 -w 3 -b -10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m50_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m50_w3_b10.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_high_m50_w3_b-10.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		equivalent to:<br>
+		Arguments: -m 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Low Pass<br>
+		Arguments:<br>
+		-t low -m 100 -w 3
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Low Pass Lightened<br>
+		Arguments:<br>
+		-t low -m 100 -w 3 -b 10
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Low Pass Darkened<br>
+		Arguments:<br>
+		-t low -m 100 -w 3 -b -10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w3_b10.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./BINOMIAL_files/lena3_low_m100_w3_b-10.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Computes a convolution filter to blend the image with either a <br>
+				low pass or high pass filtered version of the image. The <br>
+				kernel weights are based upon the binomial coefficients</li>
+			<li>Performs a convolution of the filter kernel with the image.</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for <br>
+		the case of a 3x3 100% low pass filter:<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>kern1D="1,2,1,2,4,2,1,2,1"</li>
+			<li>convert $infile -bias 0% -convolve "$kern1D" $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

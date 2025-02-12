@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: BUMPTEXT</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - bumptext - applies a raised text effect onto an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, bumptext, text, label, caption, bump, raised.">
+<link rel="stylesheet" href="BUMPTEXT_files/style.css">
+</head>
+<body id="bumptext" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="BUMPTEXT_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+BUMPTEXT
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Applies a raised text effect onto an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=bumptext&amp;dirname=bumptext">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: bumptext -t text -s size [-p pointsize] [-f font] [-m mode] [-a
+ angles] [-i intensity] [-g gravity] [-o offsets] [-c color] [-b 
+blendval] infile outfile<br>
+		USAGE: bumptext [-h or -help]
+		</p>
+
+		<p align="left">
+		-t .... text ............ text to apply to image; enclose in quotes<br>
+		-s .... size ............ size of text box; can be specified as WIDTH, <br> 
+		......................... WIDTHx, xHEIGHT or WIDTHxHEIGHT<br>
+		-p .... pointsize ....... text pointsize; integer&gt;0; default will be <br>
+		......................... determined from textbox width<br>
+		-f .... font ............ font name or path to font file; default=Helvetica<br>
+		-m .... mode ............ text mode; mode is either label or caption;<br>
+		......................... default=label<br>
+		-a .... angles .......... lighting directions; azimuthxaltitude; azimuth <br>
+		......................... angles are integers between 0 and 360 degrees;<br>
+		......................... altitude angles are integers between 0 and 90 <br>
+		......................... degrees; default="120x45"<br>
+		-i .... intensity ....... intensity or strength of the bump text; integer&gt;=0;<br>
+		......................... default=20<br>
+		-g .... gravity ......... gravity location for placing the text on the image;<br>
+		......................... default=northwest<br>
+		-o .... offsets ......... x and y pixel offsets of the text location relative <br>
+		......................... to the gravity settings; default="+0+0"<br>
+		-c .... color ........... colorization color for the image; <br>
+		......................... any valid opaque IM color specification; <br>
+		......................... default=white<br>
+		-b .... blendval ........ colorization blending value; 0&lt;=integer&lt;=100;<br>
+		......................... 0 is no colorization and 100 is full colorization;<br>
+		......................... default=0
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a raised text effect onto an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: BUMPTEXT applies a raised text effect onto an image. The text 
+		my be applied in either label or caption mode. Optionally, the image may be 
+		colorized.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-t text ... TEXT to apply to image. Be sure to enclose in quotes.
+		</p>
+
+		<p align="left">
+		-s size ... SIZE of text box. In label mode, the text will be placed all 
+		in one line. The size of the text will be determined either by the text box 
+		width or height or pointsize. Specifying pointsize and width or height is not 
+		a valid combination. In caption mode, the text will be placed in multiple 
+		rows as determined by the text box width and height. Pointsize may optionally 
+		be supplied in addition to the text box width and height.
+		</p>
+
+		<p align="left">
+		-p pointsize ... POINTSIZE is the size of the font. Values are integers 
+		greater than 0. The default is unspecified, so that the pointsize will be 
+		determined from the textbox width, height or widthxheight.
+		</p>
+
+		<p align="left">
+		-f font ... FONT is the text font or path to the font file. The default is 
+		Helvetica.
+		</p>
+
+		<p align="left">
+		-m mode ... MODE for adding text. Options are either label or caption. In 
+		label mode the text will all be in one row as determined by either the 
+		text box width or height or pointsize. In caption mode, the text will be on 
+		multiple rows to fill the text box width and height. The pointsize may be 
+		optionally specified along with the text box width and height.
+		</p>
+
+		<p align="left">
+		-a angles ... Angles are the AZIMUTHxALTITUDE angles used to specify the 
+		direction of lighting to create the bump effect. Azimuth angles are integers 
+		between 0 and 360 degrees. Altitude angles are integers between 0 and 90 
+		degrees. The default="120x45"
+		</p>
+
+		<p align="left">
+		-i intensity ... INTENSITY is the intensity or strength of the raised text. 
+		Values are integers&gt;=0. The default=20
+		</p>
+
+		<p align="left">
+		-g gravity ... GRAVITY is the standard IM -gravity locations for placing the 
+		text. Choices are: northwest, north, northeast, west, center, east, southwest, 
+		south and southeast. The default=northwest.
+		</p>
+
+		<p align="left">
+		-o offsets ... OFFSETS are the x and y pixel offsets of the text location 
+		from the gravity settings. This is implemented via the -geometry setting. 
+		The default="+0+0" or no offset from the specified gravity setting.
+		</p>
+
+		<p align="left">
+		-c color ... COLOR is the colorization color to apply to the image. Choices 
+		are any valid opaque IM color specification. The default=white
+		See <a href="http://imagemagick.org/script/color.php" target="_blank">http://imagemagick.org/script/color.php</a>
+		</p>
+
+		<p align="left">
+		-b blendval ... BLENDVAL is the colorization blending amount. Values are 
+		integers between 0 and 100. A value of 0 is no colorization (the image is 
+		unchanged). A value of 100 changes the image to a constant color specified 
+		by the color argument. The default=0.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BUMPTEXT_files/wintercard1.jpg" width="600" height="434">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-m label -s 300x -b 0 -a 120x45 -i 20 -g southeast -o "+10+10" -t "HAPPY HOLIDAYS"
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BUMPTEXT_files/wintercard1_bumptext_b0_white_a120x45_i20_label_s300x_p_sout.jpg" width="600" height="434">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-m label -s 300x -c white -b 70 -a 120x45 -i 20 -g southeast -o "+10+10" -t "HAPPY HOLIDAYS"
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BUMPTEXT_files/wintercard1_bumptext_b70_white_a120x45_i20_label_s300x_p_sou.jpg" width="600" height="434">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-m label -s 300x -c white -b 70 -a 120x45 -i 20 -g northwest -o "+10+10" -t "HAPPY HOLIDAYS"
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BUMPTEXT_files/wintercard1_bumptext_b70_white_a120x45_i20_label_s300x_p_nor.jpg" width="600" height="434">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" bgcolor="black" align="center">
+		<p align="center">
+		&nbsp;
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		Arguments:<br>
+		-m caption -s 280x -p 36 -c white -b 70 -a 120x45 -i 20 -g northwest -o "+10+10" -t "HAPPY HOLIDAYS"
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="BUMPTEXT_files/wintercard1_bumptext_b70_white_a120x45_i20_caption_s300x_p36.jpg" width="600" height="434">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Uses either label or caption to create white text on a <br>
+				black background and determines the width and height of <br>
+				the textbox from that image</li>
+			<li>Uses -shade to give a 3D effect to the text and makes the  <br>
+				background of the text transparent</li>
+			<li>Uses -colorize to adjust the blending color of the image</li>
+			<li>Overlays the text image onto the colorized images at the desired location</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for the label case.
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert $infile -alpha off +repage -fill $color -colorize ${blendval}% $tmp1</li>
+			<li>ww=`echo "${size}x" | cut -dx -f1`</li>
+			<li>hh=`echo "${size}x" | cut -dx -f2`</li>
+			<li>convert -background black -fill white \<br>
+				-font $font -gravity center \<br>
+				-size ${ww}x ${mode}:"$text" -shade "$angles" $tmp2</li>
+			<li>hh=`convert $tmp2 -ping -format "%h" info:`</li>
+			<li>grayval=`convert $tmp2[1x1+0+0] -format "%[fx:100*u.r]" info:`</li>
+			<li>convert $tmp1 \( $tmp2 -trim +repage -transparent "gray($grayval%)" \) \<br>
+				-gravity "$gravity" -geometry "$offsets" -compose modulate \<br>
+				-set option:compose:args $intensity -composite $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+<script src="BUMPTEXT_files/app.js" type="text/javascript"></script></body></html>

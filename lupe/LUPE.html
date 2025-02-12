@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://www.fmwconcepts.com/imagemagick/lupe/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: LUPE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - lupe - applies a magnifying glass effect in a local area of an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, lupe, magnifying glass, magnification, spherical distortion, magnifier">
+<link rel="stylesheet" href="./LUPE_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="b3e6880e4520f59f416d41e30bca958a"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="lupe">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./LUPE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+LUPE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies a magnifying glass effect in a local area of an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=lupe&amp;dirname=lupe">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: lupe [centx,centy] [-m mag] [-s shape] [-l lenx,leny] [-r round] [-b border] [-c color] [-d distort] [-p pcolor] infile outfile<br>
+		USAGE: lupe [-h or -help]
+		</p>
+
+		<p align="left">
+		centx,centy ............ coordinate in image for center of lupe;<br>
+		........................ default is center of image<br>
+		-m .... mag ............ magnification factor; float; mag&gt;=1; <br>
+		........................ default=2<br>
+		-s .... shape .......... shape is lupe (magnifying glass) shape;<br>
+		........................ circle (ellipse) or square (rectangle); <br>
+		........................ default=circle<br>
+		-l .... lenx,leny ...... radii (circle) or half-width (square);<br>
+		........................ must be greater than 0; default=64,64;<br>
+		........................ if only one value is provided, it will<br>
+		........................ be used in both dimensions.<br>
+		-r .... round .......... rounding radius for corners of square;<br>
+		........................ round&gt;=0; default=10<br>
+		-b .... border ........  border thickness for lupe; border&gt;=0;<br>
+		........................ default=4<br>
+		-c .... color .......... border color for lupe; default=white<br>
+		-d .... distort ........ spherical distortion factor; float; <br>
+		........................ distort&gt;=0; default=0<br>
+		-p .... pcolor ........  color to use to pad the image so that <br>
+		........................ zooms near the edges can be used; <br>
+		........................ any valid IM color is allowed; default <br>
+		........................ is no pad                      
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a magnifying glass effect in a local area of an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: LUPE applies a magnifying glass (lupe) effect in a local area 
+		of an image. The normal mode is a simple magnification with no distortion. 
+		However an option is provided to apply a spherical distortion. The lupe can 
+		have either a circular/elliptical shape or a (rounded) square/rectangular 
+		shape. The lupe border thickeness and color can also be specified.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		centx,centy ... CENTX,CENTY are the coordinates in the image for the center 
+		of the lupe. If not specified, then the center of the image will be provided.
+		</p>
+
+		<p align="left">
+		-m mag ... MAG is the magnificiation factor. Values must be greater than or
+		equal to 1. Values may be floating point numbers. The default is 2.
+		</p>
+
+		<p align="left">
+		-s shape ... SHAPE is the shape of the lupe. The shape may be circle or square. 
+		The default is circle.
+		</p>
+
+		<p align="left">
+		-l lenx,leny ... LENX,LENY is either the radii for the circle/ellipse or the 
+		half-width for the square/rectangle. Values must be integers greater than 0. 
+		The default is 64,64.
+		</p>
+
+		<p align="left">
+		-r round ... ROUND is the radius of the corner rounding for the shape=square 
+		option. Values must be integers greater than or equal to zero. The default is 10.
+		</p>
+
+		<p align="left">
+		-b border ... BORDER is the border thickness of the lupe. Values must be 
+		integers greater than or equal to zero. The default=4.
+		</p>
+
+		<p align="left">
+		-c color ... COLOR is the color of the border of the lupe. Color may be any 
+		valid IM color specification. Be sure to enclose in double quotes if not 
+		using a color name. The default=white.
+		</p>
+
+		<p align="left">
+		-d distort ... DISTORT is the spherical distortion factor. Values may be floating 
+		point numbers greater than or equal to 0. The default=0 (no distortion). When 
+		values are greater than 0, the distortion is applied using -fx. Therefore, the 
+		processing will be slower.
+		</p>
+
+		<p align="left">
+		-p pcolor ... PCOLOR is the color to use to pad the image so that zooms near the 
+		edges can be used. Any valid IM color is allowed. The default is no pad.                    
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Simple Magnification
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Image<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./LUPE_files/lena.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m1_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m3_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s square -m 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s square -m 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s square -m 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m1_square_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_square_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m3_square_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Shape And Border Variations - Magnification 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original Image<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./LUPE_files/lena.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -l 64,64
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -l 64,32
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy32_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s square -m 2 -l 64,64
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s square -m 2 -l 64,32
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_square_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_square_cx127_cy127_dx64_dy32_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -c white
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -c deepskyblue
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4_blue.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -b 4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -b 0
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b0.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 2 -b 4
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-s circle -m 1 -b 0 -d 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m2_circle_cx127_cy127_dx64_dy64_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_m1_circle_cx127_cy127_dx64_dy64_df1_b0.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Magnification Versus Distortion
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Image<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./LUPE_files/lena_grid.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+	</td></tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m1_circle_cx135_cy135_dx64_dy32_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m2_circle_cx135_cy135_dx64_dy32_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m3_circle_cx135_cy135_dx64_dy32_df0_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 1 -d 1
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 1 -d 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		135,135 -s circle -l 64,32 -m 1 -d 3
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m1_circle_cx135_cy135_dx64_dy32_df1_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m1_circle_cx135_cy135_dx64_dy32_df2_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_m1_circle_cx135_cy135_dx64_dy32_df3_b4.jpg" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Magnification Animation
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Distortion Animation
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_nondistort_animation.gif" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./LUPE_files/lena_grid_distort_animation.gif" width="256" height="256" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a binary mask image for the loop of the desired size and <br>
+				shape</li>
+			<li>Computes and magnifies/distorts a subsection of the image</li>
+			<li>Masks the magnified/distorted subsection so it is transparent outside</li>
+			<li>Composites the masked magnified/distorted subsection into the image <br>
+				at the proper location</li>
+			<li>Draws the lupe border into the image</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for <br>
+		the case of simple magnification:<br>
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert -size ${subwidth}x${subheight} xc:black -fill white \<br>
+				-draw "$shape $subcentx,$subcenty $lenx,$leny 0,360" $tmp0</li>
+			<li>convert $infile[$sub] -distort SRT "$subcentx,$subcenty  $mag  0" $tmp1</li>
+			<li>convert $infile \( $tmp1 $tmp0 $tmp0 -compose multiply -composite \) \<br>
+				-geometry $sub -composite $tmp2</li>
+			<li>convert $tmp2 \<br>
+				-stroke $color -strokewidth $border \<br>
+				-fill none -draw "$shape $centx,$centy $lenx,$leny 0,360" \<br>
+				-stroke $color2 -strokewidth $border2 \<br>
+				-fill none -draw "$shape $centx,$centy $lenxo,$lenyo 0,360" \<br>
+				-stroke $color2 -strokewidth $border2 \<br>
+				-fill none -draw "$shape $centx,$centy $lenxi,$lenyi 0,360" \<br>
+				$outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

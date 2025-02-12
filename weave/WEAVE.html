@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://www.fmwconcepts.com/imagemagick/weave/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://www.fmwconcepts.com/imagemagick/weave/index.php"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: WEAVE</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - weave - applies an irregular linear weave-like distortion to an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, weave, distortion, lines, tile, compose, pattern, random">
+<link rel="stylesheet" href="./WEAVE_files/style.css">
+</head>
+<body marginwidth="0" marginheight="0" id="weave">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./WEAVE_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+WEAVE
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies an irregular linear weave-like distortion to an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=weave&amp;dirname=weave">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 03, 2021</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: weave [-m modulation] [-d distortion] [-b blur] [-k kind] [-c compose] [-s size] [-o offset] [-a angle] [-o opacity] [-S seed] [-r retain] infile [tilefile] outfile<br>
+		USAGE: weave [-h or -help]
+		</p>
+
+		<p align="left">
+		-m .. modulation .. image modulate percent values; three comma separated  <br>
+		................... values for brightness,saturation,hue;   <br>
+		................... default="100,100,100" (no change)<br>
+		-d .. distortion .. image distortion amount in pixels; two comma separated <br>
+		................... values; default="7,7"<br>
+		-b .. blur ........ distortion blur sigma amount; float&gt;=0; default=4<br>
+		-k .. kind ........ kind of distortion; options are random or image; <br>
+		................... default="image"<br>
+		-c .. compose ..... compose method; softlight, overlay, pegtoplight; <br>
+		................... default=softlight<br>
+		-s .. size ........ tile size in pixels defining outer rectangle;<br>
+		................... default="9x9"<br>
+		-o .. offset ...... tile offset to inner rectangle; <br>
+		................... two "x" separated integers; default="2x2"<br>
+		-a .. angle ....... angle of rotation for tile; 0&lt;=integer&lt;=180; default=45<br>
+		-O .. opacity ..... tile opacity; 0&lt;=integer&lt;=100; default=100<br>
+		-S .. seed ........ seed for kind=random; integer&gt;=0; default=no seed<br>
+		-r .. retain ...... retain image of tile as tile.png; yes or no; default=no<br>
+<br>
+		optional tilefile in place of tiling arguments
+<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply an irregular linear weave-like distortion to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: WEAVE applies an irregular linear weave-like distortion to 
+		an image.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-m modulation ... image MODULATION percent values. Three comma separated  
+		values for brightness,saturation,hue. The default="100,100,100" (no change)
+		</p>
+
+		<p align="left">
+		-d distortion ... image DISTORTION amount in pixels. Two comma separated 
+		values. The default="7,7".
+		</p>
+
+		<p align="left">
+		-b blur ... distortion BLUR sigma amount. Values are floats&gt;=0. 
+		The default=4.
+		</p>
+
+		<p align="left">
+		-k kind ... KIND of distortion: Options are random (r) or image (i).  
+		The default="image".
+		</p>
+
+		<p align="left">
+		-c compose ... COMPOSE method. Choices are: softlight (s), overlay (o), 
+		or pegtoplight (p). The default=softlight.
+		</p>
+
+		<p align="left">
+		-s size ... tile SIZE in pixels defining outer rectangle. The default="9x9"
+		</p>
+
+		<p align="left">
+		-o offset ... tile OFFSET to inner rectangle. Two "x" separated integers. 
+		The default="2x2"
+		</p>
+
+		<p align="left">
+		-a angle ... Angle of rotation for tile. Values are 0&lt;=integers&lt;=180. 
+		The default=45
+		</p>
+
+		<p align="left">
+		-O opacity ... tile OPACITY. Values are 0&lt;=integers&lt;=100. The default=100
+		</p>
+
+		<p align="left">
+		-S seed ... SEED for kind=random. Values are integers&gt;=0. The default=no seed
+		</p>
+
+		<p align="left">
+		-r retain ... Retain image of tile as tile.png. Options are: 
+		yes (y) or no (n) The default=no
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 1 --- Variation of Compose Method
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 9x9 -o 2x2 -c softlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_csoftlight_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 9x9 -o 2x2 -c overlay
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_coverlay_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 9x9 -o 2x2 -c pegtoplight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_cpegtoplight_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 2 --- Variation in Size
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 9x9 -o 2x2 -c softlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_csoftlight_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 6x6 -o 2x2 -c softlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_csoftlight_ts6x6_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Example 3 --- Variation of Kind
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k image -s 9x9 -o 2x2 -c softlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_kimage_csoftlight_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 90,70,100 -o 90 -k random -s 6x6 -o 2x2 -c softlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./WEAVE_files/spaceman_weave_a45_m90,70,100_o90_b4_krandom_csoftlight_ts9x9_to2x2.png" width="603" height="378" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a tile from a line pattern</li>
+			<li>Tiles out an image to the size of the input times 1.414</li>
+			<li>Rotates the tiled image by 45 deg and center crops <br>
+				to the size of the input</li>
+			<li>Reads the input</li>
+			<li>Modulates the input</li>
+			<li>Copies the cropped tiled image to MPR: and <br>
+				adjusts its opacity</li>
+			<li>Composes the mpr: tiled image with the input</li>
+			<li>Blurs a grayscale clone of the composite image</li>
+			<li>Distorts the input using the blurred clone of the composite</li>
+			<li>Saves the output</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+
+
+
+</body></html>

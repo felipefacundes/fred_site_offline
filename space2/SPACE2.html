@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://www.fmwconcepts.com/imagemagick/space2/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: SPACE2</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - space2 - applies a spatially adaptive contrast (and brightness) enhancement filter to an image.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, space2, spatially adaptive filter, spatially adaptive contrast enhancement, brightness, contrast">
+<link rel="stylesheet" href="./SPACE2_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="d021a558b7366ab58376d3d55de9a8cc"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="space2">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./SPACE2_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+SPACE2
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Adaptively enhances the contrast and brightness of an image.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=space2&amp;dirname=space2">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: space2 [-a autolevel] [-b bri] [-c con] [-s sat] [-m maxgain ] [-d] [-w window ] infile outfile<br>
+		USAGE: space2 [-h or -help]
+		</p>
+
+		<p align="left">
+		-a ... autolevel ... autolevel as preprocessing; options are: <br>
+		.................... off (o), together (t), separately (s); <br>
+		.................... default=together<br>
+		-b ... bri ......... brightness adjustment factor; float&gt;0; <br>
+		.................... default=1 (no change) <br>                            
+		-c ... con ......... contrast adjustment factor; float&gt;0; <br>
+		.................... default=1 (no change) <br>                            
+		-s ... sat ......... saturation adjustment percent; float; <br>
+		.................... -45&lt;=sat&lt;=45; default is no change <br>
+		-m ... maxgain ..... maximum gain; controls amount of detail; <br>
+		.................... float&gt;0; default=2.5 <br>
+		.................... larger values will allow more detail; <br>
+		-d ................. set the desired standard deviation (dstd) <br>
+		.................... to an internally set constant value; <br>
+		.................... default is to use the image's actual std <br>                               
+		-w ... window ... .. windowing size as percentage of image; <br>
+		.................... nominally between 5 and 20; 2&lt;=float&lt;=50; <br>
+		.................... default=8 <br>
+		-h or -help ........ get help
+		</p>
+
+		<p align="left">
+		PURPOSE: To change the contrast and/or brightness in an image adaptively. 
+		</p>
+
+		<p align="left">
+		DESCRIPTION: SPACE2 is an adaptive technique to enhance an image's 
+		brightness and contrast. SPACE is an abbreviation for SPacially 
+		Adaptive Contrast Enhancement.
+		</p>
+
+		<p align="left">
+		The adaptive formula R = M + G*(I-M). Here R is the resulting image. I is
+		the input image. M is a mean image, which is a low pass filtered version of
+		the input image. It is generated by a block resize of the input image to
+		some fraction of the input size. The resize amount is computed from the
+		window size. This image is then re-expanded to its original size. The
+		resizing technique is fast way to apply a large block size moving window
+		average. The term (I-M) is a high pass filtered version of the input image.
+		G is a gain image, which involves S, the standard deviation of the input
+		image, generated by the same resizing technique as used to create the mean
+		image, M. G also includes the desired standard deviation (dstd) and a max
+		gain factor. The gain image, G, is used to set the amount of detail
+		(sharpness) in the output as well as to limit runaway gain. Max gain is
+		typically on the order of 1-10, with a default of 2.5. The block window size
+		typically is on the order of 5-20% of the image size and nominally 8%. There
+		are times when one may want to push the max gain value higher than the
+		default, for example, when trying to pull information out of a hazy picture.
+		The algorithm has options to control the brightness, contrast and
+		saturation. The brightness and contrast have automatically computed defaults
+		that are image dependent. They are applied via sigmoidal non-linear
+		functions. The saturation is a linear adjustment in LAB colorspace and the
+		default is no change.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-a autolevel --- autolevel as preprocessing step. The options are: 
+		off (o), together (t), separately (s). The default=together. Note, 
+		for some images, especially with haze, the option separately can cause 
+		severe color shifts.
+		</p>
+
+		<p align="left">
+		-b bri --- bri is a brightness adjustment factor multiplied by the  
+		automatically computed default. It is a float&gt;0. Values larger then 1 will 
+		increase the brightness and values smaller than 1 will decrease the 
+		brightness. The default is 1 or no change from the automatically computed 
+		value. 
+		</p>
+
+		<p align="left">
+		-c con --- con is a contrast adjustment factor multiplied by the  
+		automatically computed default. It is a float&gt;0. Values larger then 1 will 
+		increase the contrast and values smaller than 1 will decrease the contrast. 
+		The default is 1 or no change from the automatically computed value. 
+		</p>
+
+		<p align="left">
+		-s sat --- sat is a saturation factor. It is used in a post processing step. 
+		It is a float in the range of -45 to 45 (percent). The default is 0 or no 
+		change and skips saturation processing. 
+		</p>
+
+		<p align="left">
+		-m maxgain --- maxgain is the maximum gain. It controls the amount of detail 
+		(sharpness). Values are floats&gt;0. The default is 2.5. Larger values allow 
+		more detail to show and may be useful for very hazy images. Too large a  
+		value may over-exaggerate detail, especially when there is no haze.
+		</p>
+
+		<p align="left">
+		-d --- set the desired standard deviation (dstd) to an internally set 
+		constant value. The default is to use the image's actual std for the dstd.                             
+		Both results are close. It becomes a user's preference. The results are 
+		image dependent. Some images become slightly sharper with one method and 
+		other images are sharper with the other method.
+		</p>
+
+		<p align="left">
+		-w window --- the moving window size as a percentage of the input image for the 
+		local averaging and standard deviation operations. Values are 2&lt;=float&lt;=50. 
+		Typical values are between 5 and 20. The default is 8 (%).
+		</p>
+
+		<p align="left">
+		REQUIREMENTS: If not using HDRI mode, this script can be slow due to the 
+		use of -fx. Also IM 6.5.5-1 or higher due to the use of -auto-level. For 
+		best results use IM 6.7.9-5 or higher due to changes in the operation of 
+		-sigmoidal-contrast.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://3.bp.blogspot.com/-iOOnD5rmkxk/Ta7Vi7ePTsI/AAAAAAAAANM/EgDnXlR0HHU/s1600/Chloe%2BBell%2B045.JPG" target="_blank">http://3.bp.blogspot.com/-iOOnD5rmkxk/Ta7Vi7ePTsI/AAAAAAAAANM/EgDnXlR0HHU/s1600/Chloe%2BBell%2B045.JPG</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/Chloe_Bell_045.jpg" width="800" height="536">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/Chloe_Bell_045_space2.jpg" width="800" height="536">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(provided by Anthony Thyssen)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/chinese_chess_sm.jpg" width="800" height="600">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/chinese_chess_sm_space2.jpg" width="800" height="600">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://www.asknlearn.com/EduWiz/help/Chapter9/Chapter9.htm" target="_blank">http://www.asknlearn.com/EduWiz/help/Chapter9/Chapter9.htm</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image006_before.jpg" width="307" height="230">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image006_before_space2.jpg" width="307" height="230">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://enhance.pho.to/" \="" id="_blank">http://enhance.pho.to/</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/4.jpg" width="800" height="532">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/4_space2.jpg" width="800" height="532">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://enhance.pho.to/" \="" id="_blank">http://enhance.pho.to/</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/butterfly.jpg" width="380" height="438">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/butterfly_space2.jpg" width="380" height="438">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://warrencampdesign.com/warren/images/photoEdits/basics/focusContrast/lions_before.jpg" target="blank">http://warrencampdesign.com/warren/images/photoEdits/basics/focusContrast/lions_before.jpg</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/lioncuddle1.jpg" width="350" height="280">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/lioncuddle1_space2.jpg" width="350" height="280">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://digital-photography-school.com/turn-ho-hum-color-into-wow-with-photoshop" target="_blank">http://digital-photography-school.com/turn-ho-hum-color-into-wow-with-photoshop</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/yellow_building_small.jpg" width="491" height="366">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		Arguments:<br>
+		(defaults)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/yellow_building_small_space2.jpg" width="491" height="366">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a t (default)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a s
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/zelda2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/zelda2_space2.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/zelda2_space2_sep.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://dragon.larc.nasa.gov/retinex/" target="_blank">source</a>)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(defaults)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image3s.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image3s_space2.jpg" width="142" height="216" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://dragon.larc.nasa.gov/retinex/" target="_blank">source</a>)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		(defaults)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 10
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image26s.jpg" width="180" height="118" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image26s_space2.jpg" width="180" height="118" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/image26s_space2_m10.jpg" width="180" height="118" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://dragon.larc.nasa.gov/retinex/" target="_blank">source</a>)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-m 2.5 (defaults)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/haze20s.jpg" width="216" height="142" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/haze20s_space2.jpg" width="216" height="142" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://dragon.larc.nasa.gov/retinex/" target="_blank">source</a>)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a t (default)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-a s
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/haze22s.jpg" width="216" height="142" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/haze22s_space2.jpg" width="216" height="142" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./SPACE2_files/haze22s_space2_sep.jpg" width="216" height="142" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Adjust the brightness and contrast using a non-linear method</li>
+			<li>Computes using -resize both a mean and standard deviation reduced <br>
+				size images according to the window dimension</li>
+			<li>Expands both using -resize to their original size</li>
+			<li>Subtracts the mean image from the original image as a difference image</li>
+			<li>Computes a gain image based upon the standard deviation <br>
+				image and the desired standard deviation</li>
+			<li>Combines the mean image with the product of the gain and difference images</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

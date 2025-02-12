@@ -1,0 +1,1021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)http://www.fmwconcepts.com/imagemagick/3Dbox/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator, div[role="dialog"] div[role="document"], div[role="dialog"] div[role="document"], div[role="dialog"] div[role="document"] {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: 3DBOX</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - 3Dbox - generates a perspective view of a 3D box at any orientation with pictures pasted on each of its sides">
+<meta name="keywords" content="ImageMagick, scripts, image processing, 3Dbox, box, cube, isometric, orthographic, perspective, perspective distortion, perspective, perspective tranformation, image perspective transformation, image perspective projection, perspective projection">
+<link rel="stylesheet" href="./3DBOX_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="07688285981ea90c7d9ad41338cc5c54"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style></head>
+<body marginwidth="0" marginheight="0" id="\3Dbox">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./3DBOX_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+3DBOX
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Generates a perspective view of a 3D box at any orientation with pictures 
+		pasted on each of its sides
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=3Dbox&amp;dirname=3Dbox">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: July 07, 2021</p>
+
+<p align="center" class="nominal purple bold">
+WARNING: This Script Is Limited To IM Version 6.3.5-6 Or Higher
+</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: 3Dbox option=value infile1 infile2 infile3 [infile4 infile5 infile6] outfile<br>
+		USAGE: 3Dbox [-h or -help]
+		</p>
+
+		<p align="left">
+		OPTIONS:  any one or more <br>
+		<br>
+		pan ..... value ... rotation about output vertical centerline; <br>
+		................... -360 to +360 (deg); default=0<br>
+		tilt .... value ... rotation about output horizontal centerline; <br>
+		................... -360 to +360 (deg); default=0<br>
+		roll .... value ... rotation about the output center; <br>
+		................... -360 to +360 (deg); default=0<br>
+		pef ..... value ... perspective exaggeration factor; <br>
+		................... 0 to 3.19; default=1<br>
+		mode .... value ... mode for display of opposite faces to <br> 
+		................... image1, image2, image3;<br>
+		................... mode may be either mirror or rot180; default=mirror<br>
+		format .. value ... controls format of output image;<br>
+		................... format may be either auto or center; default=auto;<br>
+		................... auto sizes the output image to just contain the box;<br>
+		................... center creates an output image large enought to <br>
+		................... hold any rotation of the box and keep the centroid<br>
+		................... of the box in the very center of the output image<br>
+		zoom .... value ... output zoom factor; where value &gt; 1 means enlarge <br>
+		................... and &lt; 1 means shrink<br>
+		size .... value ... dwidth[xdheight] for the output image; options are: <br>
+		................... dwidth, dwidthx, xdheight or dwidhtxdheight<br>
+		bgcolor . value ... the background color value; any valid IM image <br>
+		................... color specification (see -fill); default is black<br>
+		filter .. value ... any valid IM filter method; default is area resampled.<br>
+		<br>
+		If infile4 infile5 infile6 are left off, then the first three infiles <br>
+		will be used for their opposite sides.  The dimensions of all the images <br>
+		must be consistent with forming a box.
+		</p>
+
+		<p align="left">
+		PURPOSE: To generate a perspective view of a 3D box at any orientation 
+		with pictures pasted on each of its sides.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: 3D box generates a perspective view of a 3D box at any 
+		orientation with pictures pasted on each of its sides. The use may  
+		supply either 3 or 6 images. If only 3 images are provided, then these  
+		will be either mirrored or rotated 180 degrees for use on the opposite 
+		faces of the box. Note that the dimensions of all the images must be 
+		consistent with forming a box.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		PAN is a rotation of the box about the output image vertical 
+		centerline -360 to +360 degrees. Positive rotations turn the 
+		right side of the box away from the viewer and the left side 
+		towards the viewer. If pan=0, tilt=0 and roll=0, the output 
+		image will look straight onto the side of the box containing 
+		the first image. The default is pan=0 degrees.
+		</p>
+
+		<p align="left">
+		TILT is a rotation of the box about the output image horizontal 
+		centerline -360 to +360 degrees. Positive rotations turn the top 
+		of the box away from the viewer and the bottom towards the viewer. 
+		If pan=0, tilt=0 and roll=0, the output image will look straight 
+		onto the side of the box containing the first image. The default 
+		is tilt=0 degrees.
+		</p>
+
+		<p align="left">
+		ROLL is a rotation in the box in the plane of the output image
+		-360 to +360 degrees. Positive values are clockwise and negative 
+		values are counter-clockwise.  If pan=0, tilt=0 and roll=0, the  
+		output image will look straight onto the side of the box containing 
+		the first image. The default is roll=0 degrees.
+		</p>
+
+		<p align="left">
+		PAN, TILT and ROLL are order dependent. If all three are provided, 
+		then they will be done in whatever order specified.
+		</p>
+
+		<p align="left">
+		PEF is the perspective exaggeration factor. It ranges from 0 to 3.19. 
+		A normal perspective is achieved with a value of 1. As PEF is 
+		increased from 1, the perspective effect moves towards that of 
+		a wide angle lens (more distortion). If PEF is decreased from 1 
+		the perspective effect moves towards a telephoto lens (less 
+		distortion). A PEF=0, achieves an isometric (orthographic) view 
+		(parallel lines remain parallel). The default is 0.5 so as to 
+		avoid too much perspective exaggeration.
+		</p>
+
+		<p align="left">
+		MODE identifies how to handle the images on the opposite faces to 
+		those for infile1 infile2 and infile3. This is especially useful when 
+		the other 3 images are not provided. In this case, it replicates  
+		the first 3 images for use as the remaining 3 images. The choices 
+		are either mirror or rot180. For mode=mirror, the opposite sides of 
+		the box will be mirror images with the tops aligned, when the other 
+		3 images are not provide. When the other 3 images are provided, then 
+		they will be used as supplied. For mode=rot180, the opposite sides 
+		of the box will use 180 degree rotated versions of the first 3 images, 
+		when the other 3 images are not provided. When the other 3 images 
+		are provided, then they also will be rotated 180 degrees. The 
+		choice of mode, especially when the last 3 images are not provided, 
+		will be useful depending upon how the box is rotated and whether 
+		one wants to see right-side up images or upside down images.
+		The default is mirror.
+		</p>
+
+		<p align="left">
+		FORMAT identifies how to set the output image size. The choices are 
+		auto and center. When format=auto, the output image will be just large 
+		enough to contain the box. When format=center, the output image 
+		will be large enough to hold the box at any rotation, pef and zoom 
+		and keep the centroid of the box in the very center of the output image.
+		This is important when trying to generate animations in order to keep 
+		the box properly rotating about a single centered point in the output image.
+		</p>
+
+		<p align="left">
+		ZOOM is the output image zoom factor, which makes the output image
+		larger or smaller in size. Values &gt; 1 enlarge the output image; 
+		whereas values &lt; 1 shrink the output image. The default is 1. 
+		The actual size of the image depends upon the box's rotation, zoom, 
+		pef and the format parameter.
+		</p>
+
+		<p align="left">
+		SIZE is the dwidth[xdheight] for the output image. The choices are:
+		dwidth, dwidthx, xdheight or dwidthxdheight. For format=auto, size will
+		override zoom and determine the zoom factor to use to ensure the output
+		is the desired size according to the following. If dwidth is provided,
+		then it will be used to compute the zoom from the larger of the unzoomed
+		output width and height. If dwidthx is provided, then it will be used to
+		compute the zoom from the unzoomed output width. If xdheight is
+		provided, it will be used to compute the zoom from the unzoomed output
+		height. If dwidthxdheight is provided, dwidth will be used to compute
+		the zoom from the unzoomed output width. The choice is basically
+		determining which dimension will end up the desired size. For
+		format=center, zoom and dwidth[xdheight] act independently. The default
+		size is an approximaton and will be large enough to hold the box at any
+		rotation, zoom and pef and may contain excess background. The size
+		parameter, however, allows one to set a desired size. If either dwidth
+		or dheight is missing, then the supplied value will be used for both the
+		width and height of the output. The best way to determine the needed
+		size is probably to generate an image with pan and tilt set to some
+		multiple of 90 degrees and set the roll to 45 degrees so that output is
+		looking right at the largest face turned so that the diagonals are
+		horizontal and vertical. Then compare the size of this image to another
+		generated with pan=45 degrees, tilt=-45 degrees and roll=0 so that one
+		is viewing the box with its diagonals horizontal and vertical. Use the
+		largest dimensions from each case. Basically, you can set dwidthxdheight
+		such that the image will be larger than necessary as one can always crop
+		the animation afterwards to remove excess background area.
+		</p>
+
+		<p align="left">
+		FILTER is any valid IM -filter value. The default is (EWA) area resampling.
+		This may cause slight blurring. If you prefer the result to be more crisp, 
+		but with the possibility of some aliasing, then use filter=point; otherwise 
+		for a compromise, use filter=lanczos.
+		</p>
+
+		<p align="left">
+		NOTE: the script is a bit slow due to all the necessary setup computations 
+		prior to using +distort perspective to warp the images onto the box faces.
+		</p>
+
+		<p align="left" class="red">
+		IMPORTANT: This script is limited to IM version 6.4.2-7 or higher to  
+		support -fx scientific-notation and IM version 6.3.5-6 or higher to 
+		conform to the current +distort perspective control point sequence.
+		</p>
+
+		<p align="left">
+		NOTE: This script is built upon the excellent box example first developed 
+		by Anthony Thyssen at 
+		<a href="http://www.imagemagick.org/Usage/distorts/#box3d" target="_blank">http://www.imagemagick.org/Usage/distorts/#box3d</a>. 
+		I want to express my thanks to Anthony for his explainations of the 
+		subtle points of +distort perspective, -layers merge, -crop -flatten 
+		and the Unix eval expression. 
+		</p>
+
+		<p align="left">
+		<a href="http://www.fmwconcepts.com/imagemagick/linkcounter.php?dir=3Dbox/&amp;linkname=3DBOX.pdf" target="_blank">Mathematics Background</a> (32KB PDF) 
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		3 Square Images --- Variations In PEF (Perspective Exaggeration)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/logo3.gif" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=1<br>
+		filter=point
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0.5<br>
+		filter=point<br>
+		(default pef)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0<br>
+		filter=point<br>
+		(isometric)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef1_point.jpg" width="226" height="219" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef0p5_point.jpg" width="200" height="218" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef0_point.jpg" width="180" height="218" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pan Animation<br>
+		Arguments:<br>
+		tilt=-45 pef=1<br>
+		filter=point format=center
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pan Animation<br>
+		Arguments:<br>
+		tilt=-45 pef=0.5<br>
+		filter=point format=center
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pan Animation<br>
+		Arguments:<br>
+		tilt=-45 pef=0<br>
+		filter=point format=center
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_pan_pef1_center.gif" width="307" height="307" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_pan_pef0p5_center.gif" width="225" height="225" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_pan_pef0_center.gif" width="220" height="220" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		3 Square Images --- Pan Animations --- Variations In Mode
+		</p>
+		<p align="center">
+		<a href="http://www.fmwconcepts.com/imagemagick/linkcounter.php?dir=3Dbox/&amp;linkname=3Dbox_animate_pan" target="_blank">Pan Animation Script</a> 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/logo3.gif" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pan Animation<br>
+		Arguments:<br>
+		tilt=-45 pef=0.5<br>
+		filter=point filter=center<br>
+		mode=mirror
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Pan Animation<br>
+		Arguments:<br>
+		tilt=-45 pef=0.5<br>
+		filter=point filter=center<br>
+		mode=rot180
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_pan_pef0p5_center.gif" width="225" height="225" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_pan_pef0p5_center_rot180.gif" width="225" height="225" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		3 Square Images --- Tilt Animations --- Variations In Mode
+		</p>
+		<p align="center">
+		<a href="http://www.fmwconcepts.com/imagemagick/linkcounter.php?dir=3Dbox/&amp;linkname=3Dbox_animate_tilt" target="_blank">Tilt Animation Script</a> 
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/logo3.gif" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Tilt Animation<br>
+		Arguments:<br>
+		pan=45 pef=0.5<br>
+		filter=point filter=center<br>
+		mode=mirror
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Tilt Animation<br>
+		Arguments:<br>
+		pan=45 pef=0.5<br>
+		filter=point filter=center<br>
+		mode=rot180
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_tilt_pef0p5_center.gif" width="225" height="225" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_animation_tilt_pef0p5_center_rot180.gif" width="225" height="225" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		3 Square Images --- Variations In Zoom Or Size
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/mandril.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/logo3.gif" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/zelda3.jpg" width="128" height="128" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0.5<br>
+		filter=point zoom=1.5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef0p5_zoom1p5_point.jpg" width="300" height="327" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0.5<br>
+		filter=point size=400x<br>
+		(make width 400)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef0p5_w400x_point.jpg" width="400" height="437" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0.5<br>
+		filter=point size=x400<br>
+		(make height 400)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_p45_tm45_pef0p5_hx400_point.jpg" width="366" height="400" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+	</tr>
+	<tr>
+</tr></tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Imagemagick Box: 3 Images --- Variations In PEF (Perspective Exaggeration)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images<br>
+		(see <a href="http://www.imagemagick.org/Usage/distorts/#box3d" target="_blank">http://www.imagemagick.org/Usage/distorts/#box3d</a>) 
+		</p>
+		</td>
+	</tr>
+<!-- 
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		convert -size 150x200 xc:skyblue \
+		-fill black -pointsize 20 -gravity north -annotate +0+5 'IM Examples' \
+		-fill blue -pointsize 15 -gravity northeast -annotate +5+28 'Box Set' \
+		-fill black -pointsize 15 -gravity south -annotate +0+5 'ImageMagick' \
+		-stroke blue -strokewidth 2 -draw 'line 0,169 150,169' \
+		\( http://imagemagick.org/Usage/images/logo.gif -resize 100x100 \) \
+		-gravity center -compose multiply -composite box_front.jpg
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		convert -size 200x40 xc:skyblue \
+		-pointsize 20 -gravity north -annotate +5+0 'IM Examples' \
+		-pointsize 10 -gravity south -annotate +0+0 'ImageMagick' \
+		-stroke blue -strokewidth 2 -draw 'line 30,0 30,40' \
+		-rotate -90 box_spine.jpg
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		convert -size 150x40 xc:skyblue \
+		-pointsize 20 -gravity north -annotate +5+0 'IM Examples' \
+		-pointsize 10 -gravity south -annotate +0+0 'ImageMagick' \
+		box_top.jpg
+		</p>
+		</td>
+	</tr>
+ -->
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_front.jpg" width="150" height="200" hspace="0" vspace="0" border="0"><br>
+		(box front)
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_spine.jpg" width="40" height="200" hspace="0" vspace="0" border="0"><br>
+		(box spine)
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_top.jpg" width="150" height="40" hspace="0" vspace="0" border="0"><br>
+		(box top)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-30 pef=1<br>
+		filter=point
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-30 pef=0.5<br>
+		filter=point<br>
+		(default pef)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-30 pef=0.01<br>
+		filter=point<br>
+		(virtually isometric)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm30_pef1_point.jpg" width="171" height="240" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm30_pef0p5_point.jpg" width="148" height="240" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm30_pef0p01_point.jpg" width="134" height="240" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Imagemagick Box: 3 Images --- Variations In Orientation
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images<br>
+		(see <a href="http://www.imagemagick.org/Usage/distorts/#box3d" target="_blank">http://www.imagemagick.org/Usage/distorts/#box3d</a>) 
+
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_front.jpg" width="150" height="200" hspace="0" vspace="0" border="0"><br>
+		(box front)
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_spine.jpg" width="40" height="200" hspace="0" vspace="0" border="0"><br>
+		(box spine)
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_top.jpg" width="150" height="40" hspace="0" vspace="0" border="0"><br>
+		(box top)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-60 pef=0.5<br>
+		filter=point
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-45 pef=0.5<br>
+		filter=point<br>
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		pan=45 tilt=-30 pef=0.5<br>
+		filter=point<br>
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm60_pef0p5_point.jpg" width="159" height="218" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm45_pef0p5_point.jpg" width="155" height="236" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./3DBOX_files/box_im_p45_tm30_pef0p5_point.jpg" width="148" height="240" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<!-- 
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Imagemagick Box: 3 Images ~~- Variations In Filter
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original Images<br />
+		(see <a href="http://www.imagemagick.org/Usage/distorts/#box3d" target="_blank">http://www.imagemagick.org/Usage/distorts/#box3d</a>) 
+
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="images/box_im_front.jpg" width="150" height="200" hspace="0" vspace="0" border="0"><br />
+		(box front)
+		</td>
+		<td align="center" valign="middle">
+		<img src="images/box_im_spine.jpg" width="40" height="200" hspace="0" vspace="0" border="0"><br />
+		(box spine)
+		</td>
+		<td align="center" valign="middle">
+		<img src="images/box_im_top.jpg" width="150" height="40" hspace="0" vspace="0" border="0"><br />
+		(box top)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br />
+		pan=45 tilt=-30 pef=0.5<br />
+		(default EWA filter)
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br />
+		pan=45 tilt=-30 pef=0.5<br />
+		filter=lanczos<br />
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br />
+		pan=45 tilt=-30 pef=0.5<br />
+		filter=point<br />
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="images/box_im_p45_tm30_pef0p5_point.jpg" width="148" height="240" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="images/box_im_p45_tm30_pef0p5_point.jpg" width=148 height="240" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="images/box_im_p45_tm30_pef0p5_point.jpg" width="148" height="240" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</table>
+
+<br />
+<br />
+ -->
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Define world coordinates with Z pointing towards the viewer, X <br>
+				pointing to the right as seen by the viewer and Y pointing <br>
+				upwards as seen by the viewer</li>
+			<li>Creates a box whose world coordinates are the dimensions of <br>
+				the first 3 images and whose centroid is at the world coordinate origin</li>
+			<li>Defines surface corners from the vertices of box</li>
+			<li>Assign an image to each surface: Image1 will be on the front, <br>
+				Image2 will be on the left side and Image3 will be on the top</li>
+			<li>Projects the corners of the box to the output image domain</li>
+			<li>For each surface, create a set of 4 pairs of control points<br>
+				using the input image corner x,y coordinates and the projected <br>
+				box corner x,y coordinates for that surface</li>
+			<li>Test for backfacing surfaces and eliminate them</li>
+			<li>Apply +distort perspective to each front facing surface <br>
+				to warp the appropirate image onto its corresponding <br>
+				front facing surface</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

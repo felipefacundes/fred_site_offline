@@ -1,0 +1,931 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://www.fmwconcepts.com/imagemagick/splittone3/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: SPLITTONE3</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - splittone3 - applies a color splittone effect to an image">
+<meta name="keywords" content="ImageMagick, scripts, image processing, splittone3, color, highlight, shadow, mix, blend, colorize, overlay, softlight, hardlight, composition">
+<link rel="stylesheet" href="./SPLITTONE3_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="9a06aca92b0887cf75eaceba44073327"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="splittone3">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./SPLITTONE3_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+SPLITTONE3
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Applies a color splittone effect to an image
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=splittone3&amp;dirname=splittone3">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: splittone3 [-sc shadowcolor] [-hc highlightcolor] [-m mix] [-f format] [-t type] [-c compose] [-p] [-b bri] [-c con] infile outfile<br>
+		USAGE: splittone3 [-help]
+		</p>
+
+		<p align="left">
+		-sc ... shadowcolor ...... shadow color; any opaque IM color allowed;<br> 
+		.......................... default=black<br>
+		-hc ... highlightcolor ... highlight color; any opaque IM color allowed; <br>
+		.......................... default=white<br>
+		-m .... mix .............. mix between shadow and highlight coloring; <br> 
+		.......................... 0&lt;=interger&lt;=100; 0 is all shadow coloring; <br> 
+		.......................... 100 is all highlight coloring; default=50<br> 
+		-f .... format ........... format of image to process; image or grayscale; <br>
+		.......................... default=image<br>
+		-t .... type ............. type of color processing; color or gradient;<br> 
+		.......................... default=color<br>
+		-c .... compose .......... compose method to use; choices are: colorize, <br>
+		.......................... overlay, softlight and hardlight; default=colorize<br>
+		-p ....................... preserve luminosity<br>
+		-b .... bri .............. brightness; -100&lt;integer&lt;100; default=0<br>
+		-s .... sat .............. saturation; -100&lt;integer&lt;100; default=0
+		</p>
+
+		<p align="left">
+		PURPOSE: To apply a color splittone effect to an image.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: SPLITTONE3 applies a color splittone effect to an image by 
+		blending shadow and highlight color. 
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-sc shadowcolor ... SHADOWCOLOR is the shadow color. Any opaque IM color is 
+		allowed. The default=black
+		</p>
+
+		<p align="left">
+		-hc highlightcolor ... HIGHLIGHTCOLOR is the highlight color. Any opaque IM 
+		color is allowed. The default=black
+		</p>
+
+		<p align="left">
+		-m mix ... MIX between shadow and highlight coloring. Values are integers 
+		between 0 and 100. Zero is all shadow coloring. One hundred is all 
+		highlight coloring. The default=50 (equal blend).
+		</p>
+
+		<p align="left">
+		-f format ... FORMAT the image to process. Choices are: image (leave image 
+		unchanged) or grayscale (convert image to grayscale before processing). The
+		default=image.
+		</p>
+
+		<p align="left">
+		-t type ... TYPE of color processing. The choices are: color (solid color 
+		composition of grayscale version with image) or gradient (+level-colors 
+		composition of grayscale version with image). The default=color.
+		</p>
+
+		<p align="left">
+		-c compose ... COMPOSE method to use to combine the image and the colored 
+		grayscale image. The choices are: colorize, overlay, softlight and hardlight. 
+		The default=colorize.
+		</p>
+
+		<p align="left">
+		-p ... Preserve luminosity.
+		</p>
+
+		<p align="left">
+		-b bri ... BRI is the percent change in brightness. Values are integers 
+		between -100 and 100. The default=0 (no change)
+		</p>
+
+		<p align="left">
+		-s sat ... SAT is the percent change in saturation. Values are integers 
+		between -100 and 100. The default=0 (no change)
+		</p>
+
+		<p align="left">
+		LIMITATION: Works best for compose=colorize when using IM 6.8.5.5 or 
+		higher due to the introduction and use of colorspace HCLp. Otherwise, 
+		a quite different result will be obtained using colorspace HSL.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 1
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://ablazewithlight.blogspot.com/2012/10/raw-processing-in-lightroom-4-split.html" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="2">
+		<img src="./SPLITTONE3_files/gentle_kiss.jpg" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Mix
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="2">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m25_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m75_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Format
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -f image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -f grayscale
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_grayscale_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Type
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -t color
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -t gradient
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_gradient_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Compose
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c colorize
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c overlay
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_overlay_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c softlight
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c hardlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_softlight_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_hardlight_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Preserve Luminosity
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c colorize
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c colorize -p
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pyes.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Brightness
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c colorize -b 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc hsl(61.11%,40%,50%) <br>-hc hsl(4.17%,20%,50%) <br>-m 50 -c colorize -b 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b0_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/gentle_kiss_splittone3_sc_hsl(61.11pct,30pct,50pct)_hc_hsl(4.17pct,30pct,50pct)_image_color_colorize_m50_b20_s0_pno.png" width="320" height="215" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original Image<br>
+		(<a href="http://digital-photography-school.com/create-amazing-sunsets-with-lightrooms-split-toning-tool" target="_blank">source</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="2">
+		<img src="./SPLITTONE3_files/sunsets_sm.jpg" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Amounts
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top" colspan="2">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 25
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 75
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m25_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m75_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Format
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -f image
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -f grayscale
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_grayscale_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Type
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -t color
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -t gradient
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_gradient_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Compose
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c colorize
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c overlay
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_overlay_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c softlight
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c hardlight
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_softlight_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_hardlight_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Preserve Luminosity
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c colorize
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c colorize -p
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pyes.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" bgcolor="black" colspan="2" data-darkreader-inline-bgcolor="" style="--darkreader-inline-bgcolor: #000000;">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Variation in Brightness
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c colorize -b 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Arguments:<br>
+		-sc red -hc yellow <br>-m 50 -c colorize -b 20
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b0_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="top">
+		<img src="./SPLITTONE3_files/sunsets_sm_splittone3_sc_red_hc_yellow_image_color_colorize_m50_b20_s0_pno.png" width="300" height="150" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle" colspan="3">
+		<p align="center">
+		What the script does is as follows for the default case, but with user specified colors:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a grayscale version of the image</li>
+			<li>Creates solid color image for each of the shadow color and highlight color</li>
+			<li>Uses -compose colorize to apply color to the grayscale image for each case <br>
+				of shadows and highlights</li>
+			<li>Puts the grayscale image into the alpha channel of the colorized shadow  <br>
+				and highlight images</li>
+			<li>Blends the highlight colored image and the shadow colored image</li>
+		</ul>
+		<p></p>
+		<p align="left">
+		</p><blockquote>
+		This is equivalent to the following IM commands:
+		</blockquote>
+		<p></p>
+		<p align="left">
+		</p><ul>
+			<li>sproc="-fill $scolor -colorize 100%"</li>
+			<li>hproc="-fill $hcolor -colorize 100%"</li>
+			<li>samtf=`convert xc: -format "%[fx:$samt/100]" info:`</li>
+			<li>hamtf=`convert xc: -format "%[fx:$hamt/100]" info:`</li>
+			<li>convert $infile -colorspace gray -auto-level $tmpG1</li>
+
+			<li>convert $tmpG1 \<br>
+					\( -clone 0 $sproc -colorspace HCLp -separate +channel \) \<br>
+					\( -clone 0 -colorspace HCLp -channel b -separate +channel \) \<br>
+					-delete 0,3 -set colorspace HCLp -combine -colorspace sRGB $tmpS1</li>
+
+			<li>convert $tmpG1 \<br>
+					\( -clone 0 $hproc -colorspace HCLp -separate +channel \) \<br>
+					\( -clone 0 -colorspace HCLp -channel b -separate +channel \) \<br>
+					-delete 0,3 -set colorspace HCLp -combine -colorspace sRGB $tmpH1</li>
+	
+			<li>convert $infile \<br>
+				\( $tmpS1 \( $tmpG1 -blur 0x$blur -negate -auto-level \) \<br>
+					-alpha off -compose copy_opacity -composite \) \<br>
+				-compose over -flatten $tmpS1</li>
+
+			<li>convert $infile \<br>
+				\( $tmpH1 \( $tmpG1 -blur 0x$blur -auto-level \) \<br>
+					-alpha off -compose copy_opacity -composite \) \<br>
+				-compose over -flatten $tmpH1</li>
+
+			<li>convert \( $tmpS1 \) \( $tmpH1 \) \<br>
+				-define compose:args=$mix -compose blend -composite -modulate 100,$sat,100 $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

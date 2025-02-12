@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://www.fmwconcepts.com/imagemagick/glasseffects/index.php -->
+<html xmlns="http://www.w3.org/1999/xhtml" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) brightness(85%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #000000;
+   --darkreader-neutral-text: #d4cfc8;
+   --darkreader-selection-background: #002299;
+   --darkreader-selection-text: #e8e5e2;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #000000 !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #000000;
+}
+html, body {
+    border-color: #534938;
+    color: #e8e5e2;
+}
+a {
+    color: #0179ff;
+}
+table {
+    border-color: #2b3438;
+}
+::placeholder {
+    color: #a39a8e;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #121700 !important;
+    color: #e8e5e2 !important;
+}
+::-webkit-scrollbar {
+    background-color: #000000;
+    color: #9a9183;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #181f22;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f383d;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #1c2428;
+}
+::-webkit-scrollbar-corner {
+    background-color: #000000;
+}
+::selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}
+::-moz-selection {
+    background-color: #002299 !important;
+    color: #e8e5e2 !important;
+}</style>
+<title>Fred's ImageMagick Scripts: GLASSEFFECTS</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred&#39;s ImageMagick Scripts - glasseffects - modifies an image so that it appears to be viewed through textured and/or tiled glass.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, glasseffects, effect, displacement, dispersion, tile, grid, random, blend, glass, texture">
+<link rel="stylesheet" href="./GLASSEFFECTS_files/style.css"><style class="darkreader darkreader--sync" media="screen"></style>
+<meta name="darkreader" content="a2da5132d4e8b5e52634f7bdf29d1bab"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #5d2a00 !important;
+    border-color: #d3a000 !important;
+    color: #f6e8bf !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #000a1c !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #000000 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #000000 !important;
+}
+.tou-uknfeu {
+    background-color: #000000 !important;
+}
+.tou-6i3zyv {
+    background-color: #002f4a !important;
+}</style></head>
+<body marginwidth="0" marginheight="0" id="glasseffects">
+
+<div class="blue">
+<br>
+<h2 align="center" class="white"><img src="./GLASSEFFECTS_files/im_logo_small_sharp.gif" border="2" width="120" height="90" hspace="20" vspace="0" align="absmiddle" class="red">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="left" valign="middle">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p align="left" class="red"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+GLASSEFFECTS
+</h2>
+
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="70%">
+	<tbody><tr>
+		<td align="left" valign="middle" class="larger">
+		<p align="left">
+		Modifies an image so that it appears to be viewed through textured 
+		and/or tiled glass.
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=glasseffects&amp;dirname=glasseffects">Download Script</a></p>
+
+<p align="center" class="smaller red">
+last modified: December 15, 2018</p>
+
+<br>
+<br>
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="90%">
+	<tbody><tr>
+		<td align="center" valign="middle" class="fixedwidth">
+		<p align="left">
+		USAGE: glasseffects [-e effect ] [-a amount] [-d density] [-g granularity] [-k kind] [-t type] [-m mode] [-w weight] [-s spacing] [-r ripple] [-b bluramt] [-c cellsize] [-o ocolor] [-i intermix] [-n newseed] infile outfile<br>
+		USAGE: glasseffects [-h or -help]
+		</p>
+
+		<p align="left">
+		-e .... effect ........... type of image effect; displace, disperse or none; <br>
+		.......................... default=disperse<br>
+		-a .... amount ........... amount of effect; integer&gt;=0; zero indicates no <br>
+		.......................... image effect; default=3<br>
+		-d .... density .......... density (frequency) of dispersion; integer&gt;=0; default=3<br>
+		-g .... granularity ...... granularity (extent) of dispersion or displacement; <br>
+		.......................... integer&gt;=0; default=3<br>
+		-k .... kind ............. kind of grid; simple or broken; default=simple<br>
+		-t .... type ............. type of grid; grid; single, double or bipolar<br>
+		.......................... default=single<br>
+		-m .... mode ............. mode of applying grid; overlay (only for type!=bipolar) or <br>
+		.......................... displace (all types) or grid (grid only, no image);<br>
+		.......................... default=displace<br>
+		-w .... weight ........... grid line weight; integer&gt;=0; zero indicates no grid;<br>
+		.......................... default=1<br>
+		-s .... spacing .......... spacing between double or bipolar grid lines; <br>
+		.......................... integer&gt;=0; default=0<br>
+		-r .... ripple ........... ripple (wiggle) amount for grid lines; integer&gt;=0; <br>
+		.......................... default=0<br>
+		-b .... bluramt .......... blur amount for grid lines; float&gt;=0; default=0<br>
+		-c .... cellsize ......... grid cell size; comma separate x,y sizes; if only one <br>
+		.......................... value is supplied it will be used for both; <br>
+		.......................... integer&gt;(2*weight+spacing); default=30<br>
+		-o .... ocolor ........... grid overlay color; default=white<br>
+		-i .... intermix ......... grid overlay color intermix with image percent; <br>
+		.......................... 0&lt;=integer&lt;=100; default=100 indicates full grid and <br>
+		.......................... no mixing with underlying image<br>
+		-n .... newseed .......... forced seed value; integer&gt;0; default will randomly <br>
+		.......................... change seed 
+		</p>
+
+		<p align="left">
+		PURPOSE: To modify an image so that it appears to be viewed through 
+		textured and/or tiled glass.
+				</p>
+
+		<p align="left">
+		DESCRIPTION: GLASSEFFECTS modifies an image so that it appears to be 
+		viewed through textured and/or tiled glass. The effect may be created 
+		using either displacement or dispersion. Also a grid may be superimposed, 
+		which can either be colored or used displaced image texture.
+		</p>
+
+		<p align="left">
+		ARGUMENTS: 
+		</p>
+
+		<p align="left">
+		-e effect ... EFFECT applies either a displacement or dispersion effect 
+		to the image. Choices are: disperse, displace or none. The default is disperse.
+		</p>
+
+		<p align="left">
+		-a amount ... AMOUNT of dispersion or displacement in pixels. Values are 
+		integers&gt;=0. A value of zero will be the same as effect=none. The default=3.
+		</p>
+
+		<p align="left">
+		-d density ... DENSITY is the density or frequency of the dispersion effect. 
+		Values are integers&gt;=0. The default=3.
+		</p>
+
+		<p align="left">
+		-g granularity ... GRANULARITY is the size of the dispersion or displacement 
+		areas. Values are integers&gt;=0. The default=3.
+		</p>
+
+		<p align="left">
+		-k kind ... KIND of grid desired. Choices are: simple or broken. Simple means 
+		continuous lines. Broken means the grid lines will be broken so the cells are 
+		somewhat separated and offset slightly. The default is simple.
+		</p>
+
+		<p align="left">
+		-t type ... TYPE of grid desired. Choices are: single, double or bipolar. 
+		Single is a white grid on a black or gray background depending upon whether  
+		mode is set to overlay or displace, respectively. Double has the white grid 
+		lines doubled with an optional spacing between. Bipolar has double grid lines 
+		with an optional spacing between but one set is white and the other is black 
+		and they are both on a gray background as bipolar can only be used with 
+		mode=displace. The default is single.
+		</p>
+
+		<p align="left">
+		-m mode ... MODE of applying the grid to the image. Choices are: displace 
+		(which can be use for all types), overlay (which is valid only for single 
+		or double grid types) and grid (which indicates to output only the grid and 
+		ignore the image). Using mode=displace will cause the texture of the grid 
+		to come from the image offset by a displacement of 1/4 of the grid cell size.  
+		If the grid is single or double, the offset will come from the right or down 
+		from the grid by 1/4 of the cell size (due to the grid being white). If the 
+		grid is bipolar, then the offset will be 1/4 of the cell size from that edge 
+		of the grid towards the interior of the cell (due to the grid being composed 
+		of both black and white parts). That is, the white grid will get its texture 
+		from the right or down by 1/4 of the cell size and the black grid will get 
+		its texture from the left or up by 1/4 of the cell size. Using mode=overlay 
+		will simply mix the specified color with the image where the grid exists. 
+		The default is displace.
+		</p>
+
+		<p align="left">
+		-w weight ... WEIGHT is the line weight for the grid lines. Values are 
+		integers&gt;=0. If zero is selected, then the grid will not be applied. The 
+		default=1.
+		</p>
+
+		<p align="left">
+		-s spacing ... SPACING is the spacing between either the double or bipolar 
+		grid lines. Values are integers&gt;=0. If zero is selected, there will be no 
+		space between the double or bipolar grid. Thus a spacing of zero for double 
+		grid lines is equivalent to twice the weight for a single grid lines. The 
+		default=0.
+		</p>
+
+		<p align="left">
+		-r ripple ... RIPPLE indicates have the grid lines ripple or wiggle 
+		rather than being straight lines. Values are integers&gt;=0. The default=0 
+		which indicates no ripple.
+		</p>
+
+		<p align="left">
+		-b bluramt ... BLURAMT is the amount of blurring to apply to the grid lines. 
+		This is only relevant to mode=overlay. Values are integers&gt;=0. The default=0.
+		</p>
+
+		<p align="left">
+		-c cellsize ... CELLSIZE is a comma separate pair of integers that represent 
+		the dimensions of the grid cells. If only one value is supplied, then it will 
+		be used for both dimensions. The cell size values must be larger than 
+		(2*weight+spacing) and cannot be zero. The default=30
+		</p>
+
+		<p align="left">
+		-o ocolor ... COLOR is the mixing color for the grid with the image when 
+		mode=overlay. Any valid IM color is allowed. The default=white.
+		See http://imagemagick.org/script/color.php
+		</p>
+
+		<p align="left">
+		-i intermix ... INTERMIX is the mixing percent of the overlay color of the 
+		grid with the image background. Values are integers between 0 and 100. The 
+		default=100 indicates that the grid will be full overlay color and will not 
+		be mixed with the underlying image.
+		</p>
+
+		<p align="left">
+		-n newseed ... NEWSEED is the forced seed value to use for randomization in 
+		the image effect and in the ripple. This permits the pattern to be repeated. 
+		The default is to change the seed value randomly each time the script is run, 
+		thus causing somewhat different patterns each time the script is run.
+		</p>
+
+		<p align="left">
+		NOTE: If your IM version is less than 6.4.8.4, then the dispersion effect 
+		will run slowly due to the use of -fx.
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 1: Disperse Vs Displace --- No Grid
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Original
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Disperse<br>
+		Arguments:<br>
+		-e disperse -a 3 -d 3 -g 3 -w 0 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displace<br>
+		Arguments:<br>
+		-e displace -a 10 -g 3 -w 0 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_displace_x30_y30_a3_d3_g3_w0_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_displace_simple_single_displace_x30_y30_a10_d3_g3_w0_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Example 2: Disperse With Displaced Simple Grid And Increasing Width And Spacing
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="3">
+		<img src="./GLASSEFFECTS_files/monet3.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t single -m displace <br>
+		-a 3 -d 3 -g 3 -w 1 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 1 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_displace_x30_y30_a3_d3_g3_w1_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_displace_x30_y30_a3_d3_g3_w1_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t double -m displace <br>
+		-a 3 -d 3 -g 3 -w 1 -s 1 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 1 -s 1 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_displace_x30_y30_a3_d3_g3_w1_s1_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_displace_x30_y30_a3_d3_g3_w1_s1_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t single -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_displace_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_displace_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t double -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -s 1 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -s 1 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_displace_x30_y30_a3_d3_g3_w2_s1_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_displace_x30_y30_a3_d3_g3_w2_s1_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		&nbsp;
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t double -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -s 2 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 2 -s 2 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		&nbsp;
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_displace_x30_y30_a3_d3_g3_w2_s2_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_displace_x30_y30_a3_d3_g3_w2_s1_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 3: Overlay Grids (No Disperse Or Displace)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./GLASSEFFECTS_files/monet3.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple<br>
+		Arguments:<br>
+		-e none -k simple <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Broken <br>
+		Arguments:<br>
+		-e none -k broken <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_overlay_darkgoldenrod_x30_y30_a0_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_broken_single_overlay_darkgoldenrod_x30_y30_a0_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple Wiggle<br>
+		Arguments:<br>
+		-e none -k simple <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2 -r 5
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double Simple Wiggle<br>
+		Arguments:<br>
+		-e none -k simple <br>
+		-t double -m overlay <br>
+		-o darkgoldenrod -w 2 -s 2 -r 5
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_overlay_darkgoldenrod_x30_y30_a0_d3_g3_w2_s0_r5_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_overlay_darkgoldenrod_x30_y30_a0_d3_g3_w2_s2_r5_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 4: Overlay Grids With Dispersion
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./GLASSEFFECTS_files/monet3.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2 <br>
+		-a 3 -d 3 -g 3 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Broken <br>
+		Arguments:<br>
+		-e disperse -k broken <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2 <br>
+		-a 3 -d 3 -g 3 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_broken_single_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double Simple<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t double -m overlay <br>
+		-o darkgoldenrod -w 2 -s 2<br>
+		-a 3 -d 3 -g 3 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double Simple Wiggle<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t double -m overlay <br>
+		-o darkgoldenrod -w 2 -s 2<br>
+		-a 3 -d 3 -g 3 -r 5 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s2_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s2_r5_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple Intermix<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2 -i 50<br>
+		-a 3 -d 3 -g 3 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple Blur<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t single -m overlay <br>
+		-o darkgoldenrod -w 2 -b 1<br>
+		-a 3 -d 3 -g 3 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s0_r0_i50_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_overlay_darkgoldenrod_x30_y30_a3_d3_g3_w2_s0_r0_i100_b1_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Example 5: Grids
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+		<img src="./GLASSEFFECTS_files/monet3.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Simple<br>
+		Arguments:<br>
+		-k simple -t single <br>
+		-m grid -w 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Single Broken <br>
+		Arguments:<br>
+		-k broken -t single <br>
+		-m grid -w 2
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Bipolar Simple <br>
+		Arguments:<br>
+		-k simple -t bipolar <br>
+		-m grid -w 2 -s 0
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Double Simple<br>
+		Arguments:<br>
+		-k simple -t double <br>
+		-m grid -w 2 -s 2
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_single_grid_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_broken_single_grid_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_bipolar_grid_x30_y30_a3_d3_g3_w2_s0_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/monet3_glass_disperse_simple_double_grid_x30_y30_a3_d3_g3_w2_s2_r0_i100_b0_n100.jpg" width="128" height="161" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Example 6: Disperse Vs Displace --- With Bipolar Grid<br>
+		(<a href="http://www.entheosweb.com/photoshop/glass_effects.asp" target="_blank">http://www.entheosweb.com/photoshop/glass_effects.asp</a>)
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<p align="center">
+		Original
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="2">
+		<img src="./GLASSEFFECTS_files/redcanoe.jpg" width="369" height="251" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<p align="center">
+		Disperse<br>
+		Arguments:<br>
+		-e disperse -k simple <br>
+		-t bipolar -m displace <br>
+		-a 3 -d 3 -g 3 -w 1 -s 1 -n 100
+		</p>
+		</td>
+		<td align="center" valign="middle">
+		<p align="center">
+		Displace<br>
+		Arguments:<br>
+		-e displace -k simple <br>
+		-t bipolar -m displace <br>
+		a 10 -g 3 -w 1 -s 1 -n 100
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/redcanoe_glass_disperse_simple_bipolar_displace_x42_y42_a3_d3_g3_w1_s1_r0_b0.jpg" width="369" height="251" hspace="0" vspace="0" border="0">
+		</td>
+		<td align="center" valign="middle">
+		<img src="./GLASSEFFECTS_files/redcanoe_glass_displace_simple_bipolar_displace_x42_y42_a10_d3_g3_w1_s1_r0_b0.jpg" width="369" height="251" hspace="0" vspace="0" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<td align="left" valign="middle">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Creates a random, blurred image</li>
+			<li>Applies the random, blurred image to the input image <br>
+			as a displacement map or as a dispersion map</li>
+			<li>Optionally creates a grid</li>
+			<li>Applies the grid to the image either as an overlay of  <br>
+			specified color or uses image texture from a displacement</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for effect=disperse, kind=simple, <br>
+		mode=displace, type=bipolar
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>ww=`convert $infile -format "%[fx:w]" info:`</li>
+			<li>hh=`convert $infile -format "%[fx:h]" info:`</li>
+			<li>xcell=`convert xc: -format "%[fx:$xsize - $weight]" info:`</li>
+			<li>ycell=`convert xc: -format "%[fx:$ysize - $weight]" info:`</li>
+			<li>ww2=`convert xc: -format "%[fx:$ww - $weight]" info:`</li>
+			<li>hh2=`convert xc: -format "%[fx:$hh - $weight]" info:`</li>
+			<li>convert -size ${ww}x${hh} xc: $seeding +noise Random -colorspace gray \<br>
+			-blur 0x${granular} -virtual-pixel tile -fx "u" -contrast-stretch 0% $tmp1</li>
+			<li>convert $infile \<br>
+			\( $tmp1 -evaluate cos "$density" \) \<br>
+			\( $tmp1 -evaluate sin "$density" \) \<br>
+			-compose displace -set option:compose:args ${amount}x${amount} -composite $tmp0</li>
+			<li>convert \( -size ${xcell}x${ycell} xc:black \<br>
+			-size ${weight}x${ycell} xc:white +append \<br>
+			-size ${xcell}x${weight} xc:white -append \) \<br>
+			-write mpr:tile +delete -size ${ww}x${hh} tile:mpr:tile \<br>
+			-gravity southeast -chop ${weight}x${weight}+0+0 \<br>
+			\( +clone -gravity east -crop ${weight}x${hh2}+0+0 +repage \) +append \<br>
+			\( +clone -gravity south -crop ${ww}x${weight}+0+0 +repage \) -append $tmp2</li>
+			<li>convert $tmp2 \( +clone -negate -roll -${offset}-${offset} +level 0,50% \) \<br>
+			-compose plus -composite $tmp2</li>
+			<li>if [ "$spacing" = "" ]; then<br>
+			dx=`convert xc: -format "%[fx:($xsize-$weight)/4]" info:`<br>
+			dy=`convert xc: -format "%[fx:($ysize-$weight)/4]" info:`<br>
+			else<br>
+			dx=`convert xc: -format "%[fx:($xsize-$weight-$spacing)/4]" info:`<br>
+			dy=`convert xc: -format "%[fx:($ysize-$weight-$spacing)/4]" info:`<br>
+			fi</li>
+			<li>composite $tmp2 $tmp0 -virtual-pixel edge -displace ${dx}x${dy} $outfile</li>
+
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body></html>

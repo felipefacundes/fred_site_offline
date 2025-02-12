@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-lt-installed="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Fred's ImageMagick Scripts: COLORTONING</title>
+<meta name="author" content="Fred Weinhaus">
+<meta name="description" content="Fred's ImageMagick Scripts - colortoning - color tones an image in highlights and/or shadows and/or overall.">
+<meta name="keywords" content="ImageMagick, scripts, image processing, colortoning, colors, tone, tone mapping, toning, colorize, modify">
+<link rel="stylesheet" href="COLORTONING_files/style.css">
+</head>
+<body id="colortoning" marginwidth="0" marginheight="0">
+
+<div class="blue">
+<br>
+<h2 class="white" align="center"><img src="COLORTONING_files/im_logo_small_sharp.gif" class="red" width="120" vspace="0" hspace="20" height="90" border="2" align="absmiddle">Fred's ImageMagick Scripts</h2>
+<br>
+<br>
+</div>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td valign="middle" align="left">
+			<ul>
+				<b>Licensing:</b>
+				<p align="left">Copyright © Fred Weinhaus</p>
+				<p align="left">My scripts are available <u>free of charge for non-commercial (non-profit) use, ONLY.</u></p>
+				<p align="left"><b>For use of my scripts in commercial (for-profit) environments or non-free applications, please contact me 
+					(Fred Weinhaus) for licensing arrangements. My email address is fmw at alink dot net.</b></p>
+				<p align="left">If you: 1) redistribute, 2) incorporate any of these scripts into other free 
+					applications or 3) reprogram them in another scripting language, then 
+					<u>you must contact me for permission</u>, especially if the result 
+					might be used in a commercial or for-profit environment.</p>
+				<p align="left">Usage, whether stated or not in the script, is restricted to the above licensing arrangements. 
+					It is also subject, in a subordinate manner, to the ImageMagick license, which can be found at:
+					<a href="http://www.imagemagick.org/script/license.php" target="_blank">
+					http://www.imagemagick.org/script/license.php</a></p>
+				<p class="red" align="left"><b>Please read the <u>Pointers For Use</u> on my home page to properly install and customize my scripts.</b></p>
+				
+			</ul>
+		</td>
+	</tr>
+</tbody></table>
+
+<h2 align="center">
+COLORTONING
+</h2>
+
+<br>
+
+<table width="70%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="larger" valign="middle" align="left">
+		<p align="left">
+		Color tones an image in highlights and/or shadows and/or overall
+		</p></td>
+	</tr>
+</tbody></table>
+
+<p align="center"><a href="http://www.fmwconcepts.com/imagemagick/downloadcounter.php?scriptname=colortoning&amp;dirname=colortoning">Download Script</a></p>
+
+<p class="smaller red" align="center">
+last modified: November 04, 2019</p>
+
+<br>
+<br>
+
+<table width="90%" cellspacing="0" cellpadding="5" border="0" align="center">
+	<tbody><tr>
+		<td class="fixedwidth" valign="middle" align="center">
+		<p align="left">
+		USAGE: colortoning [-ch highcolor] [-cl lowcolor] [-ca allcolor] 
+		[-bh -blendhigh] [-bl blendlow] [-ba blenall] [-o order] [-i images] 
+		infile outfile
+		<br><br>
+		USAGE: colortoning [-help|h]
+		</p>
+
+		<p align="left">
+		-ch ... highcolor ... desired highrange or highlight color; default=no <br>
+		..................... highlight toning<br>
+		-cl ... lowcolor  ... desired lowrange or shadow color; default=no <br>
+		..................... shadow toning<br>
+		-ca ... allcolor .... desired overall color; default=no overall toning<br>
+		-bh ... blendhigh ... blending amount for hightlights; 0≤integer≤100;<br>
+		..................... default=100 (all hightoned and no input)<br>
+		-bl ... blendlow .... blending amount for shadows; 0≤integer≤100;<br>
+		..................... default=100 (all shadowtoned and no input)<br>
+		-ba ... blendall .... blending amount for overall color; 0≤integer≤100;<br>
+		..................... default=100 (all shadowtoned and no input)<br>
+		-o .... order ....... order of tonal processing steps; comma separate<br>
+		..................... string involving any non-duplicated combination<br> 
+		..................... of H,L,A; one, two, or three letters may be <br>
+		..................... specified; default="HLA" to process highlights <br>
+		..................... first, then shadows, then all<br>
+		-i .... images ...... choice of view or save intermediate images <br>
+		..................... resulting from each toning step; default=neither<br>
+		</p>
+
+		<p align="left">
+		PURPOSE: To color tone an image in highlights and/or shadows and/or overall.
+		</p>
+
+		<p align="left">
+		DESCRIPTION: COLORTONING will color tone an image in highlights and/or 
+		shadows and/or overall. The amount of blending with the original image in 
+		each tonal range can be specified. The default is not to blend with the 
+		original image.  Processing occurs sequentially from highlights to shadows 
+		to overall toning.
+		</p>
+
+		<p align="left">
+		ARGUMENTS:
+		</p>
+
+		<p align="left">
+		-ch highcolor ... HIGHCOLOR is the highrange or highlight color desired for 
+		the toning. Any valid opaque IM color is allowed. The default is no 
+		highlight color toning.
+		</p>
+
+		<p align="left">
+		-cl lowcolor ... LOWCOLOR is the lowrange or shadow color desired for the 
+		toning. Any valid opaque IM color is allowed. The default is no shadow 
+		color toning.
+		</p>
+
+		<p align="left">
+		-ca allcolor ... ALLCOLOR is the overall color desired for the toning. Any 
+		valid opaque IM color is allowed. The default is no overall color toning.
+		</p>
+
+		<p align="left">
+		-bh blendhigh ... BLENDHIGH is the percent blending of the highlight toned 
+		image with the original (or previous toned version). Values are integers in  
+		the range of 0 to 100. The default=100 means all toned image and no blending.
+		</p>
+
+		<p align="left">
+		-bl blendlow ... BLENDLOW is the percent blending of the shadow toned 
+		image with the original (or previous toned version). Values are integers in  
+		the range of 0 to 100. The default=100 means all toned image and no blending.
+		</p>
+
+		<p align="left">
+		-ba blendall ... BLENDAll is the percent blending of the overall toned 
+		image with the original (or previous toned version). Values are integers in  
+		the range of 0 to 100. The default=100 means all toned image and no blending.
+		</p>
+
+		<p align="left">
+		-o order  ... ORDER is the order of the tonal processing steps. Values are 
+		a comma separate string involving any non-duplicated combination of H,L and A.   
+		One, two or three letters may be specified. The default="H,L,A" to process 
+		highlights first, then shadows, then all.
+		</p>
+
+		<p align="left">
+		-i images ... IMAGES permits the viewing or saving of the intermediate  
+		images generated during the processing. The choices are: view (v) or save (s).
+		The default is neither. If images=save, then files will be named for the 
+		input image with _colortoning_#.png where #=1 and/or 2 and/or 3.
+		</p>
+		
+		<p align="left">
+		REFERENCE: <a href="http://phlearn.com/color-toning-with-reference-episode110" target="blank">http://phlearn.com/color-toning-with-reference-episode110</a>
+		</p>
+
+		<p align="left">
+		CAVEAT: No guarantee that this script will work on all platforms, 
+		nor that trapping of inconsistent parameters is complete and 
+		foolproof. Use At Your Own Risk. 
+		</p>
+
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<h3 align="center">EXAMPLES</h3>
+
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Example <br>
+		(see <a href="http://phlearn.com/color-toning-with-reference-episode110" target="blank">http://phlearn.com/color-toning-with-reference-episode110</a>)
+		</p>
+	</td></tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Original Image
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Arguments:<br>
+		-cl "#2a1236" -ca "#bc978e" -ch "#f2f4e9" \<br>
+		-bl 65 -ba 20 -o "l,a,h" -i save
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="COLORTONING_files/1281259_cowboy.jpg" width="240" vspace="0" hspace="0" height="300" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		Low (Shadow) Toning Step
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Color Swatch<br>
+		#2a1236		
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/1281259_cowboy_colortoning_1.png" width="240" vspace="0" hspace="0" height="300" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/lowcolor.png" width="100" vspace="0" hspace="0" height="100" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		All (Overall) Toning Step
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Color Swatch<br>
+		#bc978e		
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/1281259_cowboy_colortoning_2.png" width="240" vspace="0" hspace="0" height="300" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/allcolor.png" width="100" vspace="0" hspace="0" height="100" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<p align="center">
+		High (Highlight) Toning Step
+		</p>
+		</td>
+		<td valign="middle" align="center">
+		<p align="center">
+		Color Swatch<br>
+		#f2f4e9		
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/1281259_cowboy_colortoning_3.png" width="240" vspace="0" hspace="0" height="300" border="0">
+		</td>
+		<td valign="middle" align="center">
+		<img src="COLORTONING_files/highcolor.png" width="100" vspace="0" hspace="0" height="100" border="0">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<p align="center">
+		Comparison Original vs Final
+		</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" valign="middle" align="center">
+		<img src="COLORTONING_files/1281259_cowboy_colortoning_animation.gif" width="240" vspace="0" hspace="0" height="300" border="0">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="5" border="1" align="center">
+	<tbody><tr>
+		<td colspan="3" valign="middle" align="left">
+		<p align="center">
+		What the script does is as follows:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>Does a colored blend with input or previous toning step for <br>
+				each desired tonal range</li>
+		</ul>
+		<p></p>
+		<p align="center">		
+		This is equivalent to the following IM commands for Highlights:
+		</p>
+		<p align="left">
+		</p><ul>
+			<li>convert -quiet -regard-warnings "$infile" $dir/tmpI.mpc</li>
+			<li>convert $dir/tmpI.mpc $dir/tmpP.mpc</li>
+			<li>blendhigh2=$((100-blendhigh))</li>
+			<li>convert $dir/tmpP.mpc \<br>
+				\( -clone 0 -fill "$highcolor" -colorize 100% \) \<br>
+				\( -clone 0 -colorspace gray \) \<br>
+				-compose blend -define compose:args=$blendhigh,$blendhigh2 -composite \<br>
+				$dir/tmpP.mpc</li>
+			<li>convert $dir/tmpP.mpc $outfile</li>
+		</ul>
+		<p></p>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+<script src="COLORTONING_files/app.js" type="text/javascript"></script></body></html>
